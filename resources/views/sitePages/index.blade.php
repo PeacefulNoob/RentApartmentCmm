@@ -43,7 +43,7 @@
 
                         <div class="property-title-top">
                             <div class="property-location py-1">
-                                <img src="/assets/images/iconfinder_pin_293694.svg" class="" alt="">
+                            <img src="/assets/images/iconfinder_pin_293694 (1).svg" class="" alt="">
                                 {{ $property->location->city }} ,      {{ $property->street }}
 
                             </div>
@@ -59,7 +59,7 @@
 
                                 <h5>{{ $property->title }}</h5>
                                  </a>
-                                <p> {{ $property->price }}  / night</p>
+                                <p> {{ $property->price }} &euro; / night</p>
                             </div>
                       
                         @php
@@ -100,7 +100,7 @@
     <div class="all_aboutMne">
         <div class="aboutMne">
             <div class="text">
-            <h1>ABOUT MONTENEGRO</h1>
+            <h1 style="color:white;">ABOUT MONTENEGRO</h1>
             <p>Events / Festivals / Parties / Holidays
             </p> 
         </div>
@@ -128,25 +128,7 @@
             </div>
         </div>
     </div>
-    <div class="coronaSection mt-5 py-5">
-                <div class="covid-header">
-                    <img src="/assets/images/covidIcon.svg" class="mr-2" alt="">
-                    <h2 class="m-0">{{ $covid->title }}</h2>
-                </div>
-                <div class="covid-body my-4">
-                    <p class="covid-text">
-                        @php
-                            echo substr($covid->subtitle, 0, 333);
-                        @endphp...</p>
-                        <a href="#" class=""  data-toggle="modal" data-target="#covid_modal">+ Read more details</a>
-                        @can('admin')
+  @include('components.covid_section')
 
-                            <a href="{{ route('covids.edit',$covid->id) }}"><button
-                                    type="button" class="btn btn-warning">Edit</button></a> </td>
-                        @endcan
-                </div>
-       
-
-    </div>
 </div>
 @endsection

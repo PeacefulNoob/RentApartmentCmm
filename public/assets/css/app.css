@@ -404,8 +404,10 @@ body {
   position: absolute;
   top: 0;
   left: 0;
-  -webkit-transform: translate(50%, 10%);
-          transform: translate(50%, 10%);
+  transform: translate(80%, 25%);
+  width: 35%;
+  height: 20px;
+  overflow: hidden;
 }
 
 .gallery_owl .owl-dots .owl-dot {
@@ -479,13 +481,17 @@ body {
 .gallery_single_owl .owl-next span {
   display: none;
 }
-
+a{
+  color: black;
+}
 .gallery_single_owl .owl-dots {
   position: absolute;
   bottom: 0;
   left: 50%;
-  -webkit-transform: translate(0%, 0%);
-          transform: translate(0%, 0%);
+  transform: translate(80%, 25%);
+  width: 35%;
+  height: 20px;
+  overflow: hidden;
 }
 
 .gallery_single_owl .owl-dots .owl-dot {
@@ -667,6 +673,10 @@ body {
 @media (min-width: 1200px) {
   .modal-xl {
     max-width: 100vw;
+  }
+  .modal-covid {
+    max-width: 80vw;
+    margin: auto !important;
   }
   .modal-content {
     padding-right: 12%;

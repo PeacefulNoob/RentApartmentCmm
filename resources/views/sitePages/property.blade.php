@@ -22,7 +22,7 @@
                    
                 </div>
                 <div class="property-single-location py-1 d-flex">
-                    <img src="/assets/images/iconfinder_pin_293694.svg" class="" alt="">
+                <img src="/assets/images/iconfinder_pin_293694 (1).svg" class="" alt="">
                     {{ $property->location->city }} ,
                    {{ $property->street }} ,
                  {{ $property->location->zip }}
@@ -39,7 +39,7 @@
             <div class="col-4">
                 <form action="" class="form-property">
                     <div class="form-group text-center">
-                     <h3 >    €   {{$property->price}} / night   </h3>
+                     <h3 >      {{$property->price}} &euro; / night   </h3>
                       </div>
                       <div class="form_inquiry">
                     <div class="form-row m-0">
@@ -69,6 +69,10 @@
 
         </div>
     </div>
+</div>
+<div class="googleMap paddinglr my-5">
+    <h2 class="py-2">Google maps location</h2>
+<iframe src="https://www.google.com/maps/embed?pb=!1m14!1m12!1m3!1d3718.9604097407932!2d18.85334240911809!3d42.28405578539378!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!5e0!3m2!1sen!2s!4v1605286267549!5m2!1sen!2s" width="100%" height="600" frameborder="0" style="border:1px solid #08338F;" allowfullscreen="" aria-hidden="false" tabindex="0"></iframe>
 </div>
 <div class="properties my-5">
     <h2>More like this</h2>
