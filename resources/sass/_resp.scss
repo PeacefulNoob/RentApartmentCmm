@@ -1,0 +1,130 @@
+/* Extra small devices (phones, 600px and down) */
+@media only screen and (max-width: 600px) {}
+
+/* Small devices (portrait tablets and large phones, 600px and up) */
+@media only screen and (min-width: 600px) {}
+
+/* Medium devices (landscape tablets, 768px and up) */
+@media only screen and (min-width: 768px) {}
+
+/* Large devices (laptops/desktops, 992px and up) */
+@media only screen and (min-width: 992px) {}
+
+/* Extra large devices (large laptops and desktops, 1200px and up) */
+@media only screen and (min-width: 1200px) {}
+
+
+
+@media only screen and (max-width: 798px) {
+    .slImage {
+
+        background-image: url(/assets/images/Homepage-cover4-Mobile.jpg) !important;
+    }
+    .postDiv {
+        padding-left: 5% !important;
+        padding-right: 5% !important;
+    }
+    .nav-container {}
+
+    main {
+        margin-top: 12% !important;
+    }
+
+    #section2 {
+        margin-top: 0rem !important;
+    }
+
+    .search {
+        display: none;
+    }
+
+    .slImage {
+
+        height: 100vh !important;
+        object-fit: cover;
+        margin-top: 0px !important;
+
+    }
+
+    .dva span {
+        font-size: 12px !important;
+    }
+
+    .brandf {
+        display: none;
+    }
+
+    // Hamburger nav visible on mobile only
+    .nav-mobile {
+        display: block;
+    }
+
+    .site-block-retro .col1 {
+        width: 100%;
+    }
+
+    .site-block-retro .col2 {
+        width: 100%;
+    }
+
+    nav {
+        width: 100%;
+
+        ul {
+            display: none;
+            height: 100vh;
+            margin: 0;
+            padding: 135px 10px;
+            text-align: center;
+            background-color: rgb(53, 53, 53);
+
+            li {
+                float: none;
+                background-color: #f5b52b10;
+                margin-top: 20px;
+                border-radius: 20px;
+
+                a {
+                    padding: 15px;
+                    line-height: 20px;
+                    color: white !important;
+
+                }
+
+                ul li a {
+                    padding-left: 30px;
+                }
+            }
+        }
+    }
+
+    .nav-dropdown {
+        position: static;
+    }
+
+    .episode-guest {
+        position: relative;
+    }
+
+    .episode {
+
+        flex-wrap: wrap;
+    }
+
+    .episode .episode-body .episode-desc {
+        overflow: hidden;
+        height: 20px;
+    }
+
+    .footerKontakt {
+        margin: auto;
+    }
+}
+
+
+
+@media screen and (min-width: $breakpoint) {
+    .nav-list {
+        display: table !important;
+    }
+}

@@ -1,0 +1,239 @@
+<?php
+
+namespace App\Http\Controllers;
+
+use App\Property;
+use Illuminate\Http\Request;
+use Gate;
+use DB;
+use App\Location;
+use App\PropertyType;
+use Validator;
+use App\Amenity;
+use Intervention\Image\Facades\Image;
+use Illuminate\Support\Facades\Storage;
+
+class PropertyController extends Controller
+{
+    /**
+     * Display a listing of the resource.
+     *
+     * @return \Illuminate\Http\Response
+     */
+    public function __construct()
+    {
+        $this->middleware('can:adman')->except('show');
+
+    }
+    public function index()
+   {
+    $properties = Property::all();
+    return view ('admin.properties',compact('properties'));
+
+    }
+
+    /**
+     * Show the form for creating a new resource.
+     *
+     * @return \Illuminate\Http\Response
+     */
+    public function create()
+    {
+        $locations = Location::all();
+        $types= PropertyType::all();
+        $amenities = Amenity::all();
+        return view ('admin.property.create',compact('locations','types','amenities'));
+
+    }
+
+    /**
+     * Store a newly created resource in storage.
+     *
+     * @param  \Illuminate\Http\Request  $request
+     * @return \Illuminate\Http\Response
+     */
+    public function store(Request $request)
+    {
+
+        $validator = Validator::make($request->all(), [
+            'title' => 'required',
+            'file[]' => 'mimes:mp4,mov,ogg,jpeg,png,jpg,svg',
+            'description' => 'required',
+            'persons' => 'required',
+            'price' => 'required',
+            'size' => 'required',
+            'floor' => 'required',
+            'room_count' => 'required',
+/*             'google_maps' => 'required',
+ */          'street' => 'required',
+            'location_id' => 'required',
+            'property_type_id' => 'required',
+           
+
+        ]);
+        if ($validator->fails()) {
+            return redirect()->back()
+                        ->withErrors($validator)
+                        ->withInput();
+        }
+
+        $property = new Property;
+        $property->title = $request->input('title');
+        $property->description = $request->input('description');
+        $property->price = $request->input('price');
+        $property->persons = $request->input('persons');
+        $property->size = $request->input('size');
+        $property->floor = $request->input('floor');
+        $property->room_count = $request->input('room_count');
+        $property->location_id = $request->input('location_id');
+        $property->google_maps = $request->input('google_maps');
+        $property->street = $request->input('street');
+        $property->property_type_id = $request->input('property_type_id');
+        $property->user_id = auth()->user()->id;
+        $property->save();
+
+       /*  $request= array_merge($request->all(),[
+            "image" => $fileNameToStore,
+            "user_id" => auth()->user()->id,
+        ]);
+        $property1 = Property::create($request); */
+
+        if ($request->hasFile('file')) 
+        {  
+            foreach($request->file('file') as $image)
+            {
+                $name=$image->getClientOriginalName();
+                $extension= $image->getClientOriginalExtension();
+                $fileName = time(). '.'.$name.'.'.$extension;
+                Image::make($image)->encode('jpg', 75)->resize(1200, null, function($constraint) {  $constraint->aspectRatio();}) ->save('assets/images/property_images/'.$fileName );
+                $data[] = $name;  
+                $image1 = new Image;
+                $image1->title=json_encode($data);     
+                DB::table('property_images')
+                    ->insert(
+                        ['image' => $fileName,
+                        'property_id' => $property->id]
+                    );
+            }
+           
+            }
+       $property->amenities()->sync((array)$request->input('amenity'));
+
+       return redirect()->back()->with('success', 'Success!');
+    }
+
+    /**
+     * Display the specified resource.
+     *
+     * @param  \App\Property  $property
+     * @return \Illuminate\Http\Response
+     */
+    public function show(Property $property)
+    {
+        $images = DB::table('property_images')->where('property_id', '=', $property->id)->get();
+        $properties=Property::orderBy('created_at', 'DESC')->get();
+        $property= Property::findOrFail($property->id);
+        return view('sitePages.property', compact('property','properties','images'));
+    }
+
+    /**
+     * Show the form for editing the specified resource.
+     *
+     * @param  \App\Property  $property
+     * @return \Illuminate\Http\Response
+     */
+    public function edit(Property $property)
+    {
+        $locations = Location::all();
+        $types= PropertyType::all();
+        $amenities = Amenity::all();
+        $property = Property::findOrFail($property->id);
+        return view ('admin.property.edit',compact('property','locations','types','amenities'));
+    }
+
+    /**
+     * Update the specified resource in storage.
+     *
+     * @param  \Illuminate\Http\Request  $request
+     * @param  \App\Property  $property
+     * @return \Illuminate\Http\Response
+     */
+    public function update(Request $request, Property $property)
+    {
+        if(Gate::denies('edit-property')){
+            return redirect(route('admin.users.index'));
+        }
+        $validator = Validator::make($request->all(), [
+            'title' => 'required',
+            //'file[]' => 'mimes:mp4,mov,ogg,jpeg,png,jpg,svg',
+            'description' => 'required',
+            'persons' => 'required',
+            'price' => 'required',
+            'size' => 'required',
+            'floor' => 'required',
+            'room_count' => 'required',
+/*             'google_maps' => 'required',
+ */          'street' => 'required',
+            'location_id' => 'required',
+            'property_type_id' => 'required',
+
+
+        ]);
+        if ($validator->fails()) {
+            return redirect()->back()
+                        ->withErrors($validator)
+                        ->withInput();
+        }
+        Property::find($property->id)->update($request->all());
+
+
+        /* DB::table('properties')->where('id', $property->id)->update([
+            'title' => $request->title,
+            'description' => $request->description,
+            'price' => $request->price,
+            'size' => $request->size,
+            'floor' => $request->floor,
+            'room_count' => $request->roomcount,
+            'location_id' => $request->location,
+            'street' => $request->street,
+            'property_type_id' => $request->type,
+            'google_maps' => $request->google_maps,
+
+            'user_id' => auth()->user()->id,
+ 
+    ]);  */
+     
+        $property->amenities()->sync((array)$request->input('amenity'));
+ 
+       return redirect()->back()->with('success', 'Ažuriranje uspješno');
+    }
+
+    public function special($id) {
+        Property::where('id', $id)
+                ->update(['special' => 1]);
+                return back()->with('success','!');
+    }
+       
+    public function notSpecial($id) {
+        Property::where('id', $id)
+                ->update(['special' => 0]);
+          
+                return back()->with('success','!');
+    }
+    /**
+     * Remove the specified resource from storage.
+     *
+     * @param  \App\Property  $property
+     * @return \Illuminate\Http\Response
+     */
+    public function destroy(Property $property)
+    {
+        if(Gate::denies('delete-property')){
+            return redirect(route('admin.users.index'));
+        }
+
+             $property->amenities()->detach();
+             $property->delete();
+             return redirect()->route('admin.users.index');
+        }
+    }

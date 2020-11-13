@@ -1,0 +1,32 @@
+footer {
+    padding-top: 1%;
+    background: $primaryColor;
+    padding-top: 5%;
+    color: white !important;
+    font-weight: 300;
+    h2{
+        font-weight: 300;
+
+    }
+}
+.footer1{
+    @include paddinglr;
+    padding-bottom: 2%;
+}
+footer a {
+    color: white !important;
+}
+.right_footer{
+    margin-left: auto;
+    margin-right: 2%;
+}
+.left_footer{
+    margin-left: 2%;
+    margin-right:auto;
+}
+.footer2{
+    border-top: 1px solid $secondaryColor;
+    display: flex;
+    width: 100%;
+    padding: 10px 10px 0px 10px;
+  }

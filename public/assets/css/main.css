@@ -1,0 +1,201 @@
+.header1, .header2 {
+    padding-left: 9%;
+    padding-right: 9%;
+  }
+  
+  footer {
+    padding-left: 9%;
+    padding-right: 9%;
+    margin-top: 3%;
+  }
+  
+  footer .footerLogo img {
+    width: 90%;
+  }
+  
+  .sectionFooter {
+    z-index: 10000;
+    position: absolute;
+    background-color: white;
+    width: 100%;
+    -webkit-box-shadow: 0px 0px 91px 0px rgba(0, 0, 0, 0.75);
+    box-shadow: 0px 0px 91px 0px rgba(0, 0, 0, 0.15);
+  }
+  
+  .patreon {
+    width: 100%;
+    color: white;
+    padding: 10px;
+    margin: 0px 0px 32px 0px;
+    height: 100%;
+    border-radius: 5px;
+  }
+  
+  .bottomFooter {
+    color: white;
+    background: #BAC818;
+    position: absolute;
+    width: 100%;
+    left: 0;
+    padding-left: 2%;
+    padding-right: 2%;
+    padding-bottom: 3px;
+    padding-top: 12px;
+  }
+  
+  .bottomFooter a {
+    color: white;
+  }
+  
+  .footerLista {
+    margin: 7px 2px;
+  }
+  
+  .footerLista li a {
+    color: #BAC818;
+  }
+  
+  /* Extra small devices (phones, 600px and down) */
+  /* Small devices (portrait tablets and large phones, 600px and up) */
+  /* Medium devices (landscape tablets, 768px and up) */
+  /* Large devices (laptops/desktops, 992px and up) */
+  /* Extra large devices (large laptops and desktops, 1200px and up) */
+  @media only screen and (max-width: 798px) {
+    .slImage {
+      background-image: url(/assets/images/Homepage-cover4-Mobile.jpg) !important;
+    }
+    .postDiv {
+      padding-left: 5% !important;
+      padding-right: 5% !important;
+    }
+    main {
+      margin-top: 12% !important;
+    }
+    #section2 {
+      margin-top: 0rem !important;
+    }
+    .search {
+      display: none;
+    }
+    .slImage {
+      height: 100vh !important;
+      -o-object-fit: cover;
+         object-fit: cover;
+      margin-top: 0px !important;
+    }
+    .dva span {
+      font-size: 12px !important;
+    }
+    .brandf {
+      display: none;
+    }
+    .nav-mobile {
+      display: block;
+    }
+    .site-block-retro .col1 {
+      width: 100%;
+    }
+    .site-block-retro .col2 {
+      width: 100%;
+    }
+    nav {
+      width: 100%;
+    }
+    nav ul {
+      display: none;
+      height: 100vh;
+      margin: 0;
+      padding: 135px 10px;
+      text-align: center;
+      background-color: #353535;
+    }
+    nav ul li {
+      float: none;
+      background-color: #f5b52b10;
+      margin-top: 20px;
+      border-radius: 20px;
+    }
+    nav ul li a {
+      padding: 15px;
+      line-height: 20px;
+      color: white !important;
+    }
+    nav ul li ul li a {
+      padding-left: 30px;
+    }
+    .nav-dropdown {
+      position: static;
+    }
+    .episode-guest {
+      position: relative;
+    }
+    .episode {
+      -ms-flex-wrap: wrap;
+          flex-wrap: wrap;
+    }
+    .episode .episode-body .episode-desc {
+      overflow: hidden;
+      height: 20px;
+    }
+    .footerKontakt {
+      margin: auto;
+    }
+  }
+  
+  @media screen and (min-width: 799px) {
+    .nav-list {
+      display: table !important;
+    }
+  }
+  
+  /* properties index
+   */
+  .image-placeholder {
+    height: 300px;
+    background: #212135;
+  }
+  
+  .property-title {
+    display: -webkit-box;
+    display: -ms-flexbox;
+    display: flex;
+    -webkit-box-pack: justify;
+        -ms-flex-pack: justify;
+            justify-content: space-between;
+    margin-top: 10px;
+  }
+  
+  .property p {
+    font-size: 14px;
+    color: #ABACAF;
+  }
+  
+  .property {
+    /*  margin-right: 10%;
+      margin-left: 10%; */
+  }
+  
+  .homeMain {
+    margin-right: 10%;
+    margin-left: 10%;
+  }
+  
+  .propertyMain {
+    margin-right: 10%;
+    margin-left: 10%;
+  }
+  
+  .property-single {
+    width: 100%;
+  }
+  
+  .carousel-item {
+    width: 200px;
+    height: 200px;
+    background-color: red;
+  }
+  
+  .amenityHome {
+    width: 50px;
+  }
+  /*# sourceMappingURL=app.css.map */

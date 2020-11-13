@@ -1,0 +1,14 @@
+#size {
+    width: 100%;
+  }
+  .sidenav{
+    padding-left: 20px;
+    padding-top: 30px;
+    height: 100%;
+    border: 1px solid #cdffff;
+    padding-right: 20px;
+  }
+  .sidenav div{
+    padding: 10px;
+    border-bottom: 1px solid black;
+  }
