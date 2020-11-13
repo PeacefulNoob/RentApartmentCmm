@@ -31,9 +31,9 @@ class CreatePropertiesTable extends Migration
             $table->tinyInteger('status')->default('1');
             $table->tinyInteger('special')->default('0');
             $table->timestamps();
-/*             $table->foreign('property_type_id')->references('id')->on('property_types')
+            $table->foreign('property_type_id')->references('id')->on('property_types')
             ->onDelete('cascade');
-  */
+ 
        
         });
     }

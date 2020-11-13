@@ -89,6 +89,10 @@ footer h2 {
   font-weight: 300;
 }
 
+footer li {
+  padding: 4px;
+}
+
 .footer1 {
   padding-left: 12%;
   padding-right: 12%;
@@ -378,10 +382,20 @@ body {
 
 .gallery_owl .owl-prev {
   left: 10px;
+  background: transparent url("/assets/images/left.svg") 0% 0% no-repeat padding-box !important;
+}
+
+.gallery_owl .owl-prev span {
+  display: none;
 }
 
 .gallery_owl .owl-next {
   right: 10px;
+  background: transparent url("/assets/images/right.svg") 0% 0% no-repeat padding-box !important;
+}
+
+.gallery_owl .owl-next span {
+  display: none;
 }
 
 .gallery_owl .owl-dots {
@@ -448,10 +462,20 @@ body {
 
 .gallery_single_owl .owl-prev {
   left: 10px;
+  background: transparent url("/assets/images/left.svg") 0% 0% no-repeat padding-box !important;
+}
+
+.gallery_single_owl .owl-prev span {
+  display: none;
 }
 
 .gallery_single_owl .owl-next {
   right: 10px;
+  background: transparent url("/assets/images/right.svg") 0% 0% no-repeat padding-box !important;
+}
+
+.gallery_single_owl .owl-next span {
+  display: none;
 }
 
 .gallery_single_owl .owl-dots {
@@ -490,10 +514,20 @@ body {
 
 .blogs_owl .owl-prev {
   left: -50px;
+  background: transparent url("/assets/images/left.svg") 0% 0% no-repeat padding-box !important;
+}
+
+.blogs_owl .owl-prev span {
+  display: none;
 }
 
 .blogs_owl .owl-next {
   right: -50px;
+  background: transparent url("/assets/images/right.svg") 0% 0% no-repeat padding-box !important;
+}
+
+.blogs_owl .owl-next span {
+  display: none;
 }
 
 .property-location, .property-type {
@@ -729,5 +763,42 @@ body {
 
 .modal-image-full .modal-body {
   margin-top: 7%;
+}
+
+.buttonBlue {
+  color: white;
+  background-color: #1D4C81;
+  border: none;
+  border-radius: 5px;
+  padding: 10px 20px;
+  font-weight: 500;
+}
+
+.noImage {
+  width: 350px;
+  height: 270px;
+  background-color: #CECECE;
+  border-radius: 5px;
+}
+
+.noImageFull {
+  width: 350px;
+  height: 270px;
+  background-color: #CECECE;
+  border-radius: 5px;
+}
+
+.abouts7 h1, .abouts7 h3 {
+  color: #1D4C81;
+  font-weight: 800;
+}
+
+.bold {
+  font-weight: 600;
+}
+
+.coronaSection a {
+  color: #1D4C81;
+  font-weight: 600;
 }
 /*# sourceMappingURL=app.css.map */

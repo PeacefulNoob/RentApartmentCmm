@@ -33,7 +33,7 @@ Route::group(
 );
 Route::group(['middleware' => 'auth'], function() {
     Route::get('/home', 'HomeController@index')->name('admin/home');
-   
+
     Route::resource('faqs','FaqController');
     Route::resource('blogs','BlogController');
     Route::get('/special/{id}', 'PropertyController@special')->name('special');
@@ -56,3 +56,6 @@ Route::post('/email-yacht', [
     'uses' => 'EmailController@exy',
     'as' => 'contact.store.yacht'
 ]);
+
+Route::get("/rentProperty" , 'PropertyController@showAllPropertyFilter')->name('property.filter');
+Route::get('/filterProperties', 'PropertyController@showPropertyByFilter')->name('filter.properties');

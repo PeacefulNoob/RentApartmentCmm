@@ -32,4 +32,8 @@ class Property extends Model
     public function isSpecial(){
         return $this->special;
     }
+
+    public function scopeFilter($query, QueryFilter $filters){
+        return $filters->apply($query);
+    }
 }

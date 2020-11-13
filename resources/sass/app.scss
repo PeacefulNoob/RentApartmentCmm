@@ -481,3 +481,36 @@ margin-top: 2%;
         margin-top: 7%;
     }
 }
+.buttonBlue{
+    color: white;
+    background-color: $primaryColor;
+    border: none;
+    border-radius: 5px;
+    padding: 10px 20px;
+    font-weight: 500;
+}
+.noImage{
+    width:350px ;
+    height: 270px;
+    background-color:#CECECE ;
+    border-radius: 5px;
+}
+.noImageFull{
+    width:350px ;
+    height: 270px;
+    background-color:#CECECE ;
+    border-radius: 5px;
+}
+.abouts7{
+h1,h3{
+    color: $primaryColor;
+    font-weight: 800;
+}
+}
+.bold{
+    font-weight: 600;
+}
+.coronaSection a{
+    color: $primaryColor;
+    font-weight: 600;
+}

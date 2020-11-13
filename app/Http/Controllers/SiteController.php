@@ -18,7 +18,7 @@ class SiteController extends Controller
        $properties = Property::all();
        $propertiesS = Property::where('special', '=', '1')->get();
        $blogs = Blog::all();
-    
+
         return view ('sitePages.index',compact('properties','propertiesS','covid','blogs'));
     }
     public function transfers()
@@ -27,7 +27,7 @@ class SiteController extends Controller
        $properties = Property::all();
        $propertiesS = Property::where('special', '=', '1')->get();
        $blogs = Blog::all();
-    
+
         return view ('sitePages.transfers',compact('properties','propertiesS','covid','blogs'));
     }
     public function excoursions()
@@ -36,7 +36,7 @@ class SiteController extends Controller
        $properties = Property::all();
        $propertiesS = Property::where('special', '=', '1')->get();
        $blogs = Blog::all();
-    
+
         return view ('sitePages.excoursions',compact('properties','propertiesS','covid','blogs'));
     }
     public function rentCar()
@@ -45,7 +45,7 @@ class SiteController extends Controller
        $properties = Property::all();
        $propertiesS = Property::where('special', '=', '1')->get();
        $blogs = Blog::all();
-    
+
         return view ('sitePages.rentCar',compact('properties','propertiesS','covid','blogs'));
     }
     public function rentYacht()
@@ -54,13 +54,12 @@ class SiteController extends Controller
        $properties = Property::all();
        $propertiesS = Property::where('special', '=', '1')->get();
        $blogs = Blog::all();
-    
+
         return view ('sitePages.rentYacht',compact('properties','propertiesS','covid','blogs'));
     }
     public function about()
     {
 
-    
         return view ('sitePages.about');
     }
 }

@@ -11,7 +11,9 @@ use App\PropertyType;
 use Validator;
 use App\Amenity;
 use Intervention\Image\Facades\Image;
+use App\PropertyFilters;
 use Illuminate\Support\Facades\Storage;
+use Illuminate\Support\Facades\Input;
 
 class PropertyController extends Controller
 {
@@ -22,7 +24,7 @@ class PropertyController extends Controller
      */
     public function __construct()
     {
-        $this->middleware('can:adman')->except('show');
+        $this->middleware('can:adman')->except('show', 'showAllPropertyFilter', 'showPropertyByFilter');
 
     }
     public function index()
@@ -68,7 +70,7 @@ class PropertyController extends Controller
  */          'street' => 'required',
             'location_id' => 'required',
             'property_type_id' => 'required',
-           
+
 
         ]);
         if ($validator->fails()) {
@@ -98,24 +100,24 @@ class PropertyController extends Controller
         ]);
         $property1 = Property::create($request); */
 
-        if ($request->hasFile('file')) 
-        {  
+        if ($request->hasFile('file'))
+        {
             foreach($request->file('file') as $image)
             {
                 $name=$image->getClientOriginalName();
                 $extension= $image->getClientOriginalExtension();
                 $fileName = time(). '.'.$name.'.'.$extension;
                 Image::make($image)->encode('jpg', 75)->resize(1200, null, function($constraint) {  $constraint->aspectRatio();}) ->save('assets/images/property_images/'.$fileName );
-                $data[] = $name;  
+                $data[] = $name;
                 $image1 = new Image;
-                $image1->title=json_encode($data);     
+                $image1->title=json_encode($data);
                 DB::table('property_images')
                     ->insert(
                         ['image' => $fileName,
                         'property_id' => $property->id]
                     );
             }
-           
+
             }
        $property->amenities()->sync((array)$request->input('amenity'));
 
@@ -200,11 +202,11 @@ class PropertyController extends Controller
             'google_maps' => $request->google_maps,
 
             'user_id' => auth()->user()->id,
- 
+
     ]);  */
-     
+
         $property->amenities()->sync((array)$request->input('amenity'));
- 
+
        return redirect()->back()->with('success', 'Ažuriranje uspješno');
     }
 
@@ -213,11 +215,11 @@ class PropertyController extends Controller
                 ->update(['special' => 1]);
                 return back()->with('success','!');
     }
-       
+
     public function notSpecial($id) {
         Property::where('id', $id)
                 ->update(['special' => 0]);
-          
+
                 return back()->with('success','!');
     }
     /**
@@ -235,5 +237,29 @@ class PropertyController extends Controller
              $property->amenities()->detach();
              $property->delete();
              return redirect()->route('admin.users.index');
+        }
+
+
+        public function showAllPropertyFilter(){
+
+            return view('sitePages.rentProperty',
+                [
+                    'properties' => Property::all(),
+                    'cities' => Location::all() ,
+                    'types' => PropertyType::all()
+                ]
+            );
+        }
+
+        public function showPropertyByFilter(PropertyFilters $filters){
+        session()->flashInput($filters->filters());
+        return view('sitePages.rentProperty',
+            [
+                'properties' => Property::filter($filters)->get(),
+                'cities' => Location::all() ,
+                'types' => PropertyType::all()
+            ]
+        );
+
         }
     }

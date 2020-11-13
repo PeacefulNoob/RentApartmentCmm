@@ -20,8 +20,9 @@ class AllSeeder extends Seeder
 
 
        
-        factory(App\Property::class ,100)->create();
+
        factory(App\PropertyImage::class ,600)->create();
+       factory(App\Property::class ,100)->create();
 
 
        $property = Property::find(1);	

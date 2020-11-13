@@ -8,6 +8,9 @@ footer {
         font-weight: 300;
 
     }
+    li{
+        padding: 4px;
+    }
 }
 .footer1{
     @include paddinglr;
