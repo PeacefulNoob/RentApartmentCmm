@@ -14,6 +14,8 @@
         integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm" crossorigin="anonymous">
     <!-- Styles -->
     <link href="/assets/css/admin.css" rel="stylesheet">
+<!--    <link href="/assets/css/bootstrapck-sample.css" rel="stylesheet">
+ -->
     <!-- Scripts -->
     <script src="https://code.jquery.com/jquery-3.5.1.min.js"
         integrity="sha256-9/aliU8dGd2tb6OSsuzixeV4y/faTqgFtohetphbbj0=" crossorigin="anonymous"></script>
@@ -25,16 +27,15 @@
 
 </head>
 
-<body>
+<body class="dark-theme">
 
-    <div id="app" class="row m-0">
-        <div class="col-12">
-            @include('components.admin_navbar')
-        </div>
-        <div class="col-2">
+<div id="app" class="row m-0">
+        <div class="app-sidebar">
             @include('components.admin_sidebar')
         </div>
-        <div class="py-4 col-10">
+        <div class="py-4 main-content app-content ">
+            @include('components.admin_navbar')
+  
             @include('components.alerts')
             @yield('content')
         </div>
@@ -49,6 +50,8 @@
     <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/js/bootstrap.min.js"
         integrity="sha384-JZR6Spejh4U02d8jOt6vLEHfe/JQGiRRSQQxSfFWpi1MquVdAyjUar5+76PVCmYl" crossorigin="anonymous">
     </script>
+       <script src="/assets/js/sidemenu.js"></script> 
+
 </body>
 
 </html>

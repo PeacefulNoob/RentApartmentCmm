@@ -3,13 +3,13 @@
 
 
 @section('content')
-<div class="container">
+<div class="container-fluid adminPage">
     <table class="table">
         <thead>
             <tr>
                 <th scope="col">#</th>
                 <th scope="col">name</th>
-                <th scope="col">Special</th>
+                <th scope="col">Favourites</th>
 
                 <th scope="col">Option</th>
                 <th scope="col">Option</th>
@@ -29,10 +29,10 @@
                   
 
                     <td>
-                            @if ($property->isSpecial())
-                            <a href="/notSpecial/{{$property->id}}" class="btn btn-warning btn small">Disable</a>
+                            @if ($property->isFavourite())
+                            <a href="/notFavourite/{{$property->id}}" class="btn btn-warning btn small">Disable</a>
                             @else
-                            <a href="/special/{{$property->id}}" class="btn btn-info btn small">Enable</a>
+                            <a href="/favourite/{{$property->id}}" class="btn btn-info btn small">Enable</a>
                             @endif
                     </td>
                     <td>

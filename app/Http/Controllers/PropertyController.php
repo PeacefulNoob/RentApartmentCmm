@@ -14,6 +14,7 @@ use Intervention\Image\Facades\Image;
 use App\PropertyFilters;
 use Illuminate\Support\Facades\Storage;
 use Illuminate\Support\Facades\Input;
+use Illuminate\Support\Str;
 
 class PropertyController extends Controller
 {
@@ -106,7 +107,7 @@ class PropertyController extends Controller
             {
                 $name=$image->getClientOriginalName();
                 $extension= $image->getClientOriginalExtension();
-                $fileName = time(). '.'.$name.'.'.$extension;
+                $fileName = time(). '_'.Str::random(5).'.'.$extension;
                 Image::make($image)->encode('jpg', 75)->resize(1200, null, function($constraint) {  $constraint->aspectRatio();}) ->save('assets/images/property_images/'.$fileName );
                 $data[] = $name;
                 $image1 = new Image;
@@ -210,17 +211,17 @@ class PropertyController extends Controller
        return redirect()->back()->with('success', 'Ažuriranje uspješno');
     }
 
-    public function special($id) {
+    public function favourite($id) {
         Property::where('id', $id)
-                ->update(['special' => 1]);
-                return back()->with('success','!');
+                ->update(['favourites' => 1]);
+                return back()->with('success','Property is in favourites group now!');
     }
 
-    public function notSpecial($id) {
+    public function notFavourite($id) {
         Property::where('id', $id)
-                ->update(['special' => 0]);
+                ->update(['favourites' => 0]);
 
-                return back()->with('success','!');
+                return back()->with('success','Property is removed from favourites group!');
     }
     /**
      * Remove the specified resource from storage.

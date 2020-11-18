@@ -1,9 +1,8 @@
 @extends('layouts.master')
 @section('content')
-
-    <div class="hero">
-        <div class="hero-tran-image">
-            <div class="hero-div row">
+<div class="row padding" >
+    <div class="side_filter col-3 mt-5">
+            <div class=" row m-0">
                 <form method="GET" action="{{ route('filter.properties') }}" style="width: 100%; display: flex; flex-direction: column;" >
                    @csrf
                     <div>
@@ -44,10 +43,9 @@
                     </div>
                 </form>
             </div>
-        </div>
     </div>
 
-    <div class="row specialProperties" style="margin-bottom: 30px;">
+    <div class="properties_filter row specialProperties col-9 mt-5" >
         <?php
         $j = 1;
         ?>
@@ -125,6 +123,7 @@
                 </div>
             </div>
         @endforelse
+    </div>
     </div>
     </div>
 @endsection

@@ -43,6 +43,14 @@ $('.blogs_owl').owlCarousel({
     }
 })
 
+/* $('.showMoreAm').click(function() {
+  $(".property-single-facilities").fadeIn();
+  $(".property-single-facilities").animate({marginTop:"20px"},300);
+}); */
+
+ $(".showMoreAm").click(function(){
+  $(".property-single-facilities").slideToggle('400');
+}); 
 
 $('.secondCarForm').hide();
 $('.nextCarForm').on(

@@ -17,7 +17,7 @@
 </div>
         </div>
     <div class="abouts2 padding cblue">
-        <p>The main priority of the CMM Company is deeper understanding of the client's needs and preferences which,
+        <p class= "py-2">The main priority of the CMM Company is deeper understanding of the client's needs and preferences which,
             together with their extensive investment experience and international recognition allows the client to feel
             secure and confident to purchase through CMM Group. </p>
         <p>CMM's rapid growth has seen the company expend to the following international markets:</p>

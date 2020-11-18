@@ -6,14 +6,44 @@
     <div class="hero">
         <div class="hero-image">
             <div class="hero-text">
-                <h1 style="font-size:50px">TAGLINE GOES HERE</h1>
+                <h1 c>Rent real estate in Montenegro!</h1>
+                    <form method="GET" action="{{ route('filter.properties') }}" style="width: 100%; display: flex; flex-direction: column;" >
+                    @csrf
+                        <div class="form-row m-0">
+                            <div class=" col-md-6 searchForm">
+<!--                                 <label for="city" class="labelNew">City</label>
+ -->                                        <select name="city" id="city" class="form-control">
+                                    <option value="" disabled selected>Where would you like to rent real estate?</option>
+                                            @foreach($cities as $city)
+                                            <option value="{{$city->id}}" {{ (old("city") == $city->id ? "selected":"") }}>{{$city->city}}</option>
+                                            @endforeach
+                                        </select>
+                            </div>
+                            <div class=" col-md-5 searchForm">
+<!--                             <label for="type" class="labelNew">Property type</label>
+ -->                                    <select name="type"  id="type" class="form-control" >
+                                            <option value="" disabled selected>Pick property type that fits you.</option>
+                                        @foreach($types as $type)
+                                        <option value="{{$type->id}}" {{ (old("type") == $type->id ? "selected":"") }}>{{$type->title}}</option>
+                                        @endforeach
+                                    </select>
+                            </div>
+                            <div class=" col-md-1 searchForm">
 
+                                    <div class="button-form-submit">
+                                        <button class="btn btn-submit">GO</button>
+                                    </div>
+                                    </div>
+
+                        </div>
+
+                    </form>
             </div>
         </div>
     </div>
     <div class="properties my-5">
         <h2>Special price</h2>
-        <p class="pgrey mb-1 mt-3">Review COVID-19 travel restrictions before you book. <a href=""
+        <p class="pgrey mb-1 mt-3">Review COVID-19 travel restrictions before you book. <a href="/rentProperty"
                 style="text-decoration:underline;">Learn more</a></p>
         <div class="row specialProperties" style="margin-bottom: 30px;">
             <?php
@@ -21,18 +51,16 @@
             $j = 1;
             ?>
             @forelse($propertiesS as $property)
-                <div class="col-lg-3 col-md-6 col-sm-6 col-12 my-3">
+                <div class="col-lg-3 col-md-6 col-sm-6 col-12 my-3 propertiesMain">
 
                     <div class="property">
                         <div class="image-placeholder">
-                            {{-- /// --}}
                             <div class="owl-navigation owl-carousel gallery_owl owl-theme">
                                 @foreach($property->images as $image)
-                                    <img src="/assets/images/property_images/{{ $image->image }}" class="property_slide" alt="">
+                                <a href="/properties/{{ $property->id }}">  <img src="/assets/images/property_images/{{ $image->image }}" class="property_slide" alt=""> </a>
                                 @endforeach
                             </div>
 
-                            {{-- /// --}}
                             <img class="map_icon" src="/assets/images/google-maps.svg" alt="">
                             <div class="peoples">
                                 <h6>{{ $property->persons }}x</h6>
@@ -43,12 +71,12 @@
 
                         <div class="property-title-top">
                             <div class="property-location py-1">
-                            <img src="/assets/images/iconfinder_pin_293694 (1).svg" class="" alt="">
+                            <img src="/assets/images/iconfinder_pin_293694.svg" class="" alt="">
                                 {{ $property->location->city }} ,      {{ $property->street }}
 
                             </div>
                             <div class="property-type py-1">
-                                <img src="ikonica" class="amenityHome" alt="">
+                            <img src="/assets/images/Property type.svg" class="ikonica" alt="">
                                 {{ $property->propertyType->title }}
                             </div>
 
@@ -66,13 +94,13 @@
                             $amenities = $property->amenities()->get();
                             $colcount = count($propertiesS);
                             $k = 1;
-
+ 
                         @endphp
                         @foreach($amenities as $amenitie)
-                            <img src="/assets/images/{{ $amenitie->photoUrl }}" class="amenityHome"
+                            <img src="/assets/images/{{ $amenitie->photoUrl }}" class="amenityHomeS"
                                 alt={{ $amenitie->photoUrl }}>
                             <?php
-                                        if ($k++ == 4)
+                                        if ($k++ == 8)
                                             break;
                                         ?>
                         @endforeach
@@ -109,7 +137,9 @@
             <div class="owl-navigation owl-carousel blogs_owl owl-theme ">
                 @foreach($blogs as $blog)
                     <div class="card" style="border:none">
-                        <img class="card-img-top" src="/assets/images/{{ $blog->image }}" alt="Card image cap">
+                    <a href="/single_news/{{$blog->id}}">
+                        <img class="card-img-top" src="/{{ $blog->image }}" alt="Card image cap">
+                        </a>
                         <div class="card-body">
                             <h5 class="card-title">{{ $blog->title }}</h5>
                             <p class="card-text">

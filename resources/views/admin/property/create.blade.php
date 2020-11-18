@@ -3,19 +3,19 @@
 
 
 @section('content')
-<link href="https://cdn.jsdelivr.net/npm/select2@4.1.0-beta.1/dist/css/select2.min.css" rel="stylesheet" />
+<link href="/assets/css/select2.min.css" rel="stylesheet">
 
-<div class="container">
-    <h1>Create Property</h1>
+<div class="container-fluid adminPage">
+    <h1 class="my-4">Create Property</h1>
     <form action="{{ route('properties.store') }}" method="POST" enctype="multipart/form-data">
         @csrf
         <div class="form-row">
             <div class="form-group col-md-6">
-                <label for="title">Title</label>
+                <label for="title" class="labelNew">Title</label>
                 <input type="text" class="form-control" id="title" placeholder="title" name="title" required>
             </div>
             <div class="form-group col-md-2">
-                <label for="room_count">Room count</label>
+                <label class="labelNew" for="room_count">Room count</label>
                 <select id="room_count" name="room_count" class="form-control" required>
                     <option value="1 ">1</option>
                     <option value="2 ">2</option>
@@ -38,7 +38,7 @@
                 </select>
             </div>
             <div class="form-group col-md-2">
-                <label for="floor">Floor</label>
+                <label class="labelNew"   for="floor">Floor</label>
                 <select id="floor" name="floor" class="form-control" required>
                     <option value="1 ">1</option>
                     <option value="2 ">2</option>
@@ -61,8 +61,8 @@
                 </select>
             </div>
             <div class="form-group col-md-2">
-                <label for="size">Size</label>
-                <input type="number" id="size" class="size " name="size" required>
+                <label class="labelNew" for="size">Size</label>
+                <input type="number" id="size" class="form-control " name="size" required>
             </div>
         </div>
         <div class="form-group">

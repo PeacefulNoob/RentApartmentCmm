@@ -16,54 +16,111 @@
             @endforeach
         </div>
         <div class="row  mt-5">
-            <div class="col-8">
+            <div class="col-7">
                 <div class="property-title">
                     <h3>{{ $property->title }}</h3>
                    
                 </div>
-                <div class="property-single-location py-1 d-flex">
-                <img src="/assets/images/iconfinder_pin_293694 (1).svg" class="" alt="">
+                <div class="property-single-location py-2 d-flex">
+                <img src="/assets/images/iconfinder_pin_293694.svg" class="" alt="">
                     {{ $property->location->city }} ,
                    {{ $property->street }} ,
                  {{ $property->location->zip }}
                 </div>
-                <div class="property-type py-1 d-flex">
-                    <img src="/assets/images/iconfinder_pin_293694.svg" class="" alt="">
+                <div class="property-type py-2 d-flex">
+                    <img src="/assets/images/Property type.svg" class="" alt="">
                     {{ $property->propertyType->title }}
                 </div>
-                <div class="property-single-amenities">
+
+                @php
+                            $amenities = $property->amenities()->get();
+                            $k = 1;
+
+                        @endphp
+                        @foreach($amenities as $amenitie)
+                            <img src="/assets/images/{{ $amenitie->photoUrl }}" class="amenityHome py-2"
+                                alt={{ $amenitie->photoUrl }}>
+                            <?php
+                                        if ($k++ == 8)
+                                            break;
+                                        ?>
+                        @endforeach
+                <p class="showMoreAm">Show more amenities</p>
+                <div class="property-single-facilities">
+                <p> {{ implode(', ', $property->amenities()->get()->pluck('title')->toArray()) }}   </p>
+                </div>
+                <div class="property-single-amenities my-4">
                     <p> {{$property->description}}  </p>
-                    <p> {{ implode(', ', $property->amenities()->get()->pluck('title')->toArray()) }}   </p>
                 </div>
             </div>
-            <div class="col-4">
+            <div class="col-5">
                 <form action="" class="form-property">
-                    <div class="form-group text-center">
-                     <h3 >      {{$property->price}} &euro; / night   </h3>
-                      </div>
-                      <div class="form_inquiry">
-                    <div class="form-row m-0">
-                        <div class="form-group col-md-6 form_inquiry_left">
-                          <label for="checkin">CHECK-IN</label>
-                          <input type="email" class="form-control" id="checkin" placeholder="Put the C/I date please">
-                        </div>
-                        <div class="form-group col-md-6 form_inquiry_right ">
-                          <label for="ckeckout">CHECKOUT</label>
-                          <input type="password" class="form-control" id="ckeckout" placeholder="Put the C/O date please">
-                        </div>
-                      </div>
-                      <div class="form-group form_inquiry_bot">
-                        <label for="guests">Guests</label>
-                        <select id="guests" class="form-control">
-                          <option selected>1 guest</option>
-                          <option>...</option>
-                        </select>
+                <div class="firstCarForm">
+                            <div class="form-group text-center">
+                            <h3 >      {{$property->price}} &euro; / night   </h3>
+                            </div>
+                            <div class="form_inquiry">
+                                <div class="form-row m-0">
+                                    <div class="form-group col-md-6 form_inquiry_left">
+                                    <label for="checkin">CHECK-IN</label>
+                                    <input type="email" class="form-control" id="checkin" placeholder="Put the C/I date please">
+                                    </div>
+                                    <div class="form-group col-md-6 form_inquiry_right ">
+                                    <label for="ckeckout">CHECKOUT</label>
+                                    <input type="password" class="form-control" id="ckeckout" placeholder="Put the C/O date please">
+                                    </div>
+                                </div>
+                                <div class="form-group form_inquiry_bot">
+                                    <label for="guests">Guests</label>
+                                    <select id="guests" class="form-control">
+                                    <option selected>1 guest</option>
+                                    <option>...</option>
+                                    </select>
+                                </div>
+                            </div>
+                            <div class="form-group btnI text-center">
+                          <div  class="btn btn-inquiry nextCarForm">BOOK YOUR CAR</div>
+                          <p>Book your stay through email</p>
                       </div>
                     </div>
-                      <div class="form-group btnI text-center">
-                        <button type="submit" class="btn btn-inquiry">SEND INQUIRY</button>
-                        <p>Book your stay through email</p>
+                      <div class="secondCarForm">
+                        <div class="topForm stepBackCar"><p>step back</p></div>
+                       <div class="form-group text-center">
+                            <h3> Just one more step and you are done. Afterwards, we will contact you back. </h3>
                         </div>
+                        <div class="form_inquiry">
+                            <div class="form-row m-0">
+                                <div class="form-group col-md-6 form_inquiry_left">
+                                    <label for="name">NAME</label>
+                                    <input type="text" class="form-control" name="name" id="name"
+                                        placeholder="Put your real name">
+                                </div>
+                                <div class="form-group col-md-6 form_inquiry_right ">
+                                    <label for="surname">SURNAME</label>
+                                    <input type="text" class="form-control" name="surname" id="surname"
+                                        placeholder="Put your surname">
+                                </div>
+                            </div>
+                            <div class="form-row m-0">
+                                <div class="form-group col-md-6 form_inquiry_left border-top">
+                                    <label for="phoneNo">PHONE NUMBER</label>
+                                    <input type="text" class="form-control" name="phoneNo" id="phoneNo"
+                                        placeholder="Put your phone number">
+                                </div>
+                                <div class="form-group col-md-6 form_inquiry_right border-top">
+                                    <label for="email">E-MAIL</label>
+                                    <input type="text" class="form-control" name="email" id="email"
+                                        placeholder="Put your e-mail adress">
+                                </div>
+                            </div>
+                        </div>
+                        <div class="form-group btnI text-center">
+                          <button type="submit" class="btn btn-inquiry">SEND INQURY</button>
+                          <p>Our representative will contact you back through e-mail with the confirmation as soon as possible.</p>
+                      </div>
+
+                      </div>
+                     
                 </form>
             </div>
 
@@ -88,14 +145,12 @@
 
                 <div class="property">
                     <div class="image-placeholder">
-                        {{-- /// --}}
                         <div class="owl-navigation owl-carousel gallery_owl owl-theme">
                             @foreach($property->images as $image)
                                 <img src="/assets/images/property_images/{{ $image->image }}" class="property_slide" alt="">
                             @endforeach
                         </div>
 
-                        {{-- /// --}}
                         <img class="map_icon" src="/assets/images/iconfinder_pin_293694.svg" alt="">
                         <div class="peoples">
                             <h6>{{ $property->persons }}x</h6>
@@ -131,7 +186,7 @@
 
                     @endphp
                     @foreach($amenities as $amenitie)
-                        <img src="/assets/images/{{ $amenitie->photoUrl }}" class="amenityHome"
+                        <img src="/assets/images/{{ $amenitie->photoUrl }}" class="amenityHomeS "
                             alt={{ $amenitie->photoUrl }}>
                         <?php
                                                     if ($k++ == 4)

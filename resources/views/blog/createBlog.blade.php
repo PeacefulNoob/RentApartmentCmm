@@ -1,6 +1,6 @@
 @extends('layouts.app')
 @section('content')
-<div class="container">
+<div class="container-fluid adminPage">
     <form action="{{ route('blogs.store') }}" method="POST" enctype="multipart/form-data"
         class="form-horizontal mb-0">
         @csrf
@@ -14,7 +14,11 @@
             <textarea class="ckeditor form-control" name="description"></textarea>
             <div class="validate"></div>
         </div>
-
+        <div class="form-group">
+            <label for="photo">Upload photo</label>
+            <input type="file" id="photo" name="photo">
+            <div class="validate"></div>
+        </div>
         <button type="submit" class="btn btn-primary">Submit</button>
     </form>
 </div>

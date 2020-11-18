@@ -7,7 +7,7 @@ use Illuminate\Database\Eloquent\Model;
 class Blog extends Model
 {
     protected $fillable = [
-        'title','description', 'user_id','image'
+        'title','description','photo', 'user_id'
     ];
     public function user(){
         return $this->belongsTo('App\User');

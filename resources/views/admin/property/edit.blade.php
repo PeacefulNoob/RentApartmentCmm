@@ -3,7 +3,7 @@
 @section('content')
 <link href="https://cdn.jsdelivr.net/npm/select2@4.1.0-beta.1/dist/css/select2.min.css" rel="stylesheet" />
 
-<div class="container">
+<div class="container-fluid adminPage px-3">
     <h1>Edit Property</h1>
     <form action="{{ route('properties.update',$property) }}" method="POST"
         enctype="multipart/form-data">

@@ -1,6 +1,6 @@
 @extends('layouts.app')
 @section('content')
-<div class="container">
+<div class="container-fluid adminPage">
 
     <form action="{{ route('covids.update',$covid->id) }}"  method="POST" enctype="multipart/form-data">
       @method('PATCH')

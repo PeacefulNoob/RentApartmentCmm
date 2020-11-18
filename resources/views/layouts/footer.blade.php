@@ -4,22 +4,22 @@
         <div class="col-3">
             <ul class="list-unstyled footerLista">
                 <li>
-                    <h2>Section 1</h2>
+                    <h4>OUR SERVICES</h4>
                 </li>
                 <li>
-                    <a target="_blank" href="#">Page 1</a>
+                    <a target="_blank" href="#">VIP</a>
                 </li>
                 <li>
-                    <a target="_blank" href="#"> Page 2</a>
+                    <a target="_blank" href="#"> Car rental</a>
                 </li>
                 <li>
-                    <a target="_blank" href="#"> Page 3</a>
+                    <a target="_blank" href="#"> Yacht rental</a>
                 </li>
                 <li>
-                    <a target="_blank" href="#">Page 4</a>
+                    <a target="_blank" href="#">Transfers</a>
                 </li>
                 <li>
-                    <a target="_blank" href="#"> Page 5</a>
+                    <a target="_blank" href="#"> Excursions </a>
                 </li>
 
 
@@ -28,7 +28,7 @@
         <div class="col-3">
             <ul class="list-unstyled footerLista">
                 <li>
-                    <h2>Section 2</h2>
+                    <h4>INFORMATION </h4>
                 </li>
                 <li>
                     <div class="d-flex">
@@ -51,7 +51,23 @@
                         <div>email@cmm.me</div>
                     </div>
                 </li>
+            
+
+
+            </ul>
+        </div>
+        <div class="col-3">
+            <ul class="list-unstyled footerLista">
                 <li>
+                    <h4>USEFUL LINKS</h4>
+                </li>
+                <li>
+                    <a target="_blank" href="#">Ministery of Economy</a>
+                </li>
+                <li>
+                    <a target="_blank" href="#">Ministery of Finance </a>
+                </li>
+                 <li>
                     <ul>
                         <li class="bold">Facebook</li>
                         <li class="bold">Instagram</li>
@@ -59,54 +75,27 @@
                     </ul>
                 </li>
 
-
             </ul>
         </div>
         <div class="col-3">
             <ul class="list-unstyled footerLista">
                 <li>
-                    <h2>Section 3</h2>
+                    <h4>LAST BLOGS</h4>
                 </li>
                 <li>
-                    <a target="_blank" href="#">Link 1</a>
+                    <a target="_blank" href="#">Blogpost 1</a>
                 </li>
                 <li>
-                    <a target="_blank" href="#"> Link 2 </a>
+                    <a target="_blank" href="#">Blogpost 1</a>
+                </li>    <li>
+                    <a target="_blank" href="#">Blogpost 1</a>
+                </li>    <li>
+                    <a target="_blank" href="#">Blogpost 1</a>
+                </li>    <li>
+                    <a target="_blank" href="#">Blogpost 1</a>
+                </li>    <li>
+                    <a target="_blank" href="#">Blogpost 1</a>
                 </li>
-                <li>
-                    <a target="_blank" href="#">Link 3</a>
-                </li>
-                <li>
-                    <a target="_blank" href="#">Link 4</a>
-                </li>
-                <li>
-                    <a target="_blank" href="#"> Link 5</a>
-                </li>
-
-
-            </ul>
-        </div>
-        <div class="col-3">
-            <ul class="list-unstyled footerLista">
-                <li>
-                    <h2>Section 1</h2>
-                </li>
-                <li>
-                    <a target="_blank" href="#">Page 1</a>
-                </li>
-                <li>
-                    <a target="_blank" href="#"> Page 2</a>
-                </li>
-                <li>
-                    <a target="_blank" href="#"> Page 3</a>
-                </li>
-                <li>
-                    <a target="_blank" href="#">Page 4</a>
-                </li>
-                <li>
-                    <a target="_blank" href="#"> Page 5</a>
-                </li>
-
 
             </ul>
         </div>
