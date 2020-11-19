@@ -1,7 +1,7 @@
 <footer class="">
 
     <div class="footer1 row paddinglra mx-0">
-        <div class="col-3">
+        <div class="col-lg-3 col-md-6 col-sm-6 col-12">
             <ul class="list-unstyled footerLista">
                 <li>
                     <h4>OUR SERVICES</h4>
@@ -25,7 +25,7 @@
 
             </ul>
         </div>
-        <div class="col-3">
+        <div class="col-lg-3 col-md-6 col-sm-6 col-12">
             <ul class="list-unstyled footerLista">
                 <li>
                     <h4>INFORMATION </h4>
@@ -56,7 +56,7 @@
 
             </ul>
         </div>
-        <div class="col-3">
+        <div class="col-lg-3 col-md-6 col-sm-6 col-12">
             <ul class="list-unstyled footerLista">
                 <li>
                     <h4>USEFUL LINKS</h4>
@@ -77,7 +77,7 @@
 
             </ul>
         </div>
-        <div class="col-3">
+        <div class="col-lg-3 col-md-6 col-sm-6 col-12">
             <ul class="list-unstyled footerLista">
                 <li>
                     <h4>LAST BLOGS</h4>

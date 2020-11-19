@@ -157,13 +157,31 @@ footer a {
   .slImage {
     background-image: url(/assets/images/Homepage-cover4-Mobile.jpg) !important;
   }
+  .propertyMain {
+    padding-left: 5% !important;
+    padding-right: 5% !important;
+}
+.paddinglr{
+  padding-left: 5% !important;
+  padding-right:5% !important;
+}
+.hero-div{
+  padding-left: 5% !important;
+  padding-right:5% !important;
+}
+.hero-car-image{
+  height: auto !important;
+}
+  h1{
+    font-size: 38px !important;
+  }
   .postDiv {
     padding-left: 5% !important;
     padding-right: 5% !important;
   }
-  main {
-    margin-top: 12% !important;
-  }
+  .blogs_main {
+    margin-top: -30%;
+}
   #section2 {
     margin-top: 0rem !important;
   }
@@ -196,11 +214,9 @@ footer a {
   }
   nav ul {
     display: none;
-    height: 100vh;
     margin: 0;
-    padding: 135px 10px;
+    padding: 15px 10px;
     text-align: center;
-    background-color: #353535;
   }
   nav ul li {
     float: none;
@@ -289,10 +305,8 @@ body {
   position: relative;
 }
 
-.property-title {
-  /*  display: flex;
-    justify-content: space-between;
-    margin-top: 10px; */
+.property-title h3 {
+ font-weight: 700;
 }
 
 .property p {
@@ -358,13 +372,15 @@ body {
   height: 20px;
   z-index: 2;
 }
-
+.ikonica{
+  width: 13px;
+}
 .map_icon {
   position: absolute;
-  left: 20px;
-  bottom: 20px;
+  left: 15px;
+  bottom: 15px;
   z-index: 2;
-  height: 20px;
+  height: 30px;
 }
 
 .property_slide {
@@ -487,8 +503,8 @@ background-color: red;
 }
 
 .aboutMne {
-  background-image: -webkit-gradient(linear, left top, left bottom, from(rgba(0, 0, 0, 0.1)), to(rgba(0, 0, 0, 0.1))), url("/assets/images/mainMne.png");
-  background-image: linear-gradient(rgba(0, 0, 0, 0.1), rgba(0, 0, 0, 0.1)), url("/assets/images/mainMne.png");
+  background-image: -webkit-gradient(linear, left top, left bottom, from(rgba(0, 0, 0, 0.1)), to(rgba(255, 255, 255, 0.3))), url("/assets/images/mainMne.png");
+  background-image: linear-gradient(rgba(0, 0, 0, 0.1), rgba(255, 255, 255, 0.3)), url("/assets/images/mainMne.png");
   height: 55vh;
   width: 100%;
   position: relative;
@@ -528,7 +544,9 @@ background-color: red;
 .blogs_main {
   margin-top: -12%;
 }
-
+.blogs_main p {
+color:#ADDBEF;
+}
 .card-body, .card-footer {
   background-color: #1D4C81;
   color: white;
@@ -622,14 +640,17 @@ a{
   display: none;
 }
 
-.property-location, .property-type {
+.property-location, .property-type, .property-single-location {
   color: #ABACAF;
 }
 
 .card-footer {
   border-top: 1px solid rgba(255, 255, 255, 0.241) !important;
 }
-
+.faciImg h6{
+  color: black;
+  font-weight: 700;
+}
 .property-single-amenities {
   padding: 30px 20px;
   background-color: #F5F5F5;
@@ -648,11 +669,12 @@ a{
 }
 .showMoreAm{
   text-decoration: underline;
-  color: #1D4C81;
+  color: #08338F;
+  font-weight: 600;
 }
 .form-property {
   background-color: #1D4C81;
-  padding: 40px;
+  padding: 30px;
   border-radius: 5px;
   color: white !important;
 }
@@ -660,12 +682,14 @@ a{
 .form-property h3 {
   color: white !important;
 }
-
+.firstCarForm p{
+  font-weight: 300 !important;
+}
 .btn-inquiry {
   background: #fff;
   color: #1D4C81;
   font-weight: 700;
-  padding: 10px 30px;
+  padding: 8px 40px;
 }
 
 .form-control {
@@ -767,7 +791,9 @@ a{
   flex: 0 0 20%;
   max-width: 20%;
 }
-
+.blue{
+  color:#1D4C81;
+}
 @media (min-width: 1200px) {
   .modal-xl {
     max-width: 100vw;

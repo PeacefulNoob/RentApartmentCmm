@@ -3,18 +3,18 @@
 <div class="hero">
     <div class="hero-yacht-image">
         <div class="hero-div row">
-        <div class="col-6">
-            <h2>Rent a yacht in Montenegro</h2>
+        <div class="col-lg-6 col-md-6 col-sm-12 col-12 p-0">
+            <h2 class="blue">Rent a yacht in Montenegro</h2>
             <h4>"A man is never lost at sea."</h4>
             <p>Rent-a-car is one of the most required services of our company. The area of the country will allow you to visit most of the parts of Montenegro, while enjoying the beauty and discovering new landscapes at every turn of the winding mountain road. </p>
      <p>Using the service of car rental, you acquire the freedom of movement. We offer a large selection of vehicles to suit every taste - from inexpensive compact cars worth 35-40 Euros per day to jeeps and convertibles of premium-class.</p>
         </div>
-        <div class="col-6">
+        <div class="col-lg-6 col-md-6 col-sm-12 col-12 p-0">
             <form action="{{route('contact.store.yacht')}}" method="POST" class="form-property">
               {{ csrf_field() }}
               <div class="firstCarForm">
                 <div class="form-group text-center">
-                    <h3> Find a perfect car for your stay in Montenegro </h3>
+                    <h3>Enjoy blue colors of the Adriatic sea and relax your body and soul on a yacht. </h3>
                 </div>
                 <div class="form_inquiry">
                     <div class="form-row m-0">
@@ -39,7 +39,7 @@
                   
                 </div>
                 <div class="form-group btnI text-center">
-                  <div  class="btn btn-inquiry nextCarForm">BOOK A YACHT</div>
+                  <div  class="btn btn-inquiry nextCarForm mb-3" >BOOK A YACHT</div>
                   <p>Book your stay through email</p>
               </div>
             </div>

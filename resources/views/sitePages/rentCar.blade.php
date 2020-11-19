@@ -3,7 +3,7 @@
 <div class="hero">
     <div class="hero-car-image">
         <div class="hero-div row">
-            <div class="col-6">
+            <div class="col-lg-6 col-md-6 col-sm-12 col-12 p-0">
                 <h2>Rent a car in Montenegro</h2>
                 <h4>Hit those roads and win all of the mountains with stunning views</h4>
                 <p>Rent-a-car is one of the most required services of our company. The area of the country will allow
@@ -13,7 +13,7 @@
                     vehicles to suit every taste - from inexpensive compact cars worth 35-40 Euros per day to jeeps and
                     convertibles of premium-class.</p>
             </div>
-            <div class="col-6 p-0">
+            <div class=" col-lg-6 col-md-6 col-sm-12 col-12 p-0">
                 <form action="{{ route('contact.store.main') }}" method="POST" class="form-property">
                     {{ csrf_field() }}
                     <div class="firstCarForm">
@@ -59,7 +59,7 @@
                             </div>
                         </div>
                         <div class="form-group btnI text-center">
-                          <div  class="btn btn-inquiry nextCarForm">BOOK YOUR CAR</div>
+                          <div  class="btn btn-inquiry nextCarForm mb-3">BOOK YOUR CAR</div>
                           <p>Book your stay through email</p>
                       </div>
                     </div>
