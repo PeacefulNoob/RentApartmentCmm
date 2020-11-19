@@ -42,7 +42,7 @@
         </div>
     </div>
     <div class="properties my-5">
-        <h2>Special price</h2>
+        <h2>Our favourites</h2>
         <p class="pgrey mb-1 mt-3">Review COVID-19 travel restrictions before you book. <a href="#" class=""  data-toggle="modal" data-target="#covid_modal"
                 style="text-decoration:underline;">Learn more</a></p>
         <div class="row specialProperties" style="margin-bottom: 30px;">

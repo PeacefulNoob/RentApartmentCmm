@@ -7,8 +7,15 @@
         <div class="col-lg-6 col-md-6 col-sm-12 col-12 p-0">
             <h2>Transfers in Montenegro</h2>
             <h4>Schedule your transfer and have a relaxing stay in Montenegro.</h4>
-            <p>Rent-a-car is one of the most required services of our company. The area of the country will allow you to visit most of the parts of Montenegro, while enjoying the beauty and discovering new landscapes at every turn of the winding mountain road. </p>
-              <p>Using the service of car rental, you acquire the freedom of movement. We offer a large selection of vehicles to suit every taste - from inexpensive compact cars worth 35-40 Euros per day to jeeps and convertibles of premium-class.</p>
+            <p>If you have planned a long passage through the country or you want to go to the neighboring country,
+you need a transfer! Turning to our company, you can choose from two vehicle types, depending on the
+number of people. Private transfer involves following visitors at any time and in any direction. Group
+transfers consist in servicing a group of passengers which is performed in accordance with the previously
+approved schedule. </p>
+              <p>Note that in addition to transfers to and from the airport, transfers to resorts and
+historical centers of the country are also quite popular. People who value every minute of their time on
+vacation prefer to order the transfer and to make excursions to the cities of Montenegro. We have
+comfortable, clean vehicles and professional and courteous drivers.</p>
      
         </div>
         <div class="col-lg-6 col-md-6 col-sm-12 col-12 p-0 p-0">
