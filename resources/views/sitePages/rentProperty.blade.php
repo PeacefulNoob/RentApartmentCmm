@@ -1,7 +1,7 @@
 @extends('layouts.master')
 @section('content')
 <div class="row padding" >
-    <div class="side_filter col-3 mt-5">
+    <div class="side_filter col-lg-3 col-md-3 col-sm-12 col-12 mt-5">
             <div class=" row m-0">
                 <form method="GET" action="{{ route('filter.properties') }}" style="width: 100%; display: flex; flex-direction: column;" >
                    @csrf
@@ -45,7 +45,7 @@
             </div>
     </div>
 
-    <div class="properties_filter row specialProperties col-9 mt-5" >
+    <div class="properties_filter row specialProperties col-lg-9 col-md-9 col-sm-12 col-12 mt-5" >
         <?php
         $j = 1;
         ?>

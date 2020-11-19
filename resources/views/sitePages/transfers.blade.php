@@ -4,14 +4,14 @@
     <div class="hero-tran-image">
         <div class="hero-div row">
         
-        <div class="col-6">
+        <div class="col-lg-6 col-md-6 col-sm-12 col-12 p-0">
             <h2>Transfers in Montenegro</h2>
             <h4>Schedule your transfer and have a relaxing stay in Montenegro.</h4>
             <p>Rent-a-car is one of the most required services of our company. The area of the country will allow you to visit most of the parts of Montenegro, while enjoying the beauty and discovering new landscapes at every turn of the winding mountain road. </p>
               <p>Using the service of car rental, you acquire the freedom of movement. We offer a large selection of vehicles to suit every taste - from inexpensive compact cars worth 35-40 Euros per day to jeeps and convertibles of premium-class.</p>
      
         </div>
-        <div class="col-6 p-0">
+        <div class="col-lg-6 col-md-6 col-sm-12 col-12 p-0 p-0">
             <form action="{{ route('contact.store.main') }}" method="POST" class="form-property">
                 {{ csrf_field() }}
                 <div class="firstCarForm">
@@ -57,7 +57,7 @@
                         </div>
                     </div>
                     <div class="form-group btnI text-center">
-                      <div  class="btn btn-inquiry nextCarForm">BOOK TRANSFER</div>
+                      <div  class="btn btn-inquiry nextCarForm  mb-3">BOOK TRANSFER</div>
                       <p>Book your stay through email</p>
                   </div>
                 </div>
