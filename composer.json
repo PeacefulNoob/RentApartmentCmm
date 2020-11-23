@@ -15,7 +15,9 @@
         "intervention/image": "^2.5",
         "laravel/framework": "^7.24",
         "laravel/tinker": "^2.0",
-        "laravel/ui": "^2.2"
+        "laravel/ui": "^2.2",
+        "nesbot/carbon": "^2.41",
+        "spatie/laravel-google-calendar": "^3.1"
     },
     "require-dev": {
         "facade/ignition": "^2.0",

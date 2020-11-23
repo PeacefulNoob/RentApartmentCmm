@@ -17,6 +17,8 @@ Auth::routes();
 Route::resource('properties','PropertyController');
 Route::resource('covids','CovidController');
 
+Route::get('calendar' , 'CalendarController@index');
+
 Route::get('/', 'SiteController@index')->name('home');
 Route::get('/transfers', 'SiteController@transfers')->name('transfers');
 Route::get('/excoursions', 'SiteController@excoursions')->name('excoursions');
