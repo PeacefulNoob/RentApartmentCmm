@@ -13,7 +13,17 @@
     <meta name="keywords" content="real estate,apartments,apartment,house,summer,crna gora,montenegro,enjoy,winter,top,luxury,afordable,reasonable,kotor,sea,house,lovely">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="author" content="PeacefulNoob">  
-    
+
+    <meta property="og:image" content="https://cmm-rental.com/assets/images/logo1.png" />
+    <meta property="og:type" content="website" />
+    <meta property="og:url" content="https://cmm-rental.com/" />
+    <meta property="og:title" content="CMM | Rental" />
+    <meta property="og:description" content="CMM | Rental website" />
+  
+    <link rel="icon" type="image/png" href="/images/Bar-ikonica.png" />
+    <link rel="apple-touch-icon-precomposed" href="/assets/images/logo1.png" type="image/png" sizes="152x152" />
+    <link rel="apple-touch-icon-precomposed" href="/assets/images/logo1.png" type="image/png" sizes="120x120" />
+    <link rel="apple-touch-icon" href="/assets/images/logo1.png" sizes="180x180" />
 
   <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css" integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm" crossorigin="anonymous">
 
@@ -51,5 +61,7 @@
     <script src="https://cdn.jsdelivr.net/npm/select2@4.1.0-beta.1/dist/js/select2.min.js"></script>
 <script src="https://cdnjs.cloudflare.com/ajax/libs/OwlCarousel2/2.3.4/owl.carousel.min.js"></script>
 <script src="/assets/js/main.js"></script>
+{{-- <script type="text/javascript" src="https://maps.googleapis.com/maps/api/js?key=MY_API_KEY&libraries=geocoding,places"></script>
+ --}}
 </body>
 </html>

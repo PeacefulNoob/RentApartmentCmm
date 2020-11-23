@@ -29,7 +29,12 @@
   background-color: white;
   font-size: 16px;
 }
-
+input[type=date], input[type=datetime-local], input[type=month], input[type=time] {
+    color: white;
+}
+select.form-control:not([size]):not([multiple]) {
+  color: white;
+}
 .searchForm select{
  
   color:#1D4C81 !important;
