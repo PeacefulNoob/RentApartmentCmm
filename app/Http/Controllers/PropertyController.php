@@ -15,6 +15,7 @@ use App\PropertyFilters;
 use Illuminate\Support\Facades\Storage;
 use Illuminate\Support\Facades\Input;
 use Illuminate\Support\Str;
+use Mapper;
 
 class PropertyController extends Controller
 {
@@ -136,6 +137,8 @@ class PropertyController extends Controller
         $images = DB::table('property_images')->where('property_id', '=', $property->id)->get();
         $properties=Property::orderBy('created_at', 'DESC')->get();
         $property= Property::findOrFail($property->id);
+        Mapper::map(53.381128999999990000, -1.470085000000040000);
+
         return view('sitePages.property', compact('property','properties','images'));
     }
 
