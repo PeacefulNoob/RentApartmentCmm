@@ -43,7 +43,7 @@
     </div>
     <div class="properties my-5">
         <h2>Special price</h2>
-        <p class="pgrey mb-1 mt-3">Review COVID-19 travel restrictions before you book. <a href="/rentProperty"
+        <p class="pgrey mb-1 mt-3">Review COVID-19 travel restrictions before you book. <a href="#" class=""  data-toggle="modal" data-target="#covid_modal"
                 style="text-decoration:underline;">Learn more</a></p>
         <div class="row specialProperties" style="margin-bottom: 30px;">
             <?php
@@ -67,21 +67,17 @@
                                 <img src="poepe" alt="">
                             </div>
                         </div>
-
-
                         <div class="property-title-top">
                             <div class="property-location py-1">
-                            <img src="/assets/images/iconfinder_pin_293694.svg" class="" alt="">
+                            <img src="/assets/images/iconfinder_pin_293694.svg" class="ikonica mr-1" alt="">
                                 {{ $property->location->city }} ,      {{ $property->street }}
 
                             </div>
                             <div class="property-type py-1">
-                            <img src="/assets/images/Property type.svg" class="ikonica" alt="">
+                            <img src="/assets/images/Property type.svg" class="ikonica mr-1" alt="">
                                 {{ $property->propertyType->title }}
                             </div>
-
                         </div>
-
                             <div class="property-title py-1">
                                 <a href="/properties/{{ $property->id }}">
 
