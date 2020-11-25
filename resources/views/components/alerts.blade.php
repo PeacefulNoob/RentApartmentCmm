@@ -1,4 +1,5 @@
-
+    
+<!--
 @if (session('success'))
 <div class="alert alert-success" role="alert">
 {{session('success')}}  
@@ -15,8 +16,7 @@
     {{session('error')}}    </div>
     
 @endif
-    
-@if ($errors->any())
+ @if ($errors->any())
     <div class="alert alert-danger">
         <ul>
             @foreach ($errors->all() as $error)
@@ -24,30 +24,44 @@
             @endforeach
         </ul>
     </div>
-@endif
+@endif -->
 
-
-{{-- <div class="alert alert-primary" role="alert">
-    This is a primary alert—check it out!
-  </div>
-  <div class="alert alert-secondary" role="alert">
-    This is a secondary alert—check it out!
-  </div>
-  <div class="alert alert-success" role="alert">
-    This is a success alert—check it out!
-  </div>
-  <div class="alert alert-danger" role="alert">
-    This is a danger alert—check it out!
-  </div>
-  <div class="alert alert-warning" role="alert">
-    This is a warning alert—check it out!
-  </div>
-  <div class="alert alert-info" role="alert">
-    This is a info alert—check it out!
-  </div>
-  <div class="alert alert-light" role="alert">
-    This is a light alert—check it out!
-  </div>
-  <div class="alert alert-dark" role="alert">
-    This is a dark alert—check it out!
-  </div> --}}
+@if (session('success'))
+<div class="alertDiv">
+<div class="alert alert-success alert-dismissable">
+          <div class="alertwrapper clearfix">
+          <button type="button" class="close" data-dismiss="alert" aria-label="Close">
+            <span aria-hidden="true">&times;</span> </button>
+                <div class="alerticon successful">
+              <span class="glyphicon glyphicon-ok-sign"></span>
+            </div>
+            <div class="alertcontent">
+              <h4>Success!</h4>
+              {{session('success')}} 
+            </div>
+          </div>
+        </div>
+        </div>
+   @endif
+   @if ($errors->any())
+<div class="alertDiv">
+   <div class="alert alert-danger alert-dismissable">
+          <div class="alertwrapper clearfix">
+          <button type="button" class="close" data-dismiss="alert" aria-label="Close">
+             <span aria-hidden="true">&times;</span> </button>
+                <div class="alerticon dangerous">
+              <span class="glyphicon glyphicon-warning-sign"></span>
+            </div>
+            <div class="alertcontent">
+              <h4>Danger!</h4>
+              <ul>
+              @foreach ($errors->all() as $error)
+                <li>{{ $error }}</li>
+            
+            @endforeach
+            </ul>
+            </div>
+          </div>
+        </div>
+        </div>
+        @endif 

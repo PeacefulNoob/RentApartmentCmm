@@ -346,7 +346,15 @@ body {
 .property p {
   font-size: 14px;
 }
-
+.alertDiv{
+    position: absolute;
+    z-index: 100;
+    top: 7%;
+    width: 30%;
+}
+.alertDiv ul{
+margin-right: 4%;
+}
 .properties .pgrey {
   color: #ABACAF;
 }

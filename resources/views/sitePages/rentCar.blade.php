@@ -14,7 +14,7 @@
                     convertibles of premium-class.</p>
             </div>
             <div class=" col-lg-6 col-md-6 col-sm-12 col-12 pr-0">
-                <form action="{{ route('contact.store.main') }}" method="POST" class="form-property">
+                <form action="{{ route('contact.store.main') }}" method="POST" class="form-property needs-validation">
                     {{ csrf_field() }}
                     <input type="hidden" class="form-control" name="title" id="title" value="Rent a Car">
                     <div class="firstCarForm">
@@ -26,36 +26,54 @@
                                 <div class="form-group col-md-6 form_inquiry_left">
                                     <label for="pud">PICK-UP DATE</label>
                                     <input type="date" class="form-control" name="pud" id="pud"
-                                        placeholder="Put the pick up date">
+                                        placeholder="Put the pick up date" required>
+                                        <div class="valid-feedback">
+                                            Looks good!
+                                        </div>
                                 </div>
                                 <div class="form-group col-md-6 form_inquiry_right ">
                                     <label for="dofd">DROP-OFF DATE</label>
                                     <input type="date" class="form-control" name="dofd" id="dofd"
-                                        placeholder="Put the drop off date">
+                                        placeholder="Put the drop off date" required>
+                                        <div class="valid-feedback">
+                                            Looks good!
+                                        </div>
                                 </div>
                             </div>
                             <div class="form-row m-0">
                                 <div class="form-group col-md-6 form_inquiry_left border-top">
                                     <label for="put">PICK-UP TIME</label>
                                     <input type="time" class="form-control" name="put" id="put"
-                                        placeholder="Put the pick up time">
+                                        placeholder="Put the pick up time" required>
+                                        <div class="valid-feedback">
+                                            Looks good!
+                                        </div>
                                 </div>
                                 <div class="form-group col-md-6 form_inquiry_right border-top">
                                     <label for="doft">DROP-OFF TIME</label>
                                     <input type="time" class="form-control" name="doft" id="doft"
-                                        placeholder="Put the drop off time">
+                                        placeholder="Put the drop off time" required>
+                                        <div class="valid-feedback">
+                                            Looks good!
+                                        </div>
                                 </div>
                             </div>
                             <div class="form-row m-0">
                                 <div class="form-group col-md-6 form_inquiry_left border-top">
                                     <label for="pul">PICK-UP LOCATION</label>
                                     <input type="text" class="form-control" name="pul" id="pul"
-                                        placeholder="Put the pick up location">
+                                        placeholder="Put the pick up location" required>
+                                        <div class="valid-feedback">
+                                            Looks good!
+                                        </div>
                                 </div>
                                 <div class="form-group col-md-6 form_inquiry_right border-top">
                                     <label for="dofl">DROP-OFF LOCATION</label>
                                     <input type="text" class="form-control" name="dofl" id="dofl"
-                                        placeholder="Put the drop off location">
+                                        placeholder="Put the drop off location" required>
+                                        <div class="valid-feedback">
+                                            Looks good!
+                                        </div>
                                 </div>
                             </div>
                         </div>
@@ -74,24 +92,36 @@
                                 <div class="form-group col-md-6 form_inquiry_left">
                                     <label for="name">NAME</label>
                                     <input type="text" class="form-control" name="name" id="name"
-                                        placeholder="Put your real name">
+                                        placeholder="Put your real name" required> 
+                                        <div class="valid-feedback">
+                                            Looks good!
+                                        </div>
                                 </div>
                                 <div class="form-group col-md-6 form_inquiry_right ">
                                     <label for="surname">SURNAME</label>
                                     <input type="text" class="form-control" name="surname" id="surname"
-                                        placeholder="Put your surname">
+                                        placeholder="Put your surname" required>
+                                        <div class="valid-feedback">
+                                            Looks good!
+                                        </div>
                                 </div>
                             </div>
                             <div class="form-row m-0">
                                 <div class="form-group col-md-6 form_inquiry_left border-top">
                                     <label for="phoneNo">PHONE NUMBER</label>
                                     <input type="number" class="form-control" name="phoneNo" id="phoneNo"
-                                        placeholder="Put your phone number">
+                                        placeholder="Put your phone number" required>
+                                        <div class="valid-feedback">
+                                            Looks good!
+                                        </div>
                                 </div>
                                 <div class="form-group col-md-6 form_inquiry_right border-top">
                                     <label for="email">E-MAIL</label>
                                     <input type="email" class="form-control" name="email" id="email"
-                                        placeholder="Put your e-mail adress">
+                                        placeholder="Put your e-mail adress" required>
+                                        <div class="valid-feedback">
+                                            Looks good!
+                                        </div>
                                 </div>
                             </div>
                         </div>
