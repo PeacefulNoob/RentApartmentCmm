@@ -79,9 +79,8 @@ drivers, our guides – they are people who know everything about Montenegro!</p
 
 </div>
 
-        </div>
+        </div>           
 
         </div>
-    </div>
-</div>
+    </div> 
 @endsection

@@ -137,8 +137,8 @@ class PropertyController extends Controller
         $images = DB::table('property_images')->where('property_id', '=', $property->id)->get();
         $properties=Property::orderBy('created_at', 'DESC')->get();
         $property= Property::findOrFail($property->id);
-     //   Mapper::map(53.381128999999990000, -1.470085000000040000);
-     Mapper::location('Sheffield')->map(['zoom' => 15, 'center' => false, 'marker' => false, 'type' => 'HYBRID', 'overlay' => 'TRAFFIC']);
+      Mapper::map(53.381128999999990000, -1.470085000000040000);
+     //Mapper::location('Sheffield')->map(['zoom' => 15, 'center' => false, 'marker' => false, 'type' => 'HYBRID', 'overlay' => 'TRAFFIC']);
 
         return view('sitePages.property', compact('property','properties','images'));
     }
@@ -267,4 +267,22 @@ class PropertyController extends Controller
         );
 
         }
+        public function uploadImage(Request $request) { 
+            if($request->hasFile('upload')) {
+                       $originName = $request->file('upload')->getClientOriginalName();
+                       $fileName = pathinfo($originName, PATHINFO_FILENAME);
+                       $extension = $request->file('upload')->getClientOriginalExtension();
+                       $fileName = $fileName.'_'.time().'.'.$extension;
+                   
+                       $request->file('upload')->move(public_path('images/news'), $fileName);
+              
+                       $CKEditorFuncNum = $request->input('CKEditorFuncNum');
+                       $url = asset('/assets/images/news'.$fileName); 
+                       $msg = 'Image uploaded successfully'; 
+                       $response = "<script>window.parent.CKEDITOR.tools.callFunction($CKEditorFuncNum, '$url', '$msg')</script>";
+                          
+                       @header('Content-type: text/html; charset=utf-8'); 
+                       echo $response;
+                   }
+            }
     }

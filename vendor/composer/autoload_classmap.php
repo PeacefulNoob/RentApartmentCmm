@@ -41,6 +41,7 @@ return array(
     'App\\Http\\Middleware\\isManager' => $baseDir . '/app/Http/Middleware/isManager.php',
     'App\\Location' => $baseDir . '/app/Location.php',
     'App\\Mail\\ContactFormsMail' => $baseDir . '/app/Mail/ContactFormsMail.php',
+    'App\\Mail\\PropertyInquiryMail' => $baseDir . '/app/Mail/PropertyInquiryMail.php',
     'App\\Mail\\YachtFormMail' => $baseDir . '/app/Mail/YachtFormMail.php',
     'App\\Property' => $baseDir . '/app/Property.php',
     'App\\PropertyFilters' => $baseDir . '/app/PropertyFilters.php',

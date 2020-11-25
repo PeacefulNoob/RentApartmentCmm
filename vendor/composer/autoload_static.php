@@ -528,6 +528,7 @@ class ComposerStaticInit5d2b540bd7551519872613e7ce1e34b6
         'App\\Http\\Middleware\\isManager' => __DIR__ . '/../..' . '/app/Http/Middleware/isManager.php',
         'App\\Location' => __DIR__ . '/../..' . '/app/Location.php',
         'App\\Mail\\ContactFormsMail' => __DIR__ . '/../..' . '/app/Mail/ContactFormsMail.php',
+        'App\\Mail\\PropertyInquiryMail' => __DIR__ . '/../..' . '/app/Mail/PropertyInquiryMail.php',
         'App\\Mail\\YachtFormMail' => __DIR__ . '/../..' . '/app/Mail/YachtFormMail.php',
         'App\\Property' => __DIR__ . '/../..' . '/app/Property.php',
         'App\\PropertyFilters' => __DIR__ . '/../..' . '/app/PropertyFilters.php',

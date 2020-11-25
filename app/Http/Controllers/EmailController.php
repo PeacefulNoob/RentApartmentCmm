@@ -11,7 +11,7 @@ class EmailController extends Controller
 {
     public function exc(Request $request)
     {
- 
+        //! Transfers,excoursions i rentacar isti
         $validator = Validator::make($request->all(), [
             'pud' => 'required',
             'dofd' => 'required',
@@ -22,19 +22,16 @@ class EmailController extends Controller
             'name' => 'required',
             'surname' => 'required',
             'phoneNo' => 'required',
-            'email' => 'required'
+            'email' => 'required',
+            'title' => 'required',
 
         ]);
-    
         if ($validator->fails()) {
             return redirect()->back()
                         ->withErrors($validator)
                         ->withInput();
         }
-      
-  
            Mail::to('test.qqriq@gmail.com')->send(new ContactFormsMail($request));
-          
            return redirect()->back()->with('contact', 'Message Sent! Our representative will contact you back through e-mail with the confirmation as soon as possible. ');
     }
 
@@ -43,8 +40,30 @@ class EmailController extends Controller
         $validator = Validator::make($request->all(),[
             'pud' => 'required',
             'dofd' => 'required',
-            'put' => 'required',
-            'doft' => 'required'
+            'nofpeople' => 'required',
+            'name' => 'required',
+            'surname' => 'required',
+            'phoneNo' => 'required',
+            'email' => 'required'
+        ]);
+        if($validator->fails()){
+            return redirect()->back()
+                   ->withErrors($validator)
+                   ->withInput();
+        }
+        Mail::to('test.qqriq@gmail.com')->send(new YachtFormMail($request));
+        return redirect()->back()->with('contact', 'Message Sent! Our representative will contact you back through e-mail with the confirmation as soon as possible. ');
+    }
+
+    public function propertyInquiry(Request $request){
+        $validator = Validator::make($request->all(),[
+            'checkin' => 'required',
+            'ckeckout' => 'required',
+            'guests' => 'required',
+            'name' => 'required',
+            'surname' => 'required',
+            'phoneNo' => 'required',
+            'email' => 'required'
         ]);
 
         if($validator->fails()){
@@ -52,10 +71,26 @@ class EmailController extends Controller
                    ->withErrors($validator)
                    ->withInput();
         }
-
-        Mail::to('test.qqriq@gmail.com')->send(new YachtFormMail($request));
-
+        Mail::to('test.qqriq@gmail.com')->send(new PropertyInquiryMail($request));
         return redirect()->back()->with('contact', 'Message Sent! Our representative will contact you back through e-mail with the confirmation as soon as possible. ');
-
     }
+   /*  public function ExcoursionInquiry(Request $request){
+        $validator = Validator::make($request->all(),[
+            'checkin' => 'required',
+            'ckeckout' => 'required',
+            'guests' => 'required',
+            'name' => 'required',
+            'surname' => 'required',
+            'phoneNo' => 'required',
+            'email' => 'required'
+        ]);
+
+        if($validator->fails()){
+            return redirect()->back()
+                   ->withErrors($validator)
+                   ->withInput();
+        }
+        Mail::to('test.qqriq@gmail.com')->send(new PropertyInquiryMail($request));
+        return redirect()->back()->with('contact', 'Message Sent! Our representative will contact you back through e-mail with the confirmation as soon as possible. ');
+    } */
 }

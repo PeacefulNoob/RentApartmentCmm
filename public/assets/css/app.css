@@ -7,7 +7,7 @@
   position: fixed;
   z-index: 2;
   width: 100%;
-  background-color: #ffffffb5;
+  background-color: #ffffffe0;
 }
 
 .hero-image {
@@ -395,7 +395,44 @@ body {
      object-fit: cover;
   border-radius: 5px;
 }
+.filterRental{
+  height: 20vh !important;
 
+}
+.filterInput{
+  background-color: transparent;
+  border: 2px solid #1D4C81 !important;
+  border-radius: 5px;
+  color: #1D4C81 !important;
+  width: 100%;
+}
+.filterMain{
+  background-color: #ADDBEF;
+  border-radius: 5px;
+  color: #1D4C81;
+  padding: 5px;
+
+}
+.filterMain label{
+font-weight: 500;
+  color: #1D4C81;
+  text-transform: uppercase;
+}
+.filterMain button{
+  background-color: #1D4C81;
+    color: white;
+padding: 3px 25px; 
+margin: auto;
+width: 100%;
+}
+
+.filterMain .button-form-submit{
+  align-self: center;
+  width: 60%;
+}
+.filter{
+  padding: 13px;
+}
 .property_single_slide {
   width: 100%;
   height: 85vh;
@@ -698,16 +735,30 @@ a{
 }
 
 .form-control {
-  border: none !important;
-  background-color: transparent !important;
+  border: none ;
+  background-color: transparent ;
 }
 
 .form_inquiry {
   border: 1px solid #fff;
   margin: 0 !important;
   border-radius: 5px;
+  color: white;
 }
+.form_inquiry input{
+  color: white;
 
+}
+.form_inquiry input:active{
+background-color: #1D4C81;
+color: white;
+border: none;
+}
+.form_inquiry input:focus{
+  background-color: #1D4C81;
+  color: white;
+border: none;
+  }
 .form_inquiry_right {
   border-left: 1px solid #fff;
 }

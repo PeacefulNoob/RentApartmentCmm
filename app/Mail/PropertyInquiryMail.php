@@ -7,7 +7,7 @@ use Illuminate\Contracts\Queue\ShouldQueue;
 use Illuminate\Mail\Mailable;
 use Illuminate\Queue\SerializesModels;
 
-class YachtFormMail extends Mailable
+class PropertyInquiryMail extends Mailable
 {
     use Queueable, SerializesModels;
 
@@ -21,6 +21,7 @@ class YachtFormMail extends Mailable
        $this->request = $request->all();
 
     }
+
     /**
      * Build the message.
      *
@@ -31,7 +32,7 @@ class YachtFormMail extends Mailable
         $data = $this->request;
 
         return $this->from('test.qqriq@gmail.com')
-        ->subject('CMM-rental | Rent Yacht Inquiry')
-        ->markdown('emails.rentYacht',compact('data'));
+        ->subject('CMM-rental | Property Inquiry')
+        ->markdown('emails.propertyInquiry',compact('data'));
     }
 }
