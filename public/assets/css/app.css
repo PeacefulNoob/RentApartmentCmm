@@ -10,6 +10,35 @@
   background-color: #ffffffe0;
 }
 
+#calendar-1 {
+    width: 200px;
+    margin: 0 auto;
+    font-size: 10px;
+    padding-top: 100px;
+}
+.fc-header-title h2 {
+    font-size: .9em;
+    white-space: normal !important;
+}
+.fc-view-month .fc-event, .fc-view-agendaWeek .fc-event {
+    font-size: 0;
+    overflow: hidden;
+    height: 2px;
+}
+.fc-view-agendaWeek .fc-event-vert {
+    font-size: 0;
+    overflow: hidden;
+    width: 2px !important;
+}
+.fc-agenda-axis {
+    width: 20px !important;
+    font-size: .7em;
+}
+
+.fc-button-content {
+    padding: 0;
+}
+
 .hero-image {
   background-image: -webkit-gradient(linear, left top, left bottom, from(rgba(0, 0, 0, 0.1)), to(rgba(0, 0, 0, 0.1))), url("/assets/images/cover_image/regions.png");
   background-image: linear-gradient(rgba(0, 0, 0, 0.1), rgba(0, 0, 0, 0.1)), url("/assets/images/cover_image/regions.png");
@@ -36,7 +65,7 @@ select.form-control:not([size]):not([multiple]) {
   color: white;
 }
 .searchForm select{
- 
+
   color:#1D4C81 !important;
   font-weight: 600;
 }
@@ -270,7 +299,7 @@ body {
 /* promjena
  */ p {
   font-weight: 400;
-} 
+}
 img{
   max-width: 100%;
 }
@@ -530,7 +559,7 @@ background-color: red;
 }
 .propertiesMain :hover .gallery_owl .owl-nav {
   display: block;
-  
+
 }
 .gallery_owl .owl-dots .owl-dot {
   width: 10px;
@@ -895,12 +924,12 @@ border: none;
   padding-bottom: 0% !important;
   background-color: #1D4C81;
   color: white;
-  
+
 }
 .abouts1 h1{
 color: white;
     font-size: 52px;
-  
+
 }
 .cblue{
   color:#1D4C81;
@@ -911,7 +940,7 @@ color: white;
 }
 
 .abouts3 {
-  
+
 }
 h1{
   font-size: 52px;
