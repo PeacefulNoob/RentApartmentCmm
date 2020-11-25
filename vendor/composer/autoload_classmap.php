@@ -6,6 +6,13 @@ $vendorDir = dirname(dirname(__FILE__));
 $baseDir = dirname($vendorDir);
 
 return array(
+    'Acaronlex\\LaravelCalendar\\Calendar' => $vendorDir . '/acaronlex/laravel-calendar/src/Calendar.php',
+    'Acaronlex\\LaravelCalendar\\Event' => $vendorDir . '/acaronlex/laravel-calendar/src/Event.php',
+    'Acaronlex\\LaravelCalendar\\EventCollection' => $vendorDir . '/acaronlex/laravel-calendar/src/EventCollection.php',
+    'Acaronlex\\LaravelCalendar\\Facades\\Calendar' => $vendorDir . '/acaronlex/laravel-calendar/src/facades/Calendar.php',
+    'Acaronlex\\LaravelCalendar\\IdentifiableEvent' => $vendorDir . '/acaronlex/laravel-calendar/src/IdentifiableEvent.php',
+    'Acaronlex\\LaravelCalendar\\ServiceProvider' => $vendorDir . '/acaronlex/laravel-calendar/src/ServiceProvider.php',
+    'Acaronlex\\LaravelCalendar\\SimpleEvent' => $vendorDir . '/acaronlex/laravel-calendar/src/SimpleEvent.php',
     'AllSeeder' => $baseDir . '/database/seeds/AllSeeder.php',
     'App\\Amenity' => $baseDir . '/app/Amenity.php',
     'App\\Blog' => $baseDir . '/app/Blog.php',

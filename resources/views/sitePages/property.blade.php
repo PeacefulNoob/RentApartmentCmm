@@ -5,10 +5,11 @@
     .header{
   position: relative !important;
 
-} 
+}
 
 </style>
 <div class="propertyMain">
+
     <div class="property-single">
         <div class="owl-navigation owl-carousel gallery_single_owl owl-theme">
             @foreach($property->images as $image)
@@ -19,7 +20,7 @@
             <div class=" col-lg-7 col-md-7 col-sm-12 col-12">
                 <div class="property-title">
                     <h3>{{ $property->title }}</h3>
-                   
+
                 </div>
                 <div class="property-single-location py-2 d-flex">
                 <img src="/assets/images/iconfinder_pin_293694.svg" class="ikonica mr-2" alt="">
@@ -122,7 +123,7 @@
                       </div>
 
                       </div>
-                     
+
                 </form>
             </div>
 

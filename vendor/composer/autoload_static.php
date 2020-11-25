@@ -524,9 +524,23 @@ class ComposerStaticInit5d2b540bd7551519872613e7ce1e34b6
                 0 => __DIR__ . '/..' . '/google/apiclient-services/src',
             ),
         ),
+        'A' => 
+        array (
+            'Acaronlex\\LaravelCalendar' => 
+            array (
+                0 => __DIR__ . '/..' . '/acaronlex/laravel-calendar/src',
+            ),
+        ),
     );
 
     public static $classMap = array (
+        'Acaronlex\\LaravelCalendar\\Calendar' => __DIR__ . '/..' . '/acaronlex/laravel-calendar/src/Calendar.php',
+        'Acaronlex\\LaravelCalendar\\Event' => __DIR__ . '/..' . '/acaronlex/laravel-calendar/src/Event.php',
+        'Acaronlex\\LaravelCalendar\\EventCollection' => __DIR__ . '/..' . '/acaronlex/laravel-calendar/src/EventCollection.php',
+        'Acaronlex\\LaravelCalendar\\Facades\\Calendar' => __DIR__ . '/..' . '/acaronlex/laravel-calendar/src/facades/Calendar.php',
+        'Acaronlex\\LaravelCalendar\\IdentifiableEvent' => __DIR__ . '/..' . '/acaronlex/laravel-calendar/src/IdentifiableEvent.php',
+        'Acaronlex\\LaravelCalendar\\ServiceProvider' => __DIR__ . '/..' . '/acaronlex/laravel-calendar/src/ServiceProvider.php',
+        'Acaronlex\\LaravelCalendar\\SimpleEvent' => __DIR__ . '/..' . '/acaronlex/laravel-calendar/src/SimpleEvent.php',
         'AllSeeder' => __DIR__ . '/../..' . '/database/seeds/AllSeeder.php',
         'App\\Amenity' => __DIR__ . '/../..' . '/app/Amenity.php',
         'App\\Blog' => __DIR__ . '/../..' . '/app/Blog.php',

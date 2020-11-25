@@ -17,7 +17,7 @@ $('.gallery_owl').owlCarousel({
         nav: true,
         dots: true,
     })
-    
+
 $('.blogs_owl').owlCarousel({
     responsiveClass:true,
     items:4,
@@ -50,21 +50,33 @@ $('.blogs_owl').owlCarousel({
 
  $(".showMoreAm").click(function(){
   $(".property-single-facilities").slideToggle('400');
-}); 
+});
 
 $('.secondCarForm').hide();
 $('.nextCarForm').on(
   'click',
-  function() 
+  function()
   {
     $('.firstCarForm, .secondCarForm').toggle()
   }
 );
 $('.stepBackCar').on(
     'click',
-    function() 
+    function()
     {
       $('.secondCarForm, .firstCarForm').toggle()
     }
   );
+
+
+        // page is now ready, initialize the calendar...
+
+
+
+
+
+
+
+
+
 });
