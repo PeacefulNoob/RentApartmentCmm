@@ -7,13 +7,22 @@
         <div class="col-lg-6 col-md-6 col-sm-12 col-12 p-0">
             <h2>Transfers in Montenegro</h2>
             <h4>Schedule your transfer and have a relaxing stay in Montenegro.</h4>
-            <p>Rent-a-car is one of the most required services of our company. The area of the country will allow you to visit most of the parts of Montenegro, while enjoying the beauty and discovering new landscapes at every turn of the winding mountain road. </p>
-              <p>Using the service of car rental, you acquire the freedom of movement. We offer a large selection of vehicles to suit every taste - from inexpensive compact cars worth 35-40 Euros per day to jeeps and convertibles of premium-class.</p>
+            <p>If you have planned a long passage through the country or you want to go to the neighboring country,
+you need a transfer! Turning to our company, you can choose from two vehicle types, depending on the
+number of people. Private transfer involves following visitors at any time and in any direction. Group
+transfers consist in servicing a group of passengers which is performed in accordance with the previously
+approved schedule. </p>
+              <p>Note that in addition to transfers to and from the airport, transfers to resorts and
+historical centers of the country are also quite popular. People who value every minute of their time on
+vacation prefer to order the transfer and to make excursions to the cities of Montenegro. We have
+comfortable, clean vehicles and professional and courteous drivers.</p>
      
         </div>
         <div class="col-lg-6 col-md-6 col-sm-12 col-12 p-0 p-0">
             <form action="{{ route('contact.store.main') }}" method="POST" class="form-property">
                 {{ csrf_field() }}
+                <input type="hidden" class="form-control" name="title" id="title" value="Transfer ">
+
                 <div class="firstCarForm">
                     <div class="form-group text-center">
                         <h3> Find a perfect car for your stay in Montenegro </h3>
@@ -22,24 +31,24 @@
                         <div class="form-row m-0">
                             <div class="form-group col-md-6 form_inquiry_left">
                                 <label for="pud">PICK-UP DATE</label>
-                                <input type="text" class="form-control" name="pud" id="pud"
+                                <input type="date" class="form-control" name="pud" id="pud"
                                     placeholder="Put the pick up date">
                             </div>
                             <div class="form-group col-md-6 form_inquiry_right ">
                                 <label for="dofd">DROP-OFF DATE</label>
-                                <input type="text" class="form-control" name="dofd" id="dofd"
+                                <input type="date" class="form-control" name="dofd" id="dofd"
                                     placeholder="Put the drop off date">
                             </div>
                         </div>
                         <div class="form-row m-0">
                             <div class="form-group col-md-6 form_inquiry_left border-top">
                                 <label for="put">PICK-UP TIME</label>
-                                <input type="text" class="form-control" name="put" id="put"
+                                <input type="time" class="form-control" name="put" id="put"
                                     placeholder="Put the pick up time">
                             </div>
                             <div class="form-group col-md-6 form_inquiry_right border-top">
                                 <label for="doft">DROP-OFF TIME</label>
-                                <input type="text" class="form-control" name="doft" id="doft"
+                                <input type="time" class="form-control" name="doft" id="doft"
                                     placeholder="Put the drop off time">
                             </div>
                         </div>
@@ -82,12 +91,12 @@
                         <div class="form-row m-0">
                             <div class="form-group col-md-6 form_inquiry_left border-top">
                                 <label for="phoneNo">PHONE NUMBER</label>
-                                <input type="text" class="form-control" name="phoneNo" id="phoneNo"
+                                <input type="number" class="form-control" name="phoneNo" id="phoneNo"
                                     placeholder="Put your phone number">
                             </div>
                             <div class="form-group col-md-6 form_inquiry_right border-top">
                                 <label for="email">E-MAIL</label>
-                                <input type="text" class="form-control" name="email" id="email"
+                                <input type="email" class="form-control" name="email" id="email"
                                     placeholder="Put your e-mail adress">
                             </div>
                         </div>

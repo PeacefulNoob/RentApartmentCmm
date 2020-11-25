@@ -23,6 +23,8 @@
               <div class="col-6 p-0">
                 <form action="{{ route('contact.store.main') }}" method="POST" class="form-property">
                     {{ csrf_field() }}
+                    <input type="hidden" class="form-control" name="title" id="title" value="Cetinje Excoursion">
+
                     <div class="firstCarForm">
                         <div class="form-group text-center">
                             <h3> Find a perfect car for your stay in Montenegro </h3>
@@ -31,24 +33,24 @@
                             <div class="form-row m-0">
                                 <div class="form-group col-md-6 form_inquiry_left">
                                     <label for="pud">PICK-UP DATE</label>
-                                    <input type="text" class="form-control" name="pud" id="pud"
+                                    <input type="date" class="form-control" name="pud" id="pud"
                                         placeholder="Put the pick up date">
                                 </div>
                                 <div class="form-group col-md-6 form_inquiry_right ">
                                     <label for="dofd">DROP-OFF DATE</label>
-                                    <input type="text" class="form-control" name="dofd" id="dofd"
+                                    <input type="date" class="form-control" name="dofd" id="dofd"
                                         placeholder="Put the drop off date">
                                 </div>
                             </div>
                             <div class="form-row m-0">
                                 <div class="form-group col-md-6 form_inquiry_left border-top">
                                     <label for="put">PICK-UP TIME</label>
-                                    <input type="text" class="form-control" name="put" id="put"
+                                    <input type="time" class="form-control" name="put" id="put"
                                         placeholder="Put the pick up time">
                                 </div>
                                 <div class="form-group col-md-6 form_inquiry_right border-top">
                                     <label for="doft">DROP-OFF TIME</label>
-                                    <input type="text" class="form-control" name="doft" id="doft"
+                                    <input type="time" class="form-control" name="doft" id="doft"
                                         placeholder="Put the drop off time">
                                 </div>
                             </div>
@@ -91,12 +93,12 @@
                             <div class="form-row m-0">
                                 <div class="form-group col-md-6 form_inquiry_left border-top">
                                     <label for="phoneNo">PHONE NUMBER</label>
-                                    <input type="text" class="form-control" name="phoneNo" id="phoneNo"
+                                    <input type="number" class="form-control" name="phoneNo" id="phoneNo"
                                         placeholder="Put your phone number">
                                 </div>
                                 <div class="form-group col-md-6 form_inquiry_right border-top">
                                     <label for="email">E-MAIL</label>
-                                    <input type="text" class="form-control" name="email" id="email"
+                                    <input type="email" class="form-control" name="email" id="email"
                                         placeholder="Put your e-mail adress">
                                 </div>
                             </div>
