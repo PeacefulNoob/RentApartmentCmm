@@ -13,17 +13,17 @@ class EmailController extends Controller
     {
         //! Transfers,excoursions i rentacar isti
         $validator = Validator::make($request->all(), [
-            'pud' => 'required',
-            'dofd' => 'required',
+            'pud' => 'required|date',
+            'dofd' => 'required|date',
             'put' => 'required',
             'doft' => 'required',
-            'pul' => 'required',
-            'dofl' => 'required',
-            'name' => 'required',
-            'surname' => 'required',
-            'phoneNo' => 'required',
-            'email' => 'required',
-            'title' => 'required',
+            'pul' => 'required|string|max:255',
+            'dofl' => 'required|string|max:255',
+            'name' => 'required|string|max:255',
+            'surname' => 'required|string|max:255',
+            'phoneNo' => 'required|integer',
+            'email' => 'required|email',
+            'title' => 'required|string|max:255',
 
         ]);
         if ($validator->fails()) {
@@ -40,11 +40,13 @@ class EmailController extends Controller
         $validator = Validator::make($request->all(),[
             'pud' => 'required',
             'dofd' => 'required',
-            'nofpeople' => 'required',
-            'name' => 'required',
-            'surname' => 'required',
-            'phoneNo' => 'required',
-            'email' => 'required'
+            'nofpeople' => 'required|integer',
+            'name' => 'required|string|max:255',
+            'surname' => 'required|string|max:255',
+            'phoneNo' => 'required|integer',
+            'email' => 'required|email',
+            'title' => 'required|string|max:255',
+
         ]);
         if($validator->fails()){
             return redirect()->back()
@@ -59,11 +61,13 @@ class EmailController extends Controller
         $validator = Validator::make($request->all(),[
             'checkin' => 'required',
             'ckeckout' => 'required',
-            'guests' => 'required',
-            'name' => 'required',
-            'surname' => 'required',
-            'phoneNo' => 'required',
-            'email' => 'required'
+            'guests' => 'required|integer',
+            'name' => 'required|string|max:255',
+            'surname' => 'required|string|max:255',
+            'phoneNo' => 'required|integer',
+            'email' => 'required|email',
+            'title' => 'required|string|max:255',
+
         ]);
 
         if($validator->fails()){

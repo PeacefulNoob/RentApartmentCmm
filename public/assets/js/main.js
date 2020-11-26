@@ -57,14 +57,14 @@ $('.nextCarForm').on(
   'click',
   function()
   {
-    $('.firstCarForm, .secondCarForm').toggle()
+    $('.firstCarForm, .secondCarForm').toggle().prop('required',false)
   }
 );
 $('.stepBackCar').on(
     'click',
     function()
     {
-      $('.secondCarForm, .firstCarForm').toggle()
+      $('.secondCarForm, .firstCarForm').toggle().prop('required',false)
     }
   );
 
@@ -74,6 +74,23 @@ $('.stepBackCar').on(
 });
 
 
+(function() {
+  $('.form-control').keyup(function() {
+
+      var empty = false;
+      $('.form-control').each(function() {
+          if ($(this).val() == '') {
+              empty = true;
+          }
+      });
+
+      if (empty) {
+          $('.sendInq').attr('disabled', 'disabled');
+      } else {
+          $('.sendInq').removeAttr('disabled');
+      }
+  });
+})()
 
 // Example starter JavaScript for disabling form submissions if there are invalid fields
 (function() {
@@ -90,6 +107,15 @@ $('.stepBackCar').on(
         }
         form.classList.add('was-validated');
       }, false);
+      form.addEventListener('.nextCarForm', function(event) {
+        if (form.checkValidity() === false) {
+          event.preventDefault();
+          event.stopPropagation();
+        }
+        form.classList.add('was-validated');
+      }, false);
     });
   }, false);
 })();
+
+
