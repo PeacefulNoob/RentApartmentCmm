@@ -4,8 +4,8 @@
     <div class="hero-yacht-image">
         <div class="hero-div row">
         <div class="col-lg-6 col-md-6 col-sm-12 col-12 pl-0">
-            <h2 class="blue">Rent a yacht in Montenegro</h2>
-            <h4>"A man is never lost at sea."</h4>
+            <h2 class="blue ">Rent a yacht in Montenegro</h2>
+            <h4 class="py-2">"A man is never lost at sea."</h4>
             <p>Yacht charter in Montenegro – it’s a decent choice that will make your stay even more luxurious and
 memorable. Try to rent a boat and go sailing on the Montenegrin coast, and you will understand that
 from now on you will not be able to refuse such pastime.</p>

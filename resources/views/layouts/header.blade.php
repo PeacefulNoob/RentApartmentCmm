@@ -10,7 +10,7 @@
             <ul class="navbar-nav mr-auto ml-auto my-2">
             <li class="nav-item dropdown">
                 <a class="nav-link " href="#" id="navbarDropdown" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
-                  <h5>  Tourist Corner</h5>
+                  <h5>  Tourist Corner</h5><i class="angle fe fe-chevron-down"></i>
                 </a>
                 <div class="dropdown-menu " aria-labelledby="navbarDropdown">
                   <a class="dropdown-item" href="/rent-a-car"><h5>Car rental</h5></a>
@@ -26,7 +26,9 @@
               <li class="nav-item active">
                 <a class="nav-link" href="/news"><h5>News</h5></a>
               </li>
-           
+              <li class="nav-item active">
+                <a class="nav-link" href="https://www.cmm-montenegro.com/" target="_blank"><h5>Properties to buy</h5></a>
+              </li> 
             
             </ul>
             <ul class="navbar-nav ml-auto">

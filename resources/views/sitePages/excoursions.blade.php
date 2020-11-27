@@ -10,7 +10,6 @@
     <div class="hero-exc-image">
         <div class="hero-div ">
             <h2>Excoursions in Montenegro</h2>
-            <h4>"A man is never lost at sea."</h4>
             <p>There is a huge number of attractions In Montenegro that are worth visiting. When booking a tour from
 people on the street, you can’t be sure that you will receive a good service, and even more important
 than that, you can’t be sure that you get your money back for waste of time when excursion is poorly

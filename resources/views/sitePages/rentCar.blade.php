@@ -3,9 +3,9 @@
 <div class="hero">
     <div class="hero-car-image">
         <div class="hero-div row">
-            <div class="col-lg-6 col-md-6 col-sm-12 col-12 pl-0">
+            <div class="col-lg-6 col-md-6 col-sm-12 col-12 pl-0 rentText">
                 <h2>Rent a car in Montenegro</h2>
-                <h4>Hit those roads and win all of the mountains with stunning views</h4>
+                <h4 class="py-1">Hit those roads and win all of the mountains with stunning views</h4>
                 <p>Rent-a-car is one of the most required services of our company. The area of the country will allow
                     you to visit most of the parts of Montenegro, while enjoying the beauty and discovering new
                     landscapes at every turn of the winding mountain road. </p>
@@ -13,7 +13,7 @@
                     vehicles to suit every taste - from inexpensive compact cars worth 35-40 Euros per day to jeeps and
                     convertibles of premium-class.</p>
             </div>
-            <div class=" col-lg-6 col-md-6 col-sm-12 col-12 pr-0">
+            <div class=" col-lg-6 col-md-6 col-sm-12 col-12 pr-0 ">
                 <form action="{{ route('contact.store.main') }}" method="POST" class="form-property needs-validation">
                     {{ csrf_field() }}
                     <input type="hidden" class="form-control" name="title" id="title" value="Rent a Car">
