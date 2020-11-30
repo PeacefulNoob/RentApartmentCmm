@@ -54,33 +54,45 @@ condition of the yacht.</p>
                     <h3> Just one more step and you are done. Afterwards, we will contact you back. </h3>
                 </div>
                 <div class="form_inquiry">
-                    <div class="form-row m-0">
-                        <div class="form-group col-md-6 form_inquiry_left">
-                            <label for="name">NAME</label>
-                            <input type="text" class="form-control" name="name" id="name"
-                                placeholder="Put your real name">
+                            <div class="form-row m-0">
+                                <div class="form-group col-md-6 form_inquiry_left">
+                                    <label for="name">NAME</label>
+                                    <input type="text" class="form-control" name="name" id="name"
+                                        placeholder="Put your real name" required> 
+                                        <div class="valid-feedback">
+                                            Looks good!
+                                        </div>
+                                </div>
+                                <div class="form-group col-md-6 form_inquiry_right ">
+                                    <label for="surname">SURNAME</label>
+                                    <input type="text" class="form-control" name="surname" id="surname"
+                                        placeholder="Put your surname" required>
+                                        <div class="valid-feedback">
+                                            Looks good!
+                                        </div>
+                                </div>
+                            </div>
+                            <div class="form-row m-0">
+                                <div class="form-group col-md-6 form_inquiry_left border-top">
+                                    <label for="phoneNo">PHONE NUMBER</label>
+                                    <input type="number" class="form-control" name="phoneNo" id="phoneNo"
+                                        placeholder="Put your phone number" required>
+                                        <div class="valid-feedback">
+                                            Looks good!
+                                        </div>
+                                </div>
+                                <div class="form-group col-md-6 form_inquiry_right border-top">
+                                    <label for="email">E-MAIL</label>
+                                    <input type="email" class="form-control" name="email" id="email"
+                                        placeholder="Put your e-mail adress" required>
+                                        <div class="valid-feedback">
+                                            Looks good!
+                                        </div>
+                                </div>
+                            </div>
                         </div>
-                        <div class="form-group col-md-6 form_inquiry_right ">
-                            <label for="surname">SURNAME</label>
-                            <input type="text" class="form-control" name="surname" id="surname"
-                                placeholder="Put your surname">
-                        </div>
-                    </div>
-                    <div class="form-row m-0">
-                        <div class="form-group col-md-6 form_inquiry_left border-top">
-                            <label for="phoneNo">PHONE NUMBER</label>
-                            <input type="number" class="form-control" name="phoneNo" id="phoneNo"
-                                placeholder="Put your phone number">
-                        </div>
-                        <div class="form-group col-md-6 form_inquiry_right border-top">
-                            <label for="email">E-MAIL</label>
-                            <input type="email" class="form-control" name="email" id="email"
-                                placeholder="Put your e-mail adress">
-                        </div>
-                    </div>
-                </div>
                 <div class="form-group btnI text-center">
-                  <button type="submit" class="btn btn-inquiry">SEND INQURY</button>
+                  <button type="submit" class="btn btn-inquiry sendInq" disabled>SEND INQURY</button>
                   <p>Our representative will contact you back through e-mail with the confirmation as soon as possible.</p>
               </div>
 

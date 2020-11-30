@@ -68,6 +68,8 @@
     <div id="app">
         <main class="">
             @include('components.alerts')
+            @include('components.google_maps')
+
             @yield('content')
         </main>
     </div>

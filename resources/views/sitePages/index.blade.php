@@ -53,6 +53,7 @@
             </div>
         </div>
     </div>
+
     <div class="properties my-5">
         <h2>Our favourites</h2>
         <p class="pgrey mb-1 mt-3">Review COVID-19 travel restrictions before you book. <a href="#" class=""  data-toggle="modal" data-target="#covid_modal"
@@ -72,8 +73,9 @@
                                 <a href="/properties/{{ $property->id }}">  <img src="/assets/images/property_images/{{ $image->image }}" class="property_slide" alt=""> </a>
                                 @endforeach
                             </div>
-
-                            <img class="map_icon " src="/assets/images/google-maps.svg" alt="">
+                            <a href="#" class="map_icon"  data-toggle="modal" data-target="#google_maps">
+                              <img class=" " src="/assets/images/google-maps.svg" alt="">
+                            </a>
                             <div class="peoples">
                                 <h6>{{ $property->persons }}x</h6>
                                 <img src="/assets/images/guest.svg" alt="">

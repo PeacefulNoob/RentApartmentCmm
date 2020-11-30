@@ -76,7 +76,6 @@ $('.stepBackCar').on(
 
 (function() {
   $('.form-control').keyup(function() {
-
       var empty = false;
       $('.form-control').each(function() {
           if ($(this).val() == '') {
@@ -90,7 +89,7 @@ $('.stepBackCar').on(
           $('.sendInq').removeAttr('disabled');
       }
   });
-})()
+});
 
 // Example starter JavaScript for disabling form submissions if there are invalid fields
 (function() {
@@ -117,5 +116,4 @@ $('.stepBackCar').on(
     });
   }, false);
 })();
-
 
