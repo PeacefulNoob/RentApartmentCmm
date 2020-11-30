@@ -15,7 +15,7 @@ celebrations. Thanks to our team of professionals, we provide maintenance and wa
 condition of the yacht.</p>
         </div>
         <div class="col-lg-6 col-md-6 col-sm-12 col-12 pr-0">
-            <form action="{{route('contact.store.yacht')}}" method="POST" class="form-property">
+            <form action="{{route('contact.store.yacht')}}" method="POST" class="needs-validation form-property">
               {{ csrf_field() }}
               <div class="firstCarForm">
                 <div class="form-group text-center">

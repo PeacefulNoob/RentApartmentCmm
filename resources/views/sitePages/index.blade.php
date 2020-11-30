@@ -2,6 +2,8 @@
 
 @section('content')
 @include('components.modal_covid')
+@include('components.google_maps')
+
 <div class="homeMain">
     <div class="hero">
         <div class="hero-image">
