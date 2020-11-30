@@ -3,11 +3,13 @@
 namespace App\Http\Controllers;
 
 use App\Property;
+use Carbon\Carbon;
 use Illuminate\Http\Request;
 use Gate;
 use DB;
 use App\Location;
 use App\PropertyType;
+use Spatie\GoogleCalendar\Event;
 use Validator;
 use App\Amenity;
 use Intervention\Image\Facades\Image;
@@ -15,6 +17,7 @@ use App\PropertyFilters;
 use Illuminate\Support\Facades\Storage;
 use Illuminate\Support\Facades\Input;
 use Illuminate\Support\Str;
+use App\FullCalendar as FullCalendar;
 
 class PropertyController extends Controller
 {
@@ -136,7 +139,9 @@ class PropertyController extends Controller
         $images = DB::table('property_images')->where('property_id', '=', $property->id)->get();
         $properties=Property::orderBy('created_at', 'DESC')->get();
         $property= Property::findOrFail($property->id);
-        return view('sitePages.property', compact('property','properties','images'));
+        $calendar = FullCalendar::getCalendar($property->calendar_id);
+       // $calendar1 = FullCalendar::getCalendar1($property->calendar_id);
+        return view('sitePages.property', compact('property','properties','images', 'calendar'));
     }
 
     /**

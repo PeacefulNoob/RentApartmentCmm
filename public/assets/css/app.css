@@ -10,11 +10,22 @@
   background-color: #ffffffb5;
 }
 
-#calendar-1 {
-    width: 200px;
+#calendar {
+    width: 250px;
     margin: 0 auto;
     font-size: 10px;
-    padding-top: 100px;
+    padding-bottom: 30px;
+    padding-top: 135px;
+    height: 490px;
+}
+
+#calendar-1 {
+    width: 250px;
+    margin: 0 auto;
+    font-size: 10px;
+    padding-bottom: 30px;
+    padding-top: 135px;
+    height: 490px;
 }
 .fc-header-title h2 {
     font-size: .9em;
@@ -37,6 +48,34 @@
 
 .fc-button-content {
     padding: 0;
+}
+
+.fc-scrollgrid{
+    border-style: hidden!important;
+}
+
+.fc-daygrid-day-number{
+    margin: auto;
+}
+
+td .fc-daygrid-day:hover{
+    background-color: #1D4C81;
+    color: white;
+}
+
+.fc-button-primary{
+    background-color: #1D4C81!important;
+}
+
+.calendar-wrapper{
+    background-color: whitesmoke;;
+    border-radius: 30px;
+    width: 300px;
+    margin: auto;
+}
+
+.fc td, .fc th {
+    border-style: none !important;
 }
 
 .hero-image {

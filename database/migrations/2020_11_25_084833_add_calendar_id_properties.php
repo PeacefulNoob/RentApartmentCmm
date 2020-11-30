@@ -4,7 +4,7 @@ use Illuminate\Database\Migrations\Migration;
 use Illuminate\Database\Schema\Blueprint;
 use Illuminate\Support\Facades\Schema;
 
-class AddFavouritesToPropertiesTable extends Migration
+class AddCalendarIdProperties extends Migration
 {
     /**
      * Run the migrations.
@@ -14,7 +14,7 @@ class AddFavouritesToPropertiesTable extends Migration
     public function up()
     {
         Schema::table('properties', function (Blueprint $table) {
-            $table->tinyInteger('favourites')->nullable()->default(1)->after('special');
+            $table->string('calendar_id')->nullable();
         });
     }
 
@@ -26,8 +26,7 @@ class AddFavouritesToPropertiesTable extends Migration
     public function down()
     {
         Schema::table('properties', function (Blueprint $table) {
-            $table->dropColumn('favourites');
-
+            $table->dropColumn('calendar_id');
         });
     }
 }

@@ -130,6 +130,28 @@
         </div>
     </div>
 </div>
+
+
+<div class="calendar-wrapper">
+<div id='calendar0'></div>
+</div>
+<div class="calendar-wrapper">
+    <div id='calendar1'></div>
+</div>
+{{--
+<div class="calendar-wrapper">
+    <div id='calendar1'></div>
+</div>
+--}}
+
+{{--<div class="calendar-wrapper">
+    {!! $calendar->calendar() !!}
+    {!! $calendar->script() !!}
+</div>--}}
+{{--<div class="calendar-wrapper">
+    {!! $calendar1->calendar() !!}
+    {!! $calendar1->script() !!}
+</div>--}}
 <div class="googleMap paddinglr my-5">
     <h2 class="py-4">Google maps location</h2>
 <iframe src="https://www.google.com/maps/embed?pb=!1m14!1m12!1m3!1d3718.9604097407932!2d18.85334240911809!3d42.28405578539378!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!5e0!3m2!1sen!2s!4v1605286267549!5m2!1sen!2s" width="100%" height="600" frameborder="0" style="border:1px solid #08338F;" allowfullscreen="" aria-hidden="false" tabindex="0"></iframe>
@@ -217,5 +239,106 @@
         @endforelse
     </div>
 </div>
+<script>
+
+
+   /* var allEvents = [];
+    allEvents = $('#calendar-1').fullCalendar('clientEvents');
+    alert(allEvents);*/
+
+   /* var obj = new Array();
+
+    var evts = [];
+for(var i = 0; i < 3; i++){
+    evts.push({
+        title: obj[i],
+        start: obj[i],
+        end: obj[i]
+    });
+    }
+    console.log(evts);
+    drawCalendar(obj);
+    function drawCalendar(data){
+*/
+
+      $(document).ready(function(){
+
+
+          events = <?php echo json_encode($calendar); ?> ;
+          eventList = [];
+          for(var i =0; i<events.length;i++){
+              eventList.push({
+                  title: events[i].title,
+                  start:events[i].start.date.slice(0,10), // try timed. will fall back to all-day
+                  end: events[i].end.date.slice(0,10), // same
+
+              });
+          }
+
+
+          var date = new Date();
+          alert(date);
+          var d = date.getDate();
+          var m = date.getMonth();
+          var y = date.getFullYear();
+          var x = new Date();
+          x.setDate(1);
+          x.setMonth(x.getMonth() + 1);
+
+
+
+        var calendarEl = document.getElementById('calendar0');
+        var calendar = new FullCalendar.Calendar(calendarEl, {
+            initialView: 'dayGridMonth',
+            initialDate: date,
+            headerToolbar: {
+                left: 'title',
+                center: '',
+                right: 'prev,next today'
+            },
+            selectable: true,
+            events: eventList,
+            eventColor: '#378006',
+            viewDidMount: function(view, element) {
+                cur = view.intervalStart;
+                d = moment(cur).add('months', 1);
+                calendar1.fullCalendar('gotoDate', d);
+            },
+            dateClick: function(info) {
+                alert('clicked ' + info.dateStr);
+            },
+            eventClick:function(){
+                alert("OKS");
+            }
+        });
+        calendar.render();
+
+          var calendarEl1 = document.getElementById('calendar1');
+          var calendar1 = new FullCalendar.Calendar(calendarEl1, {
+              initialView: 'dayGridMonth',
+              initialDate: x,
+              headerToolbar: {
+                  left: 'title',
+                  center: '',
+                  right: ''
+              },
+              selectable: true,
+              events: eventList,
+              eventColor: '#378006',
+              dateClick: function(info) {
+                  alert('clicked ' + info.dateStr);
+              },
+              eventClick:function(){
+                  alert("OKS");
+              }
+          });
+          calendar1.render();
+
+
+
+      });
+
+</script>
+
 
 @endsection
