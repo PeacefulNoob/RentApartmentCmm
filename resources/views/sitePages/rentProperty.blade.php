@@ -7,6 +7,9 @@
             <div class=" filterMain">
                 <form method="GET" action="{{ route('filter.properties') }}" style="width: 100%; display: flex; flex-direction: column;" >
                    @csrf
+                   <div class="filter">
+                   <h3>Detailed search</h3>
+                   </div>
                 <div class="filter">
                 <label>City:</label>
                     <select name="city" id="city" class="form-control filterInput">
@@ -53,23 +56,22 @@
 
                 <div class="property">
                     <div class="image-placeholder">
-                        {{-- /// --}}
+          
                         <div class="owl-navigation owl-carousel gallery_owl owl-theme">
                             @foreach($property->images as $image)
                                 <img src="/assets/images/property_images/{{ $image->image }}" class="property_slide filterRental" alt="">
                             @endforeach
                         </div>
 
-                        {{-- /// --}}
-                        <img class="map_icon" src="/assets/images/google-maps.svg" alt="">
-                        <div class="peoples">
-                            <h6>{{ $property->persons }}x</h6>
-                            <img src="poepe" alt="">
+                  
+                        <img class="map_icon " src="/assets/images/google-maps.svg" alt="">
+                            <div class="peoples">
+                                <h6>{{ $property->persons }}x</h6>
+                                <img src="/assets/images/guest.svg" alt="">
+                            </div>
                         </div>
-                    </div>
 
-
-                    <div class="property-title-top">
+                        <div class="property-title-top py-2">
                         <div class="property-location py-1">
                             <img src="/assets/images/iconfinder_pin_293694.svg" class="ikonica mr-1" alt="">
                             {{ $property->location->city }} ,      {{ $property->street }}
@@ -87,7 +89,7 @@
 
                             <h5>{{ $property->title }}</h5>
                         </a>
-                        <p> {{ $property->price }} &euro; / night</p>
+                        <h5><bold> {{ $property->price }} &euro; </bold>/ night</h5>
                     </div>
 
                     @php
@@ -115,7 +117,7 @@
                 <div class="property">
                     <div class="property-title">
                         <div>
-                            <h4>Sorry, there are no special properties</h4>
+                            <h4>Sorry, there are no properties</h4>
                         </div>
 
                     </div>

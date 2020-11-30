@@ -133,11 +133,8 @@
     </div>
 </div>
 <div class="googleMap paddinglr my-5">
-   {{--  <div style="width: 500px; height: 500px;">
-        {!! Mapper::render() !!}
-    </div> --}}
     <h2 class="py-4">Google maps location</h2>
-<iframe src="https://www.google.com/maps/embed?pb=!1m14!1m12!1m3!1d3718.9604097407932!2d18.85334240911809!3d42.28405578539378!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!5e0!3m2!1sen!2s!4v1605286267549!5m2!1sen!2s" width="100%" height="600" frameborder="0" style="border:1px solid #08338F;" allowfullscreen="" aria-hidden="false" tabindex="0"></iframe>
+<iframe src="https://www.google.com/maps/embed/v1/place?q={{$property->street}}&key=AIzaSyBxKQ25JRZ3zkWcgJ5mTfmSG85CxvYtcYs" width="100%" height="600" frameborder="0" style="border:1px solid #08338F;" allowfullscreen="" aria-hidden="false" tabindex="0"></iframe>
  </div>
 <div class="properties my-5">
     <h2>More like this</h2>
@@ -151,29 +148,31 @@
         @forelse($properties as $property)
         <div class="col-lg-3 col-md-6 col-sm-6 col-12 my-3 propertiesMain">
 
-                <div class="property">
+        <div class="property">
                     <div class="image-placeholder">
+          
                         <div class="owl-navigation owl-carousel gallery_owl owl-theme">
                             @foreach($property->images as $image)
-                                <img src="/assets/images/property_images/{{ $image->image }}" class="property_slide" alt="">
+                                <img src="/assets/images/property_images/{{ $image->image }}" class="property_slide filterRental" alt="">
                             @endforeach
                         </div>
 
-                        <img class="map_icon" src="/assets/images/google-maps.svg" alt="">
-                        <div class="peoples">
-                            <h6>{{ $property->persons }}x</h6>
-                            <img src="poepe" alt="">
+                  
+                        <img class="map_icon " src="/assets/images/google-maps.svg" alt="">
+                            <div class="peoples">
+                                <h6>{{ $property->persons }}x</h6>
+                                <img src="/assets/images/guest.svg" alt="">
+                            </div>
                         </div>
-                    </div>
 
-
-                    <div class="property-title-top">
+                        <div class="property-title-top py-2">
                         <div class="property-location py-1">
-                        <img src="/assets/images/iconfinder_pin_293694.svg" class="ikonica mr-1" alt="">
-                            {{ $property->location->city }}
+                            <img src="/assets/images/iconfinder_pin_293694.svg" class="ikonica mr-1" alt="">
+                            {{ $property->location->city }} ,      {{ $property->street }}
+
                         </div>
                         <div class="property-type py-1">
-                        <img src="/assets/images/Property type.svg" class="ikonica mr-1" alt="">
+                            <img src="/assets/images/Property type.svg" class="ikonica mr-1" alt="">
                             {{ $property->propertyType->title }}
                         </div>
 
@@ -184,22 +183,21 @@
 
                             <h5>{{ $property->title }}</h5>
                         </a>
-                        <p> {{ $property->price }} &euro; / night</p>
+                        <h5><bold> {{ $property->price }} &euro; </bold>/ night</h5>
                     </div>
 
                     @php
                         $amenities = $property->amenities()->get();
-                        $colcount = count($properties);
                         $k = 1;
 
                     @endphp
                     @foreach($amenities as $amenitie)
-                        <img src="/assets/images/{{ $amenitie->photoUrl }}" class="amenityHomeS "
-                            alt={{ $amenitie->photoUrl }}>
+                        <img src="/assets/images/{{ $amenitie->photoUrl }}" class="amenityHomeS"
+                             alt={{ $amenitie->photoUrl }}>
                         <?php
-                                                    if ($k++ == 4)
-                                                        break;
-                                                    ?>
+                        if ($k++ == 4)
+                            break;
+                        ?>
                     @endforeach
                 </div>
 

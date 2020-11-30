@@ -68,6 +68,7 @@
     <div id="app">
         <main class="">
             @include('components.alerts')
+
             @yield('content')
         </main>
     </div>

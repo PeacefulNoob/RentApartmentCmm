@@ -2,36 +2,50 @@
 
 @section('content')
 @include('components.modal_covid')
+@include('components.google_maps')
+
 <div class="homeMain">
     <div class="hero">
         <div class="hero-image">
             <div class="hero-text">
-                <h1 c>Rent real estate in Montenegro!</h1>
+                <h1 c>Rent a real estate in Montenegro</h1>
                     <form method="GET" action="{{ route('filter.properties') }}" style="width: 100%; display: flex; flex-direction: column;" >
                     @csrf
-                        <div class="form-row m-0">
-                            <div class=" col-md-6 searchForm">
-<!--                                 <label for="city" class="labelNew">City</label>
- -->                                        <select name="city" id="city" class="form-control">
+                        <div class="form-row m-0 mainsearch">
+                            <div class=" col-md-4 searchForm">
+                                       <select name="city" id="city" class="form-control">
                                     <option value="" disabled selected>Where would you like to rent real estate?</option>
                                             @foreach($cities as $city)
                                             <option value="{{$city->id}}" {{ (old("city") == $city->id ? "selected":"") }}>{{$city->city}}</option>
                                             @endforeach
                                         </select>
                             </div>
-                            <div class=" col-md-5 searchForm">
-<!--                             <label for="type" class="labelNew">Property type</label>
- -->                                    <select name="type"  id="type" class="form-control" >
+                            <div class=" col-md-4 searchForm">
+                                   <select name="type"  id="type" class="form-control" >
                                             <option value="" disabled selected>Pick property type that fits you.</option>
                                         @foreach($types as $type)
                                         <option value="{{$type->id}}" {{ (old("type") == $type->id ? "selected":"") }}>{{$type->title}}</option>
                                         @endforeach
                                     </select>
                             </div>
+                            <div class=" col-md-3 searchForm">
+                            <select name="persons"  id="persons" class="form-control" >
+                                            <option value="" disabled selected>How many guests</option>
+                                        <option value="{{old('persons')}}"> {{old('persons')}}</option>
+                                        <option value="1">1</option>
+                                        <option value="2"> 2</option>
+                                        <option value="3"> 3</option>
+                                        <option value="4"> 4</option>
+                                        <option value="5"> 5</option>
+                                        <option value="6"> 6</option>
+                                        <option value="7"> 7</option>
+                                    </select>
+                                         
+                            </div>
                             <div class=" col-md-1 searchForm">
 
                                     <div class="button-form-submit">
-                                        <button class="btn btn-submit">GO</button>
+                                        <button class="btn btn-submit">GO!</button>
                                     </div>
                                     </div>
 
@@ -41,6 +55,7 @@
             </div>
         </div>
     </div>
+
     <div class="properties my-5">
         <h2>Our favourites</h2>
         <p class="pgrey mb-1 mt-3">Review COVID-19 travel restrictions before you book. <a href="#" class=""  data-toggle="modal" data-target="#covid_modal"
@@ -60,14 +75,15 @@
                                 <a href="/properties/{{ $property->id }}">  <img src="/assets/images/property_images/{{ $image->image }}" class="property_slide" alt=""> </a>
                                 @endforeach
                             </div>
-
-                            <img class="map_icon" src="/assets/images/google-maps.svg" alt="">
+                            <a href="#" class="map_icon"  data-toggle="modal" data-target="#google_maps">
+                              <img class=" " src="/assets/images/google-maps.svg" alt="">
+                            </a>
                             <div class="peoples">
                                 <h6>{{ $property->persons }}x</h6>
-                                <img src="poepe" alt="">
+                                <img src="/assets/images/guest.svg" alt="">
                             </div>
                         </div>
-                        <div class="property-title-top">
+                        <div class="property-title-top py-2">
                             <div class="property-location py-1">
                             <img src="/assets/images/iconfinder_pin_293694.svg" class="ikonica mr-1" alt="">
                                 {{ $property->location->city }} ,      {{ $property->street }}
@@ -83,7 +99,7 @@
 
                                 <h5>{{ $property->title }}</h5>
                                  </a>
-                                <p> {{ $property->price }} &euro; / night</p>
+                                <h5><bold> {{ $property->price }} &euro; </bold>/ night</h5>
                             </div>
                       
                         @php
@@ -134,14 +150,14 @@
                 @foreach($blogs as $blog)
                     <div class="card" style="border:none">
                     <a href="/single_news/{{$blog->id}}">
-                        <img class="card-img-top" src="/{{ $blog->image }}" alt="Card image cap">
+                        <img class="card-img-top blog_image" src="/{{ $blog->image }}" alt="Card image cap">
                         </a>
                         <div class="card-body">
-                            <h5 class="card-title">{{ $blog->title }}</h5>
+                            <h4 class="card-title">{{ $blog->title }}</h4>
                             <p class="card-text">
                                 @php
 
-                                    echo substr($blog->description, 0, 135);
+                                    echo substr($blog->description, 0, 60);
                                 @endphp...
                             </p>
                         </div>

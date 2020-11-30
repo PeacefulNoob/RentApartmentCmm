@@ -50,8 +50,8 @@ class FaqController extends Controller
         $userId = Auth::id();
 
         $validator = Validator::make($request->all(), [
-            'answer' => 'required',
-            'question' => 'required',
+            'answer' => 'required|string',
+            'question' => 'required|string',
            
 
         ]);
@@ -110,8 +110,8 @@ class FaqController extends Controller
     public function update(Request $request,$id)
     {
         $validator = Validator::make($request->all(), [
-            'answer' => 'required',
-            'question' => 'required',
+            'answer' => 'required|string',
+            'question' => 'required|string',
         ]);
 
         if ($validator->fails()) {
