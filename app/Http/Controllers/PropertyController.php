@@ -2,6 +2,7 @@
 
 namespace App\Http\Controllers;
 
+use App\FullCalendar as FullCalendar;
 use App\Property;
 use Illuminate\Http\Request;
 use Gate;
@@ -136,7 +137,8 @@ class PropertyController extends Controller
         $images = DB::table('property_images')->where('property_id', '=', $property->id)->get();
         $properties=Property::orderBy('created_at', 'DESC')->get();
         $property= Property::findOrFail($property->id);
-        return view('sitePages.property', compact('property','properties','images'));
+        $calendar = FullCalendar::getCalendar($property->calendar_id);
+        return view('sitePages.property', compact('property','properties','images','calendar'));
     }
 
     /**
