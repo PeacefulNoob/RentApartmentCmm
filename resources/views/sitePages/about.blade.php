@@ -101,7 +101,7 @@
 
     </div>
     <div class="lineB"></div>
-    <div class="row m-0 abouts6 padding justify-content-center">
+    <div class="row m-0 abouts6 padding justify-content-center " id="about_contact">
         <h4 class="col-12 py-3">Contact us</h4>
 
         <div class="col-6">

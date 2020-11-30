@@ -1,11 +1,15 @@
 @component('mail::message')
 # Introduction
+Rent A Yacht
+{{$data['pud']}}
+{{$data['dofd']}}
+{{$data['nofpeople']}}
+{{$data['name']}}
+{{$data['surname']}}
+{{$data['phoneNo']}}
+{{$data['email']}}
 
-Yacht Rent.
-
-@component('mail::button', ['url' => ''])
 Button Text
-@endcomponent
 
 Thanks,<br>
 {{ config('app.name') }}

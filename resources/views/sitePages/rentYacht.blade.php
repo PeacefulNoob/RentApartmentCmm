@@ -3,14 +3,19 @@
 <div class="hero">
     <div class="hero-yacht-image">
         <div class="hero-div row">
-        <div class="col-lg-6 col-md-6 col-sm-12 col-12 p-0">
-            <h2 class="blue">Rent a yacht in Montenegro</h2>
-            <h4>"A man is never lost at sea."</h4>
-            <p>Rent-a-car is one of the most required services of our company. The area of the country will allow you to visit most of the parts of Montenegro, while enjoying the beauty and discovering new landscapes at every turn of the winding mountain road. </p>
-     <p>Using the service of car rental, you acquire the freedom of movement. We offer a large selection of vehicles to suit every taste - from inexpensive compact cars worth 35-40 Euros per day to jeeps and convertibles of premium-class.</p>
+        <div class="col-lg-6 col-md-6 col-sm-12 col-12 pl-0">
+            <h2 class="blue ">Rent a yacht in Montenegro</h2>
+            <h4 class="py-2">"A man is never lost at sea."</h4>
+            <p>Yacht charter in Montenegro – it’s a decent choice that will make your stay even more luxurious and
+memorable. Try to rent a boat and go sailing on the Montenegrin coast, and you will understand that
+from now on you will not be able to refuse such pastime.</p>
+     <p>Rentals also available for motor yachts, yachts
+for comfortable rest or participating in regatta, yachts-restaurant for banquets, weddings and other
+celebrations. Thanks to our team of professionals, we provide maintenance and warranty for the perfect
+condition of the yacht.</p>
         </div>
-        <div class="col-lg-6 col-md-6 col-sm-12 col-12 p-0">
-            <form action="{{route('contact.store.yacht')}}" method="POST" class="form-property">
+        <div class="col-lg-6 col-md-6 col-sm-12 col-12 pr-0">
+            <form action="{{route('contact.store.yacht')}}" method="POST" class="needs-validation form-property">
               {{ csrf_field() }}
               <div class="firstCarForm">
                 <div class="form-group text-center">
@@ -20,12 +25,12 @@
                     <div class="form-row m-0">
                         <div class="form-group col-md-6 form_inquiry_left">
                             <label for="pud">PICK-UP DATE</label>
-                            <input type="text" class="form-control" name="pud" id="pud"
+                            <input type="date" class="form-control" name="pud" id="pud"
                                 placeholder="Put the pick up date">
                         </div>
                         <div class="form-group col-md-6 form_inquiry_right ">
                             <label for="dofd">DROP-OFF DATE</label>
-                            <input type="text" class="form-control" name="dofd" id="dofd"
+                            <input type="date" class="form-control" name="dofd" id="dofd"
                                 placeholder="Put the drop off date">
                         </div>
                     </div>
@@ -49,33 +54,45 @@
                     <h3> Just one more step and you are done. Afterwards, we will contact you back. </h3>
                 </div>
                 <div class="form_inquiry">
-                    <div class="form-row m-0">
-                        <div class="form-group col-md-6 form_inquiry_left">
-                            <label for="name">NAME</label>
-                            <input type="text" class="form-control" name="name" id="name"
-                                placeholder="Put your real name">
+                            <div class="form-row m-0">
+                                <div class="form-group col-md-6 form_inquiry_left">
+                                    <label for="name">NAME</label>
+                                    <input type="text" class="form-control" name="name" id="name"
+                                        placeholder="Put your real name" required> 
+                                        <div class="valid-feedback">
+                                            Looks good!
+                                        </div>
+                                </div>
+                                <div class="form-group col-md-6 form_inquiry_right ">
+                                    <label for="surname">SURNAME</label>
+                                    <input type="text" class="form-control" name="surname" id="surname"
+                                        placeholder="Put your surname" required>
+                                        <div class="valid-feedback">
+                                            Looks good!
+                                        </div>
+                                </div>
+                            </div>
+                            <div class="form-row m-0">
+                                <div class="form-group col-md-6 form_inquiry_left border-top">
+                                    <label for="phoneNo">PHONE NUMBER</label>
+                                    <input type="number" class="form-control" name="phoneNo" id="phoneNo"
+                                        placeholder="Put your phone number" required>
+                                        <div class="valid-feedback">
+                                            Looks good!
+                                        </div>
+                                </div>
+                                <div class="form-group col-md-6 form_inquiry_right border-top">
+                                    <label for="email">E-MAIL</label>
+                                    <input type="email" class="form-control" name="email" id="email"
+                                        placeholder="Put your e-mail adress" required>
+                                        <div class="valid-feedback">
+                                            Looks good!
+                                        </div>
+                                </div>
+                            </div>
                         </div>
-                        <div class="form-group col-md-6 form_inquiry_right ">
-                            <label for="surname">SURNAME</label>
-                            <input type="text" class="form-control" name="surname" id="surname"
-                                placeholder="Put your surname">
-                        </div>
-                    </div>
-                    <div class="form-row m-0">
-                        <div class="form-group col-md-6 form_inquiry_left border-top">
-                            <label for="phoneNo">PHONE NUMBER</label>
-                            <input type="text" class="form-control" name="phoneNo" id="phoneNo"
-                                placeholder="Put your phone number">
-                        </div>
-                        <div class="form-group col-md-6 form_inquiry_right border-top">
-                            <label for="email">E-MAIL</label>
-                            <input type="text" class="form-control" name="email" id="email"
-                                placeholder="Put your e-mail adress">
-                        </div>
-                    </div>
-                </div>
                 <div class="form-group btnI text-center">
-                  <button type="submit" class="btn btn-inquiry">SEND INQURY</button>
+                  <button type="submit" class="btn btn-inquiry sendInq" disabled>SEND INQURY</button>
                   <p>Our representative will contact you back through e-mail with the confirmation as soon as possible.</p>
               </div>
 

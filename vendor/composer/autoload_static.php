@@ -167,6 +167,7 @@ class ComposerStaticInit5d2b540bd7551519872613e7ce1e34b6
         'C' => 
         array (
             'Cron\\' => 5,
+            'Cornford\\Googlmapper\\' => 21,
             'Carbon\\' => 7,
         ),
         'B' => 
@@ -491,6 +492,10 @@ class ComposerStaticInit5d2b540bd7551519872613e7ce1e34b6
         array (
             0 => __DIR__ . '/..' . '/dragonmantank/cron-expression/src/Cron',
         ),
+        'Cornford\\Googlmapper\\' => 
+        array (
+            0 => __DIR__ . '/..' . '/cornford/googlmapper/src',
+        ),
         'Carbon\\' => 
         array (
             0 => __DIR__ . '/..' . '/nesbot/carbon/src/Carbon',
@@ -577,6 +582,7 @@ class ComposerStaticInit5d2b540bd7551519872613e7ce1e34b6
         'App\\Http\\Middleware\\isManager' => __DIR__ . '/../..' . '/app/Http/Middleware/isManager.php',
         'App\\Location' => __DIR__ . '/../..' . '/app/Location.php',
         'App\\Mail\\ContactFormsMail' => __DIR__ . '/../..' . '/app/Mail/ContactFormsMail.php',
+        'App\\Mail\\PropertyInquiryMail' => __DIR__ . '/../..' . '/app/Mail/PropertyInquiryMail.php',
         'App\\Mail\\YachtFormMail' => __DIR__ . '/../..' . '/app/Mail/YachtFormMail.php',
         'App\\Property' => __DIR__ . '/../..' . '/app/Property.php',
         'App\\PropertyFilters' => __DIR__ . '/../..' . '/app/PropertyFilters.php',
@@ -681,6 +687,33 @@ class ComposerStaticInit5d2b540bd7551519872613e7ce1e34b6
         'Carbon\\Traits\\Units' => __DIR__ . '/..' . '/nesbot/carbon/src/Carbon/Traits/Units.php',
         'Carbon\\Traits\\Week' => __DIR__ . '/..' . '/nesbot/carbon/src/Carbon/Traits/Week.php',
         'Carbon\\Translator' => __DIR__ . '/..' . '/nesbot/carbon/src/Carbon/Translator.php',
+        'Cornford\\Googlmapper\\Contracts\\MappingBaseInterface' => __DIR__ . '/..' . '/cornford/googlmapper/src/Contracts/MappingBaseInterface.php',
+        'Cornford\\Googlmapper\\Contracts\\MappingInterface' => __DIR__ . '/..' . '/cornford/googlmapper/src/Contracts/MappingInterface.php',
+        'Cornford\\Googlmapper\\Contracts\\ModelingInterface' => __DIR__ . '/..' . '/cornford/googlmapper/src/Contracts/ModelingInterface.php',
+        'Cornford\\Googlmapper\\Contracts\\ObjectableInterface' => __DIR__ . '/..' . '/cornford/googlmapper/src/Contracts/ObjectableInterface.php',
+        'Cornford\\Googlmapper\\Exceptions\\MapperArgumentException' => __DIR__ . '/..' . '/cornford/googlmapper/src/Exceptions/MapperArgumentException.php',
+        'Cornford\\Googlmapper\\Exceptions\\MapperException' => __DIR__ . '/..' . '/cornford/googlmapper/src/Exceptions/MapperException.php',
+        'Cornford\\Googlmapper\\Exceptions\\MapperInstanceException' => __DIR__ . '/..' . '/cornford/googlmapper/src/Exceptions/MapperInstanceException.php',
+        'Cornford\\Googlmapper\\Exceptions\\MapperSearchException' => __DIR__ . '/..' . '/cornford/googlmapper/src/Exceptions/MapperSearchException.php',
+        'Cornford\\Googlmapper\\Exceptions\\MapperSearchKeyException' => __DIR__ . '/..' . '/cornford/googlmapper/src/Exceptions/MapperSearchKeyException.php',
+        'Cornford\\Googlmapper\\Exceptions\\MapperSearchLimitException' => __DIR__ . '/..' . '/cornford/googlmapper/src/Exceptions/MapperSearchLimitException.php',
+        'Cornford\\Googlmapper\\Exceptions\\MapperSearchResponseException' => __DIR__ . '/..' . '/cornford/googlmapper/src/Exceptions/MapperSearchResponseException.php',
+        'Cornford\\Googlmapper\\Exceptions\\MapperSearchResultException' => __DIR__ . '/..' . '/cornford/googlmapper/src/Exceptions/MapperSearchResultException.php',
+        'Cornford\\Googlmapper\\Exceptions\\MapperSearchResultMalformedException' => __DIR__ . '/..' . '/cornford/googlmapper/src/Exceptions/MapperSearchResultMalformedException.php',
+        'Cornford\\Googlmapper\\Facades\\MapperFacade' => __DIR__ . '/..' . '/cornford/googlmapper/src/Facades/MapperFacade.php',
+        'Cornford\\Googlmapper\\Mapper' => __DIR__ . '/..' . '/cornford/googlmapper/src/Mapper.php',
+        'Cornford\\Googlmapper\\MapperBase' => __DIR__ . '/..' . '/cornford/googlmapper/src/MapperBase.php',
+        'Cornford\\Googlmapper\\MapperServiceProvider' => __DIR__ . '/..' . '/cornford/googlmapper/src/MapperServiceProvider.php',
+        'Cornford\\Googlmapper\\Models\\Circle' => __DIR__ . '/..' . '/cornford/googlmapper/src/Models/Circle.php',
+        'Cornford\\Googlmapper\\Models\\Location' => __DIR__ . '/..' . '/cornford/googlmapper/src/Models/Location.php',
+        'Cornford\\Googlmapper\\Models\\Map' => __DIR__ . '/..' . '/cornford/googlmapper/src/Models/Map.php',
+        'Cornford\\Googlmapper\\Models\\Marker' => __DIR__ . '/..' . '/cornford/googlmapper/src/Models/Marker.php',
+        'Cornford\\Googlmapper\\Models\\Polygon' => __DIR__ . '/..' . '/cornford/googlmapper/src/Models/Polygon.php',
+        'Cornford\\Googlmapper\\Models\\Polyline' => __DIR__ . '/..' . '/cornford/googlmapper/src/Models/Polyline.php',
+        'Cornford\\Googlmapper\\Models\\Rectangle' => __DIR__ . '/..' . '/cornford/googlmapper/src/Models/Rectangle.php',
+        'Cornford\\Googlmapper\\Models\\Streetview' => __DIR__ . '/..' . '/cornford/googlmapper/src/Models/Streetview.php',
+        'Cornford\\Googlmapper\\Traits\\Languages' => __DIR__ . '/..' . '/cornford/googlmapper/src/Traits/Languages.php',
+        'Cornford\\Googlmapper\\Traits\\Regions' => __DIR__ . '/..' . '/cornford/googlmapper/src/Traits/Regions.php',
         'Cron\\AbstractField' => __DIR__ . '/..' . '/dragonmantank/cron-expression/src/Cron/AbstractField.php',
         'Cron\\CronExpression' => __DIR__ . '/..' . '/dragonmantank/cron-expression/src/Cron/CronExpression.php',
         'Cron\\DayOfMonthField' => __DIR__ . '/..' . '/dragonmantank/cron-expression/src/Cron/DayOfMonthField.php',

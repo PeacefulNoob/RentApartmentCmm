@@ -18,12 +18,9 @@ class YachtFormMail extends Mailable
      */
     public function __construct($request)
     {
-        $this->pud = $request['pud'];
-        $this->dofd = $request['dofd'];
-        $this->put = $request['put'];
-        $this->doft = $request['doft'];
-    }
+       $this->request = $request->all();
 
+    }
     /**
      * Build the message.
      *
@@ -31,8 +28,10 @@ class YachtFormMail extends Mailable
      */
     public function build()
     {
+        $data = $this->request;
+
         return $this->from('test.qqriq@gmail.com')
-        ->subject('CMM-rental')
-        ->markdown('emails.rentYacht')->with('pud',  $this->pud);;
+        ->subject('CMM-rental | Rent Yacht Inquiry')
+        ->markdown('emails.rentYacht',compact('data'));
     }
 }

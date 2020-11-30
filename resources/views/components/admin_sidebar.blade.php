@@ -45,7 +45,8 @@
                     <li><a class="slide-item" href="/blogs">List of all Blog Posts     </a></li>
                 </ul>
             </li>
-           
+            <li class="slide"> <a class="side-menu__item" href="/faqs/create"><span class="side-menu__label">Add FaQ</span></a> </li>
+
             @endcan
 
         </ul>

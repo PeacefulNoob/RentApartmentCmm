@@ -21,18 +21,19 @@
            </div>
     </div>
     <div class="paddinglr single_news_blog">
-            <div class="owl-navigation owl-carousel blogs_owl owl-theme ">
+        <h4 class="py-4">More recommended news :</h4>
+    <div class="owl-navigation owl-carousel blogs_owl owl-theme ">
                 @foreach($blogs as $blog)
                     <div class="card" style="border:none">
                     <a href="/single_news/{{$blog->id}}">
-                        <img class="card-img-top" src="/{{ $blog->image }}" alt="Card image cap">
+                        <img class="card-img-top blog_image" src="/{{ $blog->image }}" alt="Card image cap">
                         </a>
                         <div class="card-body">
-                            <h5 class="card-title">{{ $blog->title }}</h5>
+                            <h4 class="card-title">{{ $blog->title }}</h4>
                             <p class="card-text">
                                 @php
 
-                                    echo substr($blog->description, 0, 135);
+                                    echo substr($blog->description, 0, 60);
                                 @endphp...
                             </p>
                         </div>

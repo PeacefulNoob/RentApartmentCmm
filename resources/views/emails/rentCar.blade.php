@@ -1,11 +1,21 @@
 @component('mail::message')
+{{$data['title']}}
+
 # Introduction
-{{$this->pud}}
+{{$data['pud']}}
+{{$data['dofd']}}
+{{$data['put']}}
+{{$data['doft']}}
+{{$data['pul']}}
+{{$data['dofl']}}
+{{$data['name']}}
+{{$data['surname']}}
+{{$data['phoneNo']}}
+{{$data['email']}} 
+
 The body of your message.
 
-@component('mail::button', ['url' => ''])
 Button Text
-@endcomponent
 
 Thanks,<br>
 {{ config('app.name') }}
