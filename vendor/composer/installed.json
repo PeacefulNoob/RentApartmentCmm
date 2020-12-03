@@ -151,6 +151,72 @@
         ]
     },
     {
+        "name": "cornford/googlmapper",
+        "version": "v3.3.3",
+        "version_normalized": "3.3.3.0",
+        "source": {
+            "type": "git",
+            "url": "https://github.com/bradcornford/Googlmapper.git",
+            "reference": "3c59aa12c4c72a0516ecaee9aed7b5f2f37b701e"
+        },
+        "dist": {
+            "type": "zip",
+            "url": "https://api.github.com/repos/bradcornford/Googlmapper/zipball/3c59aa12c4c72a0516ecaee9aed7b5f2f37b701e",
+            "reference": "3c59aa12c4c72a0516ecaee9aed7b5f2f37b701e",
+            "shasum": ""
+        },
+        "require": {
+            "ext-json": "*",
+            "illuminate/support": "^6.0 || ^7.0 || ^8.0",
+            "illuminate/view": "^6.0 || ^7.0 || ^8.0",
+            "php": ">=7.2"
+        },
+        "require-dev": {
+            "mockery/mockery": "^1.2.4",
+            "phpmd/phpmd": "^2.7",
+            "phpspec/phpspec": "^6.0",
+            "phpunit/phpunit": "^8.4",
+            "squizlabs/php_codesniffer": "^3.5"
+        },
+        "time": "2020-09-21T12:05:34+00:00",
+        "type": "library",
+        "extra": {
+            "laravel": {
+                "providers": [
+                    "Cornford\\Googlmapper\\MapperServiceProvider"
+                ],
+                "aliases": {
+                    "Mapper": "Cornford\\Googlmapper\\Facades\\MapperFacade"
+                }
+            }
+        },
+        "installation-source": "dist",
+        "autoload": {
+            "psr-4": {
+                "Cornford\\Googlmapper\\": "src/"
+            }
+        },
+        "notification-url": "https://packagist.org/downloads/",
+        "license": [
+            "MIT"
+        ],
+        "authors": [
+            {
+                "name": "Bradley Cornford",
+                "email": "me@bradleycornford.co.uk"
+            }
+        ],
+        "description": "An easy way to integrate Google Maps with Laravel.",
+        "keywords": [
+            "google",
+            "laravel",
+            "map",
+            "mapping",
+            "maps",
+            "streetview"
+        ]
+    },
+    {
         "name": "dnoegel/php-xdg-base-dir",
         "version": "v0.1.1",
         "version_normalized": "0.1.1.0",
@@ -439,17 +505,17 @@
     },
     {
         "name": "egulias/email-validator",
-        "version": "2.1.23",
-        "version_normalized": "2.1.23.0",
+        "version": "2.1.24",
+        "version_normalized": "2.1.24.0",
         "source": {
             "type": "git",
             "url": "https://github.com/egulias/EmailValidator.git",
-            "reference": "5fa792ad1853ae2bc60528dd3e5cbf4542d3c1df"
+            "reference": "ca90a3291eee1538cd48ff25163240695bd95448"
         },
         "dist": {
             "type": "zip",
-            "url": "https://api.github.com/repos/egulias/EmailValidator/zipball/5fa792ad1853ae2bc60528dd3e5cbf4542d3c1df",
-            "reference": "5fa792ad1853ae2bc60528dd3e5cbf4542d3c1df",
+            "url": "https://api.github.com/repos/egulias/EmailValidator/zipball/ca90a3291eee1538cd48ff25163240695bd95448",
+            "reference": "ca90a3291eee1538cd48ff25163240695bd95448",
             "shasum": ""
         },
         "require": {
@@ -465,7 +531,7 @@
         "suggest": {
             "ext-intl": "PHP Internationalization Libraries are required to use the SpoofChecking validation"
         },
-        "time": "2020-10-31T20:37:35+00:00",
+        "time": "2020-11-14T15:56:27+00:00",
         "type": "library",
         "extra": {
             "branch-alias": {
@@ -556,17 +622,17 @@
     },
     {
         "name": "facade/ignition",
-        "version": "2.5.0",
-        "version_normalized": "2.5.0.0",
+        "version": "2.5.2",
+        "version_normalized": "2.5.2.0",
         "source": {
             "type": "git",
             "url": "https://github.com/facade/ignition.git",
-            "reference": "81698c5e32837c74abf9bb764ff0c1b3e001afb3"
+            "reference": "08668034beb185fa2ac6f09b1034eaa440952ace"
         },
         "dist": {
             "type": "zip",
-            "url": "https://api.github.com/repos/facade/ignition/zipball/81698c5e32837c74abf9bb764ff0c1b3e001afb3",
-            "reference": "81698c5e32837c74abf9bb764ff0c1b3e001afb3",
+            "url": "https://api.github.com/repos/facade/ignition/zipball/08668034beb185fa2ac6f09b1034eaa440952ace",
+            "reference": "08668034beb185fa2ac6f09b1034eaa440952ace",
             "shasum": ""
         },
         "require": {
@@ -590,7 +656,7 @@
         "suggest": {
             "laravel/telescope": "^3.1"
         },
-        "time": "2020-10-27T13:02:22+00:00",
+        "time": "2020-11-17T09:18:51+00:00",
         "type": "library",
         "extra": {
             "branch-alias": {
@@ -2082,17 +2148,17 @@
     },
     {
         "name": "myclabs/deep-copy",
-        "version": "1.10.1",
-        "version_normalized": "1.10.1.0",
+        "version": "1.10.2",
+        "version_normalized": "1.10.2.0",
         "source": {
             "type": "git",
             "url": "https://github.com/myclabs/DeepCopy.git",
-            "reference": "969b211f9a51aa1f6c01d1d2aef56d3bd91598e5"
+            "reference": "776f831124e9c62e1a2c601ecc52e776d8bb7220"
         },
         "dist": {
             "type": "zip",
-            "url": "https://api.github.com/repos/myclabs/DeepCopy/zipball/969b211f9a51aa1f6c01d1d2aef56d3bd91598e5",
-            "reference": "969b211f9a51aa1f6c01d1d2aef56d3bd91598e5",
+            "url": "https://api.github.com/repos/myclabs/DeepCopy/zipball/776f831124e9c62e1a2c601ecc52e776d8bb7220",
+            "reference": "776f831124e9c62e1a2c601ecc52e776d8bb7220",
             "shasum": ""
         },
         "require": {
@@ -2106,7 +2172,7 @@
             "doctrine/common": "^2.6",
             "phpunit/phpunit": "^7.1"
         },
-        "time": "2020-06-29T13:22:24+00:00",
+        "time": "2020-11-13T09:40:50+00:00",
         "type": "library",
         "installation-source": "dist",
         "autoload": {
@@ -3264,9 +3330,15 @@
         ],
         "description": "Common interface for caching libraries",
         "keywords": [
+
+            "phpunit",
+            "testing",
+            "xunit"
+
             "cache",
             "psr",
             "psr-6"
+
         ]
     },
     {
@@ -6464,17 +6536,17 @@
     },
     {
         "name": "voku/portable-ascii",
-        "version": "1.5.4",
-        "version_normalized": "1.5.4.0",
+        "version": "1.5.6",
+        "version_normalized": "1.5.6.0",
         "source": {
             "type": "git",
             "url": "https://github.com/voku/portable-ascii.git",
-            "reference": "87dc337d4200b32717dd3849fea846319e897658"
+            "reference": "80953678b19901e5165c56752d087fc11526017c"
         },
         "dist": {
             "type": "zip",
-            "url": "https://api.github.com/repos/voku/portable-ascii/zipball/87dc337d4200b32717dd3849fea846319e897658",
-            "reference": "87dc337d4200b32717dd3849fea846319e897658",
+            "url": "https://api.github.com/repos/voku/portable-ascii/zipball/80953678b19901e5165c56752d087fc11526017c",
+            "reference": "80953678b19901e5165c56752d087fc11526017c",
             "shasum": ""
         },
         "require": {
@@ -6486,7 +6558,7 @@
         "suggest": {
             "ext-intl": "Use Intl for transliterator_transliterate() support"
         },
-        "time": "2020-11-08T21:15:15+00:00",
+        "time": "2020-11-12T00:07:28+00:00",
         "type": "library",
         "installation-source": "dist",
         "autoload": {

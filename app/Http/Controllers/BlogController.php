@@ -138,7 +138,7 @@ class BlogController extends Controller
 
         DB::table('blogs')->where('id', $id)->update([
             'title' => $request->title,
-            'photo' => $request->path,
+            'image' => $path,
             'description' => $request->description,
         ]);
         

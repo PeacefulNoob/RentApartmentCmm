@@ -10,9 +10,14 @@
     <div class="hero-exc-image">
         <div class="hero-div ">
             <h2>Excoursions in Montenegro</h2>
-            <h4>"A man is never lost at sea."</h4>
-            <p>Rent-a-car is one of the most required services of our company. The area of the country will allow you to visit most of the parts of Montenegro, while enjoying the beauty and discovering new landscapes at every turn of the winding mountain road. </p>
-     <p>Using the service of car rental, you acquire the freedom of movement. We offer a large selection of vehicles to suit every taste - from inexpensive compact cars worth 35-40 Euros per day to jeeps and convertibles of premium-class.</p>
+            <p>There is a huge number of attractions In Montenegro that are worth visiting. When booking a tour from
+people on the street, you can’t be sure that you will receive a good service, and even more important
+than that, you can’t be sure that you get your money back for waste of time when excursion is poorly
+organized. </p>
+     <p>When booking tours with us, you are always sure in the service you are going to get. You can
+order an individual tour in a comfortable car with a guide or book a group tour, and make a little trip
+with a small pleasant company. All our cars are new, air-conditioned, we have professional and proven
+drivers, our guides – they are people who know everything about Montenegro!</p>
         <div class="row my-5">
 <div class="col-25">
   <a href="#" class=""  data-toggle="modal" data-target="#excoursions_cetinje_modal">
@@ -73,9 +78,8 @@
 
 </div>
 
-        </div>
+        </div>           
 
         </div>
-    </div>
-</div>
+    </div> 
 @endsection

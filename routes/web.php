@@ -49,10 +49,15 @@ Route::post('Rent-a-Car', [
     'uses' => 'EmailController@exc',
     'as' => 'contact.store.main'
 ]);
-Route::post('/email-yacht', [
+Route::post('Rent-Yacht', [
     'uses' => 'EmailController@exy',
     'as' => 'contact.store.yacht'
-]);
 
+]);
+Route::post('Send-Inquiry', [
+    'uses' => 'EmailController@propertyInquiry',
+    'as' => 'contact.store.property'
+]);
 Route::get("/rentProperty" , 'PropertyController@showAllPropertyFilter')->name('property.filter');
 Route::get('/filterProperties', 'PropertyController@showPropertyByFilter')->name('filter.properties');
+Route::post('upload_image','PropertyController@uploadImage')->name('upload');

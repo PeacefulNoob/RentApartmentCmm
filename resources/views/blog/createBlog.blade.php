@@ -11,8 +11,10 @@
         </div>
         <div class="form-group">
             <label for="description1">Description</label>
-            <textarea class="ckeditor form-control" name="description"></textarea>
-            <div class="validate"></div>
+            <textarea class="form-control" id="summary-ckeditor" name="summary-ckeditor"></textarea> 
+
+{{--             <textarea class="ckeditor form-control" name="description"></textarea>
+ --}}            <div class="validate"></div>
         </div>
         <div class="form-group">
             <label for="photo">Upload photo</label>
@@ -22,12 +24,19 @@
         <button type="submit" class="btn btn-primary">Submit</button>
     </form>
 </div>
-<script src="//cdn.ckeditor.com/4.14.1/standard/ckeditor.js"></script>
-<script type="text/javascript">
+<script src="{{ asset('vendor/unisharp/laravel-ckeditor/ckeditor.js') }}"></script>
+
+{{-- <script src="//cdn.ckeditor.com/4.14.1/standard/ckeditor.js"></script>
+ --}}
+ <script type="text/javascript">
     $(document).ready(function () {
         $('.ckeditor').ckeditor();
     
     });
-    
+    CKEDITOR.replace('summary-ckeditor', {
+    filebrowserUploadUrl: "{{route('upload', ['_token' => csrf_token() ])}}",
+    filebrowserUploadMethod: 'form'
+});
 </script>
+
 @endsection

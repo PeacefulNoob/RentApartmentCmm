@@ -67,7 +67,11 @@ class FullCalendar{
 
         $calendar->setId('1');
         $calendar->setCallbacks([
-            '
+
+
+
+           '
+
             select' => 'function(selectionInfo){
                }',
             'eventClick' => 'function(event){
@@ -77,14 +81,19 @@ class FullCalendar{
             info.dayEl.style.backgroundColor = "red";
             alert("clicked " + info);
         }',
+
             '  defaultDate'=> ' ,
+
+
+
             viewRender: function(view, element) {
             cur = view.intervalStart;
             d = moment(cur).add("months", 1);
             cal1.fullCalendar("gotoDate", d);
         }',
         ]);
-        /* $eventsFullCalendar = collect(['title', 'start', 'end']);
+
+       $eventsFullCalendar = collect(['title', 'start', 'end']);
          foreach($events as $event){
              $combined =  $eventsFullCalendar->combine([
                  $event->title ,
@@ -92,12 +101,22 @@ class FullCalendar{
                   $event->end->format('Y-m-d')
                  ]);
          }
- */
+
+     $eventsFullCalendar = collect(['title', 'start', 'end']);
+        foreach($events as $event){
+            $combined =  $eventsFullCalendar->combine([
+                $event->title ,
+                $event->start->format('Y-m-d'),
+                 $event->end->format('Y-m-d')
+                ]);
+        }
+
         return  $events;
         return $combined->all();
         dd();
         return $calendar;
     }
+    
 
     public static function getCalendar1($calendar_id){
         $data = Event::get(Carbon::now(), Carbon::now()->addYear(), [], $calendar_id);
