@@ -9,12 +9,29 @@
   width: 100%;
   background-color: #ffffffb5;
 }
+.calendar-wrapper{
+    display: flex;
+    width: 30%;
+}
 
-#calendar-1 {
-    width: 200px;
+.calendar-wrapper-parent{
+/*    display: flex;
+    flex-direction: row;
+    justify-content: space-evenly;*/
+}
+
+#calendar1 {
     margin: 0 auto;
     font-size: 10px;
-    padding-top: 100px;
+    /*visibility: hidden;*/
+    display: none;
+}
+
+#calendar0 {
+    margin: 0 auto;
+    font-size: 10px;
+    /*visibility: hidden;*/
+    display: none;
 }
 .fc-header-title h2 {
     font-size: .9em;
@@ -38,6 +55,40 @@
 .fc-button-content {
     padding: 0;
 }
+
+.fc-view-harness{
+    height: 285px!important;
+}
+
+.fc-daygrid-day-number{
+    margin: auto;
+}
+
+.fc-scrollgrid{
+    border-style: none!important;
+}
+
+.day-highlight-check{
+    background: green !important;
+}
+
+td .fc-daygrid-day:hover{
+    background-color: white!important;
+    color: #1D4C81!important;
+}
+
+.fc-button-primary{
+    background-color: #1D4C81!important;
+}
+
+.fc td, .fc th {
+    border-style: none !important;
+}
+
+.activeDay {
+    background-color:#ff0000 !important;
+}
+
 
 .hero-image {
   background-image: -webkit-gradient(linear, left top, left bottom, from(rgba(0, 0, 0, 0.1)), to(rgba(0, 0, 0, 0.1))), url("/assets/images/cover_image/regions.png");

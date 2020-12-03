@@ -64,14 +64,27 @@
                             </div>
                             <div class="form_inquiry">
                                 <div class="form-row m-0">
+
                                     <div class="form-group col-md-6 form_inquiry_left">
                                     <label for="checkin">CHECK-IN</label>
-                                    <input type="date" class="form-control" id="checkin" placeholder="Put the C/I date please">
+                                    <input  class="form-control" id="checkin" placeholder="Put the C/I date please">
                                     </div>
                                     <div class="form-group col-md-6 form_inquiry_right ">
                                     <label for="ckeckout">CHECKOUT</label>
-                                    <input type="date" class="form-control" id="ckeckout" placeholder="Put the C/O date please">
+                                    <input  class="form-control" id="ckeckout" placeholder="Put the C/O date please">
                                     </div>
+                                </div>
+                                <div class="form-row m-0">
+                                {{--<div class="calendar-wrapper-parent">--}}
+                                    <!--calendar-wrapper-->
+                                    <div class="form-group col-md-6 form_inquiry_left">
+                                        <div id='calendar0' value="0"></div>
+                                    </div>
+                                    <!--calendar-wrapper-->
+                                    <div class="form-group col-md-6 form_inquiry_right ">
+                                        <div id='calendar1' value="0"></div>
+                                    </div>
+                               {{-- </div>--}}
                                 </div>
                                 <div class="form-group form_inquiry_bot">
                                     <label for="guests">Guests</label>
@@ -130,6 +143,9 @@
         </div>
     </div>
 </div>
+
+
+
 <div class="googleMap paddinglr my-5">
     <h2 class="py-4">Google maps location</h2>
 <iframe src="https://www.google.com/maps/embed?pb=!1m14!1m12!1m3!1d3718.9604097407932!2d18.85334240911809!3d42.28405578539378!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!5e0!3m2!1sen!2s!4v1605286267549!5m2!1sen!2s" width="100%" height="600" frameborder="0" style="border:1px solid #08338F;" allowfullscreen="" aria-hidden="false" tabindex="0"></iframe>
@@ -217,5 +233,169 @@
         @endforelse
     </div>
 </div>
+<script> $(document).ready(function(){
 
+        $('#checkin').on('click', function(){
+            if($('#calendar0').val() == 0 && $('#calendar1').val() == 0) {
+                $('#calendar0').css("display", "block");
+                $('#calendar1').css("display", "block");
+                $('#calendar0').val(1);
+                $('#calendar1').val(1);
+                calendar1.render();
+                calendar.render();
+            }else{
+                $('#calendar0').css("display", "none");
+                $('#calendar1').css("display", "none");
+                $('#calendar0').val(0);
+                $('#calendar1').val(0);
+            }
+        });
+
+        function checkEvents(datesBetween){
+            for(var i = 0;i<eventList.length;i++){
+                for(var j = 0; j<datesBetween.length;j++){
+                    if(eventList[i].start == datesBetween[j] || eventList[i].end == datesBetween[j]){
+                        alert("Ne mozete izabrati ove datume!");
+                        return true;
+                    }
+                }
+            }
+            return false;
+        }
+
+
+        events = <?php echo json_encode($calendar); ?> ;
+        eventList = [];
+        for(var i =0; i<events.length;i++){
+            eventList.push({
+                title: events[i].title,
+                start:events[i].start.date.slice(0,10), // try timed. will fall back to all-day
+                end: events[i].end.date.slice(0,10), // same
+            });
+        }
+        var date = new Date();
+        var d = date.getDate();
+        var m = date.getMonth();
+        var y = date.getFullYear();
+        var x = new Date();
+        x.setDate(1);
+        x.setMonth(x.getMonth() + 1);
+
+        var checkIn = '';
+        var checkOut = '';
+        var checkInInfo = null;
+        var checkOutInfo = null;
+        var bool = false;
+
+        var calendarEl1 = document.getElementById('calendar1');
+        var calendar1 = new FullCalendar.Calendar(calendarEl1, {
+            initialView: 'dayGridMonth',
+            initialDate: x,
+            headerToolbar: {
+                left: 'title',
+                center: '',
+                right: ''
+            },
+            selectable: true,
+            events: eventList,
+            eventColor: '#378006',
+            eventClassNames: 'activeDay',
+            dateClick: function(info) {
+                info.dayEl.style.backgroundColor = "black";
+                if(checkIn == ''){
+                    checkInInfo = info;
+                    checkIn = info.dateStr;
+                }else if(checkOut == ''){
+                    checkOutInfo = info;
+                    checkOut = info.dateStr;
+                    let datesBetween = [];
+                    for (var m = moment(checkIn); m.isBefore(checkOut); m.add(1, 'days')) {
+                        datesBetween.push(m.format('YYYY-MM-DD'));
+                    }
+                 bool = checkEvents(datesBetween);
+                    if(bool){
+                        checkOutInfo.dayEl.style.backgroundColor = "transparent";
+                        checkInInfo.dayEl.style.backgroundColor = "transparent";
+                        checkIn = '';
+                        checkOut = '';
+                    }
+                }else if(checkIn != '' && checkOut != ''){
+                    if(info.date > checkInInfo.date){
+                        checkOutInfo.dayEl.style.backgroundColor = "transparent";
+                        checkOutInfo = info;
+                        checkOut = info.dateStr;
+                    }else{
+                        checkInInfo.dayEl.style.backgroundColor = "transparent";
+                        checkInInfo = info;
+                        checkIn = info.dateStr;
+                    }
+                }
+            },
+            eventClick:function(){
+                alert("OKS");
+            }
+        });
+        calendar1.render();
+
+        var calendarEl = document.getElementById('calendar0');
+        var calendar = new FullCalendar.Calendar(calendarEl, {
+            initialView: 'dayGridMonth',
+            initialDate: date,
+            headerToolbar: {
+                left: 'title',
+                center: '',
+                right: 'prev,next today'
+            },
+            selectable: true,
+            events: eventList,
+            eventColor: '#378006',
+            datesSet: function(info) {
+                month = info.endStr.slice(0,10);
+                calendar1.changeView('dayGridMonth', month);
+                calendar1.render();
+            },
+            dateClick: function(info) {
+                console.log(info.dateStr);
+                info.dayEl.style.backgroundColor = "black";
+                if(checkIn == ''){
+                    checkInInfo = info;
+                    checkIn = info.dateStr;
+                    $('#checkin').val(checkIn);
+                }else if(checkOut == ''){
+                    checkOutInfo = info;
+                    checkOut = info.dateStr;
+                    $('#checkout').val(checkOut);
+                }else if(checkIn != '' && checkOut != ''){
+                    if(info.date > checkInInfo.date){
+                        checkOutInfo.dayEl.style.backgroundColor = "transparent";
+                        checkOutInfo = info;
+                        checkOut = info.dateStr;
+                    }else if(info.date < checkInInfo.date){
+                        alert("manji");
+                        checkInInfo.dayEl.style.backgroundColor = "transparent";
+                        checkInInfo = info;
+                        checkIn = info.dateStr;
+                    }else{
+                        alert("isti");
+                        checkOutInfo.dayEl.style.backgroundColor = "transparent";
+                        checkOut = '';
+                        checkInInfo = info;
+                        checkIn = info.dateStr;
+                    }
+                }
+
+              /*  console.log(checkIn + "IN");
+                console.log(checkInInfo);
+                console.log(checkOut + "OUT");
+                console.log(checkOutInfo);
+                checkOutInfo.dayEl.style.backgroundColor = "white";*/
+            },
+            eventClick:function(){
+                alert("OKS");
+            }
+        });
+        calendar.render();
+
+    });
+</script>
 @endsection
