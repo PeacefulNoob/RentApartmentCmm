@@ -116,7 +116,7 @@ class FullCalendar{
         dd();
         return $calendar;
     }
-    
+
 
     public static function getCalendar1($calendar_id){
         $data = Event::get(Carbon::now(), Carbon::now()->addYear(), [], $calendar_id);
