@@ -24,14 +24,14 @@
   }
 
   .mobile{
-      display: block;
+      display: block !important;
   }
   .properties {
     padding-left: 4%;
     padding-right: 4%;
 }
   .desktop{
-      display: none;
+      display: none !important;
   }
   .form-control{
       font-size: 14px;
@@ -243,8 +243,8 @@
  
 /*form styles*/
 #msform {
-	width: 400px;
-	margin: 50px auto;
+	width: 100%;
+	margin:  auto;
 	text-align: center;
 	position: relative;
 }

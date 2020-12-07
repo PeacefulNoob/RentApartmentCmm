@@ -33,10 +33,10 @@
               <li class="nav-item">
                 <a class="nav-link" href="/rentProperty"><h5>Rent property</h5></a>
               </li>
-              <li class="nav-item active">
+              <li class="nav-item ">
                 <a class="nav-link" href="/news"><h5>News</h5></a>
               </li>
-              <li class="nav-item active">
+              <li class="nav-item ">
                 <a class="nav-link" href="https://www.cmm-montenegro.com/" target="_blank"><h5>Properties to buy</h5></a>
               </li> 
             

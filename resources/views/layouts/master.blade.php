@@ -29,16 +29,13 @@
 
     <script src="https://code.jquery.com/jquery-3.2.1.min.js"></script>
 
-    <!-- FullCalendar -->
-    {{--<script src="/js/moment.js"></script>
-    <script src="/js/main.min.js"></script>--}}
+   
     <script src="/js/moment.js"></script>
     <script src="https://cdn.jsdelivr.net/npm/fullcalendar@5.4.0/main.js"></script>
     <script src="https://cdn.jsdelivr.net/npm/fullcalendar@5.4.0/locales-all.js"></script>
     <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/fullcalendar@5.4.0/main.css">
 
 
-  <link rel="stylesheet" href="/js/main.js"/>
   <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css" integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm" crossorigin="anonymous">
 
     <link href="https://cdn.jsdelivr.net/npm/select2@4.1.0-beta.1/dist/css/select2.min.css" rel="stylesheet" />
@@ -84,8 +81,7 @@
 <script src="https://cdnjs.cloudflare.com/ajax/libs/OwlCarousel2/2.3.4/owl.carousel.min.js"></script>
 
 <script src="/assets/js/main.js"></script>
-{{-- <script type="text/javascript" src="https://maps.googleapis.com/maps/api/js?key=MY_API_KEY&libraries=geocoding,places"></script>
- --}}
+
 
 </body>
 </html>
