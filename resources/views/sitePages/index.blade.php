@@ -2,17 +2,16 @@
 
 @section('content')
 @include('components.modal_covid')
-@include('components.google_maps')
 
 <div class="homeMain">
     <div class="hero">
         <div class="hero-image">
             <div class="hero-text">
                 <h1 c>Rent a real estate in Montenegro</h1>
-                    <form method="GET" action="{{ route('filter.properties') }}" style="width: 100%; display: flex; flex-direction: column;" >
+                    <form method="GET" action="{{ route('filter.properties') }}"  class="desktop">
                     @csrf
                         <div class="form-row m-0 mainsearch">
-                            <div class=" col-md-4 searchForm">
+                            <div class=" col-md-4 col-12 searchForm">
                                        <select name="city" id="city" class="form-control">
                                     <option value="" disabled selected>Where would you like to rent real estate?</option>
                                             @foreach($cities as $city)
@@ -20,7 +19,7 @@
                                             @endforeach
                                         </select>
                             </div>
-                            <div class=" col-md-4 searchForm">
+                            <div class=" col-md-4 col-6 searchForm">
                                    <select name="type"  id="type" class="form-control" >
                                             <option value="" disabled selected>Pick property type that fits you.</option>
                                         @foreach($types as $type)
@@ -28,7 +27,7 @@
                                         @endforeach
                                     </select>
                             </div>
-                            <div class=" col-md-3 searchForm">
+                            <div class=" col-md-3 col-6 searchForm">
                             <select name="persons"  id="persons" class="form-control" >
                                             <option value="" disabled selected>How many guests</option>
                                         <option value="{{old('persons')}}"> {{old('persons')}}</option>
@@ -52,7 +51,55 @@
                         </div>
 
                     </form>
+                    <!-- multistep form -->
+                    <form method="GET" action="{{ route('filter.properties') }}"  id="msform"  class="mobile">
+                    @csrf
+                    <ul id="progressbar">
+                        <li class="active">Location</li>
+                        <li>Type</li>
+                        <li>Persons</li>
+                    </ul>
+                    <!-- fieldsets -->
+                    <fieldset>
+                    <h2 class="fs-title">Where would you like to rent real estate?</h2>
+                      <h3 class="fs-subtitle">This is step 1</h3>
+                        <select name="city" id="city" class="form-control">
+                        @foreach($cities as $city)
+                                <option value="{{$city->id}}" {{ (old("city") == $city->id ? "selected":"") }}>{{$city->city}}</option>
+                          @endforeach
+                       </select>
+                        <input type="button" name="next" class="next action-button" value="Next" />
+                    </fieldset>
+                    <fieldset>
+                        <h2 class="fs-title">Pick property type that fits you.</h2>
+                        <h3 class="fs-subtitle">Your presence on the social network</h3>
+                        <select name="type"  id="type" class="form-control" >
+                           @foreach($types as $type)
+                   <option value="{{$type->id}}" {{ (old("type") == $type->id ? "selected":"") }}>{{$type->title}}</option>
+                            @endforeach
+                         </select>
+                        <input type="button" name="previous" class="previous action-button" value="Previous" />
+                        <input type="button" name="next" class="next action-button" value="Next" />
+                    </fieldset>
+                    <fieldset>
+                        <h2 class="fs-title">How many guests</h2>
+                        <h3 class="fs-subtitle">We will never sell it</h3>
+                        <select name="persons"  id="persons" class="form-control" >
+                                        <option value="{{old('persons')}}"> {{old('persons')}}</option>
+                                        <option value="1">1</option>
+                                        <option value="2"> 2</option>
+                                        <option value="3"> 3</option>
+                                        <option value="4"> 4</option>
+                                        <option value="5"> 5</option>
+                                        <option value="6"> 6</option>
+                                        <option value="7"> 7</option>
+                                    </select>
+                        <input type="button" name="previous" class="previous action-button" value="Previous" />
+                        <input type="submit" name="submit" class="submit action-button" value="Submit" />
+                    </fieldset>
+                    </form>
             </div>
+            
         </div>
     </div>
 
@@ -72,7 +119,12 @@
                         <div class="image-placeholder">
                             <div class="owl-navigation owl-carousel gallery_owl owl-theme">
                                 @foreach($property->images as $image)
-                                <a href="/properties/{{ $property->id }}">  <img src="/assets/images/property_images/{{ $image->image }}" class="property_slide" alt=""> </a>
+                             
+                                <a href="/properties/{{ $property->id }}">
+                                <div class="propOverlay">                                 </div>
+
+                                 <img src="/assets/images/property_images/{{ $image->image }}" class="property_slide" alt=""> 
+                                </a>
                                 @endforeach
                             </div>
                             <a href="#" class="map_icon"  data-toggle="modal" data-target="#google_maps">
@@ -86,20 +138,23 @@
                         <div class="property-title-top py-2">
                             <div class="property-location py-1">
                             <img src="/assets/images/iconfinder_pin_293694.svg" class="ikonica mr-1" alt="">
-                                {{ $property->location->city }} ,      {{ $property->street }}
-
+                              <h6>  {{ $property->location->city }} ,      {{ $property->street }}
+                              </h6>
                             </div>
                             <div class="property-type py-1">
                             <img src="/assets/images/Property type.svg" class="ikonica mr-1" alt="">
-                                {{ $property->propertyType->title }}
+                            <h6>   {{ $property->propertyType->title }}  </h6>
                             </div>
                         </div>
                             <div class="property-title py-1">
                                 <a href="/properties/{{ $property->id }}">
-
-                                <h5>{{ $property->title }}</h5>
+                                <h3 class="mobile">{{ $property->title }}</h3>
+                                <h5 class="desktop">{{ $property->title }}</h5>
                                  </a>
-                                <h5><bold> {{ $property->price }} &euro; </bold>/ night</h5>
+                                <h5 class="desktop"><bold> {{ $property->price }} &euro; </bold>/ night</h5>
+                                <h3 class="mobile"><bold> {{ $property->price }} &euro; </bold>/ night</h3>
+ 
+                   
                             </div>
                       
                         @php
@@ -109,12 +164,10 @@
  
                         @endphp
                         @foreach($amenities as $amenitie)
-                            <img src="/assets/images/{{ $amenitie->photoUrl }}" class="amenityHomeS"
+                        @if(!$amenitie->photoUrl == null )
+                        <img src="/assets/images/{{ $amenitie->photoUrl }}" class="amenityHomeS"
                                 alt={{ $amenitie->photoUrl }}>
-                            <?php
-                                        if ($k++ == 8)
-                                            break;
-                                        ?>
+                          @endif                     
                         @endforeach
                     </div>
 

@@ -117,11 +117,7 @@ background-color: #7E7E7E;
 .dropdown-menu.show {
   display: flex;
 }
-@media (min-width: 992px){
-.navbar-expand-lg .navbar-nav .dropdown-menu {
-    background-color: #1d4c81;
-}
-}
+
 .hero-text button:hover {
   background-color: #555;
   color: white;
@@ -206,115 +202,17 @@ footer a {
   padding: 20px 10px 5px 10px;
 }
 
-/* Extra small devices (phones, 600px and down) */
-/* Small devices (portrait tablets and large phones, 600px and up) */
-/* Medium devices (landscape tablets, 768px and up) */
-/* Large devices (laptops/desktops, 992px and up) */
-/* Extra large devices (large laptops and desktops, 1200px and up) */
-@media only screen and (max-width: 798px) {
-  .slImage {
-    background-image: url(/assets/images/Homepage-cover4-Mobile.jpg) !important;
-  }
-  .propertyMain {
-    padding-left: 5% !important;
-    padding-right: 5% !important;
+.hero-text form {
+  width: 100%; 
+  display: flex;
+   flex-direction: column;
 }
-.paddinglr{
-  padding-left: 5% !important;
-  padding-right:5% !important;
+.mobile{
+  display:  none;
 }
-.hero-div{
-  padding-left: 5% !important;
-  padding-right:5% !important;
+.desktop{
+  display: block;
 }
-.hero-car-image{
-  height: auto !important;
-}
-  h1{
-    font-size: 38px !important;
-  }
-  .postDiv {
-    padding-left: 5% !important;
-    padding-right: 5% !important;
-  }
-  .blogs_main {
-    margin-top: -30%;
-}
-  #section2 {
-    margin-top: 0rem !important;
-  }
-  .search {
-    display: none;
-  }
-  .slImage {
-    height: 100vh !important;
-    -o-object-fit: cover;
-       object-fit: cover;
-    margin-top: 0px !important;
-  }
-  .dva span {
-    font-size: 12px !important;
-  }
-  .brandf {
-    display: none;
-  }
-  .nav-mobile {
-    display: block;
-  }
-  .site-block-retro .col1 {
-    width: 100%;
-  }
-  .site-block-retro .col2 {
-    width: 100%;
-  }
-  nav {
-    width: 100%;
-  }
-  nav ul {
-    display: none;
-    margin: 0;
-    padding: 15px 10px;
-    text-align: center;
-  }
-  nav ul li {
-    float: none;
-    background-color: #f5b52b10;
-    margin-top: 20px;
-    border-radius: 20px;
-  }
-  nav ul li a {
-    padding: 15px;
-    line-height: 20px;
-    color: white !important;
-  }
-  nav ul li ul li a {
-    padding-left: 30px;
-  }
-  .nav-dropdown {
-    position: static;
-  }
-  .episode-guest {
-    position: relative;
-  }
-  .episode {
-    -ms-flex-wrap: wrap;
-        flex-wrap: wrap;
-  }
-  .episode .episode-body .episode-desc {
-    overflow: hidden;
-    height: 20px;
-  }
-  .footerKontakt {
-    margin: auto;
-  }
-}
-
-@media screen and (min-width: 799px) {
-  .nav-list {
-    display: table !important;
-  }
-}
-
 /* properties index
  */
 body {
@@ -381,11 +279,17 @@ body {
   position: relative;
 }
 
-.property-title h3 {
+/* .property-title h3 {
  font-weight: 700;
-}
+} */
 bold{
   font-weight: 600;
+}
+.propOverlay{
+  background: transparent linear-gradient(180deg, #00000000 0%, #10101030 100%) 0% 0% no-repeat padding-box;
+  position: absolute;
+  height: 100%;
+  width: 100%;
 }
 .property p {
   font-size: 14px;
@@ -429,8 +333,8 @@ margin-right: 4%;
   width: 50px;
 }
 .amenityHomeS{
-  width: 25px;
-
+    width: 11%;
+    margin: 0% 1%;
 }
 .coronaSection {
   margin-top: 2%;
@@ -490,7 +394,7 @@ margin-right: 4%;
   border-radius: 5px;
 }
 .filterRental{
-  height: 20vh !important;
+  height: 20vh;
 
 }
 .filter h3{
@@ -783,10 +687,15 @@ a{
   display: none;
 }
 
-.property-location, .property-type, .property-single-location {
+.property-location h6, .property-type h6, .property-single-location {
   color: #ABACAF;
 }
-
+.property-location h6, .property-type h6{
+  margin: 0;
+}
+.property-location , .property-type {
+  display: flex;
+}
 .card-footer {
   border-top: 1px solid rgba(255, 255, 255, 0.241) !important;
 }

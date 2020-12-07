@@ -102,7 +102,8 @@
 
     <div class="footer2">
         <div class="left_footer">
-            <p>All rights - CMM</p>
+            <p>© Copyright 2011 - 2020. CMM Investment Consulting Group.
+</p>
         </div>
         <div class="right_footer">
             <p>Made by QQRIQ</p>

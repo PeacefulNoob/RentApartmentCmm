@@ -166,16 +166,15 @@
                         </div>
 
                         <div class="property-title-top py-2">
-                        <div class="property-location py-1">
+                            <div class="property-location py-1">
                             <img src="/assets/images/iconfinder_pin_293694.svg" class="ikonica mr-1" alt="">
-                            {{ $property->location->city }} ,      {{ $property->street }}
-
-                        </div>
-                        <div class="property-type py-1">
+                              <h6>  {{ $property->location->city }} ,      {{ $property->street }}
+                              </h6>
+                            </div>
+                            <div class="property-type py-1">
                             <img src="/assets/images/Property type.svg" class="ikonica mr-1" alt="">
-                            {{ $property->propertyType->title }}
-                        </div>
-
+                            <h6>   {{ $property->propertyType->title }}  </h6>
+                            </div>
                     </div>
 
                     <div class="property-title py-1">
