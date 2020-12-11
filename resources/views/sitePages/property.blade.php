@@ -19,8 +19,9 @@
         <div class="row  mt-5">
             <div class=" col-lg-7 col-md-7 col-sm-12 col-12">
                 <div class="property-title">
-                    <h3>{{ $property->title }}</h3>
-
+                    <h3 class="desktop">{{ $property->title }}</h3>
+                    <h1 class="mobile">{{ $property->title }}</h1>
+                           
                 </div>
                 <div class="property-single-location py-2 d-flex">
                 <img src="/assets/images/iconfinder_pin_293694.svg" class="ikonica mr-2" alt="">
@@ -32,6 +33,7 @@
                     <img src="/assets/images/Property type.svg" class="ikonica mr-2" alt="">
                     {{ $property->propertyType->title }}
                 </div>
+                <hr class="mobile "></hr>
                 <div class="faciImg py-2">
                 <h6>Facilities/Amenities</h6>
                 @php
@@ -52,7 +54,11 @@
                 <div class="property-single-facilities">
                 <p> {{ implode(', ', $property->amenities()->get()->pluck('title')->toArray()) }}   </p>
                 </div>
+                <hr class="mobile "></hr>
+                <h6 class="tdark">Property Description</h6>
+
                 <div class="property-single-amenities my-4">
+
                     <p> {{$property->description}}  </p>
                 </div>
             </div>
@@ -178,12 +184,15 @@
                     </div>
 
                     <div class="property-title py-1">
-                        <a href="/properties/{{ $property->id }}">
-
-                            <h5>{{ $property->title }}</h5>
-                        </a>
-                        <h5><bold> {{ $property->price }} &euro; </bold>/ night</h5>
-                    </div>
+                                <a href="/properties/{{ $property->id }}">
+                                <h3 class="mobile">{{ $property->title }}</h3>
+                                <h5 class="desktop">{{ $property->title }}</h5>
+                                 </a>
+                                <h5 class="desktop"><bold> {{ $property->price }} &euro; </bold>/ night</h5>
+                                <h3 class="mobile"><bold> {{ $property->price }} &euro; </bold>/ night</h3>
+ 
+                   
+                            </div>
 
                     @php
                         $amenities = $property->amenities()->get();
@@ -191,13 +200,11 @@
 
                     @endphp
                     @foreach($amenities as $amenitie)
+                        @if(!$amenitie->photoUrl == null )
                         <img src="/assets/images/{{ $amenitie->photoUrl }}" class="amenityHomeS"
-                             alt={{ $amenitie->photoUrl }}>
-                        <?php
-                        if ($k++ == 4)
-                            break;
-                        ?>
-                    @endforeach
+                                alt={{ $amenitie->photoUrl }}>
+                          @endif                     
+                        @endforeach
                 </div>
 
             </div>

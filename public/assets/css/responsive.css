@@ -26,6 +26,22 @@
   .mobile{
       display: block !important;
   }
+  .fitlerDiv{
+ margin-top: 50%;
+    
+  }
+  .googleMap iframe{
+    height: 300px ;
+  }
+  .fitlerDiv select{
+  color: black !important;
+  border: 1px solid black;
+      
+  }
+  .modal.show .modal-dialog {
+  
+    height: 100%;
+}
   .properties {
     padding-left: 4%;
     padding-right: 4%;
@@ -69,7 +85,7 @@
 }
   .paddinglr{
     padding-left: 5% !important;
-    padding-right: 5% !important;
+    padding-right: 5% ;
   }
   .hero-div{
     padding-left: 5% !important;
@@ -114,6 +130,9 @@
   padding-right: 5%;
  
 }
+.card-title {
+  height: 108px;
+}
 .tekstAbout{
   z-index: 2;
   margin-top: 5%;
@@ -123,6 +142,23 @@
     color: #1d4c81;
     font-weight: 600;
   }
+
+
+  .filterDivMob{
+    bottom: 0;
+    display: block !important;
+    width: 100%;
+    position: absolute;
+    padding: 3% 6%;
+   background-color: #addbefeb;
+  }
+  .filterDivMob a{
+    width: 100%;
+  }
+  .filterDivMob p{
+    margin: 0;
+    width: 100%;
+  }
 .dropdown-menu.show {
     display: flex;
     background-color:  #1d4c81;
@@ -131,11 +167,34 @@
 .dropdown-menu{
     margin: 0;
 }
+.specialProperties{
+  padding: 0;
+}
+.side_filter {
+  padding: 0;
+}
+
 .blogs_owl .owl-next {
     right: -10px;
 }
+.form_inquiry_right {
+  border-left: none;
+  border-top:  1px solid #fff;
+
+}
+.property_single_slide {
+  height: 100%;
+  max-height: 60vh;
+  object-fit: cover;
+}
 .blogs_owl .owl-prev {
     left: -10px;
+}
+.blogs_owl .owl-item {
+/*   margin-right: 15px !important;
+ */}
+.blogs_main{
+  padding-right: 0% !important;
 }
 .noImage {
   height: 190px;
@@ -238,11 +297,16 @@
     .footerKontakt {
       margin: auto;
     }
-
+.filterModal{
+  height: 100%;
+  overflow: hidden;
+  background-color: #3d5a628a;
+}
 /*     ////////////////////////////FORMA//////////////////////////////////////////////////////////////////////////////////////////// */  
  
 /*form styles*/
 #msform {
+  height: 350px;
 	width: 100%;
 	margin:  auto;
 	text-align: center;
@@ -280,17 +344,17 @@
 /*buttons*/
 #msform .action-button {
 	width: 100px;
-	background: #27AE60;
+	background: #addbef;
 	font-weight: bold;
 	color: white;
 	border: 0 none;
-	border-radius: 1px;
-	cursor: pointer;
-	padding: 10px 5px;
+  border-radius: 5px;
+  cursor: pointer;
+  padding: 5px 5px;
 	margin: 10px 5px;
 }
 #msform .action-button:hover, #msform .action-button:focus {
-	box-shadow: 0 0 0 2px white, 0 0 0 3px #27AE60;
+	box-shadow: 0 0 0 2px white, 0 0 0 3px #addbef;
 }
 /*headings*/
 .fs-title {
@@ -307,6 +371,7 @@
 }
 /*progressbar*/
 #progressbar {
+  padding: 0px;
 	margin-bottom: 30px;
 	overflow: hidden;
 	/*CSS counters to number the steps*/
@@ -351,7 +416,7 @@
 /*marking active/completed steps green*/
 /*The number of the step and the connector before it = green*/
 #progressbar li.active:before,  #progressbar li.active:after{
-	background: #27AE60;
+	background: #addbef;
 	color: white;
 }
 

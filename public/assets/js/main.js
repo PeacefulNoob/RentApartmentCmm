@@ -21,15 +21,16 @@ $('.gallery_owl').owlCarousel({
 $('.blogs_owl').owlCarousel({
     responsiveClass:true,
     items:4,
-    loop: true,
+    loop: false,
+    stagePadding: 40,
     margin: 20,
     lazyLoad : true,
-    nav: true,
+    
     dots: true,
     responsive: {
         0: {
             items: 1,
-            nav: true
+            nav: false
         },
 
         850: {

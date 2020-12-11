@@ -47,7 +47,7 @@
             </div>
     </div>
 
-    <div class="properties_filter row specialProperties col-lg-9 col-md-9 col-sm-12 col-12 mt-3 m-0 pr-0" >
+    <div class="properties_filter row specialProperties   col-lg-9 col-md-9 col-sm-12 col-12 mt-3 m-0 pr-0" >
         <?php
         $j = 1;
         ?>
@@ -83,13 +83,17 @@
                             </div>
                         </div>
 
-                    <div class="property-title py-1">
-                        <a href="/properties/{{ $property->id }}">
+                        <div class="property-title py-1">
+                                <a href="/properties/{{ $property->id }}">
+                                <h3 class="mobile">{{ $property->title }}</h3>
+                                <h5 class="desktop">{{ $property->title }}</h5>
+                                 </a>
+                                <h5 class="desktop"><bold> {{ $property->price }} &euro; </bold>/ night</h5>
+                                <h3 class="mobile"><bold> {{ $property->price }} &euro; </bold>/ night</h3>
+ 
+                   
+                            </div>
 
-                            <h5>{{ $property->title }}</h5>
-                        </a>
-                        <h5><bold> {{ $property->price }} &euro; </bold>/ night</h5>
-                    </div>
 
                     @php
                         $amenities = $property->amenities()->get();
@@ -97,13 +101,11 @@
 
                     @endphp
                     @foreach($amenities as $amenitie)
+                        @if(!$amenitie->photoUrl == null )
                         <img src="/assets/images/{{ $amenitie->photoUrl }}" class="amenityHomeS"
-                             alt={{ $amenitie->photoUrl }}>
-                        <?php
-                        if ($k++ == 4)
-                            break;
-                        ?>
-                    @endforeach
+                                alt={{ $amenitie->photoUrl }}>
+                          @endif                     
+                        @endforeach
                 </div>
 
             </div>
