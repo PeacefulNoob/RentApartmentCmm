@@ -9,7 +9,8 @@
   width: 100%;
   background-color: #ffffffe0;
 }
-
+.navbar-light .navbar-toggler {
+border: none !important;}
 #calendar-1 {
     width: 200px;
     margin: 0 auto;
@@ -594,6 +595,7 @@ background-color: red;
 
 .blogs_main {
   margin-top: -12%;
+  
 }
 .blogs_main p {
 color:#ADDBEF;
