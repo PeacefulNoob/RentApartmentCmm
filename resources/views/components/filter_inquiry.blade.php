@@ -19,6 +19,8 @@
                         <h2 class="fs-title">Where would you like to rent real estate?</h2>
                         <h3 class="fs-subtitle">This is step 1</h3>
                             <select name="city" id="city" class="form-control">
+                                <option value="">All</option>
+
                             @foreach($cities as $city)
                                     <option value="{{$city->id}}" {{ (old("city") == $city->id ? "selected":"") }}>{{$city->city}}</option>
                             @endforeach
@@ -29,8 +31,10 @@
                             <h2 class="fs-title">Pick property type that fits you.</h2>
                             <h3 class="fs-subtitle">Your presence on the social network</h3>
                             <select name="type"  id="type" class="form-control" >
+                                <option value="">All</option>
+
                             @foreach($types as $type)
-                    <option value="{{$type->id}}" {{ (old("type") == $type->id ? "selected":"") }}>{{$type->title}}</option>
+                                     <option value="{{$type->id}}" {{ (old("type") == $type->id ? "selected":"") }}>{{$type->title}}</option>
                                 @endforeach
                             </select>
                             <input type="button" name="previous" class="previous action-button" value="Previous" />
@@ -41,6 +45,7 @@
                             <h3 class="fs-subtitle">We will never sell it</h3>
                             <select name="persons"  id="persons" class="form-control" >
                                             <option value="{{old('persons')}}"> {{old('persons')}}</option>
+                                            <option value="">All</option>
                                             <option value="1">1</option>
                                             <option value="2"> 2</option>
                                             <option value="3"> 3</option>

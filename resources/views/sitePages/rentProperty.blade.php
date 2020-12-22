@@ -52,7 +52,7 @@
         $j = 1;
         ?>
         @forelse($properties as $property)
-            <div class="col-lg-3 col-md-6 col-sm-6 col-12 my-3">
+            <div class="col-lg-3 col-md-6 col-sm-6 col-12 my-3 propertiesMain">
 
                 <div class="property">
                     <div class="image-placeholder">
