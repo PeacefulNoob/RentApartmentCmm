@@ -303,7 +303,11 @@
   background-color: #3d5a628a;
 }
 /*     ////////////////////////////FORMA//////////////////////////////////////////////////////////////////////////////////////////// */  
- 
+.close {
+  font-size: 2.5rem;
+  color: white;
+  opacity: .7;
+}
 /*form styles*/
 #msform {
   height: 350px;

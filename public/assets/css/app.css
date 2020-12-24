@@ -10,7 +10,45 @@
   background-color: #ffffffe0;
 }
 .navbar-light .navbar-toggler {
-border: none !important;}
+border: none !important;
+}
+
+.navbar-toggler .icon-bar {
+  width: 22px;
+  transition: all 0.2s;
+}
+.navbar-toggler .top-bar {
+  transform: rotate(45deg);
+  transform-origin: 0% 10%;
+}
+.navbar-toggler .middle-bar {
+  opacity: 0;
+}
+.navbar-toggler .bottom-bar {
+  transform: rotate(-45deg);
+  transform-origin: 10% 90%;
+}
+.navbar-toggler.collapsed .top-bar {
+  transform: rotate(0);
+}
+.navbar-toggler.collapsed .middle-bar {
+  opacity: 1;
+}
+.navbar-toggler.collapsed .bottom-bar {
+  transform: rotate(0);
+}
+.navbar-toggler{
+  width: 47px;
+  height: 34px;
+  background-color: transparent;
+  border:none;
+}
+.navbar-toggler .icon-bar{
+  float: left;
+  height: 2px;
+  background-color: #1D4C81;
+  margin-bottom: 5px;
+}
 #calendar-1 {
     width: 200px;
     margin: 0 auto;
