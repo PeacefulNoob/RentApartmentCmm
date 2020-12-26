@@ -1,15 +1,15 @@
 @extends('layouts.master')
 @section('content')
 <div class="hero">
-    <div class="hero-car-image">
+    <div class="hero-car-image change1">
         <div class="hero-div row">
             <div class="col-lg-6 col-md-6 col-sm-12 col-12 pl-0 rentText">
                 <h2>Rent a car in Montenegro</h2>
-                <h4 class="py-1">Hit those roads and win all of the mountains with stunning views</h4>
-                <p>Rent-a-car is one of the most required services of our company. The area of the country will allow
+                <h4 class="py-2">Hit those roads and win all of the mountains with stunning views</h4>
+                <p class="py-2">Rent-a-car is one of the most required services of our company. The area of the country will allow
                     you to visit most of the parts of Montenegro, while enjoying the beauty and discovering new
                     landscapes at every turn of the winding mountain road. </p>
-                <p>Using the service of car rental, you acquire the freedom of movement. We offer a large selection of
+                <p class="py-2">Using the service of car rental, you acquire the freedom of movement. We offer a large selection of
                     vehicles to suit every taste - from inexpensive compact cars worth 35-40 Euros per day to jeeps and
                     convertibles of premium-class.</p>
             </div>

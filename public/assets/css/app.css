@@ -11,6 +11,7 @@
 }
 .navbar-light .navbar-toggler {
 border: none !important;
+outline: none !important;
 }
 
 .navbar-toggler .icon-bar {
@@ -78,7 +79,7 @@ border: none !important;
     padding: 0;
 }
 .card-title{
-  font-weight: 700;
+  font-weight: 600;
 }
 .hero-image {
   background-image: -webkit-gradient(linear, left top, left bottom, from(rgba(0, 0, 0, 0.1)), to(rgba(0, 0, 0, 0.1))), url("/assets/images/cover_image/regions.png");
@@ -107,8 +108,9 @@ select.form-control:not([size]):not([multiple]) {
 }
 .searchForm select{
   color: black!important;
-  font-weight: 500;
+  font-weight: 400;
 }
+
 .hero-text {
 
   width: 70%;
@@ -134,7 +136,10 @@ select.form-control:not([size]):not([multiple]) {
   padding: 2px;
 }
 select.form-control:not([size]):not([multiple]) {
-  height: calc(2.25rem + 10px) !important;
+  height: calc(2.25rem + 2px) !important;
+}
+.button1-inquiry{
+  border-radius: 30px;
 }
 select:focus, input:focus{
   outline: none;
@@ -184,8 +189,15 @@ background-color: #7E7E7E;
   color: #ffff !important;
   display: inline-block !important;
 }
+.dropdown-item:hover {
+  color: #ffff !important;
+  background-color: #1d4c81;
+}
 .dropdown-menu {
   margin: 0.925rem 0 0;
+}
+.covid-text{
+  font-weight: 300;
 }
 .nav-item {
   padding: 0px 10px;
@@ -303,9 +315,16 @@ p{
   font-size: 16px;
 }
 
-
+.specialProperties h2{
+  position: absolute;
+  left: 18px;
+}
+.razmak{
+  width: 100%;
+  height: 1px;
+}
 body {
-  font-family: "Montserrat", sans-serif;
+  font-family: "Montserrat", sans-serif !important;
 }
 
 .paddinglr {
@@ -318,9 +337,9 @@ body {
   position: relative;
 }
 
-/* .property-title h3 {
- font-weight: 700;
-} */
+.property-title h3 , h5 {
+ font-weight: 400;
+} 
 bold{
   font-weight: 600;
 }
@@ -373,8 +392,8 @@ margin-right: 4%;
   MARGIN: 2%;
 }
 .amenityHomeS{
-    width: 9%;
-    margin: 0% 2%;
+  width: 7%;
+  margin: 0% 3%;
 }
 .coronaSection {
   margin-top: 2%;
@@ -403,6 +422,8 @@ margin-right: 4%;
 }
 .coronaSection a {
   color: #1D4C81;
+  font-weight: 500;
+  font-size: 18px;
 }
 
 .peoples {
@@ -446,7 +467,7 @@ margin-right: 4%;
 }
 .filterInput{
   background-color: transparent;
-  border: 2px solid #1D4C81 !important;
+  border: 1px solid #1D4C81 !important;
   border-radius: 5px;
   color: #1D4C81 !important;
   width: 100%;
@@ -632,11 +653,16 @@ background-color: red;
 }
 
 .blogs_main {
-  margin-top: -12%;
+  margin-top: -15%;
   
+}
+.single_news_blog {
+  padding-left: 12%;
+  padding-right: 12%;
 }
 .blogs_main p {
 color:#ADDBEF;
+font-weight: 300;
 }
 .card-body, .card-footer {
   background-color: #1D4C81;
@@ -713,9 +739,12 @@ a{
   color: #fff !important;
   font-size: 50px !important;
 }
-
+.owl-prev,.owl-next  {
+  outline: none !important;
+}
 .blogs_owl .owl-prev {
   left: -50px;
+  outline: none !important;
   background: transparent url("/assets/images/left.svg") 0% 0% no-repeat padding-box !important;
 }
 
@@ -771,13 +800,17 @@ a{
 }
 .form-property {
   background-color: #1D4C81;
-  padding: 30px;
+  padding: 25px;
   border-radius: 5px;
   color: white !important;
 }
 
 .form-property h3 {
   color: white !important;
+  text-align: left;
+  padding-left: 0%;
+  margin-left: 0%;
+  font-weight: 700;
 }
 .firstCarForm p{
   font-weight: 300 !important;
@@ -834,11 +867,13 @@ hr {
 
 .form-group {
   padding: 12px  !important;
-  margin: 0px !important;
+  margin: 0px ;
   font-weight: 600;
   font-size: 16px;
 }
-
+.btnI {
+  margin-top: 25px;
+}
 .btnI p {
   font-weight: 100;
   margin: 0;
@@ -870,6 +905,9 @@ hr {
   background-size: cover;
   position: relative;
   color: white;
+}
+.change1 p{
+  font-size: 18px;
 }
 
 .hero-tran-image {
@@ -927,9 +965,11 @@ hr {
 @media (min-width: 1200px) {
   .modal-xl {
     max-width: 100vw;
+    
   }
   .modal-covid {
     max-width: 80vw;
+    float: left;
     margin: auto !important;
   }
   .modal-content {

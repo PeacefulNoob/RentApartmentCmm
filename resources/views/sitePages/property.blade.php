@@ -64,11 +64,12 @@
             </div>
             <div class=" col-lg-5 col-md-5 col-sm-12 col-12">
            <form action="{{ route('contact.store.property') }}" method="POST" class="form-property">
-                        {{ csrf_field() }}
+           <input type="hidden" class="form-control" name="title" id="title" value="Property rent">
 
+                        {{ csrf_field() }}
                 <div class="firstCarForm">
                             <div class="form-group text-center">
-                            <h3 >      {{$property->price}} &euro; / night   </h3>
+                            <h3 >    &euro;   {{$property->price}} / night   </h3>
                             </div>
                             <div class="form_inquiry">
                                 <div class="form-row m-0">
@@ -77,16 +78,14 @@
                                     <input name="checkin" type="date" class="form-control" id="checkin" placeholder="Put the C/I date please">
                                     </div>
                                     <div class="form-group col-md-6 form_inquiry_right ">
-                                    <label name="ckeckout" for="ckeckout">CHECKOUT</label>
-                                    <input type="date" class="form-control" id="ckeckout" placeholder="Put the C/O date please">
+                                    <label  for="ckeckout">CHECKOUT</label>
+                                    <input type="date" name="ckeckout" class="form-control" id="ckeckout" placeholder="Put the C/O date please">
                                     </div>
                                 </div>
                                 <div class="form-group form_inquiry_bot">
                                     <label for="guests">Guests</label>
-                                    <select id="guests" class="form-control" name="guests">
-                                    <option selected>1 guest</option>
-                                    <option>...</option>
-                                    </select>
+                                    <input type="number"  name="guests" class="form-control" id="guests" placeholder="Number of guests">
+
                                 </div>
                             </div>
                             <div class="form-group btnI text-center">

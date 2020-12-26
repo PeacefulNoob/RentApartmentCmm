@@ -1,7 +1,7 @@
 @extends('layouts.master')
 @section('content')
 <div class="hero">
-    <div class="hero-yacht-image">
+    <div class="hero-yacht-image change1">
         <div class="hero-div row">
         <div class="col-lg-6 col-md-6 col-sm-12 col-12 pl-0">
             <h2 class="blue ">Rent a yacht in Montenegro</h2>

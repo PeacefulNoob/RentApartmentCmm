@@ -61,8 +61,9 @@ class SiteController extends Controller
     }
     public function about()
     {
+        $blogs = Blog::all();
 
-        return view ('sitePages.about');
+        return view ('sitePages.about',compact('blogs'));
     }
 
     public function news()

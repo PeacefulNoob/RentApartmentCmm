@@ -14,13 +14,13 @@
                  <h2>{{ $blog->title }}</h2>
            </div>
            <div class="single_news_date py-1">
-                 <p>By {{ $blog->user->name }} on {{ $blog->created_at }}</p>
+                 <p>By CMM Admin on {{ $blog->created_at }}</p>
            </div>
            <div class="single_news_body py-2">
                  <p>{!! $blog->description !!}</p>
            </div>
     </div>
-    <div class="paddinglr single_news_blog">
+    <div class=" single_news_blog">
         <h4 class="py-4">More recommended news :</h4>
     <div class="owl-navigation owl-carousel blogs_owl owl-theme ">
                 @foreach($blogs as $blog)
@@ -29,16 +29,20 @@
                         <img class="card-img-top blog_image" src="/{{ $blog->image }}" alt="Card image cap">
                         </a>
                         <div class="card-body">
-                            <h4 class="card-title">{{ $blog->title }}</h4>
-                            <p class="card-text">
+                        <h4 class="card-title">
+                            @php
+                            echo substr($blog->title, 0, 60);
+                            @endphp...
+                        </h4>
+                        <p class="card-text">
                                 @php
 
-                                    echo substr($blog->description, 0, 60);
+                                    echo substr($blog->description, 0, 55);
                                 @endphp...
                             </p>
                         </div>
                         <div class="card-footer">
-                        <p>  By {{$blog->user->name}} on {{ $blog->created_at }}</p> 
+                        <p>  {{ $blog->created_at }}</p> 
                         </div>
                     </div>
 

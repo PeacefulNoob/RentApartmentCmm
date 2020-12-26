@@ -24,10 +24,14 @@
                         <img class="card-img-top blog_image" src="{{ $blog->image }}" alt="Card image cap">
                     </a>
                         <div class="card-body">
-                            <h5 class="card-title">{{ $blog->title }}</h5>
+                        <h4 class="card-title">
+                            @php
+                            echo substr($blog->title, 0, 60);
+                            @endphp...
+                        </h4>
                         </div>
                         <div class="card-footer">
-                        <p>  By {{$blog->user->name}} on {{ $blog->created_at }}</p> 
+                        <p> {{ $blog->created_at }}</p> 
                         </div>
                     </div>
                 @endforeach

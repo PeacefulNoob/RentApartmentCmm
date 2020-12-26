@@ -4,7 +4,7 @@
                     <h2 class="m-0">{{ $covid->title }}</h2>
                 </div>
                 <div class="covid-body mt-4">
-                    <h5 class="covid-text">
+                    <h5 class="covid-text my-4">
                         @php
                             echo substr($covid->subtitle, 0, 333);
                         @endphp...</h5>

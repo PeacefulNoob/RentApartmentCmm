@@ -3,6 +3,8 @@
 namespace App\Http\Controllers;
 
 use App\Faq;
+use App\Blog;
+
 use Illuminate\Http\Request;
 use Validator;
 use Auth;
@@ -25,7 +27,9 @@ class FaqController extends Controller
     public function index()
     {
         $faqs= Faq::all();
-        return view ('sitePages.Faq',compact('faqs'));
+        $blogs = Blog::all();
+
+        return view ('sitePages.Faq',compact('faqs','blogs'));
 
     }
 

@@ -22,7 +22,6 @@ $('.blogs_owl').owlCarousel({
     responsiveClass:true,
     items:4,
     loop: false,
-    stagePadding: 40,
     margin: 20,
     lazyLoad : true,
     
@@ -30,7 +29,9 @@ $('.blogs_owl').owlCarousel({
     responsive: {
         0: {
             items: 1,
-            nav: false
+            nav: false,
+            stagePadding: 40,
+
         },
 
         850: {

@@ -34,8 +34,8 @@
     height: 300px ;
   }
   .fitlerDiv select{
-  color: black !important;
-  border: 1px solid black;
+  color: #1d4c81 !important;
+  border: 1px solid #1d4c81;
       
   }
   .modal.show .modal-dialog {
@@ -80,6 +80,9 @@
     width: 100%;
    
 }
+.change1 p {
+  font-size: 12px;
+}
 .property_slide {
   height: 35vh;
 }
@@ -91,9 +94,19 @@
     padding-left: 5% !important;
     padding-top: 25%;
     padding-right:5% !important;
+    padding-bottom: 4% !important;
   }
   .hero-car-image{
     height: auto !important;
+    background-size: revert;
+  }
+  .hero-yacht-image{
+    height: auto !important;
+
+  }
+  .hero-tran-image{
+    height: auto !important;
+
   }
   .hero-text h1{
     color: #1d4c81;
@@ -149,7 +162,7 @@
     display: block !important;
     width: 100%;
     position: absolute;
-    padding: 3% 6%;
+    padding: 6% 6%;
    background-color: #addbefeb;
   }
   .filterDivMob a{
@@ -183,8 +196,9 @@
 
 }
 .property_single_slide {
-  height: 100%;
-  max-height: 60vh;
+  height: 35vh;
+  max-height: 35vh;
+  width: 100%;
   object-fit: cover;
 }
 .blogs_owl .owl-prev {
@@ -195,6 +209,8 @@
  */}
 .blogs_main{
   padding-right: 0% !important;
+  padding-left: 0% !important;
+
 }
 .noImage {
   height: 190px;
@@ -207,6 +223,14 @@
     padding: 5% 6%;  
     background-color: #addbefeb;
     top: 100%;
+}
+.single_news_blog {
+  padding-left: 0%;
+  padding-right: 0%;
+}
+.single_news_blog h4 {
+  padding-left: 4%;
+
 }
 .searchForm {
     background-color: #ffffffd4;
@@ -300,7 +324,7 @@
 .filterModal{
   height: 100%;
   overflow: hidden;
-  background-color: #3d5a628a;
+  background-color: #addbefb8;
 }
 /*     ////////////////////////////FORMA//////////////////////////////////////////////////////////////////////////////////////////// */  
 .close {
@@ -320,7 +344,6 @@
 	background: white;
 	border: 0 none;
 	border-radius: 3px;
-	box-shadow: 0 0 15px 1px rgba(0, 0, 0, 0.4);
 	padding: 20px 30px;
 	box-sizing: border-box;
 	width: 80%;
@@ -348,7 +371,7 @@
 /*buttons*/
 #msform .action-button {
 	width: 100px;
-	background: #addbef;
+	background: #1d4c81;
 	font-weight: bold;
 	color: white;
 	border: 0 none;
@@ -357,14 +380,14 @@
   padding: 5px 5px;
 	margin: 10px 5px;
 }
-#msform .action-button:hover, #msform .action-button:focus {
+/* #msform .action-button:hover, #msform .action-button:focus {
 	box-shadow: 0 0 0 2px white, 0 0 0 3px #addbef;
-}
+} */
 /*headings*/
 .fs-title {
 	font-size: 15px;
 	text-transform: uppercase;
-	color: #2C3E50;
+	color: #1d4c81;
 	margin-bottom: 10px;
 }
 .fs-subtitle {
@@ -420,7 +443,7 @@
 /*marking active/completed steps green*/
 /*The number of the step and the connector before it = green*/
 #progressbar li.active:before,  #progressbar li.active:after{
-	background: #addbef;
+	background: #1d4c81;
 	color: white;
 }
 

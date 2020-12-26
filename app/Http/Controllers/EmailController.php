@@ -6,6 +6,7 @@ use Illuminate\Http\Request;
 use Validator;
 use Mail;
 use App\Mail\ContactFormsMail;
+use App\Mail\PropertyInquiryMail;
 use App\Mail\YachtFormMail;
 class EmailController extends Controller
 {

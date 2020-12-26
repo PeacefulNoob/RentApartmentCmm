@@ -1,9 +1,10 @@
 @extends('layouts.master')
 @section('content')
 <div class="row padding m-0 pt-5" >
-    <h2 class="col-12 pt-5 text-center">Results around {{ old("city")}} </h2>
 
-    <div class="side_filter col-lg-3 col-md-3 col-sm-12 col-12 mt-3 py-3 pl-0 ">
+    <div class="side_filter col-lg-3 col-md-3 col-sm-12 col-12 mt-5 py-3 pl-0 ">
+    <div class="razmak my-4"></div>
+
             <div class=" filterMain">
                 <form method="GET" action="{{ route('filter.properties') }}" style="width: 100%; display: flex; flex-direction: column;" >
                    @csrf
@@ -47,7 +48,10 @@
             </div>
     </div>
 
-    <div class="properties_filter row specialProperties   col-lg-9 col-md-9 col-sm-12 col-12 mt-3 m-0 pr-0" >
+    <div class="properties_filter row specialProperties  mt-5  col-lg-9 col-md-9 col-sm-12 col-12  m-0 pr-0" >
+    <h2 class="col-12 ">Results around {{ old("city")}} </h2>
+
+    <div class="razmak my-4"></div>
         <?php
         $j = 1;
         ?>

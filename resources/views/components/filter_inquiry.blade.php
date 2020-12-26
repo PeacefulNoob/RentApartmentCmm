@@ -17,8 +17,8 @@
                         <!-- fieldsets -->
                         <fieldset>
                         <h2 class="fs-title">Where would you like to rent real estate?</h2>
-                        <h3 class="fs-subtitle">This is step 1</h3>
-                            <select name="city" id="city" class="form-control">
+<!--                         <h3 class="fs-subtitle">This is step 1</h3>
+ -->                            <select name="city" id="city" class="form-control button1-inquiry">
                                 <option value="">All</option>
 
                             @foreach($cities as $city)
@@ -29,7 +29,6 @@
                         </fieldset>
                         <fieldset>
                             <h2 class="fs-title">Pick property type that fits you.</h2>
-                            <h3 class="fs-subtitle">Your presence on the social network</h3>
                             <select name="type"  id="type" class="form-control" >
                                 <option value="">All</option>
 
@@ -42,7 +41,6 @@
                         </fieldset>
                         <fieldset>
                             <h2 class="fs-title">How many guests</h2>
-                            <h3 class="fs-subtitle">We will never sell it</h3>
                             <select name="persons"  id="persons" class="form-control" >
                                             <option value="{{old('persons')}}"> {{old('persons')}}</option>
                                             <option value="">All</option>

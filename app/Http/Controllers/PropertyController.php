@@ -3,6 +3,8 @@
 namespace App\Http\Controllers;
 
 use App\Property;
+use App\Blog;
+
 use Illuminate\Http\Request;
 use Gate;
 use DB;
@@ -137,10 +139,10 @@ class PropertyController extends Controller
         $images = DB::table('property_images')->where('property_id', '=', $property->id)->get();
         $properties=Property::orderBy('created_at', 'DESC')->get();
         $property= Property::findOrFail($property->id);
-     // Mapper::map(53.381128999999990000, -1.470085000000040000);
-      //   Mapper::location('Sheffield')->map(['zoom' => 15, 'center' => false, 'marker' => false, 'type' => 'HYBRID', 'overlay' => 'TRAFFIC']);
+  
+       $blogs = Blog::all();
 
-        return view('sitePages.property', compact('property','properties','images'));
+        return view('sitePages.property', compact('property','properties','images','blogs'));
     }
 
     /**
@@ -247,11 +249,13 @@ class PropertyController extends Controller
 
         public function showAllPropertyFilter(){
 
+
             return view('sitePages.rentProperty',
                 [
                     'properties' => Property::all(),
                     'cities' => Location::all() ,
-                    'types' => PropertyType::all()
+                    'types' => PropertyType::all(),
+                    'blogs' => Blog::all()
                 ]
             );
         }
@@ -262,12 +266,14 @@ class PropertyController extends Controller
             [
                 'properties' => Property::filter($filters)->get(),
                 'cities' => Location::all() ,
-                'types' => PropertyType::all()
+                'types' => PropertyType::all(),
+                'blogs' => Blog::all()
+
             ]
         );
 
         }
-        public function uploadImage(Request $request) { 
+/*         public function uploadImage(Request $request) { 
             if($request->hasFile('upload')) {
                        $originName = $request->file('upload')->getClientOriginalName();
                        $fileName = pathinfo($originName, PATHINFO_FILENAME);
@@ -284,5 +290,5 @@ class PropertyController extends Controller
                        @header('Content-type: text/html; charset=utf-8'); 
                        echo $response;
                    }
-            }
+            } */
     }

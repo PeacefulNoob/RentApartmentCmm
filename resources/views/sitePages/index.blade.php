@@ -7,7 +7,9 @@
     <div class="hero">
         <div class="hero-image">
             <div class="hero-text">
-                <h1 >Rent a real estate     </h1 > <h1 > in Montenegro</h1>
+                <h1 class="mobile">Rent a real estate     </h1 > <h1  class="mobile"> in Montenegro</h1>
+                <h1 class="desktop">Rent a real estate in Montenegro</h1>
+
                     <form method="GET" action="{{ route('filter.properties') }}"  class="desktop">
                     @csrf
                         <div class="form-row m-0 mainsearch">
@@ -157,7 +159,7 @@
     <div class="all_aboutMne">
         <div class="aboutMne">
             <div class="text">
-            <h1 style="color:white;">ABOUT MONTENEGRO</h1>
+            <h1 style="color:white;">About Montenegro</h1>
             <p>Events / Festivals / Parties / Holidays
             </p> 
         </div>
@@ -170,16 +172,20 @@
                         <img class="card-img-top blog_image" src="/{{ $blog->image }}" alt="Card image cap">
                         </a>
                         <div class="card-body">
-                            <h4 class="card-title">{{ $blog->title }}</h4>
+                            <h4 class="card-title">
+                                                        @php
+
+                            echo substr($blog->title, 0, 60);
+                            @endphp...</h4>
                             <p class="card-text">
                                 @php
 
-                                    echo substr($blog->description, 0, 60);
+                                    echo substr($blog->description, 0, 55);
                                 @endphp...
                             </p>
                         </div>
                         <div class="card-footer">
-                        <p>  By {{$blog->user->name}} on {{ $blog->created_at }}</p> 
+                        <p>   {{ $blog->created_at }}</p> 
                         </div>
                     </div>
 

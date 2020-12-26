@@ -30,9 +30,9 @@
                 </li>
                 <li>
                     <div class="d-flex">
-                        <div > <p class="bold pr-1"> Adress :</p></div>
+                        <div > <p class="bold pr-1"> Adress:</p></div>
                         <div>
-                            <p>Adress 1, Budva, Montenegro</p>
+                            <p>Jadranski put b.b. Budva, Montenegro</p>
                             <p> Adress 2, Moskow, Russia</p>
                         </div>
                     </div>
@@ -40,13 +40,13 @@
                 <li>
                     <div class="d-flex">
                         <div><p class="bold pr-1"> Telefon:</p></div>
-                        <div>    <p>+382 00 000 000</p></div>
+                        <div>    <p> + 382 68 010 879</p></div>
                     </div>
                 </li>
                 <li>
                     <div class="d-flex">
                         <div><p class="bold pr-1"> Email adresa:</p></div>
-                        <div>  <p>email@cmm.me</p></div>
+                        <div>  <p>office@cmm-montenegro.com</p></div>
                     </div>
                 </li>
             
@@ -80,21 +80,11 @@
                 <li>
                     <h4>LAST BLOGS</h4>
                 </li>
+                @foreach($blogs as $blog)
                 <li>
-                    <a target="_blank" href="#">Blogpost 1</a>
+                    <a target="_blank" href="/single_news/{{$blog->id}}">{{$blog->title}}</a>
                 </li>
-                <li>
-                    <a target="_blank" href="#">Blogpost 1</a>
-                </li>    <li>
-                    <a target="_blank" href="#">Blogpost 1</a>
-                </li>    <li>
-                    <a target="_blank" href="#">Blogpost 1</a>
-                </li>    <li>
-                    <a target="_blank" href="#">Blogpost 1</a>
-                </li>    <li>
-                    <a target="_blank" href="#">Blogpost 1</a>
-                </li>
-
+                @endforeach
             </ul>
         </div>
 
