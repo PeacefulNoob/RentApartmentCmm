@@ -37,7 +37,7 @@
         <img src="/assets/images/covidIcon.svg" class="mr-2 ml-0 my-auto" alt="">
           <h1 class="modal-title" id="exampleModalLabel">{{ $covid->title }}</h1>
           <button type="button" class="close" data-dismiss="modal" aria-label="Close">
-            <span aria-hidden="true">&times;</span>
+         <img src="/assets/images/closeButton.svg" alt="">
           </button>
         </div>
         <div class="modal-body">

@@ -134,6 +134,9 @@ select.form-control:not([size]):not([multiple]) {
   color: #1D4C81;
 
 }
+#covid_modal .modal .modal-dialog-aside{
+  height: auto;
+}
 .hero-text h1 {
   text-transform: uppercase;
   color: white;
@@ -143,7 +146,7 @@ select.form-control:not([size]):not([multiple]) {
   padding: 2px;
 }
 select.form-control:not([size]):not([multiple]) {
-  height: calc(2.25rem + 2px) !important;
+  height: calc(2.25rem + 10px) !important;
 }
 .button1-inquiry{
   border-radius: 30px;
@@ -478,17 +481,20 @@ margin-right: 4%;
   border-radius: 5px;
   color: #1D4C81 !important;
   width: 100%;
+  padding: .375rem .75rem;
+  font-size: 12px;
 }
 .filterMain{
   background-color: #ADDBEF;
   border-radius: 5px;
   color: #1D4C81;
-  padding: 5px;
+  padding: 20px 5px;
 
 }
 .filterMain label{
-font-weight: 500;
+font-weight: 400;
   color: #1D4C81;
+  margin-bottom: 2px;
   text-transform: uppercase;
 }
 .filterMain button{
@@ -1151,7 +1157,7 @@ color:#7E7E7E;
   color: black;
 }
 .modal .modal-dialog-aside{ 
- max-width:80%; height: 100%; margin:0;transform: translate(0); transition: transform .2s;
+ max-width:80%;min-height: 100%; height: auto; margin:0;transform: translate(0); transition: transform .2s;
 }
 .modal .modal-dialog-aside .modal-content{  height: inherit; border:0; border-radius: 0;}
 .modal .modal-dialog-aside .modal-content .modal-body{ overflow-y: auto }

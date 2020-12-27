@@ -49,7 +49,7 @@
     </div>
 
     <div class="properties_filter row specialProperties  mt-5  col-lg-9 col-md-9 col-sm-12 col-12  m-0 pr-0" >
-    <h2 class="col-12 ">Results around {{ old("city")}} </h2>
+    <h2 class="col-12 ">Results around  {{$city->city}} </h2>
 
     <div class="razmak my-4"></div>
         <?php

@@ -82,11 +82,25 @@
                 <li>
                     <h4>LAST BLOGS</h4>
                 </li>
+                @if(count($blogs) > 0)
+                <?php
+					$colcount = count($blogs);
+					$i = 1;
+					?>
                 @foreach($blogs as $blog)
                 <li>
                     <a target="_blank" href="/single_news/{{$blog->id}}">{{$blog->title}}</a>
                 </li>
+                <?php	
+                if ($i++ == 6)
+                break;
+              ?>
                 @endforeach
+                @else
+                <li>
+                    <a target="_blank" href="#">No blog</a>
+                </li>
+                @endif
             </ul>
         </div>
 
