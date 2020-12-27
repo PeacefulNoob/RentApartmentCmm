@@ -29,7 +29,7 @@
                         </fieldset>
                         <fieldset>
                             <h2 class="fs-title">Pick property type that fits you.</h2>
-                            <select name="type"  id="type" class="form-control" >
+                            <select name="type"  id="type" class="form-control button1-inquiry" >
                                 <option value="">All</option>
 
                             @foreach($types as $type)
@@ -41,7 +41,7 @@
                         </fieldset>
                         <fieldset>
                             <h2 class="fs-title">How many guests</h2>
-                            <select name="persons"  id="persons" class="form-control" >
+                            <select name="persons"  id="persons" class="form-control button1-inquiry" >
                                             <option value="{{old('persons')}}"> {{old('persons')}}</option>
                                             <option value="">All</option>
                                             <option value="1">1</option>

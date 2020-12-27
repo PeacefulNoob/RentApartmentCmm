@@ -16,6 +16,7 @@ Auth::routes();
 
 Route::resource('properties','PropertyController');
 Route::resource('covids','CovidController');
+Route::resource('faqs','FaqController');
 
 Route::get('calendar' , 'CalendarController@index');
 
@@ -31,7 +32,6 @@ Route::get('/single_news/{id}', 'SiteController@single_news')->name('single_news
 
 Route::group(['middleware' => 'auth'], function() {
     Route::get('/home', 'HomeController@index')->name('admin/home');
-    Route::resource('faqs','FaqController');
     Route::resource('blogs','BlogController');
     Route::get('/favourite/{id}', 'PropertyController@favourite')->name('favourite');
     Route::get('/notFavourite/{id}', 'PropertyController@notFavourite')->name('notFavourite');

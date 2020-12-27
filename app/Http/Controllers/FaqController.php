@@ -13,9 +13,9 @@ use Gate;
 
 class FaqController extends Controller
 {
+ 
     public function __construct()
     {
- 
         $this->middleware('can:adman')->except('index');
 
     }

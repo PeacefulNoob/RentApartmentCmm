@@ -16,11 +16,13 @@
     <meta name="author" content="PeacefulNoob">  
 
     <meta property="og:image" content="https://cmm-rental.com/assets/images/logo1.png" />
+    <meta property="og:image:type" content="image/png">
     <meta property="og:type" content="website" />
     <meta property="og:url" content="https://cmm-rental.com/" />
     <meta property="og:title" content="CMM | Rental" />
     <meta property="og:description" content="CMM | Rental website" />
   
+
     <link rel="icon" type="image/png" href="/images/Bar-ikonica.png" />
     <link rel="apple-touch-icon-precomposed" href="/assets/images/logo1.png" type="image/png" sizes="152x152" />
     <link rel="apple-touch-icon-precomposed" href="/assets/images/logo1.png" type="image/png" sizes="120x120" />

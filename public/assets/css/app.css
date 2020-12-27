@@ -25,6 +25,13 @@ outline: none !important;
 .navbar-toggler .middle-bar {
   opacity: 0;
 }
+.dropdown-toggle{
+  font-size: 16px;
+  font-weight: 400;
+}
+.faqsA{
+  margin-top: 10%;
+}
 .navbar-toggler .bottom-bar {
   transform: rotate(-45deg);
   transform-origin: 10% 90%;

@@ -185,7 +185,7 @@
                             </p>
                         </div>
                         <div class="card-footer">
-                        <p>   {{ $blog->created_at }}</p> 
+                        <p>   {{ $blog->created_at->formatLocalized('%a, %b %d, %Y ') }}</p> 
                         </div>
                     </div>
 

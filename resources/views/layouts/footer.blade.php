@@ -8,18 +8,20 @@
                 </li>
         
                 <li>
-                    <a target="_blank" href="#"> Car rental</a>
+                    <a target="_blank" href="/rent-a-car"> Car rental</a>
                 </li>
                 <li>
-                    <a target="_blank" href="#"> Yacht rental</a>
+                    <a target="_blank" href="/rent-a-yacht"> Yacht rental</a>
                 </li>
                 <li>
-                    <a target="_blank" href="#">Transfers</a>
+                    <a target="_blank" href="/transfers">Transfers</a>
                 </li>
                 <li>
-                    <a target="_blank" href="#"> Excursions </a>
+                    <a target="_blank" href="/excoursions"> Excursions </a>
                 </li>
-
+                <li>
+                    <a target="_blank" href="/faqs"> FaQ </a>
+                </li>
 
             </ul>
         </div>

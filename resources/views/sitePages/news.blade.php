@@ -31,7 +31,12 @@
                         </h4>
                         </div>
                         <div class="card-footer">
-                        <p> {{ $blog->created_at }}</p> 
+                        <p>
+                            {{ $blog->created_at->formatLocalized('%a, %b %d, %Y ') }}
+
+                            {{--                         {{ $blog->created_at->toDayDateString()}}
+                            --}}
+                            </p> 
                         </div>
                     </div>
                 @endforeach

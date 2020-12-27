@@ -3,7 +3,7 @@
         <div class="header2 ">
         <nav class="navbar navbar-expand-lg navbar-light bg-transparent">
         <a class="nav-link navbar-brand mobile " href="#" id="navbarDropdown" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
-                  <h5>  Tourist</h5>  <h5>Corner</h5><i class="angle fe fe-chevron-down"></i>
+                  <h5>  Tourist</h5>  <h5>Corner</h5>  
                 </a>
                 <div class="dropdown-menu " aria-labelledby="navbarDropdown">
                   <a class="dropdown-item" href="/rent-a-car"><h5>Car rental</h5></a>
@@ -23,9 +23,10 @@
           <div class="collapse navbar-collapse" id="navbarSupportedContent">
             <ul class="navbar-nav mr-auto ml-auto my-2">
             <li class="nav-item dropdown desktop">
-                <a class="nav-link " href="#" id="navbarDropdown" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
-                  <h5>  Tourist Corner</h5><i class="angle fe fe-chevron-down"></i>
-                </a>
+                <a class="nav-link dropdown-toggle" href="#" id="navbarDropdown" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+                   Tourist Corner
+
+                </a><span class="caret"></span>
                 <div class="dropdown-menu " aria-labelledby="navbarDropdown">
                   <a class="dropdown-item" href="/rent-a-car"><h5>Car rental</h5></a>
                   <a class="dropdown-item" href="/rent-a-yacht"><h5>Yacht rental</h5></a>
