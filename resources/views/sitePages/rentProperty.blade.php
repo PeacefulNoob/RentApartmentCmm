@@ -5,7 +5,7 @@
     <div class="side_filter col-lg-3 col-md-3 col-sm-12 col-12 mt-5 py-3 pl-0 ">
     <div class="razmak my-4"></div>
 
-            <div class=" filterMain">
+            <div class=" filterMain" id="fbox">
                 <form method="GET" action="{{ route('filter.properties') }}" style="width: 100%; display: flex; flex-direction: column;" >
                    @csrf
                    <div class="filter">
@@ -132,4 +132,9 @@
     </div>
     </div>
     </div>
+    <script>
+        document.getElementById("fbox").addEventListener("click", function() {
+	this.classList.toggle("is-active");
+});
+    </script>
 @endsection

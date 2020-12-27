@@ -1,3 +1,4 @@
+
 $(document).ready(function () {
 $('.gallery_owl').owlCarousel({
     responsiveClass:true,
