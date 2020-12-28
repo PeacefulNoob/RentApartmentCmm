@@ -405,6 +405,24 @@ margin-right: 4%;
   width: 7%;
   margin: 0% 3%;
 }
+.hero-exc-image, .card-body{
+  border-bottom-left-radius: 5px;
+  border-bottom-right-radius: 5px;
+}
+
+.hero-exc-image, .card{
+  border-radius: 8px;
+}
+.hero-exc-image .card-body p{
+font-weight: 500 !important;
+margin-bottom: 15px;
+}
+.property .amenityHomeS:first-child{
+  margin: 0% 0% !important;
+}
+.property .amenityHomeS:last-child{
+  margin: 0% 0% !important;
+}
 .coronaSection {
   margin-top: 2%;
   background: #EFEFEF;
@@ -904,7 +922,7 @@ hr {
 }
 
 .modal-image-full {
-  background: transparent url("/assets/images/cover_image/cetinje.png") 0% 0% no-repeat padding-box;
+  background: transparent url("/assets/images/cover_image/cetinje.jpg") 0% 0% no-repeat padding-box;
   background-repeat: no-repeat;
   background-size: cover;
   position: relative;
@@ -924,7 +942,7 @@ hr {
 }
 
 .hero-tran-image {
-  background: transparent url("/assets/images/cover_image/transfersMain.png") 0% 0% no-repeat padding-box;
+  background: transparent url("/assets/images/cover_image/transfersMain.jpg") 0% 0% no-repeat padding-box;
   height: 100vh;
   background-repeat: no-repeat;
   background-size: cover;
@@ -933,7 +951,7 @@ hr {
 }
 
 .hero-yacht-image {
-  background: transparent url("/assets/images/cover_image/rentYachtMain.png") 0% 0% no-repeat padding-box;
+  background: transparent url("/assets/images/cover_image/rentYachtMain.jpg") 0% 0% no-repeat padding-box;
   height: 100vh;
   background-position: center;
   background-repeat: no-repeat;
@@ -942,7 +960,7 @@ hr {
 }
 
 .hero-exc-image {
-  background: transparent url("/assets/images/cover_image/excMain.png") 0% 0% no-repeat padding-box;
+  background: transparent url("/assets/images/cover_image/excMain.jpg") 0% 0% no-repeat padding-box;
   height: 100vh;
   background-position: center;
   background-repeat: no-repeat;
