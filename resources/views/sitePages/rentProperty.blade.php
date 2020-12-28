@@ -1,11 +1,11 @@
 @extends('layouts.master')
 @section('content')
-<div class="row padding m-0 pt-5" >
+<div class="row  m-0 pt-5" >
 
-    <div class="side_filter col-lg-3 col-md-3 col-sm-12 col-12 mt-5 py-3 pl-0 ">
-    <div class="razmak my-4"></div>
+    <div class=" side_filter col-lg-3 col-md-3 col-sm-12 col-12 mt-5 py-3 pl-0 ">
+    <div class="razmak my-4 desktop"></div>
 
-            <div class=" filterMain" id="fbox">
+            <div class=" filterMain " id="fbox">
                 <form method="GET" action="{{ route('filter.properties') }}" style="width: 100%; display: flex; flex-direction: column;" >
                    @csrf
                    <div class="filter">

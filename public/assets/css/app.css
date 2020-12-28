@@ -405,7 +405,7 @@ margin-right: 4%;
   width: 7%;
   margin: 0% 3%;
 }
-.hero-exc-image, .card-body{
+.hero-exc-image .card-body{
   border-bottom-left-radius: 5px;
   border-bottom-right-radius: 5px;
 }
@@ -1090,9 +1090,9 @@ h1{
   padding-bottom: 2%;
 }
 
-.modal-image-full h6 {
+.modal-image-full h5 {
   color: black;
-  font-weight: 700;
+  font-weight: 600;
 }
 
 .modal-image-full h3 {

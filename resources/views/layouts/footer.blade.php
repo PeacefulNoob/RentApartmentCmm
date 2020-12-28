@@ -35,7 +35,7 @@
                         <div > <p class="bold pr-1"> Adress:</p></div>
                         <div>
                             <p>Jadranski put b.b. Budva, Montenegro</p>
-                            <p> Adress 2, Moskow, Russia</p>
+                            <p>Adress 2, Moskow, Russia</p>
                         </div>
                     </div>
                 </li>
@@ -62,10 +62,10 @@
                     <h4>USEFUL LINKS</h4>
                 </li>
                 <li>
-                    <a target="_blank" href="#">Ministery of Economy</a>
+                    <a target="_blank" href="https://mek.gov.me/en/ministry">Ministery of Economy</a>
                 </li>
                 <li>
-                    <a target="_blank" href="#">Ministery of Finance </a>
+                    <a target="_blank" href="https://www.mif.gov.me/en/ministry">Ministery of Finance </a>
                 </li>
                  <li>
                     <ul>

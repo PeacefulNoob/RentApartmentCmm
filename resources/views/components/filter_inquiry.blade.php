@@ -3,8 +3,9 @@
     <div class="modal-content filterModal">
         <div class="modal-body">
         <button type="button" class="close" data-dismiss="modal" aria-label="Close">
-            <span aria-hidden="true">&times;</span>
-          </button>
+<!--             <span aria-hidden="true">&times;</span>
+ -->         
+<img src="/assets/images/filterExit.svg" class="exitFilter" alt=""> </button>
           <div class="mobile fitlerDiv">
                         <!-- multistep form -->
                         <form method="GET" action="{{ route('filter.properties') }}"  id="msform"  >
@@ -59,9 +60,9 @@
                         </form>
                     </div>
         </div>
-        <div class="modal-footer">
+     <!--    <div class="modal-footer">
           <button type="button" class="btn " data-dismiss="modal">Close</button>
-        </div>
+        </div> -->
       </div>
     </div>
   </div>

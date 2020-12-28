@@ -10,9 +10,9 @@
         <div class="modal-body  pt-2">
             <div class="">
                 <h3 class="title py-2">Cetinje and Mountain Lovćen</h3>
-                <h6 class="text py-2">
+                <h5 class="text py-2">
                   The center of Montenegrin authenticity and heritage.
-                </h6>
+                </h5>
                 <p>Lorem ipsum dolor sit amet, ex veri liberavisse duo. Vivendo qualisque voluptatum duo id. His omittam accusata at. Veri primis eum an, eu eos tota aliquip molestie, duo vide minimum efficiantur an. Ad mucius pertinacia incorrupte duo, alienum repudiare eu sed. Duo id debitis efficiantur, suavitate voluptatum adversarium ea cum. Erant assentior ea usu. Has ea quis torquatos, eum no errem causae persius. Eu vix quem graeci, ex vis omnium definitionem, mel no tantas omnesque facilisis. Voluptua conceptam adversarium ne his, modus partem tincidunt est ea, mei essent tritani et. Eum ne justo ubique aperiam, eum erat assum laboramus at. Assum dolore volutpat ad usu, est stet magna assum ex. Duo et latine suscipit. Ut discere albucius facilisi sea. Vix ferri inermis complectitur no. Quem alii oporteat has no, at option voluptua delicatissimi cum. Mel noster impedit pericula eu, mea autem prompta comprehensam in. Ea eum offendit interesset, ea enim dicat vim. Ludus nullam primis eos ad, nonumy aliquando incorrupte at vis, probo dicta legimus ea vis. Pri et elitr minimum, vel ex mucius posidonium, id repudiare patrioque nec. Vim ceteros gloriatur in, ex dicant euripidis percipitur usu. No bonorum fastidii moderatius nam. Sumo prompta volumus cum ex. An usu simul omnium. Sale doming elaboraret ea sit.</p>
             </div>
             <div class="row">

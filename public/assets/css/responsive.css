@@ -51,6 +51,7 @@
     }
     .filterMain {
       padding: 20px 5px 0px 5px;
+      margin: 0px 15px;
   }
     .modal-image-full .modal-button {
         position: relative;
@@ -144,9 +145,16 @@
     .hero-text {
         top: 40%;
     }
+    .exitFilter{
+        width: 28px;
+        max-width: 100%;
+        margin-right: 14px;
+        margin-top: 3px;
+    }
     .propertiesMain .gallery_owl .owl-nav {
         display: block;
     }
+
     .navbar-brand {
         padding: 5px;
         margin: 5px;
@@ -302,6 +310,12 @@
     nav {
         width: 100%;
     }
+    .hero-exc-image .card-body{
+        height: 90px;
+        padding: 1rem;
+    }
+    .hero-exc-image .card-body p {
+font-size: 14px;    }
     .navbar {
         padding: 1rem 0rem 0rem 0rem;
     }
@@ -345,7 +359,7 @@
     .filterModal {
         height: 100%;
         overflow: hidden;
-        background-color: #addbefb8;
+        background-color: #addbefdb;
     }
     /*     ////////////////////////////FORMA//////////////////////////////////////////////////////////////////////////////////////////// */
     .close {
