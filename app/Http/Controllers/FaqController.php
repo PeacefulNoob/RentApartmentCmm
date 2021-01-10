@@ -29,7 +29,7 @@ class FaqController extends Controller
         $faqs= Faq::all();
         $blogs = Blog::all();
 
-        return view ('sitePages.Faq',compact('faqs','blogs'));
+        return view ('sitePages.faq',compact('faqs','blogs'));
 
     }
 
