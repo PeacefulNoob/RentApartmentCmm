@@ -36,12 +36,12 @@
     </div>
     <div class="row m-0 abouts5 padding">
         <div class="col-lg-4 col-md-4 col-sm-6 col-12 my-2">
-        <h2>CMM Sunny Side</h2>
+        <h2>CMM Montenegro</h2>
             <p>The CMM Management Department is an integral part of the CMM Company. The CMM Management Department
                 always takes into account the individual needs of customers and provides all services at the highest
                 level. In the hands of reliable and experienced employees, your property in Montenegro will always be
                 appreciated by care and attention.</p>
-            <button class="buttonBlue">Check out more</button>
+           <a target="_blank" href="https://www.cmm-montenegro.com/">  <button class="buttonBlue">Check out more</button></a>
            
         </div>
         <div class="col-lg-4 col-md-4 col-sm-6 col-12 my-2">
@@ -50,7 +50,7 @@
                 always takes into account the individual needs of customers and provides all services at the highest
                 level. In the hands of reliable and experienced employees, your property in Montenegro will always be
                 appreciated by care and attention. </p>
-            <button class="buttonBlue">Check out more</button>
+                <a target="_blank" href="https://cmm-management.com/">      <button class="buttonBlue">Check out more</button></a>
         </div>
         <div class="col-lg-4 col-md-4 col-sm-12 col-12 my-2">
         <h2>CMM Rental</h2>
@@ -58,7 +58,7 @@
                 learn more about the peculiarities of life in this country. Most often, foreigners rent housing at the
                 height of the bathing season. Many prefer to rent real estate in resort areas, houses with sea or
                 mountain views.</p>
-            <button class="buttonBlue">Check out more</button>
+                <a target="_blank" href="https://cmm-rental.com/">   <button class="buttonBlue">Check out more</button></a>
         </div>
 
     </div>
@@ -120,8 +120,7 @@
 
         <div class="col-6">
             <h6 class="bold"> Montenegro:</h6>
-            <p> +382 68 108 896</p>
-            <p> +382 33 453 430</p>
+            <p> + 382 68 010 879</p>
             <p> E-mail: office@cmm-montenegro.com </p>
             <p> www.cmm-montenegro.com </p>
             <p>Our address in Montenegro:</p>

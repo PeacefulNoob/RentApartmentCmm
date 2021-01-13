@@ -35,7 +35,7 @@
                         <div > <p class="bold pr-1"> Adress:</p></div>
                         <div>
                             <p>Jadranski put b.b. Budva, Montenegro</p>
-                            <p>Adress 2, Moskow, Russia</p>
+                            <p> Moskow, Russia</p>
                         </div>
                     </div>
                 </li>

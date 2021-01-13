@@ -494,4 +494,7 @@ font-size: 14px;    }
     .nav-list {
         display: table !important;
     }
+    .blogs_owl .card-body{
+		height:250px;
+}
 }

@@ -362,12 +362,6 @@ bold{
 .property p {
   font-size: 14px;
 }
-.alertDiv{
-    position: absolute;
-    z-index: 100;
-    top: 7%;
-    width: 30%;
-}
 .blog_image {
   width: 100%;
   height: 38vh;
@@ -375,6 +369,13 @@ bold{
   border-top-left-radius: calc(.25rem - 1px);
   border-top-right-radius: calc(.25rem - 1px);
 }
+.alertDiv{
+    position: absolute;
+    z-index: 100;
+    top: 7%;
+    width: 30%;
+}
+
 .alertDiv ul{
 margin-right: 4%;
 }
