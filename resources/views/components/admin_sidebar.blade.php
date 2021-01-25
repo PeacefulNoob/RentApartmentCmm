@@ -16,7 +16,7 @@
 @else
 <aside class="app-sidebar sidebar-scroll ps ps--active-y">
     <div class="main-sidebar-header  active"> 
-        <a class="desktop-logo logo-light active" href="index.html">
+        <a class="desktop-logo logo-light active" href="/home">
             <img src="/assets/images/logow.png" class="main-logo" alt="logo"></a> 
            
             </div>

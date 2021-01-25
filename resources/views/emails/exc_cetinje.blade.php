@@ -1,11 +1,16 @@
 @component('mail::message')
-# Introduction
+# Hello ! You have new message from CMM Rental website.
 
-The body of your message.
 
-@component('mail::button', ['url' => ''])
-Button Text
-@endcomponent
+Pick up date : {{$data['pud']}}: {{$data['put']}}  Drop off date : {{$data['dofd']}}: {{$data['doft']}}
+Pick up location : {{$data['pul']}}  
+Drop off location : {{$data['dofl']}}  
+Number of guests : {{$data['nofpeople']}}  
+Senders name : {{$data['name']}}  
+Senders surname : {{$data['surname']}}  
+Senders phone number : {{$data['phoneNo']}}  
+Senders email : {{$data['email']}}  
+
 
 Thanks,<br>
 {{ config('app.name') }}

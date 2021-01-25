@@ -1,21 +1,19 @@
 @component('mail::message')
 {{$data['title']}}
 
-# Introduction
-{{$data['pud']}}
-{{$data['dofd']}}
-{{$data['put']}}
-{{$data['doft']}}
-{{$data['pul']}}
-{{$data['dofl']}}
-{{$data['name']}}
-{{$data['surname']}}
-{{$data['phoneNo']}}
-{{$data['email']}} 
+# Hello ! You have new message from CMM Rental website.
 
-The body of your message.
 
-Button Text
+Pick up date : {{$data['pud']}}: {{$data['put']}}  
+Drop off date : {{$data['dofd']}}: {{$data['doft']}}  
+Pick up location : {{$data['pul']}}  
+Drop off location : {{$data['dofl']}}  
+Number of guests : {{$data['nofpeople']}}  
+Senders name : {{$data['name']}}  
+Senders surname : {{$data['surname']}}  
+Senders phone number : {{$data['phoneNo']}}  
+Senders email : {{$data['email']}}  
+
 
 Thanks,<br>
 {{ config('app.name') }}

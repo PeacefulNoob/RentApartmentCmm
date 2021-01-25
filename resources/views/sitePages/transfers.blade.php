@@ -114,7 +114,7 @@ comfortable, clean vehicles and professional and courteous drivers.</p>
                             </div>
                         </div>
                     <div class="form-group btnI text-center">
-                      <button type="submit" class="btn btn-inquiry sendInq" disabled>SEND INQURY</button>
+                      <button type="submit" class="btn btn-inquiry sendInq" >SEND INQURY</button>
                       <p>Our representative will contact you back through e-mail with the confirmation as soon as possible.</p>
                   </div>
 
