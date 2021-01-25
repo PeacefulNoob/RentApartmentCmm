@@ -133,11 +133,12 @@ class PropertyController extends Controller
      * @return \Illuminate\Http\Response
      */
     public function show(Property $property)
-    {
+    { 
         $images = DB::table('property_images')->where('property_id', '=', $property->id)->get();
         $properties=Property::orderBy('created_at', 'DESC')->get();
         $property= Property::findOrFail($property->id);
         $calendar = FullCalendar::getCalendar($property->calendar_id);
+       
         return view('sitePages.property', compact('property','properties','images','calendar'));
     }
 

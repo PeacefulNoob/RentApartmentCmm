@@ -3,7 +3,8 @@
   <component name="ChangeListManager">
     <list default="true" id="cba7d383-d43a-4667-b3e3-42470ec38e28" name="Default Changelist" comment="">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/FullCalendar.php" beforeDir="false" afterPath="$PROJECT_DIR$/app/FullCalendar.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/public/assets/css/app.css" beforeDir="false" afterPath="$PROJECT_DIR$/public/assets/css/app.css" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/resources/views/sitePages/property.blade.php" beforeDir="false" afterPath="$PROJECT_DIR$/resources/views/sitePages/property.blade.php" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -131,7 +132,7 @@
   <component name="PropertiesComponent">
     <property name="RunOnceActivity.OpenProjectViewOnStart" value="true" />
     <property name="WebServerToolWindowFactoryState" value="false" />
-    <property name="last_opened_file_path" value="$PROJECT_DIR$" />
+    <property name="last_opened_file_path" value="$PROJECT_DIR$/../ecom" />
     <property name="vue.rearranger.settings.migration" value="true" />
   </component>
   <component name="RecentsManager">
@@ -164,7 +165,12 @@
       <workItem from="1606724495092" duration="4239000" />
       <workItem from="1606998711574" duration="780000" />
       <workItem from="1607005583616" duration="214000" />
-      <workItem from="1607072245378" duration="480000" />
+      <workItem from="1607072245378" duration="17634000" />
+      <workItem from="1607191204684" duration="575000" />
+      <workItem from="1607275846067" duration="1756000" />
+      <workItem from="1607294437933" duration="2167000" />
+      <workItem from="1607329217352" duration="4892000" />
+      <workItem from="1607419234925" duration="32000" />
     </task>
     <servers />
   </component>
@@ -180,13 +186,13 @@
       <screen x="0" y="0" width="1536" height="824" />
     </state>
     <state x="499" y="167" key="#com.jetbrains.php.actions.copyPaste.importReferences.PhpImportReferencesDialog/0.0.1536.824@0.0.1536.824" timestamp="1606301683596" />
-    <state x="549" y="167" key="FileChooserDialogImpl" timestamp="1607005796471">
+    <state x="549" y="167" key="FileChooserDialogImpl" timestamp="1607419264840">
       <screen x="0" y="0" width="1536" height="824" />
     </state>
-    <state x="549" y="167" key="FileChooserDialogImpl/0.0.1536.824@0.0.1536.824" timestamp="1607005796471" />
-    <state x="431" y="145" width="672" height="678" key="search.everywhere.popup" timestamp="1607072261377">
+    <state x="549" y="167" key="FileChooserDialogImpl/0.0.1536.824@0.0.1536.824" timestamp="1607419264840" />
+    <state x="431" y="145" width="672" height="678" key="search.everywhere.popup" timestamp="1607276217974">
       <screen x="0" y="0" width="1536" height="824" />
     </state>
-    <state x="431" y="145" width="672" height="678" key="search.everywhere.popup/0.0.1536.824@0.0.1536.824" timestamp="1607072261377" />
+    <state x="431" y="145" width="672" height="678" key="search.everywhere.popup/0.0.1536.824@0.0.1536.824" timestamp="1607276217974" />
   </component>
 </project>
