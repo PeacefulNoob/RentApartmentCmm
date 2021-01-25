@@ -15,7 +15,6 @@ class AddFavouritesToPropertiesTable extends Migration
     {
         Schema::table('properties', function (Blueprint $table) {
             $table->tinyInteger('favourites')->nullable()->default(1)->after('special');
-
         });
     }
 

@@ -13,8 +13,6 @@
     <meta name="keywords" content="real estate,apartments,apartment,house,summer,crna gora,montenegro,enjoy,winter,top,luxury,afordable,reasonable,kotor,sea,house,lovely">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
 
-    <meta name="author" content="PeacefulNoob">  
-
     <meta property="og:image" content="https://cmm-rental.com/assets/images/favicon1.png" />
     <meta property="og:image:type" content="image/png">
     <meta property="og:type" content="website" />
@@ -33,6 +31,14 @@
     <script src="https://code.jquery.com/jquery-3.2.1.min.js"></script>
 
    
+    <meta name="author" content="PeacefulNoob">
+
+    <script src="https://code.jquery.com/jquery-3.2.1.min.js"></script>
+
+    <!-- FullCalendar -->
+    {{--<script src="/js/moment.js"></script>
+    <script src="/js/main.min.js"></script>--}}
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/moment-range/4.0.2/moment-range.js" integrity="sha512-XKgbGNDruQ4Mgxt7026+YZFOqHY6RsLRrnUJ5SVcbWMibG46pPAC97TJBlgs83N/fqPTR0M89SWYOku6fQPgyw==" crossorigin="anonymous"></script>
     <script src="/js/moment.js"></script>
     <script src="https://cdn.jsdelivr.net/npm/fullcalendar@5.4.0/main.js"></script>
     <script src="https://cdn.jsdelivr.net/npm/fullcalendar@5.4.0/locales-all.js"></script>
@@ -63,18 +69,12 @@
     <div id="app">
         <main class="">
             @include('components.alerts')
-
             @yield('content')
         </main>
     </div>
     @include('layouts.footer')
 
-<script>
-    var calendarEl = document.getElementById("calendar-1");
-    var calendar = new Calendar(calendarEl, {
-        selectable: true
-    });
-</script>
+
 
 <!-- <script src="https://code.jquery.com/jquery-3.2.1.slim.min.js" integrity="sha384-KJ3o2DKtIkvYIK3UENzmM7KCkRr/rE9/Qpg6aAZGJwFDMVNA/GpGFF93hXpG5KkN" crossorigin="anonymous"></script>
  -->
@@ -84,6 +84,7 @@
 <script src="https://cdnjs.cloudflare.com/ajax/libs/OwlCarousel2/2.3.4/owl.carousel.min.js"></script>
 
 <script src="/assets/js/main.js"></script>
+
 
 
 </body>

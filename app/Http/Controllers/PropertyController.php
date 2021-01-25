@@ -2,6 +2,7 @@
 
 namespace App\Http\Controllers;
 
+use App\FullCalendar as FullCalendar;
 use App\Property;
 use App\Blog;
 
@@ -17,7 +18,6 @@ use App\PropertyFilters;
 use Illuminate\Support\Facades\Storage;
 use Illuminate\Support\Facades\Input;
 use Illuminate\Support\Str;
-use Mapper;
 
 class PropertyController extends Controller
 {
@@ -142,7 +142,8 @@ class PropertyController extends Controller
   
        $blogs = Blog::all();
 
-        return view('sitePages.property', compact('property','properties','images','blogs'));
+        $calendar = FullCalendar::getCalendar($property->calendar_id);
+        return view('sitePages.property', compact('property','properties','images','calendar','blogs'));
     }
 
     /**
@@ -173,16 +174,16 @@ class PropertyController extends Controller
             return redirect(route('admin.users.index'));
         }
         $validator = Validator::make($request->all(), [
-            'title' => 'required|string|max:255',
+            'title' => 'required',
             //'file[]' => 'mimes:mp4,mov,ogg,jpeg,png,jpg,svg',
             'description' => 'required',
-            'persons' => 'required|integer',
+            'persons' => 'required',
             'price' => 'required',
             'size' => 'required',
-            'floor' => 'required|integer',
+            'floor' => 'required',
             'room_count' => 'required',
 /*             'google_maps' => 'required',
- */          'street' => 'required|string|max:255',
+ */          'street' => 'required',
             'location_id' => 'required',
             'property_type_id' => 'required',
 
@@ -291,4 +292,5 @@ class PropertyController extends Controller
                        echo $response;
                    }
             } */
+
     }
