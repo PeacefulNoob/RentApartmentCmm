@@ -1,7 +1,9 @@
 @guest
 
 
-<li class="nav-item">
+<ul class="my-5">
+
+				<li class="nav-item">
                     <a class="nav-link" href="{{ route('login') }}">{{ __('Login') }}</a>
                 </li>
                 @if (Route::has('register'))
@@ -9,10 +11,12 @@
                     <a class="nav-link" href="{{ route('register') }}">{{ __('Register') }}</a>
                 </li>
                 @endif 
+	</ul>
+
 @else
 <aside class="app-sidebar sidebar-scroll ps ps--active-y">
     <div class="main-sidebar-header  active"> 
-        <a class="desktop-logo logo-light active" href="index.html">
+        <a class="desktop-logo logo-light active" href="/home">
             <img src="/assets/images/logow.png" class="main-logo" alt="logo"></a> 
            
             </div>
@@ -32,6 +36,7 @@
             @endcan
             <li class="side-item side-item-category">General</li>
             @can('adman')
+            <li class="slide"> <a class="side-menu__item" href="/covids/1/edit"><span class="side-menu__label">Edit Covid Section</span></a> </li>
 
             <li class="slide"> <a class="side-menu__item" data-toggle="slide" href="#"><span class="side-menu__label dropdown-toggle">Properties</span><i class="angle fe fe-chevron-down"></i></a>
                 <ul class="slide-menu">

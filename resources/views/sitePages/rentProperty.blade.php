@@ -1,10 +1,11 @@
 @extends('layouts.master')
 @section('content')
-<div class="row padding m-0 pt-5" >
-    <h2 class="col-12 pt-5 text-center">Results around {{ old("city")}} </h2>
+<div class="row  m-0 pt-5" >
 
-    <div class="side_filter col-lg-3 col-md-3 col-sm-12 col-12 mt-3 py-3 pl-0 ">
-            <div class=" filterMain">
+    <div class=" side_filter col-lg-3 col-md-3 col-sm-12 col-12 mt-5 py-3 pl-0 ">
+    <div class="razmak my-4 desktop"></div>
+
+            <div class=" filterMain " id="fbox">
                 <form method="GET" action="{{ route('filter.properties') }}" style="width: 100%; display: flex; flex-direction: column;" >
                    @csrf
                    <div class="filter">
@@ -47,12 +48,15 @@
             </div>
     </div>
 
-    <div class="properties_filter row specialProperties col-lg-9 col-md-9 col-sm-12 col-12 mt-3 m-0 pr-0" >
+    <div class="properties_filter row specialProperties  mt-5  col-lg-9 col-md-9 col-sm-12 col-12  m-0 pr-0" >
+    <h2 class="col-12 ">Results around  {{$city->city}} </h2>
+
+    <div class="razmak my-4"></div>
         <?php
         $j = 1;
         ?>
         @forelse($properties as $property)
-            <div class="col-lg-3 col-md-6 col-sm-6 col-12 my-3">
+            <div class="col-lg-3 col-md-6 col-sm-6 col-12 my-3 propertiesMain">
 
                 <div class="property">
                     <div class="image-placeholder">
@@ -72,25 +76,28 @@
                         </div>
 
                         <div class="property-title-top py-2">
-                        <div class="property-location py-1">
+                            <div class="property-location py-1">
                             <img src="/assets/images/iconfinder_pin_293694.svg" class="ikonica mr-1" alt="">
-                            {{ $property->location->city }} ,      {{ $property->street }}
-
-                        </div>
-                        <div class="property-type py-1">
+                              <h6>  {{ $property->location->city }} ,      {{ $property->street }}
+                              </h6>
+                            </div>
+                            <div class="property-type py-1">
                             <img src="/assets/images/Property type.svg" class="ikonica mr-1" alt="">
-                            {{ $property->propertyType->title }}
+                            <h6>   {{ $property->propertyType->title }}  </h6>
+                            </div>
                         </div>
 
-                    </div>
+                        <div class="property-title py-1">
+                                <a href="/properties/{{ $property->id }}">
+                                <h3 class="mobile">{{ $property->title }}</h3>
+                                <h5 class="desktop">{{ $property->title }}</h5>
+                                 </a>
+                                <h5 class="desktop"><bold> {{ $property->price }} &euro; </bold>/ night</h5>
+                                <h3 class="mobile"><bold> {{ $property->price }} &euro; </bold>/ night</h3>
+ 
+                   
+                            </div>
 
-                    <div class="property-title py-1">
-                        <a href="/properties/{{ $property->id }}">
-
-                            <h5>{{ $property->title }}</h5>
-                        </a>
-                        <h5><bold> {{ $property->price }} &euro; </bold>/ night</h5>
-                    </div>
 
                     @php
                         $amenities = $property->amenities()->get();
@@ -98,13 +105,11 @@
 
                     @endphp
                     @foreach($amenities as $amenitie)
+                        @if(!$amenitie->photoUrl == null )
                         <img src="/assets/images/{{ $amenitie->photoUrl }}" class="amenityHomeS"
-                             alt={{ $amenitie->photoUrl }}>
-                        <?php
-                        if ($k++ == 4)
-                            break;
-                        ?>
-                    @endforeach
+                                alt={{ $amenitie->photoUrl }}>
+                          @endif                     
+                        @endforeach
                 </div>
 
             </div>
@@ -127,4 +132,9 @@
     </div>
     </div>
     </div>
+    <script>
+        document.getElementById("fbox").addEventListener("click", function() {
+	this.classList.toggle("is-active");
+});
+    </script>
 @endsection

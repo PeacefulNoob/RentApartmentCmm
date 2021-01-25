@@ -2,17 +2,18 @@
 
 @section('content')
 @include('components.modal_covid')
-@include('components.google_maps')
 
 <div class="homeMain">
     <div class="hero">
         <div class="hero-image">
             <div class="hero-text">
-                <h1 c>Rent a real estate in Montenegro</h1>
-                    <form method="GET" action="{{ route('filter.properties') }}" style="width: 100%; display: flex; flex-direction: column;" >
+                <h1 class="mobile">Rent a real estate     </h1 > <h1  class="mobile"> in Montenegro</h1>
+                <h1 class="desktop">Rent a real estate in Montenegro</h1>
+
+                    <form method="GET" action="{{ route('filter.properties') }}"  class="desktop">
                     @csrf
                         <div class="form-row m-0 mainsearch">
-                            <div class=" col-md-4 searchForm">
+                            <div class=" col-md-4 col-12 searchForm">
                                        <select name="city" id="city" class="form-control">
                                     <option value="" disabled selected>Where would you like to rent real estate?</option>
                                             @foreach($cities as $city)
@@ -20,7 +21,7 @@
                                             @endforeach
                                         </select>
                             </div>
-                            <div class=" col-md-4 searchForm">
+                            <div class=" col-md-4 col-6 searchForm">
                                    <select name="type"  id="type" class="form-control" >
                                             <option value="" disabled selected>Pick property type that fits you.</option>
                                         @foreach($types as $type)
@@ -28,7 +29,7 @@
                                         @endforeach
                                     </select>
                             </div>
-                            <div class=" col-md-3 searchForm">
+                            <div class=" col-md-3 col-6 searchForm">
                             <select name="persons"  id="persons" class="form-control" >
                                             <option value="" disabled selected>How many guests</option>
                                         <option value="{{old('persons')}}"> {{old('persons')}}</option>
@@ -52,7 +53,17 @@
                         </div>
 
                     </form>
-            </div>
+                  
+                    </div>
+                    <div class="mobile filterDivMob">
+                    <div class="searchForm">
+                    <a href="#" class="btn "  data-toggle="modal" data-target="#filter_inquiry">
+                            <p>Where would you like to rent real estate?</p> 
+                        </a>
+                            </div>
+                    </div>
+              
+        
         </div>
     </div>
 
@@ -66,13 +77,20 @@
             $j = 1;
             ?>
             @forelse($propertiesS as $property)
+            @include('components.google_maps')
+
                 <div class="col-lg-3 col-md-6 col-sm-6 col-12 my-3 propertiesMain">
 
                     <div class="property">
                         <div class="image-placeholder">
                             <div class="owl-navigation owl-carousel gallery_owl owl-theme">
                                 @foreach($property->images as $image)
-                                <a href="/properties/{{ $property->id }}">  <img src="/assets/images/property_images/{{ $image->image }}" class="property_slide" alt=""> </a>
+                             
+                                <a href="/properties/{{ $property->id }}">
+                                <div class="propOverlay">                                 </div>
+
+                                 <img src="/assets/images/property_images/{{ $image->image }}" class="property_slide" alt=""> 
+                                </a>
                                 @endforeach
                             </div>
                             <a href="#" class="map_icon"  data-toggle="modal" data-target="#google_maps">
@@ -86,20 +104,23 @@
                         <div class="property-title-top py-2">
                             <div class="property-location py-1">
                             <img src="/assets/images/iconfinder_pin_293694.svg" class="ikonica mr-1" alt="">
-                                {{ $property->location->city }} ,      {{ $property->street }}
-
+                              <h6>  {{ $property->location->city }} ,      {{ $property->street }}
+                              </h6>
                             </div>
                             <div class="property-type py-1">
                             <img src="/assets/images/Property type.svg" class="ikonica mr-1" alt="">
-                                {{ $property->propertyType->title }}
+                            <h6>   {{ $property->propertyType->title }}  </h6>
                             </div>
                         </div>
                             <div class="property-title py-1">
                                 <a href="/properties/{{ $property->id }}">
-
-                                <h5>{{ $property->title }}</h5>
+                                <h3 class="mobile">{{ $property->title }}</h3>
+                                <h5 class="desktop">{{ $property->title }}</h5>
                                  </a>
-                                <h5><bold> {{ $property->price }} &euro; </bold>/ night</h5>
+                                <h5 class="desktop"><bold> {{ $property->price }} &euro; </bold>/ night</h5>
+                                <h3 class="mobile"><bold> {{ $property->price }} &euro; </bold>/ night</h3>
+ 
+                   
                             </div>
                       
                         @php
@@ -109,12 +130,10 @@
  
                         @endphp
                         @foreach($amenities as $amenitie)
-                            <img src="/assets/images/{{ $amenitie->photoUrl }}" class="amenityHomeS"
+                        @if(!$amenitie->photoUrl == null )
+                        <img src="/assets/images/{{ $amenitie->photoUrl }}" class="amenityHomeS"
                                 alt={{ $amenitie->photoUrl }}>
-                            <?php
-                                        if ($k++ == 8)
-                                            break;
-                                        ?>
+                          @endif                     
                         @endforeach
                     </div>
 
@@ -140,7 +159,7 @@
     <div class="all_aboutMne">
         <div class="aboutMne">
             <div class="text">
-            <h1 style="color:white;">ABOUT MONTENEGRO</h1>
+            <h1 style="color:white;">About Montenegro</h1>
             <p>Events / Festivals / Parties / Holidays
             </p> 
         </div>
@@ -153,16 +172,20 @@
                         <img class="card-img-top blog_image" src="/{{ $blog->image }}" alt="Card image cap">
                         </a>
                         <div class="card-body">
-                            <h4 class="card-title">{{ $blog->title }}</h4>
+                            <h4 class="card-title">
+                                                        @php
+
+                            echo substr($blog->title, 0, 60);
+                            @endphp...</h4>
                             <p class="card-text">
                                 @php
 
-                                    echo substr($blog->description, 0, 60);
+                                    echo substr($blog->description, 0, 55);
                                 @endphp...
                             </p>
                         </div>
                         <div class="card-footer">
-                        <p>  By {{$blog->user->name}} on {{ $blog->created_at }}</p> 
+                        <p>   {{ $blog->created_at->formatLocalized('%a, %b %d, %Y ') }}</p> 
                         </div>
                     </div>
 
@@ -171,6 +194,11 @@
         </div>
     </div>
   @include('components.covid_section')
+  @include('components.filter_inquiry')
 
 </div>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/jquery-easing/1.3/jquery.easing.min.js"></script>
+<script src="/assets/js/formScript.js"></script>
+
+
 @endsection

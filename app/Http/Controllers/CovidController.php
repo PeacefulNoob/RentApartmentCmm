@@ -14,7 +14,7 @@ class CovidController extends Controller
 
     public function __construct()
     {
-        $this->middleware('auth');
+        $this->middleware('can:adman');
     }
     /**
      * Display a listing of the resource.

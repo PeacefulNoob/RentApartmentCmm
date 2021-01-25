@@ -1,7 +1,7 @@
 @extends('layouts.master')
 @section('content')
 <div class="hero">
-    <div class="hero-yacht-image">
+    <div class="hero-yacht-image change1">
         <div class="hero-div row">
         <div class="col-lg-6 col-md-6 col-sm-12 col-12 pl-0">
             <h2 class="blue ">Rent a yacht in Montenegro</h2>
@@ -17,6 +17,8 @@ condition of the yacht.</p>
         <div class="col-lg-6 col-md-6 col-sm-12 col-12 pr-0">
             <form action="{{route('contact.store.yacht')}}" method="POST" class="needs-validation form-property">
               {{ csrf_field() }}
+              <input type="hidden" class="form-control" name="title" id="title" value="Rent a Yacht">
+
               <div class="firstCarForm">
                 <div class="form-group text-center">
                     <h3>Enjoy blue colors of the Adriatic sea and relax your body and soul on a yacht. </h3>
@@ -92,7 +94,7 @@ condition of the yacht.</p>
                             </div>
                         </div>
                 <div class="form-group btnI text-center">
-                  <button type="submit" class="btn btn-inquiry sendInq" disabled>SEND INQURY</button>
+                  <button type="submit" class="btn btn-inquiry sendInq" >SEND INQURY</button>
                   <p>Our representative will contact you back through e-mail with the confirmation as soon as possible.</p>
               </div>
 

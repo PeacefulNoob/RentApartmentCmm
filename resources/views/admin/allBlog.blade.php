@@ -27,7 +27,11 @@
                         <p>{{ $blog->title }}</p>
                     </td>
                     <td>
-                        <p>{!! $blog->description !!}
+                        <p>
+                        <p class="card-text">
+                                @php
+                                    echo substr($blog->description, 0, 100);
+                                @endphp...
                         </p>
                     </td>
                     

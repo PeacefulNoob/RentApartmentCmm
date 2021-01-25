@@ -4,6 +4,8 @@ namespace App\Http\Controllers;
 
 use App\FullCalendar as FullCalendar;
 use App\Property;
+use App\Blog;
+
 use Illuminate\Http\Request;
 use Gate;
 use DB;
@@ -137,8 +139,11 @@ class PropertyController extends Controller
         $images = DB::table('property_images')->where('property_id', '=', $property->id)->get();
         $properties=Property::orderBy('created_at', 'DESC')->get();
         $property= Property::findOrFail($property->id);
+  
+       $blogs = Blog::all();
+
         $calendar = FullCalendar::getCalendar($property->calendar_id);
-        return view('sitePages.property', compact('property','properties','images','calendar'));
+        return view('sitePages.property', compact('property','properties','images','calendar','blogs'));
     }
 
     /**
@@ -245,11 +250,13 @@ class PropertyController extends Controller
 
         public function showAllPropertyFilter(){
 
+
             return view('sitePages.rentProperty',
                 [
                     'properties' => Property::all(),
                     'cities' => Location::all() ,
-                    'types' => PropertyType::all()
+                    'types' => PropertyType::all(),
+                    'blogs' => Blog::all()
                 ]
             );
         }
@@ -260,9 +267,30 @@ class PropertyController extends Controller
             [
                 'properties' => Property::filter($filters)->get(),
                 'cities' => Location::all() ,
-                'types' => PropertyType::all()
+                'types' => PropertyType::all(),
+                'blogs' => Blog::all()
+
             ]
         );
 
         }
+/*         public function uploadImage(Request $request) { 
+            if($request->hasFile('upload')) {
+                       $originName = $request->file('upload')->getClientOriginalName();
+                       $fileName = pathinfo($originName, PATHINFO_FILENAME);
+                       $extension = $request->file('upload')->getClientOriginalExtension();
+                       $fileName = $fileName.'_'.time().'.'.$extension;
+                   
+                       $request->file('upload')->move(public_path('images/news'), $fileName);
+              
+                       $CKEditorFuncNum = $request->input('CKEditorFuncNum');
+                       $url = asset('/assets/images/news'.$fileName); 
+                       $msg = 'Image uploaded successfully'; 
+                       $response = "<script>window.parent.CKEDITOR.tools.callFunction($CKEditorFuncNum, '$url', '$msg')</script>";
+                          
+                       @header('Content-type: text/html; charset=utf-8'); 
+                       echo $response;
+                   }
+            } */
+
     }

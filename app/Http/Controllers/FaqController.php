@@ -3,6 +3,8 @@
 namespace App\Http\Controllers;
 
 use App\Faq;
+use App\Blog;
+
 use Illuminate\Http\Request;
 use Validator;
 use Auth;
@@ -11,12 +13,12 @@ use Gate;
 
 class FaqController extends Controller
 {
+ 
     public function __construct()
     {
- 
-        $this->middleware('can:adman')->except('index');
 
-    }
+        $this->middleware('can:adman', ['except' => ['index']]);
+    } 
     /**
      * Display a listing of the resource.
      *
@@ -25,7 +27,9 @@ class FaqController extends Controller
     public function index()
     {
         $faqs= Faq::all();
-        return view ('sitePages.Faq',compact('faqs'));
+        $blogs = Blog::all();
+
+        return view ('sitePages.faq',compact('faqs','blogs'));
 
     }
 
@@ -36,6 +40,8 @@ class FaqController extends Controller
      */
     public function create()
     {
+              //  $this->authorize('adman', App\Faq::class);
+
         return view('admin.createFaq');
     }
 

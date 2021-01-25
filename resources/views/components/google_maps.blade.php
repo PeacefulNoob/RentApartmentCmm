@@ -7,7 +7,7 @@
           </button>
             <div class="googleMap  ">
                     <h2 class="py-4">Google maps location</h2>
-                <iframe src="https://www.google.com/maps/embed/v1/place?q={{$property->street}}&key=AIzaSyBxKQ25JRZ3zkWcgJ5mTfmSG85CxvYtcYs" width="100%" height="600" frameborder="0" style="border:1px solid #08338F;" allowfullscreen="" aria-hidden="false" tabindex="0"></iframe>
+                <iframe src="https://www.google.com/maps/embed/v1/place?q={{$property->street}}&key=AIzaSyBxKQ25JRZ3zkWcgJ5mTfmSG85CxvYtcYs"  frameborder="0" style="border:1px solid #08338F;" allowfullscreen="" aria-hidden="false" tabindex="0"></iframe>
             </div>
         </div>
         <div class="modal-footer">
