@@ -19,8 +19,9 @@
         <div class="row  mt-5">
             <div class=" col-lg-7 col-md-7 col-sm-12 col-12">
                 <div class="property-title">
-                    <h3>{{ $property->title }}</h3>
-
+                    <h3 class="desktop">{{ $property->title }}</h3>
+                    <h1 class="mobile">{{ $property->title }}</h1>
+                           
                 </div>
                 <div class="property-single-location py-2 d-flex">
                 <img src="/assets/images/iconfinder_pin_293694.svg" class="ikonica mr-2" alt="">
@@ -32,6 +33,7 @@
                     <img src="/assets/images/Property type.svg" class="ikonica mr-2" alt="">
                     {{ $property->propertyType->title }}
                 </div>
+                <hr class="mobile "></hr>
                 <div class="faciImg py-2">
                 <h6>Facilities/Amenities</h6>
                 @php
@@ -52,15 +54,23 @@
                 <div class="property-single-facilities">
                 <p> {{ implode(', ', $property->amenities()->get()->pluck('title')->toArray()) }}   </p>
                 </div>
+                <hr class="mobile "></hr>
+                <h6 class="tdark">Property Description</h6>
+
                 <div class="property-single-amenities my-4">
+
                     <p> {{$property->description}}  </p>
                 </div>
             </div>
             <div class=" col-lg-5 col-md-5 col-sm-12 col-12">
-                <form action="" class="form-property">
+           <form action="{{ route('contact.store.property') }}" method="POST" class="form-property">
+           <input type="hidden" class="form-control" name="title" id="title" value="Property rent">
+
+                        {{ csrf_field() }}
+
                 <div class="firstCarForm">
                             <div class="form-group text-center">
-                            <h3 >      {{$property->price}} &euro; / night   </h3>
+                            <h3 >    &euro;   {{$property->price}} / night   </h3>
                             </div>
                             <div class="form_inquiry">
                                 <div class="form-row m-0">
@@ -92,10 +102,9 @@
                                 </div>
                                 <div class="form-group form_inquiry_bot">
                                     <label for="guests">Guests</label>
-                                    <select id="guests" class="form-control">
-                                    <option selected>1 guest</option>
-                                    <option>...</option>
-                                    </select>
+                                    <input type="number"  name="guests" class="form-control" id="guests" placeholder="Number of guests">
+
+
                                 </div>
                             </div>
                             <div class="form-group btnI text-center">
@@ -181,26 +190,29 @@
                         </div>
                     </div>
 
-
-                    <div class="property-title-top">
-                        <div class="property-location py-1">
-                        <img src="/assets/images/iconfinder_pin_293694.svg" class="ikonica mr-1" alt="">
-                            {{ $property->location->city }}
-                        </div>
-                        <div class="property-type py-1">
-                        <img src="/assets/images/Property type.svg" class="ikonica mr-1" alt="">
-                            {{ $property->propertyType->title }}
-                        </div>
-
+                        <div class="property-title-top py-2">
+                            <div class="property-location py-1">
+                            <img src="/assets/images/iconfinder_pin_293694.svg" class="ikonica mr-1" alt="">
+                              <h6>  {{ $property->location->city }} ,      {{ $property->street }}
+                              </h6>
+                            </div>
+                            <div class="property-type py-1">
+                            <img src="/assets/images/Property type.svg" class="ikonica mr-1" alt="">
+                            <h6>   {{ $property->propertyType->title }}  </h6>
+                            </div>
                     </div>
 
                     <div class="property-title py-1">
-                        <a href="/properties/{{ $property->id }}">
+                                <a href="/properties/{{ $property->id }}">
+                                <h3 class="mobile">{{ $property->title }}</h3>
+                                <h5 class="desktop">{{ $property->title }}</h5>
+                                 </a>
+                                <h5 class="desktop"><bold> {{ $property->price }} &euro; </bold>/ night</h5>
+                                <h3 class="mobile"><bold> {{ $property->price }} &euro; </bold>/ night</h3>
+ 
+                   
+                            </div>
 
-                            <h5>{{ $property->title }}</h5>
-                        </a>
-                        <p> {{ $property->price }} &euro; / night</p>
-                    </div>
 
                     @php
                         $amenities = $property->amenities()->get();
@@ -209,13 +221,12 @@
 
                     @endphp
                     @foreach($amenities as $amenitie)
-                        <img src="/assets/images/{{ $amenitie->photoUrl }}" class="amenityHomeS "
-                            alt={{ $amenitie->photoUrl }}>
-                        <?php
-                                                    if ($k++ == 4)
-                                                        break;
-                                                    ?>
-                    @endforeach
+                        @if(!$amenitie->photoUrl == null )
+                        <img src="/assets/images/{{ $amenitie->photoUrl }}" class="amenityHomeS"
+                                alt={{ $amenitie->photoUrl }}>
+                          @endif                     
+                        @endforeach
+
                 </div>
 
             </div>

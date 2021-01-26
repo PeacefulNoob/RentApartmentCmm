@@ -1,7 +1,7 @@
 @extends('layouts.master')
 @section('content')
 <div class="hero">
-    <div class="hero-tran-image">
+    <div class="hero-tran-image change1">
         <div class="hero-div row">
         
         <div class="col-lg-6 col-md-6 col-sm-12 col-12 p-0">
@@ -114,7 +114,7 @@ comfortable, clean vehicles and professional and courteous drivers.</p>
                             </div>
                         </div>
                     <div class="form-group btnI text-center">
-                      <button type="submit" class="btn btn-inquiry sendInq" disabled>SEND INQURY</button>
+                      <button type="submit" class="btn btn-inquiry sendInq" >SEND INQURY</button>
                       <p>Our representative will contact you back through e-mail with the confirmation as soon as possible.</p>
                   </div>
 

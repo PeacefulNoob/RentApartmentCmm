@@ -14,8 +14,8 @@
         integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm" crossorigin="anonymous">
     <!-- Styles -->
     <link href="/assets/css/admin.css" rel="stylesheet">
-<!--    <link href="/assets/css/bootstrapck-sample.css" rel="stylesheet">
- -->
+    <!--    <link href="/assets/css/bootstrapck-sample.css" rel="stylesheet">
+    -->
     <!-- Scripts -->
     <script src="https://code.jquery.com/jquery-3.5.1.min.js"
         integrity="sha256-9/aliU8dGd2tb6OSsuzixeV4y/faTqgFtohetphbbj0=" crossorigin="anonymous"></script>

@@ -7,7 +7,7 @@
 @include('components.modal_manastir')
 
 <div class="hero">
-    <div class="hero-exc-image">
+    <div class="hero-exc-image change1">
         <div class="hero-div ">
             <h2>Excoursions in Montenegro</h2>
             <p>There is a huge number of attractions In Montenegro that are worth visiting. When booking a tour from

@@ -1,6 +1,17 @@
 @extends('layouts.master')
 @section('content')
-<div class="homeMain">
+<style>
+  .header{
+    position: relative;
+  }
+  .card{
+    background-color: transparent;
+  }
+  </style>
+<div class="homeMain paddinglr">
+<div class="my-5">
+  <h1>Frequently asked Questions</h1>
+</div>
 <div class="row"  style="margin-bottom: 30px;">
     <?php
     $colcount = count($faqs);
@@ -46,7 +57,7 @@
 
     @endforelse
     
+  </div>
 
-</div>
 </div>
 @endsection
