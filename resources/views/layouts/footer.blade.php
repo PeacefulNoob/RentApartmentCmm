@@ -69,9 +69,9 @@
                 </li>
                  <li>
                     <ul>
-                        <li class="bold">Facebook</li>
-                        <li class="bold">Instagram</li>
-                        <li class="bold">Twitter</li>
+                        <li class="bold"><a href="https://www.facebook.com/cmmrealestatemontenegro" target="_blank">Facebook</a> </li>
+                        <li class="bold"><a href="https://www.instagram.com/challenge/?next=/cmm.home.management/" target="_blank">Instagram</a></li>
+                        <li class="bold"><a href="https://www.linkedin.com/company/cmm-investment-consulting-group/" target="_blank">Linkedin</a></li>
                     </ul>
                 </li>
 

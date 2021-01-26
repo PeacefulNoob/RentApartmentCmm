@@ -6,11 +6,8 @@
 <div class="homeMain">
     <div class="hero">
         <div class="hero-image">
-            <div class="hero-text">
-                <h1 class="mobile">Rent a real estate     </h1 > <h1  class="mobile"> in Montenegro</h1>
-                <h1 class="desktop">Rent a real estate in Montenegro</h1>
-
-                    <form method="GET" action="{{ route('filter.properties') }}"  class="desktop">
+            <div class="searchFormaHero">
+                <form method="GET" action="{{ route('filter.properties') }}"  class="desktop">
                     @csrf
                         <div class="form-row m-0 mainsearch">
                             <div class=" col-md-4 col-12 searchForm">
@@ -44,24 +41,28 @@
                                          
                             </div>
                             <div class=" col-md-1 searchForm">
-
+    
                                     <div class="button-form-submit">
                                         <button class="btn btn-submit">GO!</button>
                                     </div>
                                     </div>
-
+    
                         </div>
-
+    
                     </form>
-                  
+              </div>
+            <div class="hero-text">
+                <h1 class="mobile">Rent a real estate     </h1 > <h1  class="mobile"> in Montenegro</h1>
+                <h1 class="desktop">Rent a real estate in Montenegro</h1>
                     </div>
                     <div class="mobile filterDivMob">
                     <div class="searchForm">
                     <a href="#" class="btn "  data-toggle="modal" data-target="#filter_inquiry">
                             <p>Where would you like to rent real estate?</p> 
                         </a>
-                            </div>
-                    </div>
+          </div>
+      
+            </div>
               
         
         </div>
