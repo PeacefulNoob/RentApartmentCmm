@@ -80,23 +80,25 @@
                                     <input  class="form-control" id="checkin" placeholder="Put the C/I date please">
                                     </div>
                                     <div class="form-group col-md-6 form_inquiry_right ">
-                                    <label for="ckeckout">CHECKOUT</label>
-                                    <input  class="form-control" id="ckeckout" placeholder="Put the C/O date please">
+                                    <label for="checkout">CHECKOUT</label>
+                                    <input  class="form-control" id="checkout" placeholder="Put the C/O date please">
                                     </div>
                                 </div>
-                                <div class="form-row m-0">
-                                {{--<div class="calendar-wrapper-parent">--}}
-                                    <!--calendar-wrapper-->
-                                    <div class="form-group col-md-6 form_inquiry_left">
-                                        <div id='calendar0' value="0"></div>
+                                <div class="form-group form_inquiry_bot">
+                                <div class="calendar-main">
+                                    <div class="calendar-child">
+                                        <div class="form-row m-0">
+                                            <!--calendar-wrapper-->
+                                            <div class="form-group col-md-6 form_inquiry_left" style="display: block; ">
+                                                <div id='calendar0' value="0"></div>
+                                            </div>
+                                            <!--calendar-wrapper-->
+                                            <div class="form-group col-md-6 form_inquiry_right " style="display: block; border-left-style: none;">
+                                                <div id='calendar1' value="0"></div>
+                                            </div>
+                                        </div>
                                     </div>
-                                    <!--calendar-wrapper-->
-                                    <div class="form-group col-md-6 form_inquiry_right ">
-                                    <label  for="ckeckout">CHECKOUT</label>
-                                    <input type="date" name="ckeckout" class="form-control" id="ckeckout" placeholder="Put the C/O date please">
-                                        <div id='calendar1' value="0"></div>
-                                    </div>
-                               {{-- </div>--}}
+                                </div>
                                 </div>
                                 <div class="form-group form_inquiry_bot">
                                     <label for="guests">Guests</label>
@@ -243,6 +245,7 @@
                     </div>
                 </div>
             </div>
+           
         @endforelse
     </div>
 </div>
@@ -250,12 +253,15 @@
 
         $('#checkin').on('click', function(){
             if($('#calendar0').val() == 0 && $('#calendar1').val() == 0) {
+                $('.calendar-main').css("display", "block");
                 $('#calendar0').css("display", "block");
                 $('#calendar1').css("display", "block");
                 $('#calendar0').val(1);
                 $('#calendar1').val(1);
+
                 calendar1.render();
                 calendar.render();
+                $('.fc-add_event-button').css("margin-right", "20px");
             }else{
                 $('#calendar0').css("display", "none");
                 $('#calendar1').css("display", "none");
@@ -268,7 +274,6 @@
             for(var i = 0;i<eventList.length;i++){
                 for(var j = 0; j<datesBetween.length;j++){
                     if(eventList[i].start == datesBetween[j] || eventList[i].end == datesBetween[j]){
-                        alert("Ne mozete izabrati ove datume!");
                         return true;
                     }
                 }
@@ -276,16 +281,45 @@
             return false;
         }
 
+        function destroCheckEvents(datesBetween){
+            for(var j = 0; j<datesBetween.length;j++){
+                console.log("unisti izmedju" + datesBetween[j]);
+                $('.fc-day[data-date="'+ datesBetween[j] +'"]').removeClass('cellBgBetween');
+            }
+        }
+
+        function destroyEvents(){
+            if(checkOutInfo != null){
+                checkOutInfo.dayEl.style.backgroundColor = "transparent";
+            }
+            if(checkInInfo != null){
+                checkInInfo.dayEl.style.backgroundColor = "transparent";
+            }
+            checkIn = '';
+            checkOut = '';
+            $('#checkin').val("");
+            $('#checkout').val("");
+        }
+
+
 
         events = <?php echo json_encode($calendar); ?> ;
+        console.log("json envenotvi " + events);
         eventList = [];
         for(var i =0; i<events.length;i++){
+            console.log(events[i]);
             eventList.push({
-                title: events[i].title,
-                start:events[i].start.date.slice(0,10), // try timed. will fall back to all-day
-                end: events[i].end.date.slice(0,10), // same
+                id: i,
+                title: "",
+                start:events[i].start.date.slice(0,10), // try timed. will fall back to all-day.slice(0,10)
+                end: events[i].end.date.slice(0,10), // same.slice(0,10)
             });
         }
+        console.log("dogadjaji"+eventList);
+
+         
+        
+
         var date = new Date();
         var d = date.getDate();
         var m = date.getMonth();
@@ -302,25 +336,47 @@
 
         var calendarEl1 = document.getElementById('calendar1');
         var calendar1 = new FullCalendar.Calendar(calendarEl1, {
+            customButtons: {
+                add_event: {
+                    text: 'Clear',
+                    click: function() {
+                        destroyEvents();
+                    }
+                },
+                add_close:{
+                    text: 'X',
+                    click: function(){
+                        $('.calendar-main').css("display", "none");
+                    }
+                }
+            },
             initialView: 'dayGridMonth',
             initialDate: x,
             headerToolbar: {
                 left: 'title',
                 center: '',
-                right: ''
+                right: 'add_event,add_close'
             },
             selectable: true,
             events: eventList,
+            eventDisplay: 'background',
             eventColor: '#378006',
             eventClassNames: 'activeDay',
             dateClick: function(info) {
-                info.dayEl.style.backgroundColor = "black";
+                var event = calendar1.getEventById('1'); // an event object!
+                var start = event.start;
+                console.log(start);
+                info.dayEl.style.backgroundColor = "#033382";
                 if(checkIn == ''){
                     checkInInfo = info;
                     checkIn = info.dateStr;
+                    $('#checkin').val(checkIn);
                 }else if(checkOut == ''){
+                    if(info.date > checkInInfo.date){
+                    alert("checkout je ''")
                     checkOutInfo = info;
                     checkOut = info.dateStr;
+                    $('#checkout').val(checkOut);
                     let datesBetween = [];
                     for (var m = moment(checkIn); m.isBefore(checkOut); m.add(1, 'days')) {
                         datesBetween.push(m.format('YYYY-MM-DD'));
@@ -331,16 +387,88 @@
                         checkInInfo.dayEl.style.backgroundColor = "transparent";
                         checkIn = '';
                         checkOut = '';
+                        $('#checkin').val("");
+                        $('#checkout').val("");
+                    }else{
+                      /*  for(var j = 0; j<datesBetween.length;j++){
+                            $('.fc-day[data-date="'+ datesBetween[j] +'"]').addClass('cellBgBetween');
+                        }*/
                     }
+                }else{
+                    alert("checkout je manji");
+                        //checkOutInfo.dayEl.style.backgroundColor = "transparent";
+                        checkInInfo.dayEl.style.backgroundColor = "transparent";
+                        checkOut = '';
+                        checkInInfo = info;
+                        checkIn = info.dateStr;
+                        $('#checkin').val(checkIn);
+                        console.log("check in"+checkIn);
+                        console.log("check out"+checkOut);
+                        
+            }
                 }else if(checkIn != '' && checkOut != ''){
                     if(info.date > checkInInfo.date){
                         checkOutInfo.dayEl.style.backgroundColor = "transparent";
                         checkOutInfo = info;
                         checkOut = info.dateStr;
-                    }else{
+                        $('#checkout').val(checkOut);
+                      /*  let datesBetween = [];
+                        for (var m = moment(checkIn); m.isBefore(checkOut); m.add(1, 'days')) {
+                            datesBetween.push(m.format('YYYY-MM-DD'));
+                        }
+
+                        for(var j = 0; j<datesBetween.length;j++){
+                            $('.fc-day[data-date="'+ datesBetween[j] +'"]').addClass('cellBgBetween');
+                        }*/
+                    }else if(info.date < checkInInfo.date){
+                        let datesBetween = [];
+                        for (var m = moment(checkIn); m.isBefore(checkOut); m.add(1, 'days')) {
+                            datesBetween.push(m.format('YYYY-MM-DD'));
+                        }
+                        destroCheckEvents(datesBetween);
                         checkInInfo.dayEl.style.backgroundColor = "transparent";
                         checkInInfo = info;
                         checkIn = info.dateStr;
+                        $('#checkin').val(checkIn);
+                    }else{
+
+                        checkOutInfo.dayEl.style.backgroundColor = "transparent";
+                        checkOut = '';
+                        checkInInfo = info;
+                        checkIn = info.dateStr;
+                        $('#checkin').val(checkIn);
+                        let datesBetween = [];
+                        for (var m = moment(checkIn); m.isBefore(checkOut); m.add(1, 'days')) {
+                            datesBetween.push(m.format('YYYY-MM-DD'));
+                        }
+                        destroCheckEvents(datesBetween);
+                    }
+                   /* let datesBetween = [];
+                    for (var m = moment(checkIn); m.isBefore(checkOut); m.add(1, 'days')) {
+                        datesBetween.push(m.format('YYYY-MM-DD'));
+                    }
+                    for(var j = 0; j<datesBetween.length;j++){
+                        $('.fc-day[data-date="'+ datesBetween[j] +'"]').addClass('cellBgBetween');
+                    }*/
+                }
+            },
+            dayCellClassNames: function (date, cell) {
+                date = checkIn;
+                $('.fc-day[data-date="'+ date +'"]').addClass('cellBg');
+                date = checkOut;
+                $('.fc-day[data-date="'+ date +'"]').addClass('cellBg');
+                let datesBetween = [];
+                for (var m = moment(checkIn); m.isBefore(checkOut); m.add(1, 'days')) {
+                    datesBetween.push(m.format('YYYY-MM-DD'));
+                }
+                datesBetween.shift();
+                for(var j = 0; j<datesBetween.length;j++){
+                    console.log(datesBetween[j]);
+                  //  $('.fc-day[data-date="'+ datesBetween[j] +'"]').addClass('cellBgBetween');
+                }
+                for(var i=0;i<eventList.length;i++){
+                    if(date==eventList[i].start || date==eventList[i].end){
+                        $('.fc-day[data-date="'+ date +'"]').addClass('disabledCell');
                     }
                 }
             },
@@ -357,10 +485,11 @@
             headerToolbar: {
                 left: 'title',
                 center: '',
-                right: 'prev,next today'
+                right: 'prev,next'
             },
             selectable: true,
             events: eventList,
+            eventDisplay: 'background',
             eventColor: '#378006',
             datesSet: function(info) {
                 month = info.endStr.slice(0,10);
@@ -368,32 +497,88 @@
                 calendar1.render();
             },
             dateClick: function(info) {
+                var event = calendar1.getEventById('1'); // an event object!
+                var start = event.start;
+                console.log("prvi kalendar dogadjaji" + events);
                 console.log(info.dateStr);
-                info.dayEl.style.backgroundColor = "black";
+                info.dayEl.style.backgroundColor = "#033382";
                 if(checkIn == ''){
                     checkInInfo = info;
                     checkIn = info.dateStr;
                     $('#checkin').val(checkIn);
                 }else if(checkOut == ''){
+                   if(info.date > checkInInfo.date){
                     checkOutInfo = info;
                     checkOut = info.dateStr;
                     $('#checkout').val(checkOut);
+                    let datesBetween = [];
+                    for (var m = moment(checkIn); m.isBefore(checkOut); m.add(1, 'days')) {
+                        datesBetween.push(m.format('YYYY-MM-DD'));
+                    }
+                    datesBetween.shift();
+                    bool = checkEvents(datesBetween);
+                    if(bool){
+                        checkOutInfo.dayEl.style.backgroundColor = "transparent";
+                        checkInInfo.dayEl.style.backgroundColor = "transparent";
+                        checkIn = '';
+                        checkOut = '';
+                        $('#checkout').val('');
+                        $('#checkin').val('');
+                    }else{
+                    for(var j = 0; j<datesBetween.length;j++){
+                        console.log(datesBetween[j]);
+                     //   $('.fc-day[data-date="'+ datesBetween[j] +'"]').addClass('cellBgBetween');
+                    }
+                }
+            }else{
+                alert("checkout je manji");
+                       // checkOutInfo.dayEl.style.backgroundColor = "transparent";
+                        checkInInfo.dayEl.style.backgroundColor = "transparent";
+                        checkOut = '';
+                        checkInInfo = info;
+                        checkIn = info.dateStr;
+                        $('#checkin').val(checkIn);
+                        console.log("check in"+checkIn);
+                        console.log("check out"+checkOut);
+            }
                 }else if(checkIn != '' && checkOut != ''){
                     if(info.date > checkInInfo.date){
+                        let datesBetween = [];
+                        for (var m = moment(checkIn); m.isBefore(checkOut); m.add(1, 'days')) {
+                            datesBetween.push(m.format('YYYY-MM-DD'));
+                        }
+                        destroCheckEvents(datesBetween);
                         checkOutInfo.dayEl.style.backgroundColor = "transparent";
                         checkOutInfo = info;
                         checkOut = info.dateStr;
+                        $('#checkout').val(checkOut);
                     }else if(info.date < checkInInfo.date){
-                        alert("manji");
+                        let datesBetween = [];
+                        for (var m = moment(checkIn); m.isBefore(checkOut); m.add(1, 'days')) {
+                            datesBetween.push(m.format('YYYY-MM-DD'));
+                        }
+                        destroCheckEvents(datesBetween);
                         checkInInfo.dayEl.style.backgroundColor = "transparent";
                         checkInInfo = info;
                         checkIn = info.dateStr;
+                        $('#checkin').val(checkIn);
                     }else{
-                        alert("isti");
+                        destroCheckEvents(datesBetween);
                         checkOutInfo.dayEl.style.backgroundColor = "transparent";
                         checkOut = '';
                         checkInInfo = info;
                         checkIn = info.dateStr;
+                        $('#checkin').val(checkIn);
+
+                    }
+                    let datesBetween = [];
+                    for (var m = moment(checkIn); m.isBefore(checkOut); m.add(1, 'days')) {
+                        datesBetween.push(m.format('YYYY-MM-DD'));
+                    }
+                    datesBetween.shift();
+                    for(var j = 0; j<datesBetween.length;j++){
+                        console.log(datesBetween[j]);
+                   //     $('.fc-day[data-date="'+ datesBetween[j] +'"]').addClass('cellBgBetween');
                     }
                 }
 
@@ -403,11 +588,42 @@
                 console.log(checkOutInfo);
                 checkOutInfo.dayEl.style.backgroundColor = "white";*/
             },
+            dayCellClassNames: function (date, cell) {
+                date = checkIn;
+                $('.fc-day[data-date="'+ date +'"]').addClass('cellBg');
+                date = checkOut;
+                $('.fc-day[data-date="'+ date +'"]').addClass('cellBg');
+                let datesBetween = [];
+                for (var m = moment(checkIn); m.isBefore(checkOut); m.add(1, 'days')) {
+                    datesBetween.push(m.format('YYYY-MM-DD'));
+                }
+                datesBetween.shift();
+                for(var j = 0; j<datesBetween.length;j++){
+                    console.log(datesBetween[j]);
+                //    $('.fc-day[data-date="'+ datesBetween[j] +'"]').addClass('cellBgBetween');
+                }
+                for(var i=0;i<eventList.length;i++){
+                    console.log(cell);
+                    console.log(eventList[i].start + " " + date);
+                    if(date==eventList[i].start || date==eventList[i].end){
+                        $('.fc-day[data-date="'+ date +'"]').addClass('disabledCell');
+                    }
+                }
+            },
             eventClick:function(){
                 alert("OKS");
+            },
+            eventRender: function (event, element) {
+                alert(event.start);
+                var eventDate = event.start;
+                var calendarDate = $('#calendar0').fullCalendar('getDate');
+                if (eventDate.get('month') !== calendarDate.get('month')) {
+                    return false;
+                }
             }
         });
         calendar.render();
+
 
     });
 </script>

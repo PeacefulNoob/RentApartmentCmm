@@ -10,16 +10,21 @@ class FullCalendar{
 
 
     public static function getCalendar($calendar_id){
+        
         $data = Event::get(Carbon::now(), Carbon::now()->addYear(), [], $calendar_id);
+        
         if($data->count()) {
-
             foreach ($data as $key => $value) {
+                
                 $events[] = \Calendar::event(
+                   
                     $value->summary,
-
+                    
                     true,
                     new \DateTime($value->start->date),
-                    new \DateTime($value->end->date),
+                   new \DateTime($value->end->date),
+                 // $value->start->date,
+                 // $value->end->date,
                     null,
                     // Add color and link on event
                     [
@@ -106,17 +111,25 @@ class FullCalendar{
         foreach($events as $event){
             $combined =  $eventsFullCalendar->combine([
                 $event->title ,
-                $event->start->format('Y-m-d'),
-                 $event->end->format('Y-m-d')
+               /*  $event->start->format('Y-m-d'),
+                 $event->end->format('Y-m-d') */
+                 $event->start->format('c'),
+                 $event->end->format('c')
                 ]);
         }
 
-        return  $events;
+       /*  foreach ($events as $key){
+           print_r($key);
+        } */
+      
+     // dd($events);
+        return  $events; 
         return $combined->all();
+       
         dd();
         return $calendar;
     }
-    
+
 
     public static function getCalendar1($calendar_id){
         $data = Event::get(Carbon::now(), Carbon::now()->addYear(), [], $calendar_id);
