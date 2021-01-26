@@ -1,4 +1,6 @@
-<?php namespace Acaronlex\LaravelCalendar;
+<?php
+
+namespace Acaronlex\LaravelCalendar;
 
 use ArrayAccess;
 use DateTime;
@@ -8,7 +10,6 @@ use View;
 
 class Calendar
 {
-
     /**
      * @var Factory
      */
@@ -123,7 +124,7 @@ class Calendar
      */
     public function getId()
     {
-        if ( ! empty($this->id)) {
+        if (! empty($this->id)) {
             return $this->id;
         }
 
@@ -231,7 +232,6 @@ class Calendar
         }
 
         return $json;
-
     }
 
     /**
@@ -270,5 +270,4 @@ class Calendar
 
         return str_replace($search, $replace, $json);
     }
-
 }

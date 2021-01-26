@@ -1,4 +1,6 @@
-<?php namespace Acaronlex\LaravelCalendar;
+<?php
+
+namespace Acaronlex\LaravelCalendar;
 
 use DateTime;
 
@@ -11,7 +13,6 @@ use DateTime;
  */
 class SimpleEvent implements IdentifiableEvent
 {
-
     /**
      * @var string|int|null
      */

@@ -22,7 +22,7 @@ class Payment extends \Faker\Provider\Payment
      *
      * @example 'BG1234567890', ('spaced') 'BG 1234567890'
      *
-     * @see http://ec.europa.eu/taxation_customs/vies/Faq.html?locale=en#item_11
+     * @see http://ec.europa.eu/taxation_customs/vies/faq.html?locale=en#item_11
      * @see http://en.wikipedia.org/wiki/VAT_identification_number
      *
      * @param bool $spacedNationalPrefix

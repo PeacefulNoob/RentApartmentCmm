@@ -13,8 +13,9 @@
                 areas, and also investment consulting. Having a great experience, we now sell our own developments.</p>
                 </div>
                 <div class="col-lg-6 col-md-6 col-sm-12 col-12 ">
+                    <img src="/assets/images/about/Office copy.png" alt="">
+
             </div>
-            <img src="/assets/images/about/Office copy.png" alt="">
 
         </div>
     <div class="abouts2 padding cblue">

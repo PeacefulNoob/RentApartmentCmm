@@ -108,7 +108,7 @@
                                 </div>
                             </div>
                             <div class="form-group btnI text-center">
-                          <div  class="btn btn-inquiry nextCarForm">BOOK YOUR CAR</div>
+                          <div  class="btn btn-inquiry nextCarForm">BOOK YOUR PROPERTY</div>
                           <p>Book your stay through email</p>
                       </div>
                     </div>

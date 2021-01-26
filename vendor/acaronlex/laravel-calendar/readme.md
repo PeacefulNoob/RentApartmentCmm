@@ -1,4 +1,4 @@
-# Laravel 7 Full Calendar Helper
+# Laravel 7 & 8 Full Calendar 5 Helper
 
 This is a simple helper package to make generating [http://fullcalendar.io](http://fullcalendar.io) in Laravel apps easier.
 
@@ -188,16 +188,23 @@ $events[] = \Calendar::event(
 	'stringEventId' //optionally, you can specify an event ID
 );
 
-$eloquentEvent = EventModel::first(); //EventModel implements Acaronlex\LaravelCalendar\Event
-
-$calendar = \Calendar::addEvents($events) //add an array with addEvents
-    ->addEvent($eloquentEvent, [ //set custom color fo this event
-        'color' => '#800',
-    ])->setOptions([ //set fullcalendar options
-		'firstDay' => 1
-	])->setCallbacks([ //set fullcalendar callback options (will not be JSON encoded)
-        'viewRender' => 'function() {alert("Callbacks!");}'
-    ]);
+$calendar = new Calendar();
+        $calendar->addEvents($events)
+        ->setOptions([
+            'locale' => 'fr',
+            'firstDay' => 0,
+            'displayEventTime' => true,
+            'selectable' => true,
+            'initialView' => 'timeGridWeek',
+            'headerToolbar' => [
+                'end' => 'today prev,next dayGridMonth timeGridWeek timeGridDay'
+            ]
+        ]);
+        $calendar->setId('1');
+        $calendar->setCallbacks([
+            'select' => 'function(selectionInfo){}',
+            'eventClick' => 'function(event){}'
+        ]);
 
 return view('hello', compact('calendar'));
 ```
@@ -211,13 +218,11 @@ Then to display, add the following code to your View:
 <!doctype html>
 <html lang="en">
 <head>
-    	<script src="https://code.jquery.com/jquery-3.5.1.min.js"></script>
-    	<script src="//cdnjs.cloudflare.com/ajax/libs/moment.js/2.9.0/moment.min.js"></script>
-	<script src="https://cdn.jsdelivr.net/npm/@fullcalendar/core@4.4.0/main.min.js"></script>
-	<script src="https://cdn.jsdelivr.net/npm/@fullcalendar/daygrid@4.4.0/main.min.js"></script>
-	<script src="https://cdn.jsdelivr.net/npm/@fullcalendar/timegrid@4.4.0/main.min.js"></script>
+	<script src="https://code.jquery.com/jquery-3.5.1.min.js"></script>
+	<script src="//cdnjs.cloudflare.com/ajax/libs/moment.js/2.9.0/moment.min.js"></script>
+	<script src="https://cdn.jsdelivr.net/npm/fullcalendar@5.5.0/main.min.js"></script>
 
-    	<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@fullcalendar/core@4.4.0/main.min.css"/>
+    	<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/fullcalendar@5.5.0/main.css"/>
 
 
     <style>
@@ -230,6 +235,6 @@ Then to display, add the following code to your View:
 </body>
 </html>
 ```
-**Note:** The output from `calendar()` and `script()` must be non-escaped, so use `{!!` and `!!}` (or whatever you've configured your Blade compiler's raw tag directives as).   
+**Note:** The output from `calendar()` and `script()` must be non-escaped, so use `{!!` and `!!}` (or whatever you've configured your Blade compiler's raw tag directives as).
 
 The `script()` can be placed anywhere after `calendar()`, and must be after fullcalendar was included.

@@ -3,3 +3,5 @@ composer.phar
 composer.lock
 .DS_Store
 .idea/
+.php_cs.dist
+.php_cs.cache

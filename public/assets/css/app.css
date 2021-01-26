@@ -313,7 +313,7 @@ background-color: #7E7E7E;
 }
 
 .dropdown-item {
-  color: #1D4C81 !important;
+  color: white !important;
   display: inline-block !important;
 }
 .dropdown-item:hover {
@@ -445,9 +445,13 @@ h6 {
   
   
 }
+.filterProperties{
+  padding-left: 5%;
+  padding-right: 5%;
+}
 .specialProperties h2{
   position: absolute;
-  left: 18px;
+  width: 70%;
 }
 body {
   font-family: "Montserrat", sans-serif;
@@ -455,10 +459,6 @@ body {
 .razmak{
   width: 100%;
   height: 1px;
-}
-body {
-  font-family: 'Open Sans', sans-serif;
-
 }
 .nav-link h5 {
   font-family: "Montserrat", sans-serif !important;
@@ -981,8 +981,8 @@ a{
 }
 
 .form-control {
-  border: none !important;
   background-color: transparent !important;
+  color: white;
 }
 
 .form_inquiry {

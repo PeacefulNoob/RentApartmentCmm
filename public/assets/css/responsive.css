@@ -10,6 +10,10 @@
         padding-left: 5%;
         padding-right: 5%;
     }
+    .filterProperties{
+        padding-left: 2%;
+        padding-right: 2%;
+      }
     .slImage {
         background-image: url(/assets/images/Homepage-cover4-Mobile.jpg) !important;
     }

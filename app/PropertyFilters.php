@@ -16,7 +16,7 @@ class PropertyFilters extends QueryFilter
     }
 
     public function priceFrom($price){
-        return $this->builder->where('price', ">" , $price);
+        return $this->builder->where('price', ">=" , $price);
     }
 
     public function priceTo($price){

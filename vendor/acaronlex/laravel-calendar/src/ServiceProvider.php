@@ -1,10 +1,11 @@
-<?php namespace Acaronlex\LaravelCalendar;
+<?php
+
+namespace Acaronlex\LaravelCalendar;
 
 use Illuminate\Support\ServiceProvider as BaseServiceProvider;
 
 class ServiceProvider extends BaseServiceProvider
 {
-
     /**
      * Register the service provider.
      *
@@ -31,6 +32,4 @@ class ServiceProvider extends BaseServiceProvider
     {
         return ['laravel-calendar'];
     }
-
 }
-

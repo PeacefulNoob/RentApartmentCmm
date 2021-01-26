@@ -1,10 +1,11 @@
-<?php namespace Acaronlex\LaravelCalendar;
+<?php
+
+namespace Acaronlex\LaravelCalendar;
 
 use Illuminate\Support\Collection;
 
 class EventCollection
 {
-
     /**
      * @var Collection
      */

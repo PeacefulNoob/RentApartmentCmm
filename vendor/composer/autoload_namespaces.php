@@ -8,5 +8,4 @@ $baseDir = dirname($vendorDir);
 return array(
     'Mockery' => array($vendorDir . '/mockery/mockery/library'),
     'Google_Service_' => array($vendorDir . '/google/apiclient-services/src'),
-    'Acaronlex\\LaravelCalendar' => array($vendorDir . '/acaronlex/laravel-calendar/src'),
 );
