@@ -62,7 +62,8 @@ class BlogController extends Controller
                         ->withErrors($validator)
                         ->withInput();
         }
-
+        if ($request->hasFile('photo')) 
+        {
         $file = $request->file('photo');
         $extension = $file->getclientOriginalExtension();
         $size = $file->getSize();
@@ -70,7 +71,11 @@ class BlogController extends Controller
         $photo_name = 'news-' . time() . '' . $rand . '.' . $extension;
         $path = 'assets/images/news/'. $photo_name;
         Image::make($file)->encode('jpg', 75)->resize(1200, null, function($constraint) {$constraint->aspectRatio();}) ->save($path);
-
+        }
+        else
+        {
+            $path= '';
+        }
         // Create 
         $post = new Blog;
         $post->title = $request->input('title');
@@ -127,7 +132,9 @@ class BlogController extends Controller
                         ->withErrors($validator)
                         ->withInput();
         }
-
+        $blog = Blog::find($id); 
+        if ($request->hasFile('photo')) 
+        {
         $file = $request->file('photo');
         $extension = $file->getclientOriginalExtension();
         $size = $file->getSize();
@@ -135,8 +142,13 @@ class BlogController extends Controller
         $photo_name = 'news-' . time() . '' . $rand . '.' . $extension;
         $path = 'assets/images/news/'. $photo_name;
         Image::make($file)->encode('jpg', 75)->resize(1200, null, function($constraint) {$constraint->aspectRatio();}) ->save($path);
+        }
+        else
+        {
+            $path= $blog->image;
+        }
 
-        DB::table('blogs')->where('id', $id)->update([
+        $blog->update([
             'title' => $request->title,
             'image' => $path,
             'description' => $request->description,
