@@ -24,7 +24,7 @@ class PropertyFilters extends QueryFilter
     }
 
     public function persons($persons){
-        return $this->builder->where('persons', $persons);
+        return $this->builder->where('persons',"<=" , $persons);
     }
 
 
