@@ -2,7 +2,7 @@
 @section('content')
 <div class="row filterProperties m-0 pt-5" >
 
-    <div class=" side_filter col-lg-3 col-md-3 col-sm-12 col-12 mt-5 py-3 pl-0 ">
+    <div class=" side_filter col-lg-3 col-md-12 col-sm-12 col-12 mt-5 py-3 pl-0 ">
     <div class="razmak my-4 desktop"></div>
 
             <div class=" filterMain " id="fbox">
@@ -56,7 +56,7 @@
         $j = 1;
         ?>
         @forelse($properties as $property)
-            <div class="col-lg-3 col-md-6 col-sm-6 col-12 my-3 propertiesMain">
+            <div class="col-lg-3 col-md-12 col-sm-6 col-12 my-3 propertiesMain">
 
                 <div class="property">
                     <div class="image-placeholder">

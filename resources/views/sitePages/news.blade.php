@@ -19,7 +19,7 @@
         </div>
         <div class="paddinglr row m-0 pb-4">
                 @foreach($blogs as $blog)
-                    <div class="card col-lg-3 col-md-4 col-sm-6 col-12 p-4" style="border:none">
+                    <div class="card col-lg-3 col-md-6 col-sm-6 col-12 p-4" style="border:none">
                     <a href="/single_news/{{$blog->id}}">
                         <img class="card-img-top blog_image" src="{{ $blog->image }}" alt="Card image cap">
                     </a>
