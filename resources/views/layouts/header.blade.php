@@ -24,7 +24,7 @@
             <ul class="navbar-nav mr-auto ml-auto my-2">
             <li class="nav-item dropdown desktop">
                 <a class="nav-link dropdown-toggle" href="#" id="navbarDropdown" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
-                   Tourist Corner
+                <h5>   Tourist Corner</h5>
 
                 </a><span class="caret"></span>
                 <div class="dropdown-menu " aria-labelledby="navbarDropdown">
