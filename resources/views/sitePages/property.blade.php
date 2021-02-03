@@ -373,7 +373,6 @@
                     $('#checkin').val(checkIn);
                 }else if(checkOut == ''){
                     if(info.date > checkInInfo.date){
-                    alert("checkout je ''")
                     checkOutInfo = info;
                     checkOut = info.dateStr;
                     $('#checkout').val(checkOut);
@@ -412,14 +411,20 @@
                         checkOutInfo = info;
                         checkOut = info.dateStr;
                         $('#checkout').val(checkOut);
-                      /*  let datesBetween = [];
-                        for (var m = moment(checkIn); m.isBefore(checkOut); m.add(1, 'days')) {
-                            datesBetween.push(m.format('YYYY-MM-DD'));
-                        }
-
-                        for(var j = 0; j<datesBetween.length;j++){
-                            $('.fc-day[data-date="'+ datesBetween[j] +'"]').addClass('cellBgBetween');
-                        }*/
+                        let datesBetween = [];
+                    for (var m = moment(checkIn); m.isBefore(checkOut); m.add(1, 'days')) {
+                        datesBetween.push(m.format('YYYY-MM-DD'));
+                    }
+                        bool = checkEvents(datesBetween);
+                        if(bool){
+                        checkOutInfo.dayEl.style.backgroundColor = "transparent";
+                        checkInInfo.dayEl.style.backgroundColor = "transparent";
+                        checkIn = '';
+                        checkOut = '';
+                        $('#checkin').val("");
+                        $('#checkout').val("");
+                    }
+                     
                     }else if(info.date < checkInInfo.date){
                         let datesBetween = [];
                         for (var m = moment(checkIn); m.isBefore(checkOut); m.add(1, 'days')) {
@@ -531,7 +536,6 @@
                     }
                 }
             }else{
-                alert("checkout je manji");
                        // checkOutInfo.dayEl.style.backgroundColor = "transparent";
                         checkInInfo.dayEl.style.backgroundColor = "transparent";
                         checkOut = '';
