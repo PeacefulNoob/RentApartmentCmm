@@ -42,7 +42,7 @@
                 <a class="nav-link" href="/news"><h5>News</h5></a>
               </li>
               <li class="nav-item ">
-                <a class="nav-link" href="https://www.cmm-montenegro.com/" target="_blank"><h5>Properties to buy</h5></a>
+                <a class="nav-link" href="https://www.cmm-montenegro.com/" target="_blank"><h5>Properties to sell</h5></a>
               </li> 
             
             </ul>

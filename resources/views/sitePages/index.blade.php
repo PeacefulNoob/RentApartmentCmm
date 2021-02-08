@@ -12,7 +12,7 @@
                         <div class="form-row m-0 mainsearch">
                             <div class=" col-md-4 col-12 searchForm">
                                        <select name="city" id="city" class="form-control">
-                                    <option value="" disabled selected>Where would you like to rent real estate?</option>
+                                    <option value="" disabled selected>Location</option>
                                             @foreach($cities as $city)
                                             <option value="{{$city->id}}" {{ (old("city") == $city->id ? "selected":"") }}>{{$city->city}}</option>
                                             @endforeach
@@ -20,7 +20,7 @@
                             </div>
                             <div class=" col-md-4 col-6 searchForm">
                                    <select name="type"  id="type" class="form-control" >
-                                            <option value="" disabled selected>Pick property type that fits you.</option>
+                                            <option value="" disabled selected>Property type</option>
                                         @foreach($types as $type)
                                         <option value="{{$type->id}}" {{ (old("type") == $type->id ? "selected":"") }}>{{$type->title}}</option>
                                         @endforeach

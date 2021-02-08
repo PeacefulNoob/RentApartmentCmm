@@ -2,7 +2,7 @@
 @section('content')
 <div class="homeMain">
 <div class="abouts1 padding row m-0">
-        <div class=" col-lg-6 col-md-6 col-sm-12 col-12 pt-5 tekstAbout">
+        <div class=" col-lg-6 col-md-6 col-sm-12 col-12 px-0 pt-5 tekstAbout">
             <h1 class="pb-2">About us</h1>
             <p class="pb-2">CMM Investment Consulting Group is a unique Montenegrin company which provides a full spectrum of services,
                 from creation of the ideas and concepts of the property, to its construction and implementation in 15 years

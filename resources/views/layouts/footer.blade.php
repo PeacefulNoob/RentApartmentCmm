@@ -32,7 +32,7 @@
                 </li>
                 <li>
                     <div class="d-flex">
-                        <div > <p class="bold pr-1"> Adress:</p></div>
+                        <div > <p class="bold pr-1"> Address:</p></div>
                         <div>
                             <p>Jadranski put b.b. Budva, Montenegro</p>
                             <p> Moskow, Russia</p>
@@ -41,13 +41,14 @@
                 </li>
                 <li>
                     <div class="d-flex">
-                        <div><p class="bold pr-1"> Telefon:</p></div>
+                        <div><p class="bold pr-1"> 
+                            Telephone:</p></div>
                         <div>    <p> + 382 68 010 879</p></div>
                     </div>
                 </li>
                 <li>
                     <div class="d-flex">
-                        <div><p class="bold pr-1"> Email adresa:</p></div>
+                        <div><p class="bold pr-1"> Email address:</p></div>
                         <div>  <p>office@cmm-montenegro.com</p></div>
                     </div>
                 </li>
