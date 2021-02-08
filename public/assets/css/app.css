@@ -295,9 +295,28 @@ background-color: #7E7E7E;
   font-size: 14px !important;
 }
 
-
+.abouts1  P{
+  text-align: justify;
+}
+.abouts2  P{
+  text-align: justify;
+}
+.abouts4  P{
+  text-align: justify;
+}
+.abouts5  P{
+  text-align: justify;
+}
+.abouts6  P{
+  text-align: justify;
+}
 .navbar-light .navbar-nav .nav-link {
   color: #1D4C81 !important;
+}
+.navbar-nav a {
+  text-transform: uppercase;
+  font-size: 14px !important;
+  font-weight: 500 !important;
 }
 .navbar  ul li{
   text-transform: uppercase;
@@ -466,7 +485,9 @@ body {
 }
 .nav-link h5 {
   font-family: "Montserrat", sans-serif !important;
+  text-transform: uppercase;
 }
+
 .paddinglr {
   padding-left: 12%;
   padding-right: 12%;
@@ -599,6 +620,7 @@ margin-bottom: 15px;
   right: 20px;
   height: 20px;
   z-index: 2;
+  display: flex;
 }
 .ikonica{
   width: 13px;
