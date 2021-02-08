@@ -221,7 +221,6 @@ td{
   position: relative;
 }
 .searchForm{
-  border: 2px solid #ADDBEF;
   border-radius: 5px;
   color:#1D4C81 ;
   padding: 0px !important;
@@ -273,7 +272,7 @@ select:focus, input:focus{
   border: none;
   outline: 0;
   display: inline-block;
-  padding: 10px 25px;
+  padding: 11px 25px;
   color: white;
   font-weight: 700;
   background-color: #1D4C81;
@@ -291,13 +290,19 @@ background-color: #7E7E7E;
   display: flex;
 }
 
-
+.nav-link h5 {
+  margin: 0;
+  font-size: 14px !important;
+}
 
 
 .navbar-light .navbar-nav .nav-link {
   color: #1D4C81 !important;
 }
+.navbar  ul li{
+  text-transform: uppercase;
 
+}
 .vipLink {
   background-color: #1D4C81;
   border-radius: 5px;
@@ -440,7 +445,6 @@ h6 {
   width: 70%;
   margin: auto;
     border-radius: 5px;
-    background-color:#ADDBEF ;
     color: #1D4C81;
   
   
@@ -474,7 +478,7 @@ body {
 }
 
 .property-title h3 , h5 {
- font-weight: 400;
+ font-weight: 500;
 } 
 bold{
   font-weight: 600;

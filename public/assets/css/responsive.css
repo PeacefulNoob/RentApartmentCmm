@@ -1,8 +1,4 @@
-@media (min-width: 992px) {
-    .navbar-expand-lg .navbar-nav .dropdown-menu {
-        background-color: #1d4c81;
-    }
-}
+
 
 @media only screen and (max-width: 798px) {
     .header1,
@@ -501,4 +497,16 @@ font-size: 14px;    }
     .blogs_owl .card-body{
 		height:250px;
 }
+.navbar-expand-lg .navbar-nav .dropdown-menu {
+    background-color: #1d4c81;
+}
+}
+/* Large devices (laptops/desktops, 1024px and up) */
+@media only screen and (min-width: 1024px) {
+
+    
+}
+
+/* Large devices (laptops/desktops, 992px and up) */
+@media only screen and (max-width: 1200px) {
 }
