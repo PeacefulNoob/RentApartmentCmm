@@ -49,7 +49,7 @@
                 <li>
                     <div class="d-flex">
                         <div><p class="bold pr-1"> Email address:</p></div>
-                        <div>  <p>office@cmm-montenegro.com</p></div>
+                        <div>  <p>management@cmm-montenegro.com</p></div>
                     </div>
                 </li>
             

@@ -49,8 +49,10 @@
     </div>
 
     <div class="properties_filter row specialProperties  mt-5  col-lg-9 col-md-9 col-sm-12 col-12  m-0 pr-0" >
-    <h2 class="col-12 ">Results around  {{$city->city}} </h2>
-
+        @php
+        $city1 = App\Location::find( (old("city")) );
+    @endphp
+<h2 class="col-12 ">Results around {{$city1->city}} </h2>
     <div class="razmak my-4"></div>
         <?php
         $j = 1;

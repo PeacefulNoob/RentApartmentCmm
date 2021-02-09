@@ -613,7 +613,24 @@ margin-bottom: 15px;
   font-weight: 500;
   font-size: 18px;
 }
+.showFilterCity{
+  position: absolute;
+    width: 20%;
+    top: 0%;
+    left: 50%;
+    font-size: 1.85rem;
+    border: none;
+    outline: none;
+    color: black;
+    -webkit-appearance: none;
+    -moz-appearance: none;
+    font-weight: 700;
+    margin-top: -5px;
 
+}
+.showFilterCity::-ms-expand {
+  display: none;
+}
 .peoples {
   position: absolute;
   bottom: 20px;
