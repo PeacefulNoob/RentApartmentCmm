@@ -5,9 +5,9 @@
 
 .header {
   position: absolute;
-  z-index: 2;
+  z-index: 22222;
   width: 100%;
-  background-color: #ffffffb5;
+  background-color: #ffffffde;
 }
 .calendar-wrapper{
     display: flex;
@@ -500,6 +500,7 @@ body {
 
 .property-title h3 , h5 {
  font-weight: 500;
+ font-size: 14px !important;
 } 
 bold{
   font-weight: 600;
