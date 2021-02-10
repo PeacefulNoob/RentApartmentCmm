@@ -26,6 +26,7 @@ Route::get('/excoursions', 'SiteController@excoursions')->name('excoursions');
 Route::get('/rent-a-car', 'SiteController@rentCar')->name('rentCar');
 Route::get('/rent-a-yacht', 'SiteController@rentYacht')->name('rentYacht');
 Route::get('/about', 'SiteController@about')->name('about');
+Route::get('/terms', 'SiteController@terms')->name('terms');
 Route::get('/news', 'SiteController@news')->name('news');
 Route::get('/single_news/{id}', 'SiteController@single_news')->name('single_news');
 
