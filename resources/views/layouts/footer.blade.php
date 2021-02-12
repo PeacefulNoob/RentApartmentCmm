@@ -22,7 +22,9 @@
                 <li>
                     <a href="/faqs"> FaQ </a>
                 </li>
-
+                <li>
+                    <a target="_blank" href="/terms">Terms and Conditions</a>
+                </li>
             </ul>
         </div>
         <div class="col-lg-3 col-md-6 col-sm-6 col-12">
@@ -75,7 +77,7 @@
                         <li class="bold"><a href="https://www.linkedin.com/company/cmm-investment-consulting-group/" target="_blank">Linkedin</a></li>
                     </ul>
                 </li>
-
+   
             </ul>
         </div>
         <div class="col-lg-3 col-md-6 col-sm-6 col-12">

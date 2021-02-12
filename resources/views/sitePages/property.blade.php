@@ -61,6 +61,10 @@
 
                     <p> {{$property->description}}  </p>
                 </div>
+                <hr class="mobile "></hr>
+                <a target="_blank" href="/terms"> <h6 class="tdark">Terms and Conditions</h6></a>
+                <hr class="mobile "></hr>
+
             </div>
             <div class=" col-lg-5 col-md-5 col-sm-12 col-12">
            <form action="{{ route('contact.store.property') }}" method="POST" class="form-property">
@@ -77,11 +81,11 @@
 
                                     <div class="form-group col-md-6 form_inquiry_left">
                                     <label for="checkin">CHECK-IN</label>
-                                    <input  class="form-control" id="checkin" placeholder="Put the C/I date please">
+                                    <input  class="form-control" id="checkin" name = "checkin" placeholder="Put the C/I date please">
                                     </div>
                                     <div class="form-group col-md-6 form_inquiry_right ">
                                     <label for="checkout">CHECKOUT</label>
-                                    <input  class="form-control" id="checkout" placeholder="Put the C/O date please">
+                                    <input  class="form-control" id="checkout" name = "checkout" placeholder="Put the C/O date please">
                                     </div>
                                 </div>
                                 <div class="form-group form_inquiry_bot">
@@ -179,8 +183,13 @@
                     <div class="image-placeholder">
                         <div class="owl-navigation owl-carousel gallery_owl owl-theme">
                             @foreach($property->images as $image)
+                            <a href="/properties/{{ $property->id }}">
+
                                 <img src="/assets/images/property_images/{{ $image->image }}" class="property_slide" alt="">
+                                </a>
+
                             @endforeach
+
                         </div>
 
                         <img class="map_icon" src="/assets/images/google-maps.svg" alt="">
@@ -283,7 +292,7 @@
 
         function destroCheckEvents(datesBetween){
             for(var j = 0; j<datesBetween.length;j++){
-                console.log("unisti izmedju" + datesBetween[j]);
+            //    console.log("unisti izmedju" + datesBetween[j]);
                 $('.fc-day[data-date="'+ datesBetween[j] +'"]').removeClass('cellBgBetween');
             }
         }
@@ -304,7 +313,7 @@
 
 
         events = <?php echo json_encode($calendar); ?> ;
-        console.log("json envenotvi " + events);
+      //  console.log("json envenotvi " + events);
         eventList = [];
         for(var i =0; i<events.length;i++){
             console.log(events[i]);
@@ -315,10 +324,9 @@
                 end: events[i].end.date.slice(0,10), // same.slice(0,10)
             });
         }
-        console.log("dogadjaji"+eventList);
+     //   console.log("dogadjaji"+eventList);
 
-         
-        
+
 
         var date = new Date();
         var d = date.getDate();
@@ -364,14 +372,17 @@
             eventClassNames: 'activeDay',
             dateClick: function(info) {
                 var event = calendar1.getEventById('1'); // an event object!
-                var start = event.start;
-                console.log(start);
+               // console.log(start);
                 info.dayEl.style.backgroundColor = "#033382";
                 if(checkIn == ''){
+                    alert("checkIn je ''")
+
                     checkInInfo = info;
                     checkIn = info.dateStr;
                     $('#checkin').val(checkIn);
                 }else if(checkOut == ''){
+                    alert("checkout je ''")
+
                     if(info.date > checkInInfo.date){
                     checkOutInfo = info;
                     checkOut = info.dateStr;
@@ -503,7 +514,6 @@
             },
             dateClick: function(info) {
                 var event = calendar1.getEventById('1'); // an event object!
-                var start = event.start;
                 console.log("prvi kalendar dogadjaji" + events);
                 console.log(info.dateStr);
                 info.dayEl.style.backgroundColor = "#033382";
@@ -618,8 +628,6 @@
                 alert("OKS");
             },
             eventRender: function (event, element) {
-                alert(event.start);
-                var eventDate = event.start;
                 var calendarDate = $('#calendar0').fullCalendar('getDate');
                 if (eventDate.get('month') !== calendarDate.get('month')) {
                     return false;

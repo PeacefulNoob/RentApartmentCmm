@@ -119,6 +119,10 @@ $('.stepBackCar').on(
     });
   }, false);
 })();
+$('.property-single .col-lg-7').click(function() {
+  $('.calendar-main').css("display", "none");
+  });
+
 /* 
 
 //jQuery time

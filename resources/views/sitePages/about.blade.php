@@ -12,18 +12,14 @@
                 the sale, purchase and rental of real estate in Montenegro; tourism and large spectrum of services in these
                 areas, and also investment consulting. Having a great experience, we now sell our own developments.</p>
                 </div>
-                <div class="col-lg-6 col-md-6 col-sm-12 col-12 ">
-                    <img src="/assets/images/about/Office copy.png" alt="">
-
-            </div>
-
+             <img src="/assets/images/about/Office copy.png" alt="">
         </div>
     <div class="abouts2 padding cblue">
         <p class= "py-2">The main priority of the CMM Company is deeper understanding of the client's needs and preferences which,
             together with their extensive investment experience and international recognition allows the client to feel
             secure and confident to purchase through CMM Group. </p>
         <p>CMM's rapid growth has seen the company expend to the following international markets:</p>
-        <img  src="/assets/images/about/Component 14 1.png" alt="">
+        <img  src="/assets/images/about/map.png" alt="">
     </div>
     <div class="abouts3 padding">
         <h1>Our awards</h1>

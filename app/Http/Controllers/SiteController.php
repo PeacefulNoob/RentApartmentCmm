@@ -63,7 +63,11 @@ class SiteController extends Controller
         $blogs = Blog::orderBy('id', 'DESC')->get();
         return view ('sitePages.about',compact('blogs'));
     }
-
+    public function terms()
+    {
+        $blogs = Blog::orderBy('id', 'DESC')->get();
+        return view ('sitePages.terms',compact('blogs'));
+    }
     public function news()
     {
         $blogs = Blog::orderBy('id', 'DESC')->get();

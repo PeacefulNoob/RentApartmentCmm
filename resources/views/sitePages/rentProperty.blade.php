@@ -71,8 +71,12 @@
                     <div class="image-placeholder">
           
                         <div class="owl-navigation owl-carousel gallery_owl owl-theme">
+                            
                             @foreach($property->images as $image)
+                            <a href="/properties/{{ $property->id }}">
+
                                 <img src="/assets/images/property_images/{{ $image->image }}" class="property_slide filterRental" alt="">
+                            </a>
                             @endforeach
                         </div>
 

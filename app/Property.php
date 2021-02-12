@@ -30,12 +30,11 @@ class Property extends Model
         return $this->hasMany('App\PropertyImage');
     }
     public function isFavourite(){
-        return $this->special;
+        return $this->favourites;
     } 
     public function isSpecial(){
         return $this->special;
     }
-
     public function scopeFilter($query, QueryFilter $filters){
         return $filters->apply($query);
     }

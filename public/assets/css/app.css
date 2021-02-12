@@ -190,11 +190,34 @@ td .fc-daygrid-day:hover{
     opacity:.5;
     pointer-events:none;
 }
+.adminHeader{
+  height: 40px;
+  display: flex;
+  color: white;
+  background-color: #1d4c81;
+}
+.adminHeader h5{
+padding: .5rem 1rem;
+margin: auto;
+display: block;
+}
+.adminHeader a{
+  color: white !important;
 
+  }
+.tekstAbout {
+  z-index: 3;
+}
 .fc-daygrid-day-events{
     min-height: 0px!important;
 }
-
+.abouts1 img {
+  height: 100%;
+  position: absolute;
+  top: 0;
+  right: 0;
+  width: auto;
+}
 .fc-daygrid-day{
     border: 1px solid #ff0000;
     border-radius: 50%;
@@ -280,7 +303,7 @@ select:focus, input:focus{
   width: 100%;
 }
 .searchFormaHero button:hover {
-  background-color: #555;
+  background-color: #578bc5;
   color: white;
 }
 .sendInq:disabled{
@@ -327,7 +350,10 @@ background-color: #7E7E7E;
   border-radius: 5px;
   padding: 0px 30px !important;
 }
-
+.terms{
+  height: 60vh;
+  padding-top: 8% !important;
+}
 .vipLink h5 {
   color: #fff;
 }
@@ -335,14 +361,20 @@ background-color: #7E7E7E;
 .nav-item {
   margin: auto;
 }
-
+.dropdown-menu{
+  padding: 0 !important;
+}
 .dropdown-item {
+  padding: 0.95rem 1.5rem !important;
   color: white !important;
   display: inline-block !important;
 }
+.dropdown-item h5{
+  margin: 0 !important;
+}
 .dropdown-item:hover {
   color: #ffff !important;
-  background-color: #1d4c81;
+  background-color: #687079;
 }
 .dropdown-menu {
   margin: 0.925rem 0 0;
@@ -1076,6 +1108,7 @@ hr {
 }
 .btnI p {
   font-weight: 100;
+  margin-top: 10px;
 }
 
 .covid-header {
@@ -1096,7 +1129,7 @@ hr {
   background: transparent url("/assets/images/cover_image/rentCarMain.png") 0% 0% no-repeat padding-box;
   height: 100vh;
   background-repeat: no-repeat;
-  background-size: cover;
+  background-size: auto;
   position: relative;
   color: white;
 }
@@ -1179,6 +1212,7 @@ hr {
 }
 
 .topForm {
+  cursor: pointer;
   position: absolute;
   top: -25px;
   left: 0;
@@ -1196,11 +1230,11 @@ hr {
 }
 /* //promjene */
 .abouts1 {
-  padding-top: 4% !important;
-  padding-bottom: 0% !important;
+  padding-top: 6% !important;
+  padding-bottom: 3% !important;
   background-color: #1D4C81;
   color: white;
-
+  position: relative;
 }
 .abouts1 h1{
 color: white;

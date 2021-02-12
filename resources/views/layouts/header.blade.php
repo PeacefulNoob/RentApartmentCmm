@@ -54,6 +54,7 @@
                 <a class="nav-link" href="/about#about_contact"><h5>Contact us</h5></a>
               </li>
             </ul>
+       
           </div>
         </nav>
     </div>

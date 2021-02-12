@@ -1,6 +1,17 @@
 
 
 @media only screen and (max-width: 798px) {
+    .modal-image-full h1{
+        font-size: 34px  !important;
+    }
+    .modal-image-full .modal-button {
+  
+        left: 0%;
+        background: #0000009e;
+        color: #1D4C81;
+        font-size: 27px;
+        font-weight: 700;
+    }
     .header1,
     .header2 {
         padding-left: 5%;
