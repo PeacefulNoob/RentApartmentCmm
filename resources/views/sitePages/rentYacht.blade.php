@@ -77,7 +77,7 @@ condition of the yacht.</p>
                             <div class="form-row m-0">
                                 <div class="form-group col-md-6 form_inquiry_left border-top">
                                     <label for="phoneNo">PHONE NUMBER</label>
-                                    <input type="number" class="form-control" name="phoneNo" id="phoneNo"
+                                    <input type="text" class="form-control" name="phoneNo" id="phoneNo"
                                         placeholder="Put your phone number" required>
                                         <div class="valid-feedback">
                                             Looks good!

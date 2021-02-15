@@ -22,9 +22,8 @@ class FullCalendar{
                     
                     true,
                     new \DateTime($value->start->date),
-                   new \DateTime($value->end->date),
-                 // $value->start->date,
-                 // $value->end->date,
+                    new \DateTime($value->end->date),
+            
                     null,
                     // Add color and link on event
                     [
