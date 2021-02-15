@@ -81,11 +81,11 @@
 
                                     <div class="form-group col-md-6 form_inquiry_left">
                                     <label for="checkin">CHECK-IN</label>
-                                    <input  class="form-control" id="checkin" placeholder="Put the C/I date please">
+                                    <input  class="form-control" id="checkin" name = "checkin" placeholder="Put the C/I date please">
                                     </div>
                                     <div class="form-group col-md-6 form_inquiry_right ">
                                     <label for="checkout">CHECKOUT</label>
-                                    <input  class="form-control" id="checkout" placeholder="Put the C/O date please">
+                                    <input  class="form-control" id="checkout" name = "checkout" placeholder="Put the C/O date please">
                                     </div>
                                 </div>
                                 <div class="form-group form_inquiry_bot">
@@ -326,8 +326,6 @@
         }
      //   console.log("dogadjaji"+eventList);
 
-         
-        
 
         var date = new Date();
         var d = date.getDate();
@@ -373,7 +371,6 @@
             eventClassNames: 'activeDay',
             dateClick: function(info) {
                 var event = calendar1.getEventById('1'); // an event object!
-                var start = event.start;
                // console.log(start);
                 info.dayEl.style.backgroundColor = "#033382";
                 if(checkIn == ''){
@@ -516,7 +513,6 @@
             },
             dateClick: function(info) {
                 var event = calendar1.getEventById('1'); // an event object!
-                var start = event.start;
                 console.log("prvi kalendar dogadjaji" + events);
                 console.log(info.dateStr);
                 info.dayEl.style.backgroundColor = "#033382";
@@ -631,8 +627,6 @@
                 alert("OKS");
             },
             eventRender: function (event, element) {
-                alert(event.start);
-                var eventDate = event.start;
                 var calendarDate = $('#calendar0').fullCalendar('getDate');
                 if (eventDate.get('month') !== calendarDate.get('month')) {
                     return false;

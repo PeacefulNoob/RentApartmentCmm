@@ -19,7 +19,7 @@
             together with their extensive investment experience and international recognition allows the client to feel
             secure and confident to purchase through CMM Group. </p>
         <p>CMM's rapid growth has seen the company expend to the following international markets:</p>
-        <img  src="/assets/images/about/Component 14 1.png" alt="">
+        <img  src="/assets/images/about/map.png" alt="">
     </div>
     <div class="abouts3 padding">
         <h1>Our awards</h1>

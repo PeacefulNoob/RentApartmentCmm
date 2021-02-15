@@ -1108,6 +1108,7 @@ hr {
 }
 .btnI p {
   font-weight: 100;
+  margin-top: 10px;
 }
 
 .covid-header {
@@ -1211,6 +1212,7 @@ hr {
 }
 
 .topForm {
+  cursor: pointer;
   position: absolute;
   top: -25px;
   left: 0;
