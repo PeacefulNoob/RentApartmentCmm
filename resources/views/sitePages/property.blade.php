@@ -327,7 +327,6 @@
      //   console.log("dogadjaji"+eventList);
 
 
-
         var date = new Date();
         var d = date.getDate();
         var m = date.getMonth();
