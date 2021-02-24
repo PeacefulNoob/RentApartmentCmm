@@ -143,7 +143,8 @@
                 </p>
             @endif
         </div>
-        <div class="form-group ">
+        <div class="form-row">
+        <div class="form-group col-md-4">
             <label for="persons">Persons</label>
             <select id="persons" name="persons" class="form-control" required>
                 <option value="{{ $property->persons }} ">{{ $property->persons }}</option>
@@ -168,6 +169,13 @@
                 <option value="18 ">18</option>
             </select>
         </div>
+
+        <div class="form-group col-md-8">
+            <label for="calendar_id">Google Calendar ID</label>
+            <input type="text" class="form-control" id="calendar_id" name="calendar_id" value="{{ $property->calendar_id }}"required>
+        </div>
+    </div>
+
         <button type="submit" class="btn btn-primary">Update</button>
     </form>
 </div>

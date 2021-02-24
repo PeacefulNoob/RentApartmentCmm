@@ -9,7 +9,7 @@ class Property extends Model
 {    protected $table = 'properties';
 
     protected $fillable = [
-        'title','description','price', 'size','floor','room_count', 'location_id','user_id','property_type_id','google_maps','persons','favourites','status','street','special'
+        'title','description','price', 'size','floor','room_count', 'location_id','user_id','property_type_id','google_maps','calendar_id','persons','favourites','status','street','special'
     ];
     public function amenities(){
         return $this->belongsToMany('App\Amenity');

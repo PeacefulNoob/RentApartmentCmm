@@ -2,7 +2,7 @@
 
 namespace App;
 
-use Acaronlex\LaravelCalendar\Calendar;
+use AYqLnTTThKqhV4npsciGstSpAa1XdkrrBP;
 use Spatie\GoogleCalendar\Event;
 use Carbon\Carbon;
 
@@ -13,6 +13,8 @@ class FullCalendar{
         
         $data = Event::get(Carbon::now(), Carbon::now()->addYear(), [], $calendar_id);
         
+        $events = [];
+
         if($data->count()) {
             foreach ($data as $key => $value) {
                 
@@ -22,8 +24,9 @@ class FullCalendar{
                     
                     true,
                     new \DateTime($value->start->date),
-                    new \DateTime($value->end->date),
-            
+                   new \DateTime($value->end->date),
+                 // $value->start->date,
+                 // $value->end->date,
                     null,
                     // Add color and link on event
                     [
@@ -58,14 +61,14 @@ class FullCalendar{
         }
 
 
-        $eventsFullCalendar = collect(['title', 'start', 'end']);
+/*         $eventsFullCalendar = collect(['title', 'start', 'end']);
         foreach($events as $event){
             $combined =  $eventsFullCalendar->combine([
                 $event->title ,
                 $event->start->format('Y-m-d'),
                 $event->end->format('Y-m-d')
             ]);
-        }
+        } */
 
 
 
@@ -97,7 +100,7 @@ class FullCalendar{
         }',
         ]);
 
-       $eventsFullCalendar = collect(['title', 'start', 'end']);
+/*        $eventsFullCalendar = collect(['title', 'start', 'end']);
          foreach($events as $event){
              $combined =  $eventsFullCalendar->combine([
                  $event->title ,
@@ -111,11 +114,11 @@ class FullCalendar{
             $combined =  $eventsFullCalendar->combine([
                 $event->title ,
                /*  $event->start->format('Y-m-d'),
-                 $event->end->format('Y-m-d') */
+                 $event->end->format('Y-m-d') 
                  $event->start->format('c'),
                  $event->end->format('c')
                 ]);
-        }
+        } */
 
        /*  foreach ($events as $key){
            print_r($key);
@@ -175,13 +178,13 @@ class FullCalendar{
             ]);
         }
         $eventsFullCalendar = collect(['title', 'start', 'end']);
-        foreach($events as $event){
+/*         foreach($events as $event){
             $combined =  $eventsFullCalendar->combine([
                 $event->title ,
                 $event->start->format('Y-m-d'),
                 $event->end->format('Y-m-d')
             ]);
-        }
+        } */
 
 
 

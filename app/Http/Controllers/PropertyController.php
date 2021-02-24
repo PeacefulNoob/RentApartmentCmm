@@ -74,6 +74,7 @@ class PropertyController extends Controller
  */          'street' => 'required',
             'location_id' => 'required',
             'property_type_id' => 'required',
+            'calendar_id' => 'required',
 
 
         ]);
@@ -94,6 +95,8 @@ class PropertyController extends Controller
         $property->location_id = $request->input('location_id');
         $property->google_maps = $request->input('google_maps');
         $property->street = $request->input('street');
+        $property->calendar_id = $request->input('calendar_id');
+
         $property->property_type_id = $request->input('property_type_id');
         $property->user_id = auth()->user()->id;
         $property->save();
@@ -175,18 +178,18 @@ class PropertyController extends Controller
         }
         $validator = Validator::make($request->all(), [
             'title' => 'required',
-            //'file[]' => 'mimes:mp4,mov,ogg,jpeg,png,jpg,svg',
+          //'file[]' => 'mimes:mp4,mov,ogg,jpeg,png,jpg,svg',
             'description' => 'required',
             'persons' => 'required',
             'price' => 'required',
             'size' => 'required',
             'floor' => 'required',
             'room_count' => 'required',
-/*             'google_maps' => 'required',
- */          'street' => 'required',
+/*          'google_maps' => 'required',
+ */         'street' => 'required',
             'location_id' => 'required',
             'property_type_id' => 'required',
-
+            'calendar_id' => 'required',
 
         ]);
         if ($validator->fails()) {

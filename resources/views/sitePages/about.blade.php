@@ -34,8 +34,17 @@
     <div class="row m-0 abouts5 padding">
         <div class="col-lg-4 col-md-4 col-sm-6 col-12 my-2">
         <h2>CMM Montenegro</h2>
-            <p>With a great and motivated personnel, CMM Management Department is in your disposal to help your ideas and plans come true. Starting with furnishing and renovation, our designers are there to make your home look like you want. Maintenance to take care for you, while you are not there you don’t have to worry, we are here to cover that. You want your return of money from an investment, the rental department is there to make it. Management department is created in order to meet all your needs.</p>
-           <a target="_blank" href="https://www.cmm-montenegro.com/">  <button class="buttonBlue">Check out more</button></a>
+        <p>The company was founded by the merger of the group of 
+            companies with the most experienced professionals in the real estate 
+            market, tourism and investment consulting in Montenegro. Today the 
+            company specializes in the sale, purchase and rental of real estate
+             in Montenegro; tourism and large spectrum of services in these areas,
+              and also investment consulting. Having a great experience, we now sell
+               our own developments. 
+            The main priority of the CMM Company is deeper understanding of the 
+            client's needs and preferences which, together with their extensive 
+            investment experience and international recognition allows the client
+             to feel secure and confident to purchase through CMM Group</p>           <a target="_blank" href="https://www.cmm-montenegro.com/">  <button class="buttonBlue">Check out more</button></a>
            
         </div>
         <div class="col-lg-4 col-md-4 col-sm-6 col-12 my-2">

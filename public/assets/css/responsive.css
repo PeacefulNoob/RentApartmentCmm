@@ -12,6 +12,24 @@
         font-size: 27px;
         font-weight: 700;
     }
+    .calendar-main {
+        position: absolute;
+        width: 94%;
+        height: auto;
+        background-color: #1D4C81;
+        top: 250px;
+        right: 3%;
+        display: none;
+        border-radius: 5px;
+    }
+    .calendar-child {
+        position: relative;
+        width: 100%;
+        height: auto;
+        margin-top: 0px;
+        margin-left: 0px;
+        border: 1px solid #f5f5f5;
+    }
     .header1,
     .header2 {
         padding-left: 5%;
@@ -126,6 +144,7 @@
     }
     .change1 p {
         font-size: 12px;
+        text-align: justify;
     }
     .property_slide {
         height: 35vh;

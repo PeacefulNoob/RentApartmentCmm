@@ -4,7 +4,7 @@
     <div class="hero-tran-image change1">
         <div class="hero-div row">
         
-        <div class="col-lg-6 col-md-6 col-sm-12 col-12 p-0">
+        <div class=" transfersDiv col-lg-6 col-md-6 col-sm-12 col-12 p-0">
             <h2>Transfers in Montenegro</h2>
             <h4>Schedule your transfer and have a relaxing stay in Montenegro.</h4>
             <p>If you have planned a long passage through the country or you want to go to the neighboring country,
@@ -18,7 +18,7 @@ vacation prefer to order the transfer and to make excursions to the cities of Mo
 comfortable, clean vehicles and professional and courteous drivers.</p>
      
         </div>
-        <div class="col-lg-6 col-md-6 col-sm-12 col-12 p-0 p-0">
+        <div class="col-lg-6 col-md-6 col-sm-12 col-12 pr-0">
             <form action="{{ route('contact.store.main') }}" method="POST" class="form-property">
                 {{ csrf_field() }}
                 <input type="hidden" class="form-control" name="title" id="title" value="Transfer ">

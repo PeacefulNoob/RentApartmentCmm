@@ -43,6 +43,24 @@
         </div>
         </div>
    @endif
+   @if (session('contact'))
+   <div class="alertDiv m-3">
+     <div class="alert alert-success alert-dismissable">
+            <div class="alertwrapper clearfix">
+            <button type="button" class="close" data-dismiss="alert" aria-label="Close">
+               <span aria-hidden="true">&times;</span> </button>
+                  <div class="alerticon dangerous">
+                <span class="glyphicon glyphicon-warning-sign"></span>
+              </div>
+              <div class="alertcontent">
+                <h4>Message</h4>
+                <p>         {{session('contact')}} 
+               </p>
+              </div>
+            </div>
+          </div>
+          </div>
+   @endif 
    @if ($errors->any())
 <div class="alertDiv">
    <div class="alert alert-danger alert-dismissable">

@@ -61,13 +61,14 @@ class EmailController extends Controller
     public function propertyInquiry(Request $request){
         $validator = Validator::make($request->all(),[
             'checkin' => 'required',
-            'ckeckout' => 'required',
+            'checkout' => 'required',
             'guests' => 'required|integer',
             'name' => 'required|string|max:255',
             'surname' => 'required|string|max:255',
             'phoneNo' => 'required|integer',
             'email' => 'required|email',
             'title' => 'required|string|max:255',
+            'property' => 'required|string|max:255',
 
         ]);
 

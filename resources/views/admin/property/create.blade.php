@@ -11,11 +11,11 @@
         @csrf
         <div class="form-row">
             <div class="form-group col-md-6">
-                <label for="title" class="labelNew">Title</label>
+                <label for="title" class="">Title</label>
                 <input type="text" class="form-control" id="title" placeholder="title" name="title" required>
             </div>
             <div class="form-group col-md-2">
-                <label class="labelNew" for="room_count">Room count</label>
+                <label class="" for="room_count">Room count</label>
                 <select id="room_count" name="room_count" class="form-control" required>
                     <option value="1 ">1</option>
                     <option value="2 ">2</option>
@@ -38,7 +38,7 @@
                 </select>
             </div>
             <div class="form-group col-md-2">
-                <label class="labelNew"   for="floor">Floor</label>
+                <label class=""   for="floor">Floor</label>
                 <select id="floor" name="floor" class="form-control" required>
                     <option value="1 ">1</option>
                     <option value="2 ">2</option>
@@ -61,7 +61,7 @@
                 </select>
             </div>
             <div class="form-group col-md-2">
-                <label class="labelNew" for="size">Size</label>
+                <label class="" for="size">Size</label>
                 <input type="number" id="size" class="form-control " name="size" required>
             </div>
         </div>
@@ -79,6 +79,7 @@
                 <label for="street">Street</label>
                 <input type="text" class="form-control" id="street" name="street" required>
             </div>
+
             <div class="form-group col-md-3">
                 <label for="location_id">Location</label>
                 <select id="location_id" class="form-control" name="location_id">
@@ -121,7 +122,9 @@
                 </p>
             @endif
         </div>
-        <div class="form-group ">
+        <div class="form-row">
+
+        <div class="form-group col-md-4">
             <label for="persons">Persons</label>
             <select id="persons" name="persons" class="form-control" required>
                 <option value="1 ">1</option>
@@ -143,6 +146,11 @@
                 <option value="17 ">17</option>
                 <option value="18 ">18</option>
             </select>
+        </div>
+            <div class="form-group col-md-8">
+                <label for="calendar_id">Google Calendar ID</label>
+                <input type="text" class="form-control" id="calendar_id" name="calendar_id" required>
+            </div>
         </div>
 
         <div class="control-group form-group">
