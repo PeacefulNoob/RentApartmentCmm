@@ -53,6 +53,14 @@
               <li class="nav-item">
                 <a class="nav-link" href="/about#about_contact"><h5>Contact us</h5></a>
               </li>
+              @foreach (config('app.languages') as $locale)
+                 
+                 <li class="nav-item">
+                     <a class="nav-link"
+                        href="{{ route('setLocaleRout', $locale) }}"
+                         @if (app()->getLocale() == $locale) style="font-weight: bold; text-decoration: underline" @endif>{{ strtoupper($locale) }}</a>
+                 </li> 
+             @endforeach
             </ul>
        
           </div>

@@ -18,6 +18,21 @@ Route::resource('properties','PropertyController');
 Route::resource('covids','CovidController');
 Route::resource('faqs','FaqController');
 
+Route::get('/', function () {
+    return redirect(app()->getLocale());
+});
+
+ Route::get('/setLocaleRout/{lang}', function ($lang) {
+    App::setlocale($lang);
+    return redirect(app()->getLocale());
+            })->name('setLocaleRout');
+
+            
+Route::prefix('{lang?}')->middleware('setlocale')->group(function() {
+
+
+});
+
 Route::get('calendar' , 'CalendarController@index');
 
 Route::get('/', 'SiteController@index')->name('home');
