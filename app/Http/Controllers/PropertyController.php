@@ -137,11 +137,11 @@ class PropertyController extends Controller
      * @param  \App\Property  $property
      * @return \Illuminate\Http\Response
      */
-    public function show(Property $property)
+    public function show($lang,$id)
     { 
-        $images = DB::table('property_images')->where('property_id', '=', $property->id)->get();
+        $images = DB::table('property_images')->where('property_id', '=', $id)->get();
         $properties=Property::orderBy('created_at', 'DESC')->get();
-        $property= Property::findOrFail($property->id);
+        $property= Property::findOrFail($id);
   
        $blogs = Blog::all();
 

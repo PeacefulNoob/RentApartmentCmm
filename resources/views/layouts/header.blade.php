@@ -6,13 +6,13 @@
                   <h5>  Tourist</h5>  <h5>Corner</h5>  
                 </a>
                 <div class="dropdown-menu " aria-labelledby="navbarDropdown">
-                  <a class="dropdown-item" href="/rent-a-car"><h5>Car rental</h5></a>
-                  <a class="dropdown-item" href="/rent-a-yacht"><h5>Yacht rental</h5></a>
-                   <a class="dropdown-item" href="/excoursions"><h5>Excursions</h5></a>
-                 <a class="dropdown-item" href="/transfers"><h5>Transfers</h5></a>
+                  <a class="dropdown-item" href="/{{app()->getLocale()}}/rent-a-car"><h5>Car rental</h5></a>
+                  <a class="dropdown-item" href="/{{app()->getLocale()}}/rent-a-yacht"><h5>Yacht rental</h5></a>
+                   <a class="dropdown-item" href="/{{app()->getLocale()}}/excoursions"><h5>Excursions</h5></a>
+                 <a class="dropdown-item" href="/{{app()->getLocale()}}/transfers"><h5>Transfers</h5></a>
 
                 </div>
-          <a class="navbar-brand" href="/"><img src="/assets/images/logo1.png" alt=""></a>
+          <a class="navbar-brand" href="/{{app()->getLocale()}}/"><img src="/assets/images/logo1.png" alt=""></a>
           <button class="navbar-toggler collapsed" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
                 <span class="sr-only">Toggle navigation</span>
                
@@ -28,18 +28,18 @@
 
                 </a><span class="caret"></span>
                 <div class="dropdown-menu " aria-labelledby="navbarDropdown">
-                  <a class="dropdown-item" href="/rent-a-car"><h5>Car rental</h5></a>
-                  <a class="dropdown-item" href="/rent-a-yacht"><h5>Yacht rental</h5></a>
-                   <a class="dropdown-item" href="/excoursions"><h5>Excursions</h5></a>
-                 <a class="dropdown-item" href="/transfers"><h5>Transfers</h5></a>
+                  <a class="dropdown-item" href="/{{app()->getLocale()}}/rent-a-car"><h5>Car rental</h5></a>
+                  <a class="dropdown-item" href="/{{app()->getLocale()}}/rent-a-yacht"><h5>Yacht rental</h5></a>
+                   <a class="dropdown-item" href="/{{app()->getLocale()}}/excoursions"><h5>Excursions</h5></a>
+                 <a class="dropdown-item" href="/{{app()->getLocale()}}/transfers"><h5>Transfers</h5></a>
 
                 </div>
               </li>
               <li class="nav-item">
-                <a class="nav-link" href="/rentProperty"><h5>Rent property</h5></a>
+                <a class="nav-link" href="/{{app()->getLocale()}}/rentProperty"><h5>Rent property</h5></a>
               </li>
               <li class="nav-item ">
-                <a class="nav-link" href="/news"><h5>News</h5></a>
+                <a class="nav-link" href="/{{app()->getLocale()}}/news"><h5>News</h5></a>
               </li>
               <li class="nav-item ">
                 <a class="nav-link" href="https://www.cmm-montenegro.com/" target="_blank"><h5> Properties for sale</h5></a>
@@ -48,10 +48,10 @@
             </ul>
             <ul class="navbar-nav ml-auto">
               <li class="nav-item ">
-                <a class="nav-link" href="/about"><h5>About us </h5></a>
+                <a class="nav-link" href="/{{app()->getLocale()}}/about"><h5>About us </h5></a>
               </li>
               <li class="nav-item">
-                <a class="nav-link" href="/about#about_contact"><h5>Contact us</h5></a>
+                <a class="nav-link" href="/{{app()->getLocale()}}/about#about_contact"><h5>Contact us</h5></a>
               </li>
               @foreach (config('app.languages') as $locale)
                  

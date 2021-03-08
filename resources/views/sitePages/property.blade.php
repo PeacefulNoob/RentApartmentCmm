@@ -41,19 +41,16 @@
                             $k = 1;
 
                         @endphp
-                    @foreach($amenities as $amenitie)
-                         @if(!$amenitie->photoUrl == null )
+                        @foreach($amenities as $amenitie)
                             <img src="/assets/images/{{ $amenitie->photoUrl }}" class="amenityHome py-2 "
                                 alt={{ $amenitie->photoUrl }}>
                             <?php
                                         if ($k++ == 8)
                                             break;
                                         ?>
-                                            @endif                     
-
                         @endforeach
                         </div>
-                <p class="showMoreAm">Click here to see all fascilities / amenities.</p>
+                <p class="showMoreAm">{{__('property_var.click_here')}}</p>
                 <div class="property-single-facilities">
                 <p> {{ implode(', ', $property->amenities()->get()->pluck('title')->toArray()) }}   </p>
                 </div>
@@ -72,7 +69,6 @@
             <div class=" col-lg-5 col-md-5 col-sm-12 col-12">
            <form action="{{ route('contact.store.property') }}" method="POST" class="form-property">
            <input type="hidden" class="form-control" name="title" id="title" value="Property rent">
-           <input type="hidden" class="form-control" name="property"  value={{$property->title}}>
 
                         {{ csrf_field() }}
 
@@ -187,7 +183,7 @@
                     <div class="image-placeholder">
                         <div class="owl-navigation owl-carousel gallery_owl owl-theme">
                             @foreach($property->images as $image)
-                            <a href="/properties/{{ $property->id }}">
+                            <a href="/{{app()->getLocale()}}/properties/{{ $property->id }}">
 
                                 <img src="/assets/images/property_images/{{ $image->image }}" class="property_slide" alt="">
                                 </a>
@@ -198,9 +194,9 @@
 
                         <img class="map_icon" src="/assets/images/google-maps.svg" alt="">
                         <div class="peoples">
-                            <h6>{{ $property->persons }}x</h6>
-                            <img src="poepe" alt="">
-                        </div>
+                                <h6>{{ $property->persons }}x</h6>
+                                <img src="/assets/images/guest.svg" alt="">
+                            </div>
                     </div>
 
                         <div class="property-title-top py-2">
@@ -216,7 +212,7 @@
                     </div>
 
                     <div class="property-title py-1">
-                                <a href="/properties/{{ $property->id }}">
+                                <a href="/{{app()->getLocale()}}/properties/{{ $property->id }}">
                                 <h3 class="mobile">{{ $property->title }}</h3>
                                 <h5 class="desktop">{{ $property->title }}</h5>
                                  </a>
@@ -276,7 +272,6 @@
                 calendar.render();
                 $('.fc-add_event-button').css("margin-right", "20px");
             }else{
-                $('.calendar-main').css("display", "none");
                 $('#calendar0').css("display", "none");
                 $('#calendar1').css("display", "none");
                 $('#calendar0').val(0);
@@ -373,21 +368,19 @@
             events: eventList,
             eventDisplay: 'background',
             eventColor: '#378006',
-            fixedWeekCount: false,
-            showNonCurrentDates: false,
             eventClassNames: 'activeDay',
-            
             dateClick: function(info) {
-                
                 var event = calendar1.getEventById('1'); // an event object!
                // console.log(start);
                 info.dayEl.style.backgroundColor = "#033382";
                 if(checkIn == ''){
+                    alert("checkIn je ''")
 
                     checkInInfo = info;
                     checkIn = info.dateStr;
                     $('#checkin').val(checkIn);
                 }else if(checkOut == ''){
+                    alert("checkout je ''")
 
                     if(info.date > checkInInfo.date){
                     checkOutInfo = info;
@@ -411,6 +404,7 @@
                         }*/
                     }
                 }else{
+                    alert("checkout je manji");
                         //checkOutInfo.dayEl.style.backgroundColor = "transparent";
                         checkInInfo.dayEl.style.backgroundColor = "transparent";
                         checkOut = '';
@@ -473,9 +467,6 @@
                     }*/
                 }
             },
-            validRange: function(nowDate){
-                    return {start: nowDate} //to prevent anterior dates
-                },
             dayCellClassNames: function (date, cell) {
                 date = checkIn;
                 $('.fc-day[data-date="'+ date +'"]').addClass('cellBg');
@@ -497,6 +488,7 @@
                 }
             },
             eventClick:function(){
+                alert("OKS");
             }
         });
         calendar1.render();
@@ -514,9 +506,6 @@
             events: eventList,
             eventDisplay: 'background',
             eventColor: '#378006',
-            fixedWeekCount: false,
-            showNonCurrentDates: false,
-            eventClassNames: 'activeDay',
             datesSet: function(info) {
                 month = info.endStr.slice(0,10);
                 calendar1.changeView('dayGridMonth', month);
@@ -606,11 +595,12 @@
                     }
                 }
 
-         
+              /*  console.log(checkIn + "IN");
+                console.log(checkInInfo);
+                console.log(checkOut + "OUT");
+                console.log(checkOutInfo);
+                checkOutInfo.dayEl.style.backgroundColor = "white";*/
             },
-            validRange: function(nowDate){
-                    return {start: nowDate} //to prevent anterior dates
-                },
             dayCellClassNames: function (date, cell) {
                 date = checkIn;
                 $('.fc-day[data-date="'+ date +'"]').addClass('cellBg');
@@ -634,6 +624,7 @@
                 }
             },
             eventClick:function(){
+                alert("OKS");
             },
             eventRender: function (event, element) {
                 var calendarDate = $('#calendar0').fullCalendar('getDate');

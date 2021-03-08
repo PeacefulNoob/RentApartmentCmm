@@ -6,15 +6,15 @@
     <div class="razmak my-4 desktop"></div>
 
             <div class=" filterMain " id="fbox">
-                <form method="GET" action="{{ route('filter.properties') }}" style="width: 100%; display: flex; flex-direction: column;" >
+                <form method="GET" action="{{ route('filter.properties',app()->getLocale()) }}" style="width: 100%; display: flex; flex-direction: column;" >
                    @csrf
                    <div class="filter">
-                   <h3>Detailed search</h3>
+                   <h3>{{__('rent_property_var.form_title')}}</h3>
                    </div>
                 <div class="filter">
                 <label>City:</label>
                     <select name="city" id="city" class="form-control filterInput">
-                        <option value="" disabled selected>Where would you like to rent real estate?</option>
+                        <option value="" disabled selected>{{__('rent_property_var.form_city_placeholder')}}</option>
                         @foreach($cities as $city)
                         <option value="{{$city->id}}" {{ (old("city") == $city->id ? "selected":"") }}>{{$city->city}}</option>
                         @endforeach
@@ -24,25 +24,25 @@
                 <div class="filter">
                 <label>Property type:</label>
                 <select name="type" class="form-control filterInput" >
-                    <option value="" disabled selected>Choose type of the property</option>
+                    <option value="" disabled selected>{{__('rent_property_var.form_type_placeholder')}}</option>
                     @foreach($types as $type)
                     <option value="{{$type->id}}" {{ (old("type") == $type->id ? "selected":"") }}>{{$type->title}}</option>
                     @endforeach
                 </select>
                 </div>
                 <div class="filter">
-                <label>Price range:</label>
+                <label>{{__('rent_property_var.form_price_range')}}</label>
                 <div class="row m-0">
                    <div class="col-6 pl-0"> <input placeholder="From" type="number" name="priceFrom" class="price-input filterInput" value="{{old('priceFrom')}}"></div>
                    <div class="col-6 pr-0">   <input  placeholder="To" type="number" name="priceTo" class="price-input filterInput" value="{{old('priceTo')}}"></div>
                 </div>
                 </div>
                 <div class="filter">
-                <label>NUMBER OF GUESTS:</label>
+                <label>{{__('rent_property_var.form_number_of_guests')}}:</label>
                 <input class="filterInput" type="number" name="persons" value="{{old('persons')}}">
                 </div>
                     <div class="button-form-submit pt-4 pb-4" >
-                        <button class="btn btn-submit">SEARCH</button>
+                        <button class="btn btn-submit">{{__('rent_property_var.form_search')}}</button>
                     </div>
                 </form>
             </div>
@@ -56,7 +56,7 @@
     <h2 class="col-12 ">Results around {{$city1->city}} </h2>
           
       @else
-      <h2 class="col-12 ">Results around </h2>
+      <h2 class="col-12 ">{{__('rent_property_var.page_heading')}} </h2>
 
       @endif
      
@@ -73,7 +73,7 @@
                         <div class="owl-navigation owl-carousel gallery_owl owl-theme">
                             
                             @foreach($property->images as $image)
-                            <a href="/properties/{{ $property->id }}">
+                            <a href="/{{app()->getLocale()}}/properties/{{ $property->id }}">
 
                                 <img src="/assets/images/property_images/{{ $image->image }}" class="property_slide filterRental" alt="">
                             </a>
@@ -101,7 +101,7 @@
                         </div>
 
                         <div class="property-title py-1">
-                                <a href="/properties/{{ $property->id }}">
+                                <a href="/{{app()->getLocale()}}/properties/{{ $property->id }}">
                                 <h3 class="mobile">{{ $property->title }}</h3>
                                 <h5 class="desktop">{{ $property->title }}</h5>
                                  </a>
@@ -135,7 +135,7 @@
                 <div class="property">
                     <div class="property-title">
                         <div>
-                            <h4>Sorry, there are no properties</h4>
+                            <h4>{{__('rent_property_var.no_properties')}}</h4>
                         </div>
 
                     </div>

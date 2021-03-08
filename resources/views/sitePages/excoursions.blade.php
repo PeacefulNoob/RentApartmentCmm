@@ -8,23 +8,17 @@
 
 <div class="hero">
     <div class="hero-exc-image change1">
-        <div class=" hero-div ">
-            <h2>Excoursions in Montenegro</h2>
-            <p class="rentaYachDiv">There is a huge number of attractions In Montenegro that are worth visiting. When booking a tour from
-people on the street, you can’t be sure that you will receive a good service, and even more important
-than that, you can’t be sure that you get your money back for waste of time when excursion is poorly
-organized. </p>
-     <p class="rentaYachDiv">When booking tours with us, you are always sure in the service you are going to get. You can
-order an individual tour in a comfortable car with a guide or book a group tour, and make a little trip
-with a small pleasant company. All our cars are new, air-conditioned, we have professional and proven
-drivers, our guides – they are people who know everything about Montenegro!</p>
+        <div class="hero-div ">
+            <h2>{{__('excoursions_var.page_title')}}</h2>
+            <p>{{__('excoursions_var.page_title_p')}} </p>
+     <p>{{__('excoursions_var.page_title_p2')}}</p>
         <div class="row my-5">
 <div class="col-25">
   <a href="#" class=""  data-toggle="modal" data-target="#excoursions_cetinje_modal">
     <div class="card" >
         <img class="card-img-top" src="/assets/images/cetinje.png" alt="Cetinje and Mountain Lovćen">
         <div class="card-body">
-          <p class="card-text">Cetinje and Mountain Lovćen</p>
+          <p class="card-text">{{__('excoursions_var.cetinje')}}</p>
         </div>
       </div>
     </a>
@@ -35,7 +29,7 @@ drivers, our guides – they are people who know everything about Montenegro!</p
     <div class="card" >
         <img class="card-img-top" src="/assets/images/dubrovnik.png" alt="Dubrovnik">
         <div class="card-body">
-          <p class="card-text">Dubrovnik </p>
+          <p class="card-text">{{__('excoursions_var.dubrovnik')}} </p>
         </div>
       </div>
     </a>
@@ -47,7 +41,7 @@ drivers, our guides – they are people who know everything about Montenegro!</p
     <div class="card" >
         <img class="card-img-top" src="/assets/images/kotor.png" alt="Stari grad Kotor">
         <div class="card-body">
-          <p class="card-text">Kotor</p>
+          <p class="card-text">{{__('excoursions_var.kotor')}}</p>
         </div>
       </div>
     </a>
@@ -59,7 +53,7 @@ drivers, our guides – they are people who know everything about Montenegro!</p
     <div class="card" >
         <img class="card-img-top" src="/assets/images/ostrog.png" alt="Manastir Ostrog">
         <div class="card-body">
-          <p class="card-text">Monestery Ostrog </p>
+          <p class="card-text">{{__('excoursions_var.ostrog')}} </p>
         </div>
       </div>
     </a>
@@ -71,7 +65,7 @@ drivers, our guides – they are people who know everything about Montenegro!</p
     <div class="card" >
         <img class="card-img-top" src="/assets/images/skadar.png" alt="Skadarsko jezero">
         <div class="card-body">
-          <p class="card-text">Skadar lake</p>
+          <p class="card-text">{{__('excoursions_var.skadar_lake')}}</p>
         </div>
       </div>
     </a>

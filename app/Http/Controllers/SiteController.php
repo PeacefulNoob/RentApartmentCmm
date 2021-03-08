@@ -73,8 +73,9 @@ class SiteController extends Controller
         $blogs = Blog::orderBy('id', 'DESC')->get();
         return view ('sitePages.news',compact('blogs'));
     }
-    public function single_news($id)
+    public function single_news($lang,$id)
     {
+
         $blog = Blog::find($id);
         $blogs = Blog::orderBy('id', 'DESC')->get();
         return view ('sitePages.single_news',compact('blog','blogs'));

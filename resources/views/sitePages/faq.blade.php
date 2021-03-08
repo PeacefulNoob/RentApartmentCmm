@@ -10,7 +10,7 @@
   </style>
 <div class="homeMain paddinglr">
 <div class="my-5">
-  <h1>Frequently asked Questions</h1>
+  <h1>{{__('others.faq_title')}}</h1>
 </div>
 <div class="row"  style="margin-bottom: 30px;">
     <?php

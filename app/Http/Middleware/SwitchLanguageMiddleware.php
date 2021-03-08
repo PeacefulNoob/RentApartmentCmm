@@ -3,6 +3,9 @@
 namespace App\Http\Middleware;
 
 use Closure;
+use Session;
+use App;
+use Config;
 
 class SwitchLanguageMiddleware
 {

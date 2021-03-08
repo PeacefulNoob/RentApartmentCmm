@@ -12,15 +12,15 @@
 <div class="all_aboutMnePage">
         <div class="aboutMnePage pb-4">
             <div class="text">
-            <h1 style="color:white;">ABOUT MONTENEGRO</h1>
-            <p>Events / Festivals / Parties / Holidays
+            <h1 style="color:white;">{{__('others.news_title')}}</h1>
+            <p>{{__('others.news_title_p')}}
             </p> 
         </div>
         </div>
         <div class="paddinglr row m-0 pb-4">
                 @foreach($blogs as $blog)
                     <div class="card col-lg-3 col-md-6 col-sm-6 col-12 p-4" style="border:none">
-                    <a href="/single_news/{{$blog->id}}">
+                    <a href="/{{app()->getLocale()}}/single_news/{{$blog->id}}">
                         <img class="card-img-top blog_image" src="{{ $blog->image }}" alt="Card image cap">
                     </a>
                         <div class="card-body">

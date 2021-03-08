@@ -7,12 +7,12 @@
     <div class="hero">
         <div class="hero-image">
             <div class="searchFormaHero desktop">
-                <form method="GET" action="{{ route('filter.properties') }}"  class="desktop">
+                <form method="GET" action="{{ route('filter.properties',app()->getLocale()) }}"  class="desktop">
                     @csrf
                         <div class="form-row m-0 mainsearch">
                             <div class="col-lg-4 col-md-12 col-sm-6 col-12  searchForm">
                                        <select name="city" id="city" class="form-control">
-                                    <option value="" disabled selected>Location</option>
+                                    <option value="" disabled selected>{{__('index_var.location')}}</option>
                                             @foreach($cities as $city)
                                             <option value="{{$city->id}}" {{ (old("city") == $city->id ? "selected":"") }}>{{$city->city}}</option>
                                             @endforeach
@@ -20,7 +20,7 @@
                             </div>
                             <div class="col-lg-4 col-md-6 col-sm-6 col-12 searchForm">
                                    <select name="type"  id="type" class="form-control" >
-                                            <option value="" disabled selected>Property type</option>
+                                            <option value="" disabled selected>{{__('index_var.property_type')}}</option>
                                         @foreach($types as $type)
                                         <option value="{{$type->id}}" {{ (old("type") == $type->id ? "selected":"") }}>{{$type->title}}</option>
                                         @endforeach
@@ -28,7 +28,7 @@
                             </div>
                             <div class="col-lg-3 col-md-4 col-sm-6 col-12  searchForm">
                             <select name="persons"  id="persons" class="form-control" >
-                                            <option value="" disabled selected>How many guests</option>
+                                            <option value="" disabled selected>{{__('index_var.how_guests')}}</option>
                                         <option value="{{old('persons')}}"> {{old('persons')}}</option>
                                         <option value="1">1</option>
                                         <option value="2"> 2</option>
@@ -43,7 +43,7 @@
                             <div class="col-lg-1 col-md-2 col-sm-6  searchForm">
     
                                     <div class="button-form-submit">
-                                        <button class="btn btn-submit">GO!</button>
+                                        <button class="btn btn-submit">{{__('index_var.button_go')}}</button>
                                     </div>
                                     </div>
     
@@ -52,13 +52,13 @@
                     </form>
               </div>
             <div class="hero-text">
-                <h1 class="mobile">Rent a real estate     </h1 > <h1  class="mobile"> in Montenegro</h1>
-                <h1 class="desktop">Rent a real estate in Montenegro</h1>
+                <h1 class="mobile">{{__('index_var.hero_mobile1')}}</h1 > <h1  class="mobile">{{__('index_var.hero_mobile2')}}</h1>
+                <h1 class="desktop">{{__('index_var.hero_desktop')}}</h1>
                     </div>
                     <div class="mobile filterDivMob">
                     <div class="searchForm">
                     <a href="#" class="btn "  data-toggle="modal" data-target="#filter_inquiry">
-                            <p>Where would you like to rent real estate?</p> 
+                            <p>{{__('index_var.form_p1')}}</p> 
                         </a>
           </div>
       
@@ -69,9 +69,9 @@
     </div>
 
     <div class="properties my-5">
-        <h2>Our favourites</h2>
-        <p class="pgrey mb-1 mt-3">Review COVID-19 travel restrictions before you book. <a href="#" class=""  data-toggle="modal" data-target="#covid_modal"
-                style="text-decoration:underline;">Learn more</a></p>
+        <h2>{{__('index_var.our_favourite_title')}}</h2>
+        <p class="pgrey mb-1 mt-3">{{__('index_var.covid_section')}}<a href="#" class=""  data-toggle="modal" data-target="#covid_modal"
+                style="text-decoration:underline;">{{__('index_var.learn_more')}}</a></p>
         <div class="row specialProperties" style="margin-bottom: 30px;">
             <?php
             $colcount = count($propertiesS);
@@ -87,7 +87,7 @@
                             <div class="owl-navigation owl-carousel gallery_owl owl-theme">
                                 @foreach($property->images as $image)
                              
-                                <a href="/properties/{{ $property->id }}">
+                                <a href="/{{app()->getLocale()}}/properties/{{ $property->id }}">
                                 <div class="propOverlay">                                 </div>
 
                                  <img src="/assets/images/property_images/{{ $image->image }}" class="property_slide" alt=""> 
@@ -114,7 +114,7 @@
                             </div>
                         </div>
                             <div class="property-title py-1">
-                                <a href="/properties/{{ $property->id }}">
+                                <a href="/{{app()->getLocale()}}/properties/{{ $property->id }}">
                                 <h3 class="mobile">{{ $property->title }}</h3>
                                 <h5 class="desktop">{{ $property->title }}</h5>
                                  </a>
@@ -148,7 +148,7 @@
                     <div class="property">
                         <div class="property-title">
                             <div>
-                                <h4>Sorry, there are no special properties</h4>
+                                <h4>{{__('index_var.property_title')}}</h4>
                             </div>
 
                         </div>
@@ -160,16 +160,15 @@
     <div class="all_aboutMne">
         <div class="aboutMne">
             <div class="text">
-            <h1 style="color:white;">About Montenegro</h1>
-            <p>Events / Festivals / Parties / Holidays
-            </p> 
+            <h1 style="color:white;">{{__('index_var.about_mne')}}</h1>
+            <p>{{__('index_var.about_mne_p1')}}</p> 
         </div>
         </div>
         <div class="paddinglr blogs_main">
             <div class="owl-navigation owl-carousel blogs_owl owl-theme ">
                 @foreach($blogs as $blog)
                     <div class="card" style="border:none">
-                    <a href="/single_news/{{$blog->id}}">
+                    <a href="/{{app()->getLocale()}}/single_news/{{$blog->id}}">
                         <img class="card-img-top blog_image" src="/{{ $blog->image }}" alt="Card image cap">
                         </a>
                         <div class="card-body">
