@@ -28,5 +28,9 @@ return[
 
 
 
+"facilities" => "Facilities/Amenities",
+
+
+
 ]
 ?>

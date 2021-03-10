@@ -1,32 +1,35 @@
 <?php
 return[
-"click_here" => "Click here to see all fascilities / amenities.",
-"property_description" => "Property Description",
-"terms_and_cond" => "Terms and Conditions",
-"night" => "night",
-"check_in" => "CHECK-IN",
-"checkout" => "CHECKOUT",
+"click_here" => " Нажмите здесь, чтобы увидеть все возможности / удобства.",
+"property_description" => " Описание недвижимости ",
+"terms_and_cond" => " Условия и положения ",
+"night" => " ночь ",
+"check_in" => " РЕГИСТРИРОВАТЬСЯ ",
+"checkout" => " ПРОВЕРИТЬ ",
 "guests" => "Guests",
-"book_your_property" => "BOOK YOUR PROPERTY",
-"book_through_email" => "Book your stay through email",
-"step_back" => "step back",
-"just_one_more" => "Just one more step and you are done. Afterwards, we will contact you back.",
+"book_your_property" => " ЗАБРОНИРОВАТЬ НЕДВИЖИМОСТЬ",
+"book_through_email" => " Забронируйте проживание по электронной почте ",
+"step_back" => "шаг назад ",
+"just_one_more" => " Еще один шаг, и готово. После этого мы свяжемся с вами.",
 //////////////////////////////
-"form_name" => "NAME",
-"form_surname" => "SURNAME",
-"form_phone" => "PHONE NUMBER",
-"form_email" => "E-MAIL",
-"form_send" => "SEND INQURY",
-"form_send_p" => "Our representative will contact you back through e-mail with the confirmation as soon as possible.",
+"form_name" => " ИМЯ ",
+"form_surname" => " ФАМИЛИЯ ",
+"form_phone" => " ТЕЛЕФОННЫЙ НОМЕР ",
+"form_email" => " ЭЛЕКТРОННОЕ ПИСЬМО ",
+"form_send" => " ОТПРАВИТЬ ЗАПРОС ",
+"form_send_p" => "Наш представитель свяжется с вами по электронной почте как можно скорее.",
 ///////////////////////////////
-"google_maps_location" => "Google maps location",
-"more_like_this" => "More like this",
-"covid_19" => "Review COVID-19 travel restrictions before you book.",
-"learn_more" => "Learn more",
+"google_maps_location" => " Расположение на гугл картах ",
+"more_like_this" => " Больше похоже на это ",
+"covid_19" => "Перед бронированием ознакомьтесь с 
+ограничениями на поездки из-за COVID-19.",
+"learn_more" => " Узнать больше",
 ///////////////////////////////
-"no_specials" => "Sorry, there are no special properties",
+"no_specials" => " Извините, особых свойств нет ",
 
 
+"facilities" => "Услуги / Удобства
+",
 
 ]
 ?>

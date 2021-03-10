@@ -1,13 +1,12 @@
 <?php
 return[
-"form_title" => "Detailed search",
-"form_city_placeholder" => "Where would you like to rent real estate?",
-"form_type_placeholder" => "Choose type of the property",
-"form_price_range" => "Price range:",
-"form_number_of_guests" => "NUMBER OF GUESTS",
-"form_search" => "SEARCH",
-//////////////////////////////////////////////////////////////////////////////////////////////////////
-"page_heading" => "Results around",
-"no_properties" => "Sorry, there are no properties",
+"form_title" => " Детальный поиск ",
+"form_city_placeholder" => "Где бы вы хотели арендовать недвижимость?",
+"form_type_placeholder" => " Выберите тип недвижимости ",
+"form_price_range" => " Ценовой диапазон:",
+"form_number_of_guests" => "ЧИСЛО ЛЮДЕЙ ",
+"form_search" => " ПОИСК",
+"page_heading" => " Результаты около",
+"no_properties" => "Извините, особых свойств нет ",
 ]
 ?>

@@ -6,7 +6,7 @@
 }
 </style>
 <div class="homeMain">
-    <div class="paddinglr single_news_section my-5">
+    <div class="paddinglr single_news_section my-5 translate">
            <div class="single_news_header pb-3">
                 <img class="" src="/{{ $blog->image }}" alt="Card image cap">
            </div>
@@ -22,7 +22,7 @@
     </div>
     <div class=" single_news_blog">
         <h4 class="py-4"> {{__('others.more_rec_news')}} </h4>
-    <div class="owl-navigation owl-carousel blogs_owl owl-theme ">
+    <div class="owl-navigation owl-carousel blogs_owl owl-theme translate">
                 @foreach($blogs as $blog)
                     <div class="card" style="border:none">
                     <a href="/{{app()->getLocale()}}/single_news/{{$blog->id}}">

@@ -1,12 +1,9 @@
 <?php
 return[
-    "location" => "
-    Место расположения",
-    "property_type" => "Тип недвижимости
-    ",
-    "how_guests" => "Сколько гостей
-    ",
-"button_go" => " ИДТИ!",
+    "location" => "Место расположения",
+    "property_type" => "Тип недвижимости",
+    "how_guests" => "Сколько гостей?",
+"button_go" => "НАЙТИ!",
 
 "hero_mobile1" => " Снять недвижимость ",
 "hero_mobile2" => "в Черногории",

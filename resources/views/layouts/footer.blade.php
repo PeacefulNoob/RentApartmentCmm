@@ -91,7 +91,7 @@
 					$i = 1;
 					?>
                 @foreach($blogs as $blog)
-                <li>
+                <li class="translate">
                     <a target="_blank" href="/{{app()->getLocale()}}/single_news/{{$blog->id}}">{{$blog->title}}</a>
                 </li>
                 <?php	

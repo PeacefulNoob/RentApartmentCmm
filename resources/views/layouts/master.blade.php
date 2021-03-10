@@ -75,7 +75,7 @@
     </script>
     <!--End of Tawk.to Script-->
 </head>
-<body>
+<body class="notranslate">
 @auth
 
 <div class='adminHeader'>

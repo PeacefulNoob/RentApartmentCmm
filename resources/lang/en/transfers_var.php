@@ -22,7 +22,7 @@ return[
 "form_surname" => "SURNAME",
 "form_number" => "PHONE NUMBER",
 "form_mail" => "E-MAIL",
-"send_button" => "SEND INQURY"
+"send_button" => "SEND INQURY",
 "send_p1" => "Our representative will contact you back through e-mail with the confirmation as soon as possible.",
 ]
 ?>

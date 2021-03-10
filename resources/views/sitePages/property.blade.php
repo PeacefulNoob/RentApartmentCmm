@@ -30,12 +30,12 @@
                  {{ $property->location->zip }}
                 </div>
                 <div class="property-type py-2 d-flex">
-                    <img src="/assets/images/Property type.svg" class="ikonica mr-2" alt="">
+                    <img src="/assets/images/Property type.svg" class="ikonica mr-2 translate" alt="">
                     {{ $property->propertyType->title }}
                 </div>
                 <hr class="mobile "></hr>
                 <div class="faciImg py-2">
-                <h6>Facilities/Amenities</h6>
+                <h6>{{__('property_var.facilities')}}</h6>
                 @php
                             $amenities = $property->amenities()->get();
                             $k = 1;
@@ -51,18 +51,18 @@
                         @endforeach
                         </div>
                 <p class="showMoreAm">{{__('property_var.click_here')}}</p>
-                <div class="property-single-facilities">
+                <div class="property-single-facilities translate">
                 <p> {{ implode(', ', $property->amenities()->get()->pluck('title')->toArray()) }}   </p>
                 </div>
                 <hr class="mobile "></hr>
-                <h6 class="tdark">Property Description</h6>
+                <h6 class="tdark">{{__('property_var.property_description')}}</h6>
 
-                <div class="property-single-amenities my-4">
+                <div class="property-single-amenities my-4 translate">
 
                     <p> {{$property->description}}  </p>
                 </div>
                 <hr class="mobile "></hr>
-                <a target="_blank" href="/terms"> <h6 class="tdark">Terms and Conditions</h6></a>
+                <a target="_blank" href="/terms"> <h6 class="tdark">{{__('property_var.terms_and_cond')}}</h6></a>
                 <hr class="mobile "></hr>
 
             </div>
@@ -74,17 +74,17 @@
 
                 <div class="firstCarForm">
                             <div class="form-group text-center">
-                            <h3 >    &euro;   {{$property->price}} / night   </h3>
+                            <h3 >    &euro;   {{$property->price}} / {{__('property_var.night')}}   </h3>
                             </div>
                             <div class="form_inquiry">
                                 <div class="form-row m-0">
 
                                     <div class="form-group col-md-6 form_inquiry_left">
-                                    <label for="checkin">CHECK-IN</label>
+                                    <label for="checkin">{{__('property_var.check_in')}}</label>
                                     <input  class="form-control" id="checkin" name = "checkin" placeholder="Put the C/I date please">
                                     </div>
                                     <div class="form-group col-md-6 form_inquiry_right ">
-                                    <label for="checkout">CHECKOUT</label>
+                                    <label for="checkout">{{__('property_var.checkout')}}</label>
                                     <input  class="form-control" id="checkout" name = "checkout" placeholder="Put the C/O date please">
                                     </div>
                                 </div>
@@ -105,51 +105,51 @@
                                 </div>
                                 </div>
                                 <div class="form-group form_inquiry_bot">
-                                    <label for="guests">Guests</label>
+                                    <label for="guests">{{__('property_var.guests')}}</label>
                                     <input type="number"  name="guests" class="form-control" id="guests" placeholder="Number of guests">
 
 
                                 </div>
                             </div>
                             <div class="form-group btnI text-center">
-                          <div  class="btn btn-inquiry nextCarForm">BOOK YOUR PROPERTY</div>
-                          <p>Book your stay through email</p>
+                          <div  class="btn btn-inquiry nextCarForm">{{__('property_var.book_your_property')}}</div>
+                          <p>{{__('property_var.book_through_email')}}</p>
                       </div>
                     </div>
                       <div class="secondCarForm">
-                        <div class="topForm stepBackCar"><p>step back</p></div>
+                        <div class="topForm stepBackCar"><p>{{__('property_var.step_back')}} </p></div>
                        <div class="form-group text-center">
-                            <h3> Just one more step and you are done. Afterwards, we will contact you back. </h3>
+                            <h3> {{__('property_var.just_one_more')}} </h3>
                         </div>
                         <div class="form_inquiry">
                             <div class="form-row m-0">
                                 <div class="form-group col-md-6 form_inquiry_left">
-                                    <label for="name">NAME</label>
+                                    <label for="name">{{__('property_var.form_name')}}</label>
                                     <input type="text" class="form-control" name="name" id="name"
                                         placeholder="Put your real name">
                                 </div>
                                 <div class="form-group col-md-6 form_inquiry_right ">
-                                    <label for="surname">SURNAME</label>
+                                    <label for="surname">{{__('property_var.form_surname')}}</label>
                                     <input type="text" class="form-control" name="surname" id="surname"
                                         placeholder="Put your surname">
                                 </div>
                             </div>
                             <div class="form-row m-0">
                                 <div class="form-group col-md-6 form_inquiry_left border-top">
-                                    <label for="phoneNo">PHONE NUMBER</label>
+                                    <label for="phoneNo">{{__('property_var.form_phone')}}</label>
                                     <input type="text" class="form-control" name="phoneNo" id="phoneNo"
                                         placeholder="Put your phone number">
                                 </div>
                                 <div class="form-group col-md-6 form_inquiry_right border-top">
-                                    <label for="email">E-MAIL</label>
+                                    <label for="email">{{__('property_var.form_email')}}</label>
                                     <input type="text" class="form-control" name="email" id="email"
                                         placeholder="Put your e-mail adress">
                                 </div>
                             </div>
                         </div>
                         <div class="form-group btnI text-center">
-                          <button type="submit" class="btn btn-inquiry">SEND INQURY</button>
-                          <p>Our representative will contact you back through e-mail with the confirmation as soon as possible.</p>
+                          <button type="submit" class="btn btn-inquiry">{{__('property_var.form_send')}}</button>
+                          <p>{{__('property_var.form_send_p')}}</p>
                       </div>
 
                       </div>
@@ -164,20 +164,20 @@
 
 
 <div class="googleMap paddinglr my-5">
-    <h2 class="py-4">Google maps location</h2>
+    <h2 class="py-4">{{__('property_var.google_maps_location')}}</h2>
 <iframe src="https://www.google.com/maps/embed?pb=!1m14!1m12!1m3!1d3718.9604097407932!2d18.85334240911809!3d42.28405578539378!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!5e0!3m2!1sen!2s!4v1605286267549!5m2!1sen!2s" width="100%" height="600" frameborder="0" style="border:1px solid #08338F;" allowfullscreen="" aria-hidden="false" tabindex="0"></iframe>
 </div>
 <div class="properties my-5">
-    <h2>More like this</h2>
-    <p class="pgrey mb-1 mt-3">Review COVID-19 travel restrictions before you book. <a href="#" class=""  data-toggle="modal" data-target="#covid_modal"
-            style="text-decoration:underline;">Learn more</a></p>
+    <h2>{{__('property_var.more_like_this')}}</h2>
+    <p class="pgrey mb-1 mt-3">{{__('property_var.covid_19')}} <a href="#" class=""  data-toggle="modal" data-target="#covid_modal"
+            style="text-decoration:underline;">{{__('property_var.learn_more')}}</a></p>
     <div class="row specialProperties" style="margin-bottom: 30px;">
         <?php
                         $colcount = count($properties);
                         $j = 1;
                         ?>
         @forelse($properties as $property)
-        <div class="col-lg-3 col-md-6 col-sm-6 col-12 my-3 propertiesMain">
+        <div class="col-lg-3 col-md-6 col-sm-6 col-12 my-3 propertiesMain translate">
 
                 <div class="property">
                     <div class="image-placeholder">
@@ -206,7 +206,7 @@
                               </h6>
                             </div>
                             <div class="property-type py-1">
-                            <img src="/assets/images/Property type.svg" class="ikonica mr-1" alt="">
+                            <img src="/assets/images/Property type.svg" class="ikonica mr-1 " alt="">
                             <h6>   {{ $property->propertyType->title }}  </h6>
                             </div>
                     </div>
@@ -248,7 +248,7 @@
                 <div class="property">
                     <div class="property-title">
                         <div>
-                            <h4>Sorry, there are no special properties</h4>
+                            <h4>{{__('property_var.no_specials')}}</h4>
                         </div>
 
                     </div>

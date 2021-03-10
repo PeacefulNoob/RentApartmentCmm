@@ -82,7 +82,7 @@
 
                 <div class="col-lg-3 col-md-6 col-sm-6 col-12 my-3 propertiesMain">
 
-                    <div class="property">
+                    <div class="property translate">
                         <div class="image-placeholder">
                             <div class="owl-navigation owl-carousel gallery_owl owl-theme">
                                 @foreach($property->images as $image)
@@ -165,7 +165,7 @@
         </div>
         </div>
         <div class="paddinglr blogs_main">
-            <div class="owl-navigation owl-carousel blogs_owl owl-theme ">
+            <div class="owl-navigation owl-carousel blogs_owl owl-theme translate">
                 @foreach($blogs as $blog)
                     <div class="card" style="border:none">
                     <a href="/{{app()->getLocale()}}/single_news/{{$blog->id}}">
