@@ -3,7 +3,7 @@
 <div class="hero">
     <div class="hero-yacht-image change1">
         <div class="hero-div row">
-        <div class="col-lg-6 col-md-6 col-sm-12 col-12 pl-0">
+        <div class="col-lg-6 col-md-6 col-sm-12 col-12 pl-0 rentaYachDiv">
             <h2 class="blue ">{{__('rentYacht_var.rent_a_yacht_title')}}</h2>
             <h4 class="py-2">{{__('rentYacht_var.rent_a_yacht_subtitle')}}</h4>
             <p>{{__('rentYacht_var.rent_a_yacht_p1')}}</p>

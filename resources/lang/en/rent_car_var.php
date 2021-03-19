@@ -1,0 +1,26 @@
+<?php
+return[
+"rent_car_title" => "Rent a car in Montenegro",
+"rent_car_subtitle" => "Hit those roads and win all of the mountains with stunning views",
+"rent_car_p" => "Rent-a-car is one of the most required services of our company. The area of the country will allow you to visit most of the parts of Montenegro, while enjoying the beauty and discovering new landscapes at every turn of the winding mountain road.",
+"rent_car_p2" => "Using the service of car rental, you acquire the freedom of movement. We offer a large selection of vehicles to suit every taste - from inexpensive compact cars worth 35-40 Euros per day to jeeps and convertibles of premium-class.",
+"form_title" => "Find a perfect car for your stay in Montenegro",
+"pick_up_date" => "PICK-UP DATE",
+"valid_confirm" => "Looks good!",
+"drop_off_date" => "DROP-OFF DATE",
+"pick_up_time" => "PICK-UP TIME",
+"drop_off_time" => "DROP-OFF TIME",
+"pick_up_location" => "PICK-UP LOCATION",
+"drop_off_location" => "DROP-OFF LOCATION",
+"book_your_car" => "BOOK YOUR CAR",
+"book_your_stay" => "Book your stay through email",
+"step_back" => "step back",
+"one_more_step" => "Just one more step and you are done. Afterwards, we will contact you back." ,
+"form_name" => "NAME",
+"form_surname" => "SURNAME" ,
+"form_phone" => "PHONE NUMBER",
+"form_email" => "E-MAIL",
+"form_send" => "SEND INQURY",
+"form_p" => "Our representative will contact you back through e-mail with the confirmation as soon as possible.",
+]
+?>
