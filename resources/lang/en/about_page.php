@@ -1,5 +1,6 @@
 <?php
 return[
+  'title_about' => 'About us  ',
 'about_us_description1' =>'CMM Investment Consulting 
 Group is a unique Montenegrin company which provides 
 a full spectrum of services, from creation of the ideas 

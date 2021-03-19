@@ -22,7 +22,7 @@
                                 <div class="form-group col-md-6 form_inquiry_left">
                                     <label for="pud">{{__('rent_car_var.pick_up_date')}}</label>
                                     <input type="date" class="form-control" name="pud" id="pud"
-                                        placeholder="Put the pick up date" required>
+                                        placeholder=" {{__('rent_car_var.form_title')}}" required>
                                         <div class="valid-feedback">
                                             {{__('rent_car_var.valid_confirm')}}
                                         </div>
@@ -58,7 +58,7 @@
                                 <div class="form-group col-md-6 form_inquiry_left border-top">
                                     <label for="pul">{{__('rent_car_var.pick_up_location')}}</label>
                                     <input type="text" class="form-control" name="pul" id="pul"
-                                        placeholder="Put the pick up location" required>
+                                        placeholder="{{__('others.pickupl')}}" required>
                                         <div class="valid-feedback">
                                             {{__('rent_car_var.valid_confirm')}}
                                         </div>
@@ -66,7 +66,7 @@
                                 <div class="form-group col-md-6 form_inquiry_right border-top">
                                     <label for="dofl">{{__('rent_car_var.drop_off_location')}}</label>
                                     <input type="text" class="form-control" name="dofl" id="dofl"
-                                        placeholder="Put the drop off location" required>
+                                        placeholder="{{__('others.dropupl')}}" required>
                                         <div class="valid-feedback">
                                             {{__('rent_car_var.valid_confirm')}}
                                         </div>
@@ -88,7 +88,7 @@
                                 <div class="form-group col-md-6 form_inquiry_left">
                                     <label for="name">{{__('rent_car_var.form_name')}}</label>
                                     <input type="text" class="form-control" name="name" id="name"
-                                        placeholder="Put your real name" required> 
+                                        placeholder="{{__('others.real_name')}}" required> 
                                         <div class="valid-feedback">
                                             {{__('rent_car_var.valid_confirm')}}
                                         </div>
@@ -96,7 +96,7 @@
                                 <div class="form-group col-md-6 form_inquiry_right ">
                                     <label for="surname">{{__('rent_car_var.form_surname')}}</label>
                                     <input type="text" class="form-control" name="surname" id="surname"
-                                        placeholder="Put your surname" required>
+                                        placeholder="{{__('others.surname')}}" required>
                                         <div class="valid-feedback">
                                             {{__('rent_car_var.valid_confirm')}}
                                         </div>
@@ -106,7 +106,7 @@
                                 <div class="form-group col-md-6 form_inquiry_left border-top">
                                     <label for="phoneNo">{{__('rent_car_var.form_phone')}}</label>
                                     <input type="text" class="form-control" name="phoneNo" id="phoneNo"
-                                        placeholder="Put your phone number" required>
+                                        placeholder="{{__('others.phone_no_f')}}" required>
                                         <div class="valid-feedback">
                                             {{__('rent_car_var.valid_confirm')}}
                                         </div>
@@ -114,7 +114,7 @@
                                 <div class="form-group col-md-6 form_inquiry_right border-top">
                                     <label for="email">E-{{__('rent_car_var.form_email')}}</label>
                                     <input type="email" class="form-control" name="email" id="email"
-                                        placeholder="Put your e-mail adress" required>
+                                        placeholder="{{__('others.e-adress')}}" required>
                                         <div class="valid-feedback">
                                             {{__('rent_car_var.valid_confirm')}}
                                         </div>

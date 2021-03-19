@@ -21,5 +21,12 @@ return[
 "about" => "About us",
 "contact" => "Contact us",
 
+"pickupl" => "Put the pick up location",
+"dropupl" => "Put the drop off location",
+
+"real_name" => "Put your real name",
+"surname" => "Put your surname",
+"phone_no_f" => "Put your phone number",
+"e-adress" =>"Put your e-mail adress"
 ]
 ?>

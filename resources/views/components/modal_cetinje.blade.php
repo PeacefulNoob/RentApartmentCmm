@@ -56,14 +56,14 @@
                             </div>
                             <div class="form-row m-0">
                                 <div class="form-group col-md-6 form_inquiry_left border-top">
-                                    <label for="pul">PICK-UP LOCATION</label>
+                                    <label for="pul">{{__('others.pickupl')}}</label>
                                     <input type="text" class="form-control" name="pul" id="pul"
-                                        placeholder="Put the pick up location">
+                                        placeholder="{{__('others.pickupl')}}">
                                 </div>
                                 <div class="form-group col-md-6 form_inquiry_right border-top">
-                                    <label for="dofl">DROP-OFF LOCATION</label>
+                                    <label for="dofl">{{__('others.dropupl')}}</label>
                                     <input type="text" class="form-control" name="dofl" id="dofl"
-                                        placeholder="Put the drop off location">
+                                        placeholder="{{__('others.dropupl')}}">
                                 </div>
                             </div>
                         </div>
@@ -82,7 +82,7 @@
                                 <div class="form-group col-md-6 form_inquiry_left">
                                     <label for="name">NAME</label>
                                     <input type="text" class="form-control" name="name" id="name"
-                                        placeholder="Put your real name" required> 
+                                        placeholder="{{__('others.real_name')}}" required> 
                                         <div class="valid-feedback">
                                             Looks good!
                                         </div>
@@ -90,7 +90,7 @@
                                 <div class="form-group col-md-6 form_inquiry_right ">
                                     <label for="surname">SURNAME</label>
                                     <input type="text" class="form-control" name="surname" id="surname"
-                                        placeholder="Put your surname" required>
+                                        placeholder="{{__('others.surname')}}" required>
                                         <div class="valid-feedback">
                                             Looks good!
                                         </div>
@@ -100,7 +100,7 @@
                                 <div class="form-group col-md-6 form_inquiry_left border-top">
                                     <label for="phoneNo">PHONE NUMBER</label>
                                     <input type="text" class="form-control" name="phoneNo" id="phoneNo"
-                                        placeholder="Put your phone number" required>
+                                        placeholder="{{__('others.phone_no_f')}}" required>
                                         <div class="valid-feedback">
                                             Looks good!
                                         </div>
@@ -108,7 +108,7 @@
                                 <div class="form-group col-md-6 form_inquiry_right border-top">
                                     <label for="email">E-MAIL</label>
                                     <input type="email" class="form-control" name="email" id="email"
-                                        placeholder="Put your e-mail adress" required>
+                                        placeholder="{{__('others.e-adress')}}" required>
                                         <div class="valid-feedback">
                                             Looks good!
                                         </div>

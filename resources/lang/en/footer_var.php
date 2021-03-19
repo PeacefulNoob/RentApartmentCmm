@@ -26,5 +26,6 @@ return[
 "no_blog_message" => "No blog",
 "copyright" => " © Copyright 2011 - 2020. CMM Investment Consulting Group.",
 "made_by_qqriq" => "Made by QQRIQ",
+"check_more" => "check more"
 ]
 ?>

@@ -3,7 +3,7 @@
 <div class="homeMain">
 <div class="abouts1 padding row m-0">
         <div class=" col-lg-6 col-md-6 col-sm-12 col-12 pt-5 px-0 tekstAbout">
-            <h1 class="pb-2">About us</h1>
+            <h1 class="pb-2">{{__('about_page.title_about') }}</h1>
             <p class="pb-2">{{__('about_page.about_us_description1') }}</p>
             <p> {{__('about_page.about_us_description2') }}</p>
                 </div>
@@ -106,7 +106,7 @@
             <p> + 382 68 010 879</p>
             <p> E-mail: office@cmm-montenegro.com </p>
             <p> www.cmm-montenegro.com </p>
-            <p>{{__('about_page.contact_adresa_russia') }}</p>
+            <p>{{__('about_page.contact_adresa_montenegro') }}</p>
             <p> Jadranski put b.b. Budva </p>
         </div>
     </div>

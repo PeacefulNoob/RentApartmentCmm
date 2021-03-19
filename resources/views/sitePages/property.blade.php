@@ -126,24 +126,24 @@
                                 <div class="form-group col-md-6 form_inquiry_left">
                                     <label for="name">{{__('property_var.form_name')}}</label>
                                     <input type="text" class="form-control" name="name" id="name"
-                                        placeholder="Put your real name">
+                                        placeholder="{{__('others.real_name')}}">
                                 </div>
                                 <div class="form-group col-md-6 form_inquiry_right ">
                                     <label for="surname">{{__('property_var.form_surname')}}</label>
                                     <input type="text" class="form-control" name="surname" id="surname"
-                                        placeholder="Put your surname">
+                                        placeholder="{{__('others.surname')}}">
                                 </div>
                             </div>
                             <div class="form-row m-0">
                                 <div class="form-group col-md-6 form_inquiry_left border-top">
                                     <label for="phoneNo">{{__('property_var.form_phone')}}</label>
                                     <input type="text" class="form-control" name="phoneNo" id="phoneNo"
-                                        placeholder="Put your phone number">
+                                        placeholder="{{__('others.phone_no_f')}}">
                                 </div>
                                 <div class="form-group col-md-6 form_inquiry_right border-top">
                                     <label for="email">{{__('property_var.form_email')}}</label>
                                     <input type="text" class="form-control" name="email" id="email"
-                                        placeholder="Put your e-mail adress">
+                                        placeholder="{{__('others.e-adress')}}">
                                 </div>
                             </div>
                         </div>
@@ -258,354 +258,323 @@
         @endforelse
     </div>
 </div>
+
 <script> $(document).ready(function(){
-
-        $('#checkin').on('click', function(){
-            if($('#calendar0').val() == 0 && $('#calendar1').val() == 0) {
-                $('.calendar-main').css("display", "block");
-                $('#calendar0').css("display", "block");
-                $('#calendar1').css("display", "block");
-                $('#calendar0').val(1);
-                $('#calendar1').val(1);
-
-                calendar1.render();
-                calendar.render();
-                $('.fc-add_event-button').css("margin-right", "20px");
-            }else{
-                $('#calendar0').css("display", "none");
-                $('#calendar1').css("display", "none");
-                $('#calendar0').val(0);
-                $('#calendar1').val(0);
-            }
-        });
-
-        function checkEvents(datesBetween){
-            for(var i = 0;i<eventList.length;i++){
-                for(var j = 0; j<datesBetween.length;j++){
-                    if(eventList[i].start == datesBetween[j] || eventList[i].end == datesBetween[j]){
-                        return true;
-                    }
-                }
-            }
-            return false;
+    $('#checkin').on('click', function(){
+        if($('#calendar0').val() == 0 && $('#calendar1').val() == 0) {
+            $('.calendar-main').css("display", "block");
+            $('#calendar0').css("display", "block");
+            $('#calendar1').css("display", "block");
+            $('#calendar0').val(1);
+            $('#calendar1').val(1);
+            calendar1.render();
+            calendar.render();
+            $('.fc-add_event-button').css("margin-right", "20px");
+        }else{
+            $('.calendar-main').css("display", "none");
+            $('#calendar0').css("display", "none");
+            $('#calendar1').css("display", "none");
+            $('#calendar0').val(0);
+            $('#calendar1').val(0);
         }
-
-        function destroCheckEvents(datesBetween){
+    });
+    function checkEvents(datesBetween){
+        for(var i = 0;i<eventList.length;i++){
             for(var j = 0; j<datesBetween.length;j++){
-            //    console.log("unisti izmedju" + datesBetween[j]);
-                $('.fc-day[data-date="'+ datesBetween[j] +'"]').removeClass('cellBgBetween');
+                if(eventList[i].start == datesBetween[j] || eventList[i].end == datesBetween[j]){
+                    return true;
+                }
             }
         }
-
-        function destroyEvents(){
-            if(checkOutInfo != null){
-                checkOutInfo.dayEl.style.backgroundColor = "transparent";
-            }
-            if(checkInInfo != null){
-                checkInInfo.dayEl.style.backgroundColor = "transparent";
-            }
-            checkIn = '';
-            checkOut = '';
-            $('#checkin').val("");
-            $('#checkout').val("");
+        return false;
+    }
+    function destroCheckEvents(datesBetween){
+        for(var j = 0; j<datesBetween.length;j++){
+        //    console.log("unisti izmedju" + datesBetween[j]);
+            $('.fc-day[data-date="'+ datesBetween[j] +'"]').removeClass('cellBgBetween');
         }
-
-
-
-        events = <?php echo json_encode($calendar); ?> ;
-      //  console.log("json envenotvi " + events);
-        eventList = [];
-        for(var i =0; i<events.length;i++){
-            console.log(events[i]);
-            eventList.push({
-                id: i,
-                title: "",
-                start:events[i].start.date.slice(0,10), // try timed. will fall back to all-day.slice(0,10)
-                end: events[i].end.date.slice(0,10), // same.slice(0,10)
-            });
+    }
+    function destroyEvents(){
+        if(checkOutInfo != null){
+            checkOutInfo.dayEl.style.backgroundColor = "transparent";
         }
-     //   console.log("dogadjaji"+eventList);
-
-
-        var date = new Date();
-        var d = date.getDate();
-        var m = date.getMonth();
-        var y = date.getFullYear();
-        var x = new Date();
-        x.setDate(1);
-        x.setMonth(x.getMonth() + 1);
-
-        var checkIn = '';
-        var checkOut = '';
-        var checkInInfo = null;
-        var checkOutInfo = null;
-        var bool = false;
-
-        var calendarEl1 = document.getElementById('calendar1');
-        var calendar1 = new FullCalendar.Calendar(calendarEl1, {
-            customButtons: {
-                add_event: {
-                    text: 'Clear',
-                    click: function() {
-                        destroyEvents();
-                    }
-                },
-                add_close:{
-                    text: 'X',
-                    click: function(){
-                        $('.calendar-main').css("display", "none");
-                    }
+        if(checkInInfo != null){
+            checkInInfo.dayEl.style.backgroundColor = "transparent";
+        }
+        checkIn = '';
+        checkOut = '';
+        $('#checkin').val("");
+        $('#checkout').val("");
+    }
+    events = <?php echo json_encode($calendar); ?> ;
+  //  console.log("json envenotvi " + events);
+    eventList = [];
+    for(var i =0; i<events.length;i++){
+        console.log(events[i]);
+        eventList.push({
+            id: i,
+            title: "",
+            start:events[i].start.date.slice(0,10), // try timed. will fall back to all-day.slice(0,10)
+            end: events[i].end.date.slice(0,10), // same.slice(0,10)
+        });
+    }
+ //   console.log("dogadjaji"+eventList);
+    var date = new Date();
+    var d = date.getDate();
+    var m = date.getMonth();
+    var y = date.getFullYear();
+    var x = new Date();
+    x.setDate(1);
+    x.setMonth(x.getMonth() + 1);
+    var checkIn = '';
+    var checkOut = '';
+    var checkInInfo = null;
+    var checkOutInfo = null;
+    var bool = false;
+    var calendarEl1 = document.getElementById('calendar1');
+    var calendar1 = new FullCalendar.Calendar(calendarEl1, {
+        customButtons: {
+            add_event: {
+                text: 'Clear',
+                click: function() {
+                    destroyEvents();
                 }
             },
-            initialView: 'dayGridMonth',
-            initialDate: x,
-            headerToolbar: {
-                left: 'title',
-                center: '',
-                right: 'add_event,add_close'
-            },
-            selectable: true,
-            events: eventList,
-            eventDisplay: 'background',
-            eventColor: '#378006',
-            eventClassNames: 'activeDay',
-            dateClick: function(info) {
-                var event = calendar1.getEventById('1'); // an event object!
-               // console.log(start);
-                info.dayEl.style.backgroundColor = "#033382";
-                if(checkIn == ''){
-                    alert("checkIn je ''")
-
-                    checkInInfo = info;
-                    checkIn = info.dateStr;
-                    $('#checkin').val(checkIn);
-                }else if(checkOut == ''){
-                    alert("checkout je ''")
-
-                    if(info.date > checkInInfo.date){
-                    checkOutInfo = info;
-                    checkOut = info.dateStr;
-                    $('#checkout').val(checkOut);
-                    let datesBetween = [];
-                    for (var m = moment(checkIn); m.isBefore(checkOut); m.add(1, 'days')) {
-                        datesBetween.push(m.format('YYYY-MM-DD'));
-                    }
-                 bool = checkEvents(datesBetween);
-                    if(bool){
-                        checkOutInfo.dayEl.style.backgroundColor = "transparent";
-                        checkInInfo.dayEl.style.backgroundColor = "transparent";
-                        checkIn = '';
-                        checkOut = '';
-                        $('#checkin').val("");
-                        $('#checkout').val("");
-                    }else{
-                      /*  for(var j = 0; j<datesBetween.length;j++){
-                            $('.fc-day[data-date="'+ datesBetween[j] +'"]').addClass('cellBgBetween');
-                        }*/
-                    }
-                }else{
-                    alert("checkout je manji");
-                        //checkOutInfo.dayEl.style.backgroundColor = "transparent";
-                        checkInInfo.dayEl.style.backgroundColor = "transparent";
-                        checkOut = '';
-                        checkInInfo = info;
-                        checkIn = info.dateStr;
-                        $('#checkin').val(checkIn);
-                        console.log("check in"+checkIn);
-                        console.log("check out"+checkOut);
-                        
+            add_close:{
+                text: 'X',
+                click: function(){
+                    $('.calendar-main').css("display", "none");
+                }
             }
-                }else if(checkIn != '' && checkOut != ''){
-                    if(info.date > checkInInfo.date){
-                        checkOutInfo.dayEl.style.backgroundColor = "transparent";
-                        checkOutInfo = info;
-                        checkOut = info.dateStr;
-                        $('#checkout').val(checkOut);
-                        let datesBetween = [];
-                    for (var m = moment(checkIn); m.isBefore(checkOut); m.add(1, 'days')) {
-                        datesBetween.push(m.format('YYYY-MM-DD'));
-                    }
-                        bool = checkEvents(datesBetween);
-                        if(bool){
-                        checkOutInfo.dayEl.style.backgroundColor = "transparent";
-                        checkInInfo.dayEl.style.backgroundColor = "transparent";
-                        checkIn = '';
-                        checkOut = '';
-                        $('#checkin').val("");
-                        $('#checkout').val("");
-                    }
-                     
-                    }else if(info.date < checkInInfo.date){
-                        let datesBetween = [];
-                        for (var m = moment(checkIn); m.isBefore(checkOut); m.add(1, 'days')) {
-                            datesBetween.push(m.format('YYYY-MM-DD'));
-                        }
-                        destroCheckEvents(datesBetween);
-                        checkInInfo.dayEl.style.backgroundColor = "transparent";
-                        checkInInfo = info;
-                        checkIn = info.dateStr;
-                        $('#checkin').val(checkIn);
-                    }else{
-
-                        checkOutInfo.dayEl.style.backgroundColor = "transparent";
-                        checkOut = '';
-                        checkInInfo = info;
-                        checkIn = info.dateStr;
-                        $('#checkin').val(checkIn);
-                        let datesBetween = [];
-                        for (var m = moment(checkIn); m.isBefore(checkOut); m.add(1, 'days')) {
-                            datesBetween.push(m.format('YYYY-MM-DD'));
-                        }
-                        destroCheckEvents(datesBetween);
-                    }
-                   /* let datesBetween = [];
-                    for (var m = moment(checkIn); m.isBefore(checkOut); m.add(1, 'days')) {
-                        datesBetween.push(m.format('YYYY-MM-DD'));
-                    }
-                    for(var j = 0; j<datesBetween.length;j++){
+        },
+        initialView: 'dayGridMonth',
+        initialDate: x,
+        headerToolbar: {
+            left: 'title',
+            center: '',
+            right: 'add_event,add_close'
+        },
+        selectable: true,
+        events: eventList,
+        eventDisplay: 'background',
+        eventColor: '#378006',
+        fixedWeekCount: false,
+        showNonCurrentDates: false,
+        eventClassNames: 'activeDay',
+        
+        dateClick: function(info) {
+            
+            var event = calendar1.getEventById('1'); // an event object!
+           // console.log(start);
+            info.dayEl.style.backgroundColor = "#033382";
+            if(checkIn == ''){
+                checkInInfo = info;
+                checkIn = info.dateStr;
+                $('#checkin').val(checkIn);
+            }else if(checkOut == ''){
+                if(info.date > checkInInfo.date){
+                checkOutInfo = info;
+                checkOut = info.dateStr;
+                $('#checkout').val(checkOut);
+                let datesBetween = [];
+                for (var m = moment(checkIn); m.isBefore(checkOut); m.add(1, 'days')) {
+                    datesBetween.push(m.format('YYYY-MM-DD'));
+                }
+             bool = checkEvents(datesBetween);
+                if(bool){
+                    checkOutInfo.dayEl.style.backgroundColor = "transparent";
+                    checkInInfo.dayEl.style.backgroundColor = "transparent";
+                    checkIn = '';
+                    checkOut = '';
+                    $('#checkin').val("");
+                    $('#checkout').val("");
+                }else{
+                  /*  for(var j = 0; j<datesBetween.length;j++){
                         $('.fc-day[data-date="'+ datesBetween[j] +'"]').addClass('cellBgBetween');
                     }*/
                 }
-            },
-            dayCellClassNames: function (date, cell) {
-                date = checkIn;
-                $('.fc-day[data-date="'+ date +'"]').addClass('cellBg');
-                date = checkOut;
-                $('.fc-day[data-date="'+ date +'"]').addClass('cellBg');
-                let datesBetween = [];
-                for (var m = moment(checkIn); m.isBefore(checkOut); m.add(1, 'days')) {
-                    datesBetween.push(m.format('YYYY-MM-DD'));
-                }
-                datesBetween.shift();
-                for(var j = 0; j<datesBetween.length;j++){
-                    console.log(datesBetween[j]);
-                  //  $('.fc-day[data-date="'+ datesBetween[j] +'"]').addClass('cellBgBetween');
-                }
-                for(var i=0;i<eventList.length;i++){
-                    if(date==eventList[i].start || date==eventList[i].end){
-                        $('.fc-day[data-date="'+ date +'"]').addClass('disabledCell');
-                    }
-                }
-            },
-            eventClick:function(){
-                alert("OKS");
-            }
-        });
-        calendar1.render();
-
-        var calendarEl = document.getElementById('calendar0');
-        var calendar = new FullCalendar.Calendar(calendarEl, {
-            initialView: 'dayGridMonth',
-            initialDate: date,
-            headerToolbar: {
-                left: 'title',
-                center: '',
-                right: 'prev,next'
-            },
-            selectable: true,
-            events: eventList,
-            eventDisplay: 'background',
-            eventColor: '#378006',
-            datesSet: function(info) {
-                month = info.endStr.slice(0,10);
-                calendar1.changeView('dayGridMonth', month);
-                calendar1.render();
-            },
-            dateClick: function(info) {
-                var event = calendar1.getEventById('1'); // an event object!
-                console.log("prvi kalendar dogadjaji" + events);
-                console.log(info.dateStr);
-                info.dayEl.style.backgroundColor = "#033382";
-                if(checkIn == ''){
+            }else{
+                    //checkOutInfo.dayEl.style.backgroundColor = "transparent";
+                    checkInInfo.dayEl.style.backgroundColor = "transparent";
+                    checkOut = '';
                     checkInInfo = info;
                     checkIn = info.dateStr;
                     $('#checkin').val(checkIn);
-                }else if(checkOut == ''){
-                   if(info.date > checkInInfo.date){
+                    console.log("check in"+checkIn);
+                    console.log("check out"+checkOut);
+                    
+        }
+            }else if(checkIn != '' && checkOut != ''){
+                if(info.date > checkInInfo.date){
+                    checkOutInfo.dayEl.style.backgroundColor = "transparent";
                     checkOutInfo = info;
                     checkOut = info.dateStr;
                     $('#checkout').val(checkOut);
                     let datesBetween = [];
-                    for (var m = moment(checkIn); m.isBefore(checkOut); m.add(1, 'days')) {
-                        datesBetween.push(m.format('YYYY-MM-DD'));
-                    }
-                    datesBetween.shift();
+                for (var m = moment(checkIn); m.isBefore(checkOut); m.add(1, 'days')) {
+                    datesBetween.push(m.format('YYYY-MM-DD'));
+                }
                     bool = checkEvents(datesBetween);
                     if(bool){
-                        checkOutInfo.dayEl.style.backgroundColor = "transparent";
-                        checkInInfo.dayEl.style.backgroundColor = "transparent";
-                        checkIn = '';
-                        checkOut = '';
-                        $('#checkout').val('');
-                        $('#checkin').val('');
-                    }else{
-                    for(var j = 0; j<datesBetween.length;j++){
-                        console.log(datesBetween[j]);
-                     //   $('.fc-day[data-date="'+ datesBetween[j] +'"]').addClass('cellBgBetween');
-                    }
+                    checkOutInfo.dayEl.style.backgroundColor = "transparent";
+                    checkInInfo.dayEl.style.backgroundColor = "transparent";
+                    checkIn = '';
+                    checkOut = '';
+                    $('#checkin').val("");
+                    $('#checkout').val("");
                 }
-            }else{
-                       // checkOutInfo.dayEl.style.backgroundColor = "transparent";
-                        checkInInfo.dayEl.style.backgroundColor = "transparent";
-                        checkOut = '';
-                        checkInInfo = info;
-                        checkIn = info.dateStr;
-                        $('#checkin').val(checkIn);
-                        console.log("check in"+checkIn);
-                        console.log("check out"+checkOut);
-            }
-                }else if(checkIn != '' && checkOut != ''){
-                    if(info.date > checkInInfo.date){
-                        let datesBetween = [];
-                        for (var m = moment(checkIn); m.isBefore(checkOut); m.add(1, 'days')) {
-                            datesBetween.push(m.format('YYYY-MM-DD'));
-                        }
-                        destroCheckEvents(datesBetween);
-                        checkOutInfo.dayEl.style.backgroundColor = "transparent";
-                        checkOutInfo = info;
-                        checkOut = info.dateStr;
-                        $('#checkout').val(checkOut);
-                    }else if(info.date < checkInInfo.date){
-                        let datesBetween = [];
-                        for (var m = moment(checkIn); m.isBefore(checkOut); m.add(1, 'days')) {
-                            datesBetween.push(m.format('YYYY-MM-DD'));
-                        }
-                        destroCheckEvents(datesBetween);
-                        checkInInfo.dayEl.style.backgroundColor = "transparent";
-                        checkInInfo = info;
-                        checkIn = info.dateStr;
-                        $('#checkin').val(checkIn);
-                    }else{
-                        destroCheckEvents(datesBetween);
-                        checkOutInfo.dayEl.style.backgroundColor = "transparent";
-                        checkOut = '';
-                        checkInInfo = info;
-                        checkIn = info.dateStr;
-                        $('#checkin').val(checkIn);
-
-                    }
+                 
+                }else if(info.date < checkInInfo.date){
                     let datesBetween = [];
                     for (var m = moment(checkIn); m.isBefore(checkOut); m.add(1, 'days')) {
                         datesBetween.push(m.format('YYYY-MM-DD'));
                     }
-                    datesBetween.shift();
-                    for(var j = 0; j<datesBetween.length;j++){
-                        console.log(datesBetween[j]);
-                   //     $('.fc-day[data-date="'+ datesBetween[j] +'"]').addClass('cellBgBetween');
+                    destroCheckEvents(datesBetween);
+                    checkInInfo.dayEl.style.backgroundColor = "transparent";
+                    checkInInfo = info;
+                    checkIn = info.dateStr;
+                    $('#checkin').val(checkIn);
+                }else{
+                    checkOutInfo.dayEl.style.backgroundColor = "transparent";
+                    checkOut = '';
+                    checkInInfo = info;
+                    checkIn = info.dateStr;
+                    $('#checkin').val(checkIn);
+                    let datesBetween = [];
+                    for (var m = moment(checkIn); m.isBefore(checkOut); m.add(1, 'days')) {
+                        datesBetween.push(m.format('YYYY-MM-DD'));
                     }
+                    destroCheckEvents(datesBetween);
                 }
-
-              /*  console.log(checkIn + "IN");
-                console.log(checkInInfo);
-                console.log(checkOut + "OUT");
-                console.log(checkOutInfo);
-                checkOutInfo.dayEl.style.backgroundColor = "white";*/
+               /* let datesBetween = [];
+                for (var m = moment(checkIn); m.isBefore(checkOut); m.add(1, 'days')) {
+                    datesBetween.push(m.format('YYYY-MM-DD'));
+                }
+                for(var j = 0; j<datesBetween.length;j++){
+                    $('.fc-day[data-date="'+ datesBetween[j] +'"]').addClass('cellBgBetween');
+                }*/
+            }
+        },
+        validRange: function(nowDate){
+                return {start: nowDate} //to prevent anterior dates
             },
-            dayCellClassNames: function (date, cell) {
-                date = checkIn;
-                $('.fc-day[data-date="'+ date +'"]').addClass('cellBg');
-                date = checkOut;
-                $('.fc-day[data-date="'+ date +'"]').addClass('cellBg');
+        dayCellClassNames: function (date, cell) {
+            date = checkIn;
+            $('.fc-day[data-date="'+ date +'"]').addClass('cellBg');
+            date = checkOut;
+            $('.fc-day[data-date="'+ date +'"]').addClass('cellBg');
+            let datesBetween = [];
+            for (var m = moment(checkIn); m.isBefore(checkOut); m.add(1, 'days')) {
+                datesBetween.push(m.format('YYYY-MM-DD'));
+            }
+            datesBetween.shift();
+            for(var j = 0; j<datesBetween.length;j++){
+                console.log(datesBetween[j]);
+              //  $('.fc-day[data-date="'+ datesBetween[j] +'"]').addClass('cellBgBetween');
+            }
+            for(var i=0;i<eventList.length;i++){
+                if(date==eventList[i].start || date==eventList[i].end){
+                    $('.fc-day[data-date="'+ date +'"]').addClass('disabledCell');
+                }
+            }
+        },
+        eventClick:function(){
+        }
+    });
+    calendar1.render();
+    var calendarEl = document.getElementById('calendar0');
+    var calendar = new FullCalendar.Calendar(calendarEl, {
+        initialView: 'dayGridMonth',
+        initialDate: date,
+        headerToolbar: {
+            left: 'title',
+            center: '',
+            right: 'prev,next'
+        },
+        selectable: true,
+        events: eventList,
+        eventDisplay: 'background',
+        eventColor: '#378006',
+        fixedWeekCount: false,
+        showNonCurrentDates: false,
+        eventClassNames: 'activeDay',
+        datesSet: function(info) {
+            month = info.endStr.slice(0,10);
+            calendar1.changeView('dayGridMonth', month);
+            calendar1.render();
+        },
+        dateClick: function(info) {
+            var event = calendar1.getEventById('1'); // an event object!
+            console.log("prvi kalendar dogadjaji" + events);
+            console.log(info.dateStr);
+            info.dayEl.style.backgroundColor = "#033382";
+            if(checkIn == ''){
+                checkInInfo = info;
+                checkIn = info.dateStr;
+                $('#checkin').val(checkIn);
+            }else if(checkOut == ''){
+               if(info.date > checkInInfo.date){
+                checkOutInfo = info;
+                checkOut = info.dateStr;
+                $('#checkout').val(checkOut);
+                let datesBetween = [];
+                for (var m = moment(checkIn); m.isBefore(checkOut); m.add(1, 'days')) {
+                    datesBetween.push(m.format('YYYY-MM-DD'));
+                }
+                datesBetween.shift();
+                bool = checkEvents(datesBetween);
+                if(bool){
+                    checkOutInfo.dayEl.style.backgroundColor = "transparent";
+                    checkInInfo.dayEl.style.backgroundColor = "transparent";
+                    checkIn = '';
+                    checkOut = '';
+                    $('#checkout').val('');
+                    $('#checkin').val('');
+                }else{
+                for(var j = 0; j<datesBetween.length;j++){
+                    console.log(datesBetween[j]);
+                 //   $('.fc-day[data-date="'+ datesBetween[j] +'"]').addClass('cellBgBetween');
+                }
+            }
+        }else{
+                   // checkOutInfo.dayEl.style.backgroundColor = "transparent";
+                    checkInInfo.dayEl.style.backgroundColor = "transparent";
+                    checkOut = '';
+                    checkInInfo = info;
+                    checkIn = info.dateStr;
+                    $('#checkin').val(checkIn);
+                    console.log("check in"+checkIn);
+                    console.log("check out"+checkOut);
+        }
+            }else if(checkIn != '' && checkOut != ''){
+                if(info.date > checkInInfo.date){
+                    let datesBetween = [];
+                    for (var m = moment(checkIn); m.isBefore(checkOut); m.add(1, 'days')) {
+                        datesBetween.push(m.format('YYYY-MM-DD'));
+                    }
+                    destroCheckEvents(datesBetween);
+                    checkOutInfo.dayEl.style.backgroundColor = "transparent";
+                    checkOutInfo = info;
+                    checkOut = info.dateStr;
+                    $('#checkout').val(checkOut);
+                }else if(info.date < checkInInfo.date){
+                    let datesBetween = [];
+                    for (var m = moment(checkIn); m.isBefore(checkOut); m.add(1, 'days')) {
+                        datesBetween.push(m.format('YYYY-MM-DD'));
+                    }
+                    destroCheckEvents(datesBetween);
+                    checkInInfo.dayEl.style.backgroundColor = "transparent";
+                    checkInInfo = info;
+                    checkIn = info.dateStr;
+                    $('#checkin').val(checkIn);
+                }else{
+                    destroCheckEvents(datesBetween);
+                    checkOutInfo.dayEl.style.backgroundColor = "transparent";
+                    checkOut = '';
+                    checkInInfo = info;
+                    checkIn = info.dateStr;
+                    $('#checkin').val(checkIn);
+                }
                 let datesBetween = [];
                 for (var m = moment(checkIn); m.isBefore(checkOut); m.add(1, 'days')) {
                     datesBetween.push(m.format('YYYY-MM-DD'));
@@ -613,29 +582,46 @@
                 datesBetween.shift();
                 for(var j = 0; j<datesBetween.length;j++){
                     console.log(datesBetween[j]);
-                //    $('.fc-day[data-date="'+ datesBetween[j] +'"]').addClass('cellBgBetween');
-                }
-                for(var i=0;i<eventList.length;i++){
-                    console.log(cell);
-                    console.log(eventList[i].start + " " + date);
-                    if(date==eventList[i].start || date==eventList[i].end){
-                        $('.fc-day[data-date="'+ date +'"]').addClass('disabledCell');
-                    }
-                }
-            },
-            eventClick:function(){
-                alert("OKS");
-            },
-            eventRender: function (event, element) {
-                var calendarDate = $('#calendar0').fullCalendar('getDate');
-                if (eventDate.get('month') !== calendarDate.get('month')) {
-                    return false;
+               //     $('.fc-day[data-date="'+ datesBetween[j] +'"]').addClass('cellBgBetween');
                 }
             }
-        });
-        calendar.render();
-
-
+     
+        },
+        validRange: function(nowDate){
+                return {start: nowDate} //to prevent anterior dates
+            },
+        dayCellClassNames: function (date, cell) {
+            date = checkIn;
+            $('.fc-day[data-date="'+ date +'"]').addClass('cellBg');
+            date = checkOut;
+            $('.fc-day[data-date="'+ date +'"]').addClass('cellBg');
+            let datesBetween = [];
+            for (var m = moment(checkIn); m.isBefore(checkOut); m.add(1, 'days')) {
+                datesBetween.push(m.format('YYYY-MM-DD'));
+            }
+            datesBetween.shift();
+            for(var j = 0; j<datesBetween.length;j++){
+                console.log(datesBetween[j]);
+            //    $('.fc-day[data-date="'+ datesBetween[j] +'"]').addClass('cellBgBetween');
+            }
+            for(var i=0;i<eventList.length;i++){
+                console.log(cell);
+                console.log(eventList[i].start + " " + date);
+                if(date==eventList[i].start || date==eventList[i].end){
+                    $('.fc-day[data-date="'+ date +'"]').addClass('disabledCell');
+                }
+            }
+        },
+        eventClick:function(){
+        },
+        eventRender: function (event, element) {
+            var calendarDate = $('#calendar0').fullCalendar('getDate');
+            if (eventDate.get('month') !== calendarDate.get('month')) {
+                return false;
+            }
+        }
     });
+    calendar.render();
+});
 </script>
 @endsection
