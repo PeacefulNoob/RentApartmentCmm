@@ -32,7 +32,22 @@ class FaqController extends Controller
         return view ('sitePages.faq',compact('faqs','blogs'));
 
     }
-
+    $classes = TrainingClass::whereHas('user', function($query) use ($type, $gender) {
+        $query->whereIn('type', $type);
+        $query->whereIn('gender' , $gender);
+        })
+    ->whereHas('sessions', function($query) use ($priceRange, $timeRange, $classDuration) {
+    $query->whereBetween('price', $priceRange);
+    $query->where('time_from', '>', gmdate("H:i:s", mktime($timeRange[0], 0, 0)));
+    $query->whereRaw('(time_to_sec(time_to)/60)-(time_to_sec(time_from)/60) <=' . $classDuration[1]);
+    $query->whereRaw( '(time_to_sec(time_to)/60)-(time_to_sec(time_from)/60) >=' . $classDuration[0]);
+})
+    //->where('name', 'like', $search)
+    ->whereRaw($targetRadius[1] . ' * acos(cos(radians(' . $userLat . ')) * cos(radians(lat)) *
+            cos(radians(lng) - radians(' . $userLng . ')) +
+            sin(radians(' . $userLat . ')) * sin(radians(lat))) <' . $targetRadius[1])
+    ->whereIn('indoor_outdoor' , $areaType)
+    ->with('user', 'location', 'sessions', 'media')->get();
     /**
      * Show the form for creating a new resource.
      *

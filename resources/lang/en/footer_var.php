@@ -1,6 +1,6 @@
 <?php
 return[
-"our_service_title" => "OUR SERVICE",
+"our_service_title" => "Our Services",
 "car_rental_link" => "Car rental",
 "yacht_rental_link" => "Yacht rental",
 "transfers_link" => "Transfers",

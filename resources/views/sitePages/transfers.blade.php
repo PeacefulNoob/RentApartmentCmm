@@ -4,7 +4,7 @@
     <div class="hero-tran-image change1">
         <div class="hero-div row">
         
-        <div class="col-lg-6 col-md-6 col-sm-12 col-12 p-0">
+        <div class="col-lg-6 col-md-6 col-sm-12 col-12 p-0 pr-3">
             <h2>{{__('transfers_var.transfers_title')}}</h2>
             <h4>{{__('transfers_var.transfers_subtitle')}}</h4>
             <p>{{__('transfers_var.transfers_p1')}} </p>

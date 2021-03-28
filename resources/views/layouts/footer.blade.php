@@ -110,11 +110,11 @@
     </div>
 
     <div class="footer2">
-        <div class="left_footer">
+        <div class="left_footer desktop">
             <p>{{__('footer_var.copyright')}}
-</p>
+        </p>
         </div>
-        <div class="right_footer">
+        <div class="right_footer desktop">
             <p>{{__('footer_var.made_by_qqriq')}}</p>
         </div>
     </div>

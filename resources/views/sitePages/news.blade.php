@@ -21,7 +21,7 @@
                 @foreach($blogs as $blog)
                     <div class="card col-lg-3 col-md-6 col-sm-6 col-12 p-4 translate" style="border:none">
                     <a href="/{{app()->getLocale()}}/single_news/{{$blog->id}}">
-                        <img class="card-img-top blog_image" src="{{ $blog->image }}" alt="Card image cap">
+                        <img class="card-img-top blog_image" src="/{{ $blog->image }}" alt="Card image cap">
                     </a>
                         <div class="card-body">
                         <h4 class="card-title">
