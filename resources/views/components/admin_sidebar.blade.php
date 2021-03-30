@@ -50,6 +50,12 @@
                     <li><a class="slide-item" href="/blogs">List of all Blog Posts     </a></li>
                 </ul>
             </li>
+            <li class="slide"> <a class="side-menu__item " data-toggle="slide" href="#"><span class="side-menu__label dropdown-toggle">Blog posts RUS</span><i class="angle fe fe-chevron-down"></i></a>
+                <ul class="slide-menu">
+                <li><a class="slide-item" href="/blogs_rus/create">Add Blog Post RUS</a></li>
+                    <li><a class="slide-item" href="/blogs_rus">List of all Blog Posts    RUS </a></li>
+                </ul>
+            </li>
             <li class="slide"> <a class="side-menu__item" href="/faqs/create"><span class="side-menu__label">Add FaQ</span></a> </li>
 
             @endcan

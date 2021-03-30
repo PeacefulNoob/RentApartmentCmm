@@ -5,6 +5,7 @@ namespace App\Http\Controllers;
 use Illuminate\Http\Request;
 use App\Property;
 use App\Blog;
+use App\Blog_rus;
 use App\Location;
 use App\PropertyType;
 use App\Covid;
@@ -18,7 +19,14 @@ class SiteController extends Controller
        $covid = Covid::find('1')->first();
        $properties = Property::all();
        $propertiesS = Property::where('favourites', '=', '1')->get();
-       $blogs = Blog::orderBy('id', 'DESC')->get();
+       if(app()->getLocale()== 'en'){
+        $blogs = Blog::orderBy('id', 'DESC')->get();
+
+        }else{
+
+        $blogs = Blog_rus::orderBy('id', 'DESC')->get();
+
+    }
        $cities = Location::all();
        $types = PropertyType::all();
         return view ('sitePages.index',compact('properties','propertiesS','covid','blogs','cities','types'));
@@ -28,16 +36,28 @@ class SiteController extends Controller
        $covid = Covid::find('1')->first();
        $properties = Property::all();
        $propertiesS = Property::where('special', '=', '1')->get();
-       $blogs = Blog::orderBy('id', 'DESC')->get();
-       return view ('sitePages.transfers',compact('properties','propertiesS','covid','blogs'));
+       if(app()->getLocale()== 'en'){
+        $blogs = Blog::orderBy('id', 'DESC')->get();
+
+        }else{
+
+        $blogs = Blog_rus::orderBy('id', 'DESC')->get();
+
+    }       return view ('sitePages.transfers',compact('properties','propertiesS','covid','blogs'));
     }
     public function excoursions()
     {
        $covid = Covid::find('1')->first();
        $properties = Property::all();
        $propertiesS = Property::where('special', '=', '1')->get();
-       $blogs = Blog::orderBy('id', 'DESC')->get();
+       if(app()->getLocale()== 'en'){
+        $blogs = Blog::orderBy('id', 'DESC')->get();
 
+        }else{
+
+        $blogs = Blog_rus::orderBy('id', 'DESC')->get();
+
+    }
         return view ('sitePages.excoursions',compact('properties','propertiesS','covid','blogs'));
     }
     public function rentCar()
@@ -45,8 +65,14 @@ class SiteController extends Controller
        $covid = Covid::find('1')->first();
        $properties = Property::all();
        $propertiesS = Property::where('special', '=', '1')->get();
-       $blogs = Blog::orderBy('id', 'DESC')->get();
+       if(app()->getLocale()== 'en'){
+        $blogs = Blog::orderBy('id', 'DESC')->get();
 
+        }else{
+
+        $blogs = Blog_rus::orderBy('id', 'DESC')->get();
+
+    }
         return view ('sitePages.rentCar',compact('properties','propertiesS','covid','blogs'));
     }
     public function rentYacht()
@@ -54,31 +80,61 @@ class SiteController extends Controller
        $covid = Covid::find('1')->first();
        $properties = Property::all();
        $propertiesS = Property::where('special', '=', '1')->get();
-       $blogs = Blog::orderBy('id', 'DESC')->get();
+       if(app()->getLocale()== 'en'){
+        $blogs = Blog::orderBy('id', 'DESC')->get();
 
+        }else{
+
+        $blogs = Blog_rus::orderBy('id', 'DESC')->get();
+
+    }
         return view ('sitePages.rentYacht',compact('properties','propertiesS','covid','blogs'));
     }
     public function about()
     {
-        $blogs = Blog::orderBy('id', 'DESC')->get();
-        return view ('sitePages.about',compact('blogs'));
+        if(app()->getLocale()== 'en'){
+            $blogs = Blog::orderBy('id', 'DESC')->get();
+    
+            }else{
+    
+            $blogs = Blog_rus::orderBy('id', 'DESC')->get();
+    
+        }        return view ('sitePages.about',compact('blogs'));
     }
     public function terms()
     {
-        $blogs = Blog::orderBy('id', 'DESC')->get();
-        return view ('sitePages.terms',compact('blogs'));
+        if(app()->getLocale()== 'en'){
+            $blogs = Blog::orderBy('id', 'DESC')->get();
+    
+            }else{
+    
+            $blogs = Blog_rus::orderBy('id', 'DESC')->get();
+    
+        }        return view ('sitePages.terms',compact('blogs'));
     }
     public function news()
     {
-        $blogs = Blog::orderBy('id', 'DESC')->get();
-        return view ('sitePages.news',compact('blogs'));
+        if(app()->getLocale()== 'en'){
+            $blogs = Blog::orderBy('id', 'DESC')->get();
+    
+            }else{
+    
+            $blogs = Blog_rus::orderBy('id', 'DESC')->get();
+    
+        }        return view ('sitePages.news',compact('blogs'));
     }
     public function single_news($lang,$id)
     {
 
-        $blog = Blog::find($id);
-        $blogs = Blog::orderBy('id', 'DESC')->get();
-        return view ('sitePages.single_news',compact('blog','blogs'));
+        if(app()->getLocale()== 'en'){
+            $blogs = Blog::orderBy('id', 'DESC')->get();
+            $blog = Blog::find($id);
+
+            }else{
+            $blog = Blog_rus::find($id);
+            $blogs = Blog_rus::orderBy('id', 'DESC')->get();
+    
+        }        return view ('sitePages.single_news',compact('blog','blogs'));
     }
     
 }

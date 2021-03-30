@@ -5,6 +5,7 @@ namespace App\Http\Controllers;
 use App\FullCalendar as FullCalendar;
 use App\Property;
 use App\Blog;
+use App\Blog_rus;
 
 use Illuminate\Http\Request;
 use Gate;
@@ -143,7 +144,14 @@ class PropertyController extends Controller
         $properties=Property::orderBy('created_at', 'DESC')->get();
         $property= Property::findOrFail($id);
   
-       $blogs = Blog::all();
+        if(app()->getLocale()== 'en'){
+            $blogs = Blog::orderBy('id', 'DESC')->get();
+    
+            }else{
+    
+            $blogs = Blog_rus::orderBy('id', 'DESC')->get();
+    
+        }
 
         $calendar = FullCalendar::getCalendar($property->calendar_id);
         return view('sitePages.property', compact('property','properties','images','calendar','blogs'));

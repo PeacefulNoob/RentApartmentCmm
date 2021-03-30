@@ -1147,7 +1147,7 @@ hr {
   background: transparent url("/assets/images/cover_image/rentCarMain.png") 0% 0% no-repeat padding-box;
   height:  100%;
   background-repeat: no-repeat;
-  background-size: auto;
+  background-size: cover;
   position: relative;
   color: white;
 }

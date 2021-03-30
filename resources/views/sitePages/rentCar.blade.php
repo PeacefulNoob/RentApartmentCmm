@@ -2,6 +2,7 @@
 @section('content')
 <div class="hero">
     <div class="hero-car-image change1">
+
         <div class="hero-div row">
             <div class="col-lg-6 col-md-6 col-sm-12 col-12 pl-0 rentText">
                 <h2>{{__('rent_car_var.rent_car_title')}} </h2>
