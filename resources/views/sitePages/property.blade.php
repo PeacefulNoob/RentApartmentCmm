@@ -81,11 +81,11 @@
 
                                     <div class="form-group col-md-6 form_inquiry_left">
                                     <label for="checkin">{{__('property_var.check_in')}}</label>
-                                    <input  class="form-control" id="checkin" name = "checkin" placeholder="Put the C/I date please">
+                                    <input  class="form-control" id="checkin" name = "checkin" placeholder="Put the C/I date please" readonly>
                                     </div>
                                     <div class="form-group col-md-6 form_inquiry_right ">
                                     <label for="checkout">{{__('property_var.checkout')}}</label>
-                                    <input  class="form-control" id="checkout" name = "checkout" placeholder="Put the C/O date please">
+                                    <input  class="form-control" id="checkout" name = "checkout" placeholder="Put the C/O date please" readonly>
                                     </div>
                                 </div>
                                 <div class="form-group form_inquiry_bot">
@@ -258,6 +258,11 @@
         @endforelse
     </div>
 </div>
+<link href='https://cdn.jsdelivr.net/npm/bootstrap@4.5.0/dist/css/bootstrap.css' rel='stylesheet' />
+<link href='https://cdn.jsdelivr.net/npm/@fortawesome/fontawesome-free@5.13.1/css/all.css' rel='stylesheet'>
+<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/fullcalendar@5.6.0/main.min.css">
+<script src="https://cdn.jsdelivr.net/npm/fullcalendar@5.6.0/main.min.js"></script>
+
 
 <script> $(document).ready(function(){
     $('#checkin').on('click', function(){
@@ -270,6 +275,17 @@
             calendar1.render();
             calendar.render();
             $('.fc-add_event-button').css("margin-right", "20px");
+        }else{
+            $('.calendar-main').css("display", "none");
+            $('#calendar0').css("display", "none");
+            $('#calendar1').css("display", "none");
+            $('#calendar0').val(0);
+            $('#calendar1').val(0);
+        }
+    });
+		$('#checkout').on('click', function(){
+        if($('#calendar0').val() == 0 && $('#calendar1').val() == 0) {
+           
         }else{
             $('.calendar-main').css("display", "none");
             $('#calendar0').css("display", "none");
@@ -333,6 +349,8 @@
     var bool = false;
     var calendarEl1 = document.getElementById('calendar1');
     var calendar1 = new FullCalendar.Calendar(calendarEl1, {
+        themeSystem: 'bootstrap',
+
         customButtons: {
             add_event: {
                 text: 'Clear',
@@ -362,6 +380,7 @@
         showNonCurrentDates: false,
         eventClassNames: 'activeDay',
         
+      
         dateClick: function(info) {
             
             var event = calendar1.getEventById('1'); // an event object!
@@ -484,6 +503,7 @@
     calendar1.render();
     var calendarEl = document.getElementById('calendar0');
     var calendar = new FullCalendar.Calendar(calendarEl, {
+        themeSystem: 'bootstrap',
         initialView: 'dayGridMonth',
         initialDate: date,
         headerToolbar: {

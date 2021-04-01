@@ -449,8 +449,8 @@ When it's NOT activated, the fc-button classes won't even be in the DOM.
     background: var(--fc-non-business-color, rgba(215, 215, 215, 0.3));
   }
 .fc .fc-bg-event {
-    background: rgb(143, 223, 130);
-    background: var(--fc-bg-event-color, rgb(143, 223, 130));
+    background: #ff0000;
+    background: var(--fc-bg-event-color, #ff0000);
     opacity: 0.3;
     opacity: var(--fc-bg-event-opacity, 0.3)
   }
