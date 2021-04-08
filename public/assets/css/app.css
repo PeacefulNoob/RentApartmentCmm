@@ -252,15 +252,22 @@ display: block;
 }
 
 .fc-day-other .fc-daygrid-day-top { display:none;}
-
-.hero-image {
-  background-image: -webkit-gradient(linear, left top, left bottom, from(rgba(0, 0, 0, 0.1)), to(rgba(0, 0, 0, 0.1))), url("/assets/images/cover_image/regions.png");
-  background-image: linear-gradient(rgba(0, 0, 0, 0.1), rgba(0, 0, 0, 0.1)), url("/assets/images/cover_image/regions.png");
-  height: 85vh;
-  background-position: center;
-  background-repeat: no-repeat;
-  background-size: cover;
+.hero{
   position: relative;
+
+}
+.hero-image {
+  height: 85vh;
+}
+.hero-image .carousel-item {
+  height: 85vh;
+  width: 100%;
+}
+.hero-image .carousel-item img {
+  height: 100%;
+  object-fit: cover;
+  background-color: white;
+
 }
 .searchForm{
   border-radius: 5px;
@@ -869,8 +876,8 @@ background-color: red;
 }
 
 .aboutMne {
-  background-image: -webkit-gradient(linear, left top, left bottom, from(rgba(0, 0, 0, 0.1)), to(rgba(255, 255, 255, 0.3))), url("/assets/images/mainMne.png");
-  background-image: linear-gradient(rgba(0, 0, 0, 0.1), rgba(255, 255, 255, 0.3)), url("/assets/images/mainMne.png");
+  background-image: -webkit-gradient(linear, left top, left bottom, from(rgba(0, 0, 0, 0.1)), to(rgba(255, 255, 255, 0.3))), url("/assets/images/mainMne.jpg");
+  background-image: linear-gradient(rgba(0, 0, 0, 0.1), rgba(255, 255, 255, 0.3)), url("/assets/images/mainMne.jpg");
   height: 55vh;
   width: 100%;
   position: relative;
@@ -891,8 +898,8 @@ background-color: red;
 }
 
 .all_aboutMnePage{
-  background-image: -webkit-gradient(linear, left top, left bottom, from(rgba(255, 255, 255, 0.2)), to(rgba(255, 255, 255, 0.7))), url("/assets/images/mainMne.png");
-  background-image:linear-gradient(rgba(255, 255, 255, 0.2), rgba(255, 255, 255, 0.7)), url("/assets/images/mainMne.png");
+  background-image: -webkit-gradient(linear, left top, left bottom, from(rgba(255, 255, 255, 0.2)), to(rgba(255, 255, 255, 0.7))), url("/assets/images/mainMne.jpg");
+  background-image:linear-gradient(rgba(255, 255, 255, 0.2), rgba(255, 255, 255, 0.7)), url("/assets/images/mainMne.jpg");
   height: 100%;
   width: 100%;
   background-size: cover;
@@ -1419,4 +1426,29 @@ color:#7E7E7E;
 .fc-daygrid-body { 
   margin: auto !important;
 
+}
+.carousel-fade .carousel-item {
+	opacity: 0;
+	transition-duration: .9s;
+	transition-property: opacity;
+}
+
+.carousel-fade .carousel-item.active,
+.carousel-fade .carousel-item-next.carousel-item-left,
+.carousel-fade .carousel-item-prev.carousel-item-right {
+	opacity: 1;
+}
+
+.carousel-fade .active.carousel-item-left,
+.carousel-fade .active.carousel-item-right {
+	opacity: 0;
+}
+
+.carousel-fade .carousel-item-next,
+.carousel-fade .carousel-item-prev,
+.carousel-fade .carousel-item.active,
+.carousel-fade .active.carousel-item-left,
+.carousel-fade .active.carousel-item-prev {
+	transform: translateX(0);
+	transform: translate3d(0, 0, 0);
 }

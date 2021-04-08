@@ -12,7 +12,7 @@
 <div class="all_aboutMnePage">
         <div class="aboutMnePage pb-4">
             <div class="text">
-            <h1 style="color:white;">{{__('others.news_title')}}</h1>
+            <h1 >{{__('others.news_title')}}</h1>
             <p>{{__('others.news_title_p')}}
             </p> 
         </div>
