@@ -163,12 +163,13 @@ class PropertyController extends Controller
      * @param  \App\Property  $property
      * @return \Illuminate\Http\Response
      */
-    public function edit(Property $property)
+    public function edit(Property $property, Request $request)
     {
         $locations = Location::all();
         $types= PropertyType::all();
         $amenities = Amenity::all();
         $property = Property::findOrFail($property->id);
+
         return view ('admin.property.edit',compact('property','locations','types','amenities'));
     }
 
@@ -186,7 +187,7 @@ class PropertyController extends Controller
         }
         $validator = Validator::make($request->all(), [
             'title' => 'required',
-          //'file[]' => 'mimes:mp4,mov,ogg,jpeg,png,jpg,svg',
+            'file[]' => 'mimes:mp4,mov,ogg,jpeg,png,jpg,svg',
             'description' => 'required',
             'persons' => 'required',
             'price' => 'required',
@@ -206,8 +207,6 @@ class PropertyController extends Controller
                         ->withInput();
         }
         Property::find($property->id)->update($request->all());
-
-
         /* DB::table('properties')->where('id', $property->id)->update([
             'title' => $request->title,
             'description' => $request->description,
@@ -223,7 +222,26 @@ class PropertyController extends Controller
             'user_id' => auth()->user()->id,
 
     ]);  */
+    if ($request->hasFile('file'))
+    {
+        DB::table('property_images')->where('property_id',$property->id)->delete();
+        foreach($request->file('file') as $image)
+        {
+            $name=$image->getClientOriginalName();
+            $extension= $image->getClientOriginalExtension();
+            $fileName = time(). '_'.Str::random(5).'.'.$extension;
+            Image::make($image)->encode('jpg', 75)->resize(1200, null, function($constraint) {  $constraint->aspectRatio();}) ->save('assets/images/property_images/'.$fileName );
+            $data[] = $name;
+            $image1 = new Image;
+            $image1->title=json_encode($data);
+            DB::table('property_images')
+            ->insert(
+                ['image' => $fileName,
+                'property_id' => $property->id]
+            );
+        }
 
+        }
         $property->amenities()->sync((array)$request->input('amenity'));
 
        return redirect()->back()->with('success', 'Ažuriranje uspješno');

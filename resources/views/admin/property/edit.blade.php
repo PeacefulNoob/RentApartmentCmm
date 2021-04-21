@@ -174,8 +174,10 @@
             <label for="calendar_id">Google Calendar ID</label>
             <input type="text" class="form-control" id="calendar_id" name="calendar_id" value="{{ $property->calendar_id }}"required>
         </div>
-    </div>
-
+     </div>
+         <div class="control-group form-group">
+            <input type="file" id="file-1" class="file required" name="file[]" multiple>
+        </div>
         <button type="submit" class="btn btn-primary">Update</button>
     </form>
 </div>
