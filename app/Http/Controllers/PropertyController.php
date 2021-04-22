@@ -6,7 +6,7 @@ use App\FullCalendar as FullCalendar;
 use App\Property;
 use App\Blog;
 use App\Blog_rus;
-
+use App\PropertyImage;
 use Illuminate\Http\Request;
 use Gate;
 use DB;
@@ -169,8 +169,9 @@ class PropertyController extends Controller
         $types= PropertyType::all();
         $amenities = Amenity::all();
         $property = Property::findOrFail($property->id);
+        $image = PropertyImage::where('property_id', $property->id)->get();
 
-        return view ('admin.property.edit',compact('property','locations','types','amenities'));
+        return view ('admin.property.edit',compact('property','locations','types','amenities','image'));
     }
 
     /**
@@ -247,6 +248,8 @@ class PropertyController extends Controller
        return redirect()->back()->with('success', 'Ažuriranje uspješno');
     }
 
+
+
     public function favourite($id) {
         Property::where('id', $id)
                 ->update(['favourites' => 1]);
@@ -276,6 +279,13 @@ class PropertyController extends Controller
              return redirect()->route('admin.users.index');
         }
 
+
+public function delete(Request $request, Property $property){
+    if($request){
+    DB::table('property_images')->where('id',$request->id)->delete();
+    }
+    return redirect()->back()->with('success', 'Birsanje je uspješno');
+}
 
         public function showAllPropertyFilter(){
 

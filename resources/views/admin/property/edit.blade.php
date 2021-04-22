@@ -178,8 +178,20 @@
          <div class="control-group form-group">
             <input type="file" id="file-1" class="file required" name="file[]" multiple>
         </div>
+
         <button type="submit" class="btn btn-primary">Update</button>
     </form>
+
+    <div class="control-group form-group">
+            @foreach($image as $getImage)
+
+            <img src="/assets/images/property_images/{{$getImage->image}}" alt="" style="width:100px;">
+            <form action="/delete/{{$getImage->id}}" method="POST"  class="float-left">
+            @csrf
+            <button type="submit" name="delete" class="btn pr-2 btn-warning">Delete</button>
+            </form>
+            @endforeach
+     </div>
 </div>
 
 
