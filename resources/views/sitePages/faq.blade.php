@@ -27,7 +27,7 @@
               type="button" class="btn btn-primary">Edit</button></a> 
 
 
-              <form action="{{ url('faqs.destroy',$faq) }}" method="POST"  class="float-left">
+              <form action="{{ route('faqs.destroy',$faq) }}" method="POST"  class="float-left">
                 @csrf
                 {{ method_field('DELETE') }}
                 <button type="submit" class="btn btn-warning">Delete</button>

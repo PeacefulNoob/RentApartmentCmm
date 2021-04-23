@@ -183,14 +183,19 @@
     </form>
 
     <div class="control-group form-group">
+         <table class="float-left">
+           <tr>
             @foreach($image as $getImage)
-
+            <td>
             <img src="/assets/images/property_images/{{$getImage->image}}" alt="" style="width:100px;">
-            <form action="/delete/{{$getImage->id}}" method="POST"  class="float-left">
+            <form action="/delete/{{$getImage->id}}" method="POST"  class="float-left pt-3">
             @csrf
             <button type="submit" name="delete" class="btn pr-2 btn-warning">Delete</button>
             </form>
+            </td>
             @endforeach
+            </tr>
+        </table>
      </div>
 </div>
 
