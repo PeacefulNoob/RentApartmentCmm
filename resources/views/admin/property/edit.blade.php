@@ -174,10 +174,29 @@
             <label for="calendar_id">Google Calendar ID</label>
             <input type="text" class="form-control" id="calendar_id" name="calendar_id" value="{{ $property->calendar_id }}"required>
         </div>
-    </div>
+     </div>
+         <div class="control-group form-group">
+            <input type="file" id="file-1" class="file required" name="file[]" multiple>
+        </div>
 
         <button type="submit" class="btn btn-primary">Update</button>
     </form>
+
+    <div class="control-group form-group">
+         <table class="float-left">
+           <tr>
+            @foreach($image as $getImage)
+            <td>
+            <img src="/assets/images/property_images/{{$getImage->image}}" alt="" style="width:100px;">
+            <form action="/delete/{{$getImage->id}}" method="POST"  class="float-left pt-3">
+            @csrf
+            <button type="submit" name="delete" class="btn pr-2 btn-warning">Delete</button>
+            </form>
+            </td>
+            @endforeach
+            </tr>
+        </table>
+     </div>
 </div>
 
 

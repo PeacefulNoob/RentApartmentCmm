@@ -44,6 +44,7 @@ Route::prefix('{lang?}')->middleware('setlocale')->group(function() {
     Route::get('/single_news/{id}', 'SiteController@single_news')->name('single_news');
     Route::get('properties/{id}', 'PropertyController@show');
 
+
 });
 
 Route::get('calendar' , 'CalendarController@index');
@@ -56,6 +57,7 @@ Route::group(['middleware' => 'auth'], function() {
 
     Route::get('/favourite/{id}', 'PropertyController@favourite')->name('favourite');
     Route::get('/notFavourite/{id}', 'PropertyController@notFavourite')->name('notFavourite');
+    Route::post('delete/{id}', 'PropertyController@delete');
 });
 
 Route::namespace('Admin')->prefix('admin')->name('admin.')->middleware('can:manage-users')->group(function(){
