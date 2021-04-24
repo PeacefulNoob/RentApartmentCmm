@@ -1,6 +1,23 @@
 @extends('layouts.app')
 
+<style>
+
+.parent {
+  display: grid;
+  grid-gap: 4vw;
+  grid-template-columns: repeat(auto-fill, minmax(100px, 120px));
+  max-width: 800px;
+}
+
+.child {
+    height: 145px;
+    width: 105px;
+}
+</style>
+
 @section('content')
+
+
 <link href="https://cdn.jsdelivr.net/npm/select2@4.1.0-beta.1/dist/css/select2.min.css" rel="stylesheet" />
 
 <div class="container-fluid adminPage px-3">
@@ -182,20 +199,23 @@
         <button type="submit" class="btn btn-primary">Update</button>
     </form>
 
-    <div class="control-group form-group">
-         <table class="float-left">
-           <tr>
+    <div class="control-group form-group" style="padding: 43px 151px 97px;
+    border-radius: 48px;border: dotted white; background-color:#515467a1;">
+        <h3 class="pb-5 text-center">ALL PHOTOS</h3>
+        <div class="parent">
             @foreach($image as $getImage)
-            <td>
+            <div class="child pb-4">
             <img src="/assets/images/property_images/{{$getImage->image}}" alt="" style="width:100px;">
-            <form action="/delete/{{$getImage->id}}" method="POST"  class="float-left pt-3">
+            <form action="/delete/{{$getImage->id}}" method="POST"  class="text-center pt-2">
             @csrf
-            <button type="submit" name="delete" class="btn pr-2 btn-warning">Delete</button>
+            <button type="submit" name="delete" class="btn btn-warning">Delete</button>
             </form>
-            </td>
+            </div>
             @endforeach
-            </tr>
-        </table>
+        </div>
+        <div class="text-center" style="padding-top: 90px;display: flex;justify-content: center;">
+            {{$image->links()}}
+            </div>
      </div>
 </div>
 
