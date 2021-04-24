@@ -169,7 +169,7 @@ class PropertyController extends Controller
         $types= PropertyType::all();
         $amenities = Amenity::all();
         $property = Property::findOrFail($property->id);
-        $image = PropertyImage::where('property_id', $property->id)->get();
+        $image = PropertyImage::where('property_id', $property->id)->paginate(8);
 
         return view ('admin.property.edit',compact('property','locations','types','amenities','image'));
     }
