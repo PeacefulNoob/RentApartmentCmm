@@ -210,6 +210,11 @@
             @csrf
             <button type="submit" name="delete" class="btn btn-warning">Delete</button>
             </form>
+            <form action="/coverPhoto/{{$getImage->id}}" method="POST"  class="text-center pt-2" >
+            <input type="number" name="number" id="number" style="width:35%;"> 
+            @csrf
+            <button type="submit" name="save" class="btn btn-warning">Save</button>
+            </form>
             </div>
             @endforeach
         </div>
