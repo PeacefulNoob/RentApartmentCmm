@@ -154,7 +154,10 @@
         </div>
 
         <div class="control-group form-group">
+            <label for="file-1">Photos</label>
             <input type="file" id="file-1" class="file required" name="file[]" multiple>
+            <label for="file-cover-photo">Cover photo</label>
+            <input type="file" id="file-cover-photo" class="file required" name="cover-photo">
         </div>
         <button type="submit" class="btn btn-primary">Add</button>
     </form>

@@ -193,7 +193,10 @@
         </div>
      </div>
          <div class="control-group form-group">
+            <label for="file-1">Photos</label>
             <input type="file" id="file-1" class="file required" name="file[]" multiple>
+            <label for="file-cover-photo">Cover photo</label>
+            <input type="file" id="file-cover-photo" class="file required" name="cover-photo">
         </div>
 
         <button type="submit" class="btn btn-primary">Update</button>
@@ -209,11 +212,6 @@
             <form action="/delete/{{$getImage->id}}" method="POST"  class="text-center pt-2">
             @csrf
             <button type="submit" name="delete" class="btn btn-warning">Delete</button>
-            </form>
-            <form action="/coverPhoto/{{$getImage->id}}" method="POST"  class="text-center pt-2" >
-            <input type="number" name="number" id="number" style="width:35%;"> 
-            @csrf
-            <button type="submit" name="save" class="btn btn-warning">Save</button>
             </form>
             </div>
             @endforeach

@@ -58,6 +58,7 @@ Route::group(['middleware' => 'auth'], function() {
     Route::get('/favourite/{id}', 'PropertyController@favourite')->name('favourite');
     Route::get('/notFavourite/{id}', 'PropertyController@notFavourite')->name('notFavourite');
     Route::post('delete/{id}', 'PropertyController@delete');
+    Route::post('coverPhoto/{id}', 'PropertyController@changeCoverPhoto');
 });
 
 Route::namespace('Admin')->prefix('admin')->name('admin.')->middleware('can:manage-users')->group(function(){
