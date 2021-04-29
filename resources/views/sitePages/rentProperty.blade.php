@@ -134,6 +134,7 @@
             if ($j++ == 16)
                 break;
             ?>
+   
         @empty
             <div class="col-md-12 col-sm-12 col-xs-12">
                 <div class="property">
@@ -146,6 +147,9 @@
                 </div>
             </div>
         @endforelse
+               <div  class="text-center" style="padding-top: 90px;display: flex;justify-content: center;width: 100%;">
+                {{$properties->links()}}
+            </div>
     </div>
     </div>
     </div>

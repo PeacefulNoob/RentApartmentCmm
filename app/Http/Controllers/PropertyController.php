@@ -323,7 +323,7 @@ class PropertyController extends Controller
         return view(
             'sitePages.rentProperty',
             [
-                'properties' => Property::all(),
+                'properties' => Property::paginate(16),
                 'cities' => Location::all(),
                 'types' => PropertyType::all(),
                 'blogs' => Blog::all()
