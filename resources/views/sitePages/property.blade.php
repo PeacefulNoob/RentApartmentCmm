@@ -12,9 +12,9 @@
 
     <div class="property-single">
         <div class="owl-navigation owl-carousel gallery_single_owl owl-theme">
-            {{-- @php
+            @php
             $cover_photo = DB::table('property_images')->where('property_id', '=', $property->id)->first();
-           @endphp --}}
+           @endphp
             <img src="/assets/images/property_images/{{ $cover_photo->cover_photo }}" class="property_single_slide" alt="">
             @foreach($property->images as $image)
                 <img src="/assets/images/property_images/{{ $image->image }}" class="property_single_slide" alt="">

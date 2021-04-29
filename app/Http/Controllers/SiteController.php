@@ -19,7 +19,7 @@ class SiteController extends Controller
        $covid = Covid::find('1')->first();
        $properties = Property::all();
        $propId = Property::first();
-       $cover_photo = DB::table('property_images')->where('property_id', '=',  $propId->id)->first();
+    //    $cover_photo = DB::table('property_images')->where('property_id', '=',  $propId->id)->first();
        $propertiesS = Property::where('favourites', '=', '1')->get();
        if(app()->getLocale()== 'en'){
         $blogs = Blog::orderBy('id', 'DESC')->get();
@@ -31,7 +31,7 @@ class SiteController extends Controller
     }
        $cities = Location::all();
        $types = PropertyType::all();
-        return view ('sitePages.index',compact('properties','propertiesS','covid','blogs','cities','types','cover_photo'));
+        return view ('sitePages.index',compact('properties','propertiesS','covid','blogs','cities','types'));
     }
     public function transfers()
     {
