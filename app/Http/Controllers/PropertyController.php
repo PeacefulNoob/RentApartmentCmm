@@ -152,10 +152,9 @@ class PropertyController extends Controller
     public function show($lang, $id)
     {
         $images = DB::table('property_images')->where('property_id', '=', $id)->get();
-        // $cover_photo = DB::table('property_images')->where('property_id', '=', $id)->first();
         $properties = Property::orderBy('created_at', 'DESC')->get();
         $property = Property::findOrFail($id);
-
+        $cover_photo = DB::table('property_images')->where('property_id', '=', $id)->first();
         if (app()->getLocale() == 'en') {
             $blogs = Blog::orderBy('id', 'DESC')->get();
         } else {
@@ -164,7 +163,7 @@ class PropertyController extends Controller
         }
 
         $calendar = FullCalendar::getCalendar($property->calendar_id);
-        return view('sitePages.property', compact('property', 'properties', 'images', 'calendar', 'blogs'));
+        return view('sitePages.property', compact('property', 'properties', 'images', 'calendar', 'blogs', 'cover_photo'));
     }
 
     /**
@@ -195,7 +194,7 @@ class PropertyController extends Controller
      */
     public function update(Request $request, Property $property)
     {
-        if(Gate::denies('edit-property')){
+        if (Gate::denies('edit-property')) {
             return redirect(route('admin.users.index'));
         }
         $validator = Validator::make($request->all(), [
@@ -207,7 +206,7 @@ class PropertyController extends Controller
             'size' => 'required',
             'floor' => 'required',
             'room_count' => 'required',
-/*          'google_maps' => 'required',
+            /*          'google_maps' => 'required',
  */         'street' => 'required',
             'location_id' => 'required',
             'property_type_id' => 'required',
@@ -216,8 +215,8 @@ class PropertyController extends Controller
         ]);
         if ($validator->fails()) {
             return redirect()->back()
-                        ->withErrors($validator)
-                        ->withInput();
+                ->withErrors($validator)
+                ->withInput();
         }
         Property::find($property->id)->update($request->all());
         /* DB::table('properties')->where('id', $property->id)->update([
@@ -233,29 +232,47 @@ class PropertyController extends Controller
             'google_maps' => $request->google_maps,
             'user_id' => auth()->user()->id,
     ]);  */
-    if ($request->hasFile('file'))
-    {
-        DB::table('property_images')->where('property_id',$property->id)->delete();
-        foreach($request->file('file') as $image)
-        {
-            $name=$image->getClientOriginalName();
-            $extension= $image->getClientOriginalExtension();
-            $fileName = time(). '_'.Str::random(5).'.'.$extension;
-            Image::make($image)->encode('jpg', 75)->resize(1200, null, function($constraint) {  $constraint->aspectRatio();}) ->save('assets/images/property_images/'.$fileName );
-            $data[] = $name;
+        if ($request->hasFile('file')) {
+            DB::table('property_images')->where('property_id', $property->id)->delete();
+            foreach ($request->file('file') as $image) {
+                $name = $image->getClientOriginalName();
+                $extension = $image->getClientOriginalExtension();
+                $fileName = time() . '_' . Str::random(5) . '.' . $extension;
+                Image::make($image)->encode('jpg', 75)->resize(1200, null, function ($constraint) {
+                    $constraint->aspectRatio();
+                })->save('assets/images/property_images/' . $fileName);
+                $data[] = $name;
+                $image1 = new Image;
+                $image1->title = json_encode($data);
+                DB::table('property_images')
+                    ->insert(
+                        [
+                            'image' => $fileName,
+                            'property_id' => $property->id
+                        ]
+                    );
+            }
+        }
+        if ($request->hasFile('cover-photo')) {
+            // DB::table('property_images')->where('property_id',$property->id)->delete();
+
+            $coverPhoto = $request->file('cover-photo');
+            $name1 = $coverPhoto->getClientOriginalName();
+            $extension1 = $coverPhoto->getClientOriginalExtension();
+            $fileName1 = time() . '_' . Str::random(5) . '.' . $extension1;
+            Image::make($coverPhoto)->encode('jpg', 75)->resize(1200, null, function ($constraint) {
+                $constraint->aspectRatio();
+            })->save('assets/images/property_images/' . $fileName1);
+            $data[] = $name1;
             $image1 = new Image;
-            $image1->title=json_encode($data);
-            DB::table('property_images')
-            ->insert(
-                ['image' => $fileName,
-                'property_id' => $property->id]
-            );
+            $image1->title = json_encode($data);
+            DB::table('property_images')->updateOrInsert(['property_id' => $property->id], ['cover_photo' => $fileName1]);
         }
 
-        }
+
         $property->amenities()->sync((array)$request->input('amenity'));
 
-       return redirect()->back()->with('success', 'Ažuriranje uspješno');
+        return redirect()->back()->with('success', 'Ažuriranje uspješno');
     }
 
 
