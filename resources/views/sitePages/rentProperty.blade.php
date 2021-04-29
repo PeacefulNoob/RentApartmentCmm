@@ -71,10 +71,14 @@
                     <div class="image-placeholder">
           
                         <div class="owl-navigation owl-carousel gallery_owl owl-theme">
-                            
+                            @php
+                            $cover_photo = DB::table('property_images')->where('property_id', '=', $property->id)->first();
+                           @endphp
+                           <a href="/{{app()->getLocale()}}/properties/{{ $property->id }}">
+                               <img src="/assets/images/property_images/{{ $cover_photo->cover_photo }}" class="property_slide filterRental" alt="">
+                           </a>
                             @foreach($property->images as $image)
                             <a href="/{{app()->getLocale()}}/properties/{{ $property->id }}">
-
                                 <img src="/assets/images/property_images/{{ $image->image }}" class="property_slide filterRental" alt="">
                             </a>
                             @endforeach

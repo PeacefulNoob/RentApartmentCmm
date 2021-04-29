@@ -116,6 +116,14 @@
                     <div class="property translate">
                         <div class="image-placeholder">
                             <div class="owl-navigation owl-carousel gallery_owl owl-theme">
+                                @php
+                                $cover_photo = DB::table('property_images')->where('property_id', '=', $property->id)->first();
+                               @endphp
+                                <a href="/{{app()->getLocale()}}/properties/{{ $property->id }}">
+                                    <div class="propOverlay"></div>
+    
+                                     <img src="/assets/images/property_images/{{ $cover_photo->cover_photo }}" class="property_slide" alt=""> 
+                                </a>
                                 @foreach($property->images as $image)
                              
                                 <a href="/{{app()->getLocale()}}/properties/{{ $property->id }}">
