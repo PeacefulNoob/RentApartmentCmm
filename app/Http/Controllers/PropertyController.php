@@ -219,20 +219,8 @@ class PropertyController extends Controller
                 ->withInput();
         }
         Property::find($property->id)->update($request->all());
-        /* DB::table('properties')->where('id', $property->id)->update([
-            'title' => $request->title,
-            'description' => $request->description,
-            'price' => $request->price,
-            'size' => $request->size,
-            'floor' => $request->floor,
-            'room_count' => $request->roomcount,
-            'location_id' => $request->location,
-            'street' => $request->street,
-            'property_type_id' => $request->type,
-            'google_maps' => $request->google_maps,
-            'user_id' => auth()->user()->id,
-    ]);  */
-        if ($request->hasFile('file')) {
+
+        if ($request->hasFile('file') && $request->hasFile('cover-photo')) {
             DB::table('property_images')->where('property_id', $property->id)->delete();
             foreach ($request->file('file') as $image) {
                 $name = $image->getClientOriginalName();
@@ -244,30 +232,71 @@ class PropertyController extends Controller
                 $data[] = $name;
                 $image1 = new Image;
                 $image1->title = json_encode($data);
+                // cover photo
+                $coverPhoto = $request->file('cover-photo');
+                $name1 = $coverPhoto->getClientOriginalName();
+                $extension1 = $coverPhoto->getClientOriginalExtension();
+                $fileName1 = time() . '_' . Str::random(5) . '.' . $extension1;
+                Image::make($coverPhoto)->encode('jpg', 75)->resize(1200, null, function ($constraint) {
+                    $constraint->aspectRatio();
+                })->save('assets/images/property_images/' . $fileName1);
+                $data2[] = $name1;
+                $image2 = new Image;
+                $image2->title = json_encode($data2);
+
                 DB::table('property_images')
                     ->insert(
                         [
                             'image' => $fileName,
-                            'property_id' => $property->id
+                            'property_id' => $property->id,
+                            'cover_photo' => $fileName1
                         ]
                     );
             }
-        }
-        if ($request->hasFile('cover-photo')) {
-            // DB::table('property_images')->where('property_id',$property->id)->delete();
+        } 
+        
+        // elseif ($request->hasFile('file')) {
+        //     foreach ($request->file('file') as $image) {
+        //         $name = $image->getClientOriginalName();
+        //         $extension = $image->getClientOriginalExtension();
+        //         $fileName = time() . '_' . Str::random(5) . '.' . $extension;
+        //         Image::make($image)->encode('jpg', 75)->resize(1200, null, function ($constraint) {
+        //             $constraint->aspectRatio();
+        //         })->save('assets/images/property_images/' . $fileName);
+        //         $data[] = $name;
+        //         $image1 = new Image;
+        //         $image1->title = json_encode($data);
 
-            $coverPhoto = $request->file('cover-photo');
-            $name1 = $coverPhoto->getClientOriginalName();
-            $extension1 = $coverPhoto->getClientOriginalExtension();
-            $fileName1 = time() . '_' . Str::random(5) . '.' . $extension1;
-            Image::make($coverPhoto)->encode('jpg', 75)->resize(1200, null, function ($constraint) {
-                $constraint->aspectRatio();
-            })->save('assets/images/property_images/' . $fileName1);
-            $data[] = $name1;
-            $image1 = new Image;
-            $image1->title = json_encode($data);
-            DB::table('property_images')->updateOrInsert(['property_id' => $property->id], ['cover_photo' => $fileName1]);
-        }
+        //         DB::table('property_images')
+        //             ->updateOrInsert(
+        //                 [
+        //                     'image' => $fileName,
+        //                     'property_id' => $property->id,
+        //                 ]
+        //             );
+        //     }
+        // } elseif ($request->hasFile('cover-photo')) {
+        //     // cover photo
+        //     $coverPhoto = $request->file('cover-photo');
+        //     $name1 = $coverPhoto->getClientOriginalName();
+        //     $extension1 = $coverPhoto->getClientOriginalExtension();
+        //     $fileName1 = time() . '_' . Str::random(5) . '.' . $extension1;
+        //     Image::make($coverPhoto)->encode('jpg', 75)->resize(1200, null, function ($constraint) {
+        //         $constraint->aspectRatio();
+        //     })->save('assets/images/property_images/' . $fileName1);
+        //     // $data2[] = $name1;
+        //     // $image2 = new Image;
+        //     // $image2->title = json_encode($data2);
+        //     DB::table('property_images')
+        //         ->updateOrInsert(
+        //             [
+        //                 'property_id' => $property->id,
+        //                 'cover_photo' => $fileName1
+        //             ]
+        //         );
+        // }
+
+
 
 
         $property->amenities()->sync((array)$request->input('amenity'));
